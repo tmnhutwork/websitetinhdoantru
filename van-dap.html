@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vấn Đáp Tu Học Phật Pháp · Tịnh Độ An Trú</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="bai-giang.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪷</text></svg>">
+</head>
+<body class="sutra-page bai-giang-body">
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo" id="brand-logo">
+        <span class="lotus-icon">🪷</span>
+        <span class="brand-name">tịnh độ <span class="brand-dot">·</span> <em class="brand-sub">an trú</em></span>
+      </a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html#kham-pha" class="nav-link">Giáo Lý</a>
+        <a href="bai-giang.html" class="nav-link">Bài Giảng</a>
+        <a href="kinh-dien.html" class="nav-link">Kinh Điển</a>
+        <a href="index.html#thoi-khoa" class="nav-link">Thời Khóa</a>
+        <a href="van-dap.html" class="nav-link active">Vấn Đáp</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#" class="btn btn-ghost" style="padding: 8px 16px;">Đăng nhập</a>
+        <a href="#" class="btn btn-primary" style="padding: 8px 20px;">Đăng ký</a>
+        <button class="icon-btn theme-toggle" id="btn-theme-toggle" title="Chuyển chế độ đọc ban đêm" aria-label="Chuyển chế độ đọc">
+          <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path><path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path><path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+        </button>
+        <button class="mobile-menu-btn" id="btn-mobile-menu" aria-label="Mở menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN WRAPPER -->
+  <main class="bai-giang-main" id="mainContent">
+
+    <!-- HERO HEADER: TRANG VẤN ĐÁP RIÊNG BIỆT -->
+    <section class="bg-opt3-island" style="margin-top: 24px; margin-bottom: 24px; text-align: center;">
+      <div style="max-width: 820px; margin: 0 auto;">
+        <div class="bg-qa-badge" style="margin: 0 auto 16px; width: fit-content;">
+          <span class="bg-qa-badge-icon">🪷</span>
+          <span>Pháp Nhũ Vấn Đáp · Gỡ Rối Tu Tập Tại Gia</span>
+        </div>
+        <h1 style="font-family: var(--font-serif, 'Crimson Pro', Georgia, serif); font-size: clamp(30px, 4.2vw, 46px); font-weight: 700; color: var(--text-main); margin-bottom: 14px; line-height: 1.25;">
+          Góc Vấn Đáp Tu Học Phật Pháp
+        </h1>
+        <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 24px;">
+          Tháo gỡ khúc mắc, chỉ điểm công phu hành trì niệm Phật tại gia thực tế, thấu triệt và rốt ráo từ chư Tổ sư Tịnh Tông và chư Tôn Đức Giảng Sư.
+        </p>
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+          <button type="button" class="bg-qa-btn-ask-submit" id="heroBtnAskQuestion" style="padding: 11px 24px; font-size: 14.5px;">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+            <span>Đặt câu hỏi tới Ban Giảng Sư</span>
+          </button>
+          <a href="#qaCardsList" class="bg-quote-btn-secondary" style="padding: 10px 22px; font-size: 14px;">
+            <span>Xem các câu hỏi phổ biến</span>
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GÓC VẤN ĐÁP PHẬT PHÁP: 2-COLUMN SPLIT (TINH GỌN & PHÂN TRANG TỐI ĐA 6 CÂU/TRANG) -->
+    <section class="bg-qa-section" id="secQA">
+      <div class="bg-qa-split-container">
+        
+        <div class="bg-qa-split-grid">
+          
+          <!-- CỘT TRÁI (STICKY SIDEBAR): BỘ LỌC CHỦ ĐỀ, TÌM KIẾM & HỘP ĐẶT CÂU HỎI -->
+          <aside class="bg-qa-sidebar">
+            <div class="bg-qa-sidebar-sticky">
+              
+              <!-- Nhãn & Tiêu Đề Cột Trái -->
+              <div class="bg-qa-sidebar-header">
+                <div class="bg-qa-badge">
+                  <span class="bg-qa-badge-icon">🪷</span>
+                  <span>Pháp Nhũ Vấn Đáp</span>
+                </div>
+                <h2 class="bg-qa-main-title">Chủ Đề &amp;<br>Tra Cứu Khúc Mắc</h2>
+                <p class="bg-qa-sub-desc">
+                  Lọc câu hỏi theo từng khía cạnh thực tế trong công phu và đời sống thường nhật.
+                </p>
+              </div>
+
+              <!-- Thanh Tìm Kiếm Trực Quan -->
+              <div class="bg-qa-search-box">
+                <div class="bg-qa-search-input-wrap">
+                  <svg class="bg-qa-search-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                  </svg>
+                  <input type="text" id="qaSearchInput" class="bg-qa-search-field" placeholder="Tìm kiếm khúc mắc tu học..." aria-label="Tìm kiếm câu hỏi vấn đáp">
+                  <button id="qaSearchClear" class="bg-qa-search-clear-btn" type="button" aria-label="Xóa từ khóa tìm kiếm" style="display: none;">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Danh Mục Phân Loại Dạng Nút Dọc (Vertical Category Nav) -->
+              <div class="bg-qa-cat-group">
+                <div class="bg-qa-cat-title">Chủ Đề Tu Học</div>
+                <nav class="bg-qa-cat-nav" aria-label="Phân loại chủ đề vấn đáp">
+                  <button type="button" class="bg-qa-cat-btn active" data-category="all">
+                    <span class="bg-qa-cat-btn-icon">🪷</span>
+                    <span class="bg-qa-cat-btn-text">Tất Cả Khúc Mắc</span>
+                    <span class="bg-qa-cat-count" id="countAll">8</span>
+                  </button>
+                  <button type="button" class="bg-qa-cat-btn" data-category="doi-song">
+                    <span class="bg-qa-cat-btn-icon">🌿</span>
+                    <span class="bg-qa-cat-btn-text">Đời Sống Thường Nhật</span>
+                    <span class="bg-qa-cat-count" id="countDoiSong">2</span>
+                  </button>
+                  <button type="button" class="bg-qa-cat-btn" data-category="hanh-tri">
+                    <span class="bg-qa-cat-btn-icon">🧘</span>
+                    <span class="bg-qa-cat-btn-text">Công Phu Hành Trì</span>
+                    <span class="bg-qa-cat-count" id="countHanhTri">2</span>
+                  </button>
+                  <button type="button" class="bg-qa-cat-btn" data-category="tin-nguyen">
+                    <span class="bg-qa-cat-btn-icon">📖</span>
+                    <span class="bg-qa-cat-btn-text">Tín Nguyện &amp; Giáo Lý</span>
+                    <span class="bg-qa-cat-count" id="countTinNguyen">2</span>
+                  </button>
+                  <button type="button" class="bg-qa-cat-btn" data-category="ho-niem">
+                    <span class="bg-qa-cat-btn-icon">🕊️</span>
+                    <span class="bg-qa-cat-btn-text">Lâm Chung &amp; Hộ Niệm</span>
+                    <span class="bg-qa-cat-count" id="countHoNiem">2</span>
+                  </button>
+                </nav>
+              </div>
+
+              <!-- Hộp Gợi Ý Đặt Câu Hỏi (CTA Widget) -->
+              <div class="bg-qa-ask-cta-box">
+                <div class="bg-qa-ask-cta-header">
+                  <span class="bg-qa-ask-cta-icon">✍️</span>
+                  <span class="bg-qa-ask-cta-badge">Chưa tìm thấy câu trả lời?</span>
+                </div>
+                <p class="bg-qa-ask-cta-desc">
+                  Quý Phật tử đang có trở ngại trong công phu hay đời sống gia đình? Xin hoan hỷ gửi câu hỏi để thỉnh ý Ban Giảng Sư.
+                </p>
+                <button type="button" class="bg-qa-btn-ask-submit" id="btnAskQuestion">
+                  <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                  <span>Gửi Câu Hỏi Tu Học</span>
+                </button>
+              </div>
+
+            </div>
+          </aside>
+
+          <!-- CỘT PHẢI: DÒNG CHẢY CÁC THẺ KHAI THỊ TINH GỌN (WISDOM CARDS STREAM) -->
+          <main class="bg-qa-stream">
+            
+            <!-- Toolbar Cột Phải: Thống Kê & Nút Mở / Thu Gọn Nhanh -->
+            <div class="bg-qa-stream-toolbar">
+              <div class="bg-qa-stream-status">
+                <span class="bg-qa-stream-indicator"></span>
+                <span id="qaStreamCountText">Hiển thị <strong>8</strong> câu hỏi tu học</span>
+              </div>
+              <div class="bg-qa-stream-actions">
+                <button type="button" class="bg-qa-action-toggle-all" id="btnToggleAllQa" title="Mở hoặc thu gọn toàn bộ câu trả lời">
+                  <svg class="bg-qa-toggle-icon" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                  <span id="btnToggleAllQaText">Mở tất cả</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Danh Sách Thẻ Khai Thị Mở Rộng Tại Chỗ -->
+            <div class="bg-qa-cards-list" id="qaCardsList">
+              
+              <!-- CARD 1 -->
+              <article class="bg-wisdom-card" data-qa-id="qa-lai-xe" data-category="doi-song">
+                <header class="bg-wisdom-header">
+                  <div class="bg-wisdom-header-top">
+                    <span class="bg-wisdom-cat-pill">🌿 Đời Sống Thường Nhật</span>
+                  </div>
+                  <div class="bg-wisdom-header-main">
+                    <h3 class="bg-wisdom-question">Đang làm việc nhà hoặc lái xe có được niệm Phật thầm không?</h3>
+                    <button type="button" class="bg-wisdom-toggle-btn" aria-expanded="false" aria-label="Mở hoặc thu gọn câu trả lời">
+                      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                  </div>
+                </header>
+                <div class="bg-wisdom-body">
+                  <div class="bg-wisdom-body-inner">
+                    <div class="bg-wisdom-core">
+                      <p class="bg-wisdom-core-text">“Đức Phật không phân biệt nơi chốn; chỉ cần tâm luôn có Phật thì dù nấu cơm hay lái xe đều là chánh niệm sanh phước vô lượng.”</p>
+                    </div>
+                    <div class="bg-wisdom-points-title">Chỉ Điểm Thực Hành:</div>
+                    <div class="bg-wisdom-points">
+                      <div class="bg-wisdom-point">
+                        <span class="bg-wisdom-point-icon">🌿</span>
+                        <div class="bg-wisdom-point-content">
+                          <strong class="bg-wisdom-point-name">Tùy Duyên Khởi Niệm:</strong>
+                          <span class="bg-wisdom-point-desc">Đạo Phật trọng thực chất tâm ý hơn câu nệ hình tướng bên ngoài. Niệm Phật khi làm việc nhà giúp tâm không bị cuốn vào lo âu, giữ tinh thần luôn tĩnh tại và thư thái.</span>
+                        </div>
+                      </div>
+                      <div class="bg-wisdom-point">
+                        <span class="bg-wisdom-point-icon">🛡️</span>
+                        <div class="bg-wisdom-point-content">
+                          <strong class="bg-wisdom-point-name">Hóa Giải Căng Thẳng Khi Lái Xe:</strong>
+                          <span class="bg-wisdom-point-desc">Câu Phật hiệu giúp tâm người lái xe định tĩnh, làm chủ tốc độ, giảm bớt bực dọc va chạm trên đường và nhận được tha lực từ bi gia trì.</span>
+                        </div>
+                      </div>
+                      <div class="bg-wisdom-point">
+                        <span class="bg-wisdom-point-icon">⚠️</span>
+                        <div class="bg-wisdom-point-content">
+                          <strong class="bg-wisdom-point-name">Lưu Ý An Toàn Tuyệt Đối:</strong>
+                          <span class="bg-wisdom-point-desc">Khi đang điều khiển phương tiện, TUYỆT ĐỐI không lần tràng hạt hay bấm máy đếm số để tránh mất tập trung lái xe. Chỉ cần niệm thầm đều đặn theo hơi thở tự nhiên.</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="bg-wisdom-tip">
+                      <span class="bg-wisdom-tip-icon">💡</span>
+                      <div class="bg-wisdom-tip-content">
+                        <strong>Bí quyết hành trì:</strong> Mỗi khi lên xe hoặc gặp đèn đỏ, hãy niệm 3 câu “Nam Mô A Di Đà Phật” để khởi đầu hành trình an lành.
+                      </div>
+                    </div>
+                    <footer class="bg-wisdom-footer">
+                      <button type="button" class="bg-wisdom-copy-btn" data-qa-id="qa-lai-xe" title="Sao chép câu trả lời để lưu hoặc chia sẻ">
+                        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                        <span>Sao chép câu trả lời</span>
+                      </button>
+                    </footer>
+                  </div>
+                </div>
+              </article>
+
+              <!-- CARD 2 -->
+              <article class="bg-wisdom-card" data-qa-id="qa-gia-dinh" data-category="doi-song">
+                <header class="bg-wisdom-header">
+                  <div class="bg-wisdom-header-top">
+                    <span class="bg-wisdom-cat-pill">🌿 Đời Sống Thường Nhật</span>
+                  </div>
+                  <div class="bg-wisdom-header-main">
+                    <h3 class="bg-wisdom-question">Người tại gia bận rộn mưu sinh, gia đình chưa đồng thuận ăn chay thì tu thế nào?</h3>
+                    <button type="button" class="bg-wisdom-toggle-btn" aria-expanded="false" aria-label="Mở hoặc thu gọn câu trả lời">
+                      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                  </div>
+                </header>
+                <div class="bg-wisdom-body">
+                  <div class="bg-wisdom-body-inner">
+                    <div class="bg-wisdom-core">
+                      <p class="bg-wisdom-core-text">“Phật pháp tại thế gian, không rời thế gian pháp. Hãy chu toàn bổn phận làm người, chớ vì ăn chay mà sinh tranh cãi làm tổn phước gia đình.”</p>
+                    </div>
+                    <div class="bg-wisdom-points-title">Chỉ Điểm Thực Hành:</div>
+                    <div class="bg-wisdom-points">
+                      <div class="bg-wisdom-point">
+                        <span class="bg-wisdom-point-icon">🌱</span>
+                        <div class="bg-wisdom-point-content">
+                          <strong class="bg-wisdom-point-name">Tùy Duyên Hành Trì:</strong>
+                          <span class="bg-wisdom-point-desc">Tập ăn chay theo kỳ (thập trai, lục trai) hoan hỷ, không ép buộc người thân cùng ăn nếu họ chưa có nhân duyên.</span>
+                        </div>
+                      </div>
+                      <div class="bg-wisdom-point">
+                        <span class="bg-wisdom-point-icon">🏡</span>
+                        <div class="bg-wisdom-point-content">
+                          <strong class="bg-wisdom-point-name">Thân Giáo Cảm Hóa:</strong>
+                          <span class="bg-wisdom-point-desc">Tu là bớt nóng giận, thêm hiền hòa và biết yêu thương. Khi gia đình an vui, người nhà sẽ tự khắc chuyển biến và kính tin.</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="bg-wisdom-tip">
+                      <span class="bg-wisdom-tip-icon">💡</span>
+                      <div class="bg-wisdom-tip-content">
+                        <strong>Bí quyết hành trì:</strong> Hòa thuận trong gia đình là phước báu đầu tiên của người Phật tử tại gia.
+                      </div>
+                    </div>
+                    <footer class="bg-wisdom-footer">
+                      <button type="button" class="bg-wisdom-copy-btn" data-qa-id="qa-gia-dinh" title="Sao chép câu trả lời để lưu hoặc chia sẻ">
+                        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                        <span>Sao chép câu trả lời</span>
+                      </button>
+                    </footer>
+                  </div>
+                </div>
+              </article>
+
+              <!-- CARD 3 -->
+              <article class="bg-wisdom-card" data-qa-id="qa-vong-tuong" data-category="hanh-tri">
+                <header class="bg-wisdom-header">
+                  <div class="bg-wisdom-header-top">
+                    <span class="bg-wisdom-cat-pill">🧘 Công Phu Hành Trì</span>
+                  </div>
+                  <div class="bg-wisdom-header-main">
+                    <h3 class="bg-wisdom-question">Vọng tưởng khởi lên liên tục khi đang niệm Phật thì xử lý thế nào?</h3>
+                    <button type="button" class="bg-wisdom-toggle-btn" aria-expanded="false" aria-label="Mở hoặc thu gọn câu trả lời">
+                      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                  </div>
+                </header>
+                <div class="bg-wisdom-body">
+                  <div class="bg-wisdom-body-inner">
+                    <div class="bg-wisdom-core">
+                      <p class="bg-wisdom-core-text">“Đừng sợ vọng tưởng khởi, chỉ sợ giác ngộ chậm. Vọng tưởng đến thì mặc kệ nó, quay lại lắng nghe rõ ràng tiếng Nam Mô A Di Đà Phật.”</p>
+                    </div>
+                    <div class="bg-wisdom-points-title">Chỉ Điểm Thực Hành:</div>
+                    <div class="bg-wisdom-points">
+                      <div class="bg-wisdom-point">
+                        <span class="bg-wisdom-point-icon">🌊</span>
+                        <div class="bg-wisdom-point-content">
+                          <strong class="bg-wisdom-point-name">Hiểu Đúng Bản Chất Vọng Tưởng:</strong>
+                          <span class="bg-wisdom-point-desc">Tâm phàm phu quen lăng xăng từ vô lượng kiếp, nên mới tập niệm Phật vọng tưởng trồi lên là lẽ tự nhiên. Đừng bực tức hay nản lòng khi thấy vọng niệm nhiều.</span>
+                        </div>
+                      </div>
+                      <div class="bg-wisdom-point">
+                        <span class="bg-wisdom-point-icon">🎯</span>
+                        <div class="bg-wisdom-point-content">
+                          <strong class="bg-wisdom-point-name">Bí Quyết “Mặc Kệ Vọng Tưởng”:</strong>
+                          <span class="bg-wisdom-point-desc">Càng ghét bỏ và cố xua đuổi thì tâm càng rối bời. Bí quyết của chư Tổ là mặc kệ nó sinh diệt, chỉ dồn toàn bộ sự chú ý lắng nghe lại từng chữ của câu Phật hiệu.</span>
+                        </div>
+                      </div>
+                      <div class="bg-wisdom-point">
+                        <span class="bg-wisdom-point-icon">👂</span>
+                        <div class="bg-wisdom-point-content">
+                          <strong class="bg-wisdom-point-name">Phương Pháp Nhiếp Tâm Niệm Phật:</strong>
+                          <span class="bg-wisdom-point-desc">Tâm khởi niệm -&gt; Miệng phát âm -&gt; Tai lắng nghe trở lại thật rành rẽ. Ba điểm này quy về một mối thì tự khắc vọng tưởng không còn chỗ chen chân.</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="bg-wisdom-tip">
+                      <span class="bg-wisdom-tip-icon">💡</span>
+                      <div class="bg-wisdom-tip-content">
+                        <strong>Bí quyết hành trì:</strong> Khi phát hiện tâm bay đi xa, chỉ cần mỉm cười nhận biết và tiếp tục câu Phật hiệu tiếp theo, tuyệt đối không tự trách mình.
+                      </div>
+                    </div>
+                    <footer class="bg-wisdom-footer">
+                      <button type="button" class="bg-wisdom-copy-btn" data-qa-id="qa-vong-tuong" title="Sao chép câu trả lời để lưu hoặc chia sẻ">
+                        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                        <span>Sao chép câu trả lời</span>
+                      </button>
+                    </footer>
+                  </div>
+                </div>
+              </article>
+
+              <!-- CARD 4 -->
+              <article class="bg-wisdom-card" data-qa-id="qa-chuoi-hat" data-category="hanh-tri">
+                <header class="bg-wisdom-header">
+                  <div class="bg-wisdom-header-top">
+                    <span class="bg-wisdom-cat-pill">🧘 Công Phu Hành Trì</span>
+                  </div>
+                  <div class="bg-wisdom-header-main">
+                    <h3 class="bg-wisdom-question">Nên lần tràng chuỗi hạt hay bấm máy số khi hành trì niệm Phật?</h3>
+                    <button type="button" class="bg-wisdom-toggle-btn" aria-expanded="false" aria-label="Mở hoặc thu gọn câu trả lời">
+                      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                  </div>
+                </header>
+                <div class="bg-wisdom-body">
+                  <div class="bg-wisdom-body-inner">
+                    <div class="bg-wisdom-core">
+                      <p class="bg-wisdom-core-text">“Phương tiện tùy duyên; chuỗi hạt trợ giúp định tĩnh trầm sâu, máy bấm giúp giữ vững kỷ luật công phu. Cốt lõi là tâm có an trú nơi Phật hiệu hay không.”</p>
+                    </div>
+                    <div class="bg-wisdom-points-title">Chỉ Điểm Thực Hành:</div>
+                    <div class="bg-wisdom-points">
+                      <div class="bg-wisdom-point">
+                        <span class="bg-wisdom-point-icon">📿</span>
+                        <div class="bg-wisdom-point-content">
+                          <strong class="bg-wisdom-point-name">Chuỗi Hạt Trầm Tĩnh Tâm Hồn:</strong>
+                          <span class="bg-wisdom-point-desc">Chuỗi hạt bồ đề hay gỗ tự nhiên đem lại xúc giác êm đềm, giúp nhịp niệm chậm rãi, lắng đọng, rất phù hợp khi ngồi tĩnh tọa niệm Phật tại gia hay đạo tràng.</span>
+                        </div>
+                      </div>
+                      <div class="bg-wisdom-point">
+                        <span class="bg-wisdom-point-icon">🔢</span>
+                        <div class="bg-wisdom-point-content">
+                          <strong class="bg-wisdom-point-name">Máy Bấm Giữ Kỷ Luật Công Phu:</strong>
+                          <span class="bg-wisdom-point-desc">Rất tiện dụng khi đi bộ, dọn dẹp hoặc người mới tu. Máy đếm giúp đặt chỉ tiêu cụ thể (ví dụ 1.000 hoặc 3.000 câu/ngày), khắc phục tâm lười biếng và giải đãi.</span>
+                        </div>
+                      </div>
+                      <div class="bg-wisdom-point">
+                        <span class="bg-wisdom-point-icon">⚖️</span>
+                        <div class="bg-wisdom-point-content">
+                          <strong class="bg-wisdom-point-name">Chất Lượng Hơn Số Lượng:</strong>
+                          <span class="bg-wisdom-point-desc">Không nên chạy theo việc bấm máy quá nhanh làm câu Phật hiệu bị dính chữ, nuốt lời. Chữ nào phát ra trong tâm phải rành rẽ chữ đó.</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="bg-wisdom-tip">
+                      <span class="bg-wisdom-tip-icon">💡</span>
+                      <div class="bg-wisdom-tip-content">
+                        <strong>Bí quyết hành trì:</strong> Buổi sáng ngồi công phu tĩnh tọa hãy lần chuỗi hạt; trong ngày khi làm việc, đi lại hãy đeo máy bấm số ngón tay.
+                      </div>
+                    </div>
+                    <footer class="bg-wisdom-footer">
+                      <button type="button" class="bg-wisdom-copy-btn" data-qa-id="qa-chuoi-hat" title="Sao chép câu trả lời để lưu hoặc chia sẻ">
+                        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                        <span>Sao chép câu trả lời</span>
+                      </button>
+                    </footer>
+                  </div>
+                </div>
+              </article>
+
+              <!-- CARD 5 -->
+              <article class="bg-wisdom-card" data-qa-id="qa-nghiep-chuong" data-category="tin-nguyen">
+                <header class="bg-wisdom-header">
+                  <div class="bg-wisdom-header-top">
+                    <span class="bg-wisdom-cat-pill">📖 Tín Nguyện &amp; Giáo Lý</span>
+                  </div>
+                  <div class="bg-wisdom-header-main">
+                    <h3 class="bg-wisdom-question">Một đời nghiệp chướng sâu dày, tạo nhiều lỗi lầm có vãng sanh được?</h3>
+                    <button type="button" class="bg-wisdom-toggle-btn" aria-expanded="false" aria-label="Mở hoặc thu gọn câu trả lời">
+                      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                  </div>
+                </header>
+                <div class="bg-wisdom-body">
+                  <div class="bg-wisdom-body-inner">
+                    <div class="bg-wisdom-core">
+                      <p class="bg-wisdom-core-text">“Tịnh Độ tối thù thắng ở chỗ ‘Đới nghiệp vãng sanh’ — chỉ cần chí thành sám hối, tín nguyện kiên định thì mười niệm lâm chung vẫn được Phật tiếp dẫn.”</p>
+                    </div>
+                    <div class="bg-wisdom-points-title">Chỉ Điểm Thực Hành:</div>
+                    <div class="bg-wisdom-points">
+                      <div class="bg-wisdom-point">
+                        <span class="bg-wisdom-point-icon">🚢</span>
+                        <div class="bg-wisdom-point-content">
+                          <strong class="bg-wisdom-point-name">Ví Như Thuyền Lớn Chở Đá:</strong>
+                          <span class="bg-wisdom-point-desc">Nghiệp tội dù nặng như đá tảng ngàn cân, nhưng được đặt trên con thuyền đại nguyện của Phật A Di Đà thì đá vẫn qua bờ bên kia bình an mà không hề chìm xuống biển.</span>
+                        </div>
+                      </div>
+                      <div class="bg-wisdom-point">
+                        <span class="bg-wisdom-point-icon">🙏</span>
+                        <div class="bg-wisdom-point-content">
+                          <strong class="bg-wisdom-point-name">Điều Kiện Chân Thật Sám Hối:</strong>
+                          <span class="bg-wisdom-point-desc">Điều kiện tiên quyết là phải thật lòng ăn năn lỗi cũ, thệ nguyện dứt trừ điều ác, quyết chí làm lành và trọn lòng nương tựa nơi Phật hiệu.</span>
+                        </div>
+                      </div>
+                      <div class="bg-wisdom-point">
+                        <span class="bg-wisdom-point-icon">☀️</span>
+                        <div class="bg-wisdom-point-content">
+                          <strong class="bg-wisdom-point-name">Ánh Sáng Xua Tan Ngàn Năm Bóng Tối:</strong>
+                          <span class="bg-wisdom-point-desc">Đừng để mặc cảm quá khứ làm chùn bước chân tu học. Một câu Nam Mô A Di Đà Phật chí thành có năng lực tiêu trừ 80 ức kiếp tội lỗi sanh tử.</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="bg-wisdom-tip">
+                      <span class="bg-wisdom-tip-icon">💡</span>
+                      <div class="bg-wisdom-tip-content">
+                        <strong>Bí quyết hành trì:</strong> Mỗi tối trước khi ngủ, hãy thành tâm quỳ trước Phật sám hối điều chưa tốt trong ngày và phát nguyện vãng sanh cõi Cực Lạc.
+                      </div>
+                    </div>
+                    <footer class="bg-wisdom-footer">
+                      <button type="button" class="bg-wisdom-copy-btn" data-qa-id="qa-nghiep-chuong" title="Sao chép câu trả lời để lưu hoặc chia sẻ">
+                        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                        <span>Sao chép câu trả lời</span>
+                      </button>
+                    </footer>
+                  </div>
+                </div>
+              </article>
+
+              <!-- CARD 6 -->
+              <article class="bg-wisdom-card" data-qa-id="qa-tam-tang" data-category="tin-nguyen">
+                <header class="bg-wisdom-header">
+                  <div class="bg-wisdom-header-top">
+                    <span class="bg-wisdom-cat-pill">📖 Tín Nguyện &amp; Giáo Lý</span>
+                  </div>
+                  <div class="bg-wisdom-header-main">
+                    <h3 class="bg-wisdom-question">Vì sao chư Tổ dạy một câu A Di Đà Phật gom trọn tam tạng kinh điển?</h3>
+                    <button type="button" class="bg-wisdom-toggle-btn" aria-expanded="false" aria-label="Mở hoặc thu gọn câu trả lời">
+                      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                  </div>
+                </header>
+                <div class="bg-wisdom-body">
+                  <div class="bg-wisdom-body-inner">
+                    <div class="bg-wisdom-core">
+                      <p class="bg-wisdom-core-text">“Sáu chữ hồng danh thâu tóm toàn bộ vạn đức từ bi của mười phương chư Phật. Niệm Phật nhất tâm chính là thành tựu trọn vẹn cả Giới - Định - Tuệ.”</p>
+                    </div>
+                    <div class="bg-wisdom-points-title">Chỉ Điểm Thực Hành:</div>
+                    <div class="bg-wisdom-points">
+                      <div class="bg-wisdom-point">
+                        <span class="bg-wisdom-point-icon">💎</span>
+                        <div class="bg-wisdom-point-content">
+                          <strong class="bg-wisdom-point-name">Vạn Đức Hồng Danh:</strong>
+                          <span class="bg-wisdom-point-desc">Danh hiệu A Di Đà Phật là kết tinh từ muôn ngàn công hạnh, trí tuệ và đại nguyện cứu độ. Niệm danh hiệu tức là thể nhập thẳng vào công đức của Phật.</span>
+                        </div>
+                      </div>
+                      <div class="bg-wisdom-point">
+                        <span class="bg-wisdom-point-icon">⚖️</span>
+                        <div class="bg-wisdom-point-content">
+                          <strong class="bg-wisdom-point-name">Đầy Đủ Giới - Định - Tuệ:</strong>
+                          <span class="bg-wisdom-point-desc">Khi tâm đang niệm Phật thì không khởi tâm trộm cắp, sân si (đó là Giới); tâm an định nơi danh hiệu không tán loạn (đó là Định); tâm rõ ràng soi chiếu từng niệm (đó là Tuệ).</span>
+                        </div>
+                      </div>
+                      <div class="bg-wisdom-point">
+                        <span class="bg-wisdom-point-icon">🔑</span>
+                        <div class="bg-wisdom-point-content">
+                          <strong class="bg-wisdom-point-name">Pháp Môn Rút Gọn Tối Thượng:</strong>
+                          <span class="bg-wisdom-point-desc">Đọc hết Ba Tạng Mười Hai Bộ Kinh cũng để quy về tâm thanh tịnh; người bận rộn chỉ cần giữ một câu Phật hiệu cũng đạt thẳng tới cội nguồn giải thoát ấy.</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="bg-wisdom-tip">
+                      <span class="bg-wisdom-tip-icon">💡</span>
+                      <div class="bg-wisdom-tip-content">
+                        <strong>Bí quyết hành trì:</strong> Dù bận rộn việc đời, mỗi ngày hãy giữ lấy 10–15 phút ngồi yên niệm Phật đều đặn, tạo thành thói quen chánh niệm.
+                      </div>
+                    </div>
+                    <footer class="bg-wisdom-footer">
+                      <button type="button" class="bg-wisdom-copy-btn" data-qa-id="qa-tam-tang" title="Sao chép câu trả lời để lưu hoặc chia sẻ">
+                        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                        <span>Sao chép câu trả lời</span>
+                      </button>
+                    </footer>
+                  </div>
+                </div>
+              </article>
+
+              <!-- CARD 7 -->
+              <article class="bg-wisdom-card" data-qa-id="qa-lam-chung" data-category="ho-niem">
+                <header class="bg-wisdom-header">
+                  <div class="bg-wisdom-header-top">
+                    <span class="bg-wisdom-cat-pill">🕊️ Lâm Chung &amp; Hộ Niệm</span>
+                  </div>
+                  <div class="bg-wisdom-header-main">
+                    <h3 class="bg-wisdom-question">Vì sao tuyệt đối không được khóc than trước mặt người sắp lâm chung?</h3>
+                    <button type="button" class="bg-wisdom-toggle-btn" aria-expanded="false" aria-label="Mở hoặc thu gọn câu trả lời">
+                      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                  </div>
+                </header>
+                <div class="bg-wisdom-body">
+                  <div class="bg-wisdom-body-inner">
+                    <div class="bg-wisdom-core">
+                      <p class="bg-wisdom-core-text">“Giọt nước mắt của người thân sẽ kích động tình cảm lưu luyến của thần thức, làm gián đoạn chánh niệm và bỏ lỡ cơ hội vãng sanh ngàn năm một thuở.”</p>
+                    </div>
+                    <div class="bg-wisdom-points-title">Chỉ Điểm Thực Hành:</div>
+                    <div class="bg-wisdom-points">
+                      <div class="bg-wisdom-point">
+                        <span class="bg-wisdom-point-icon">🌪️</span>
+                        <div class="bg-wisdom-point-content">
+                          <strong class="bg-wisdom-point-name">Thần Thức Cực Kỳ Nhạy Cảm:</strong>
+                          <span class="bg-wisdom-point-desc">Thời khắc lâm chung tựa như ngàn cân treo sợi tóc. Tiếng khóc than thảm thiết sẽ kéo ghì thần thức ở lại với tiếc nuối và sân hận đau đớn, khó lòng xả ly cõi tạm.</span>
+                        </div>
+                      </div>
+                      <div class="bg-wisdom-point">
+                        <span class="bg-wisdom-point-icon">🪷</span>
+                        <div class="bg-wisdom-point-content">
+                          <strong class="bg-wisdom-point-name">Món Quà Tình Thương Lớn Nhất:</strong>
+                          <span class="bg-wisdom-point-desc">Thay vì khóc lóc bi thương, toàn thể thân quyến hãy đồng thanh niệm Phật thật hòa ái, rành rẽ bên tai để dẫn đường cho thần thức an tâm nương theo ánh sáng Phật A Di Đà.</span>
+                        </div>
+                      </div>
+                      <div class="bg-wisdom-point">
+                        <span class="bg-wisdom-point-icon">🚪</span>
+                        <div class="bg-wisdom-point-content">
+                          <strong class="bg-wisdom-point-name">Quy Ước Rõ Ràng Trong Gia Đình:</strong>
+                          <span class="bg-wisdom-point-desc">Người thân nào quá đau buồn không kìm được tiếng khóc nên chủ động lánh sang phòng khác; giữ cho gian phòng hộ niệm bầu không khí thanh tịnh tuyệt đối.</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="bg-wisdom-tip">
+                      <span class="bg-wisdom-tip-icon">💡</span>
+                      <div class="bg-wisdom-tip-content">
+                        <strong>Bí quyết hành trì:</strong> Hãy chia sẻ trước lời khuyên quý báu này cho người thân trong gia đình khi mọi người còn khỏe mạnh để cùng thấu hiểu.
+                      </div>
+                    </div>
+                    <footer class="bg-wisdom-footer">
+                      <button type="button" class="bg-wisdom-copy-btn" data-qa-id="qa-lam-chung" title="Sao chép câu trả lời để lưu hoặc chia sẻ">
+                        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                        <span>Sao chép câu trả lời</span>
+                      </button>
+                    </footer>
+                  </div>
+                </div>
+              </article>
+
+              <!-- CARD 8 -->
+              <article class="bg-wisdom-card" data-qa-id="qa-tam-gio" data-category="ho-niem">
+                <header class="bg-wisdom-header">
+                  <div class="bg-wisdom-header-top">
+                    <span class="bg-wisdom-cat-pill">🕊️ Lâm Chung &amp; Hộ Niệm</span>
+                  </div>
+                  <div class="bg-wisdom-header-main">
+                    <h3 class="bg-wisdom-question">Sau khi người thân trút hơi thở cuối cùng, nên làm gì trong 8 giờ đầu tiên?</h3>
+                    <button type="button" class="bg-wisdom-toggle-btn" aria-expanded="false" aria-label="Mở hoặc thu gọn câu trả lời">
+                      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                  </div>
+                </header>
+                <div class="bg-wisdom-body">
+                  <div class="bg-wisdom-body-inner">
+                    <div class="bg-wisdom-core">
+                      <p class="bg-wisdom-core-text">“Trong 8 đến 12 giờ đầu, tuyệt đối không di dời thân xác hay thay y phục. Hãy giữ trang nghiêm thanh tịnh và đồng thanh niệm Phật trợ duyên.”</p>
+                    </div>
+                    <div class="bg-wisdom-points-title">Chỉ Điểm Thực Hành:</div>
+                    <div class="bg-wisdom-points">
+                      <div class="bg-wisdom-point">
+                        <span class="bg-wisdom-point-icon">⏳</span>
+                        <div class="bg-wisdom-point-content">
+                          <strong class="bg-wisdom-point-name">Thần Thức Chưa Rời Xác:</strong>
+                          <span class="bg-wisdom-point-desc">Dù tim và hơi thở đã ngừng, thần thức vẫn cảm giác đau đớn dữ dội nếu bị di dời va chạm mạnh hoặc chườm đá lạnh.</span>
+                        </div>
+                      </div>
+                      <div class="bg-wisdom-point">
+                        <span class="bg-wisdom-point-icon">📿</span>
+                        <div class="bg-wisdom-point-content">
+                          <strong class="bg-wisdom-point-name">Trợ Niệm Liên Tục Dẫn Đường:</strong>
+                          <span class="bg-wisdom-point-desc">Ban hộ niệm cùng thân nhân thay phiên niệm câu Nam Mô A Di Đà Phật trầm hùng, rõ ràng để hương linh nương vào Phật lực xả bỏ báo thân.</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="bg-wisdom-tip">
+                      <span class="bg-wisdom-tip-icon">💡</span>
+                      <div class="bg-wisdom-tip-content">
+                        <strong>Bí quyết hành trì:</strong> Giữ tĩnh lặng tuyệt đối quanh phòng bệnh, không để tiếng ồn hay than khóc làm kinh động hương linh.
+                      </div>
+                    </div>
+                    <footer class="bg-wisdom-footer">
+                      <button type="button" class="bg-wisdom-copy-btn" data-qa-id="qa-tam-gio" title="Sao chép câu trả lời để lưu hoặc chia sẻ">
+                        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                        <span>Sao chép câu trả lời</span>
+                      </button>
+                    </footer>
+                  </div>
+                </div>
+              </article>
+
+            </div> <!-- /.bg-qa-cards-list -->
+
+            <!-- Thanh Phân Trang (Tối Đa 6 Câu Hỏi / Trang) -->
+            <div class="bg-qa-pagination-bar" id="qaPaginationBar">
+              <div class="bg-qa-pagination-info" id="qaPaginationInfo">
+                Hiển thị <strong>1 - 6</strong> trong số <strong>8</strong> câu hỏi tu học
+              </div>
+              <div class="bg-qa-pagination-controls">
+                <button type="button" class="bg-qa-page-btn" id="qaPagePrev" disabled title="Trang trước">
+                  <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                  <span>Trước</span>
+                </button>
+                <div class="bg-qa-page-numbers" id="qaPageNumbers">
+                  <button type="button" class="bg-qa-page-num-btn active" data-page="1">1</button>
+                  <button type="button" class="bg-qa-page-num-btn" data-page="2">2</button>
+                </div>
+                <button type="button" class="bg-qa-page-btn" id="qaPageNext" title="Trang kế tiếp">
+                  <span>Tiếp</span>
+                  <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Trạng Thái Trống (Empty State Khi Tìm Kiếm Không Có Kết Quả) -->
+            <div class="bg-qa-empty-state" id="qaEmptyState" style="display: none;">
+              <div class="bg-qa-empty-icon">🪷</div>
+              <h3 class="bg-qa-empty-title">Không tìm thấy câu hỏi phù hợp</h3>
+              <p class="bg-qa-empty-desc">
+                Không tìm thấy câu hỏi nào khớp với từ khóa của bạn. Hãy thử chọn chủ đề khác hoặc bấm vào các từ khóa phổ biến bên dưới:
+              </p>
+              <div class="bg-qa-empty-suggestions">
+                <span>Gợi ý:</span>
+                <button type="button" class="bg-qa-sug-tag" data-keyword="lái xe">Lái xe</button>
+                <button type="button" class="bg-qa-sug-tag" data-keyword="vọng tưởng">Vọng tưởng</button>
+                <button type="button" class="bg-qa-sug-tag" data-keyword="ăn chay">Ăn chay</button>
+                <button type="button" class="bg-qa-sug-tag" data-keyword="hộ niệm">Hộ niệm</button>
+                <button type="button" class="bg-qa-sug-tag" data-keyword="tràng hạt">Tràng hạt</button>
+              </div>
+              <button type="button" class="bg-qa-empty-reset-btn" id="btnEmptyReset">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                <span>Xóa bộ lọc &amp; Xem tất cả câu hỏi</span>
+              </button>
+            </div>
+
+          </main>
+        </div> <!-- /.bg-qa-split-grid -->
+
+      </div> <!-- /.bg-qa-split-container -->
+    </section>
+
+    <!-- ZEN QUOTE BANNER: MẢNG NGHỆ THUẬT & KHAI THỊ CỐT TỦY -->
+    <section class="bg-quote-banner-section" id="secQuoteBanner">
+      <div class="bg-quote-banner-container">
+        <div class="bg-quote-card" id="quoteCard">
+          <div class="bg-quote-card-content">
+            <div class="bg-quote-badge">
+              <span class="bg-quote-badge-dot"></span>
+              <span>Khai Thị Cốt Tủy · Tổ Thứ 13 Tịnh Độ Tông</span>
+            </div>
+            <blockquote class="bg-quote-text">
+              “Buông xả vạn duyên, một câu A Di Đà Phật niệm đến cùng.”
+            </blockquote>
+            <div class="bg-quote-author">
+              <span class="bg-quote-author-name">— Đại Sư Ấn Quang</span>
+              <span class="bg-quote-author-note">(Ấn Quang Đại Sư Gia Ngôn Lục)</span>
+            </div>
+            <p class="bg-quote-desc">
+              Giữa trăm mối lo toan của cuộc sống thường nhật, chỉ cần giữ tâm an trú nơi câu Phật hiệu, muôn nghìn vọng niệm tự khắc lắng trong như nước đứng yên.
+            </p>
+            <div class="bg-quote-actions">
+              <a href="index.html#thoi-khoa" class="bg-quote-btn-primary">
+                <span>Bắt đầu niệm Phật</span>
+                <span class="bg-quote-btn-icon">📿</span>
+              </a>
+              <a href="bai-giang.html" class="bg-quote-btn-secondary">
+                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>Nghe Pháp Âm &amp; Bài Giảng</span>
+              </a>
+            </div>
+          </div>
+          <div class="bg-quote-card-visual">
+            <img src="assets/images/BaiGiang/bg_zen_mala.jpg" alt="Chuỗi bồ đề trầm hương và tách trà thiền tĩnh lặng" class="bg-quote-img" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Gửi Câu Hỏi Khúc Mắc Tới Giảng Sư -->
+    <div class="bg-qa-modal-backdrop" id="qaAskModalBackdrop" role="dialog" aria-modal="true" aria-label="Gửi câu hỏi khúc mắc tới Ban Giảng Sư">
+      <div class="bg-qa-modal-dialog" style="max-width: 520px;">
+        <div class="bg-qa-modal-header">
+          <span class="bg-qa-topic-tag" style="background: rgba(194, 136, 52, 0.15); color: var(--accent-gold-dark, #b45309);">✍️ Thỉnh Pháp &amp; Vấn Đáp</span>
+          <button class="bg-qa-modal-close" id="btnCloseAskModal" aria-label="Đóng">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+
+        <h3 class="bg-qa-modal-question" style="font-size: 20px; margin-bottom: 8px;">Gửi Khúc Mắc Tu Học Tới Ban Giảng Sư</h3>
+        <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 18px; line-height: 1.5;">Quý Phật tử đang có trở ngại trong công phu, đời sống gia đình hoặc hộ niệm, xin hoan hỷ gửi câu hỏi. Ban Biên Tập sẽ tổng hợp và thỉnh ý chư Tôn Đức giải đáp.</p>
+
+        <form id="formAskQuestion" onsubmit="return false;" style="display: flex; flex-direction: column; gap: 14px;">
+          <div>
+            <label style="display: block; font-size: 12.5px; font-weight: 600; color: var(--text-main); margin-bottom: 6px;">Họ tên / Pháp danh của bạn:</label>
+            <input type="text" id="askUserName" class="bg-qa-search-input" style="padding: 9px 14px;" placeholder="Ví dụ: Diệu Tâm, Phúc An..." required>
+          </div>
+          <div>
+            <label style="display: block; font-size: 12.5px; font-weight: 600; color: var(--text-main); margin-bottom: 6px;">Chủ đề câu hỏi:</label>
+            <select id="askUserTopic" class="bg-qa-search-input" style="padding: 9px 14px; cursor: pointer;">
+              <option value="🌿 Đời Sống Thường Nhật">🌿 Đời Sống Thường Nhật &amp; Gia Đình</option>
+              <option value="🧘 Công Phu Hành Trì">🧘 Công Phu &amp; Hành Trì Niệm Phật</option>
+              <option value="📖 Tín Nguyện Giáo Lý">📖 Tín Nguyện &amp; Giáo Lý Tịnh Độ</option>
+              <option value="🕊️ Lâm Chung &amp; Hộ Niệm">🕊️ Lâm Chung &amp; Phương Pháp Hộ Niệm</option>
+              <option value="Khác">Khúc Mắc Khác</option>
+            </select>
+          </div>
+          <div>
+            <label style="display: block; font-size: 12.5px; font-weight: 600; color: var(--text-main); margin-bottom: 6px;">Nội dung câu hỏi chi tiết:</label>
+            <textarea id="askUserQuestion" class="bg-qa-search-input" style="padding: 10px 14px; min-height: 90px; resize: vertical;" placeholder="Xin mô tả rõ hoàn cảnh thực tế hoặc khúc mắc của bạn..." required></textarea>
+          </div>
+          <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 10px;">
+            <button type="button" class="bg-qa-btn-close-modal" id="btnCancelAskModal">Hủy bỏ</button>
+            <button type="submit" class="bg-qa-hub-btn-ask" id="btnSubmitAskQuestion" style="padding: 9px 20px;">Gửi câu hỏi ngay</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ==========================================================================
+       SITE FOOTER (TRANG NGHIÊM, HÒA HỢP & TINH TẾ)
+       ========================================================================== -->
+  <footer class="site-footer" id="siteFooter">
+    <!-- Đường viền hào quang kim sắc trên đỉnh footer -->
+    <div class="footer-top-accent"></div>
+
+    <div class="footer-container">
+      <!-- Tầng 1: Giới thiệu & Lời Vàng Khai Thị (Tổ Ấn Quang) -->
+      <div class="footer-top-tier">
+        <div class="footer-about-col">
+          <div class="footer-brand-header">
+            <span class="footer-logo-icon">🪷</span>
+            <div class="footer-brand-titles">
+              <h3 class="footer-brand-title">tịnh độ <span class="brand-dot">·</span> <em class="brand-sub">an trú</em></h3>
+              <span class="footer-brand-sub">Pháp Bảo &amp; Hành Trì Thời Hiện Đại</span>
+            </div>
+          </div>
+          <p class="footer-about-desc">
+            Không gian Phật pháp thanh tịnh trợ duyên cho bạn đạo đồng tu trên con đường <strong>Tín - Nguyện - Trì Danh</strong> niệm Phật cầu sanh Cực Lạc. Toàn bộ kinh điển, bài giảng và âm thanh niệm Phật được biên tập công phu, phụng sự hoàn toàn <strong>phi thương mại</strong> vì an lạc của số đông.
+          </p>
+          <div class="footer-badges-row">
+            <span class="footer-badge">🪷 Pháp Thí Vô Lượng</span>
+            <span class="footer-badge">🕊️ Phi Thương Mại</span>
+            <div class="footer-socials">
+              <a href="https://youtube.com" target="_blank" rel="noopener" class="footer-social-link" title="Kênh YouTube Pháp Âm" aria-label="YouTube">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener" class="footer-social-link" title="Cộng Đồng Đồng Tu Facebook" aria-label="Facebook">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+              <a href="bai-giang.html" class="footer-social-link" title="Thư Viện Bài Giảng &amp; Audio" aria-label="Audio">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+              </a>
+              <a href="kinh-dien.html" class="footer-social-link" title="Kinh Điển Tịnh Độ" aria-label="Kinh">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Thẻ Lời Vàng Khai Thị (Tổ Ấn Quang) -->
+        <div class="footer-quote-card">
+          <div class="footer-card-pill">📜 Lời Khuyên Tấn Khắc Tâm</div>
+          <p class="footer-quote-text">
+            "Thế sự vô thường, thân mạng khó giữ. Đừng hẹn ngày mai, hãy trân quý từng hơi thở mà tha thiết xưng niệm A Di Đà Phật."
+          </p>
+          <div class="footer-quote-footer">
+            <div class="footer-quote-author">
+              <strong>— Ấn Quang Đại Sư</strong>
+              <span>Tổ Thứ 13 Tịnh Độ Tông</span>
+            </div>
+            <button type="button" class="footer-qa-btn" id="footerBtnAsk" style="border: none; cursor: pointer;">
+              <span>Góc Vấn Đáp</span>
+              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tầng 2: Bản Đồ Pháp Bảo 4 Cột Gọn Gàng (Gap 7px) -->
+      <div class="footer-links-grid">
+        <div class="footer-nav-col">
+          <h4 class="footer-col-title">Về Dự Án</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Tôn Chỉ Tịnh Độ An Trú</a></li>
+            <li><a href="index.html#kham-pha">Sứ Mệnh Pháp Thí</a></li>
+            <li><a href="index.html#thoi-khoa">Lời Ngỏ Cùng Bạn Đạo</a></li>
+            <li><a href="van-dap.html#hoi-dap">Đóng Góp &amp; Hiệu Đính</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4 class="footer-col-title">Hệ Thống Pháp Bảo</h4>
+          <ul class="footer-links-list">
+            <li><a href="kinh-dien.html">Kinh Điển Tịnh Độ (Tam Kinh)</a></li>
+            <li><a href="bai-giang.html">Tuyển Tập Pháp Âm &amp; Bài Giảng</a></li>
+            <li><a href="index.html#niem-phat">Máy Niệm Phật Trực Tuyến</a></li>
+            <li><a href="index.html#thoi-khoa">Nghi Thức Thời Khóa Sớm Tối</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4 class="footer-col-title">Lộ Trình Hành Trì</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html#tam-tu-luong">Ba Món Tư Lương: Tín - Nguyện - Hạnh</a></li>
+            <li><a href="index.html#kham-pha">Phương Pháp Thập Niệm Ký Số</a></li>
+            <li><a href="index.html#thoi-khoa">48 Lời Đại Nguyện A Di Đà</a></li>
+            <li><a href="index.html#kham-pha">Lời Khai Thị Chư Tổ Tịnh Tông</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4 class="footer-col-title">Trợ Duyên Đồng Tu</h4>
+          <ul class="footer-links-list">
+            <li><a href="van-dap.html" style="font-weight: 600; color: var(--accent-gold-dark, #b45309);">Góc Vấn Đáp Tu Học Khúc Mắc</a></li>
+            <li><a href="van-dap.html">Khái Yếu Hộ Niệm Lâm Chung</a></li>
+            <li><a href="kinh-dien.html">Tải Kinh Sách Bản In (PDF)</a></li>
+            <li><a href="van-dap.html#cau-hoi-moi">Gửi Thắc Mắc Đến Ban Biên Tập</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tầng 3: Dải Hồi Hướng & Bản Quyền Liền Mạch -->
+      <div class="footer-bottom-tier">
+        <div class="footer-dedication-bar">
+          <p class="footer-dedication-verse">
+            🪷 "Nguyện đem công đức này · Trang nghiêm Phật Tịnh Độ · Trên đền bốn ơn nặng · Dưới cứu khổ tam đồ" 🪷
+          </p>
+        </div>
+        <div class="footer-legal-bar">
+          <span class="footer-legal-copy">© 2026 Tịnh Độ An Trú · Phật Pháp truyền đăng, phụng sự tha nhân vô vụ lợi. Nguyện khắp chúng sanh đồng sanh Cực Lạc.</span>
+          <div class="footer-legal-nav">
+            <a href="index.html">Trang Chủ</a>
+            <span>·</span>
+            <a href="bai-giang.html">Bài Giảng</a>
+            <span>·</span>
+            <a href="kinh-dien.html">Kinh Điển</a>
+            <span>·</span>
+            <a href="van-dap.html">Vấn Đáp</a>
+            <span>·</span>
+            <a href="#navbar" class="footer-top-btn" title="Lên đầu trang">Lên đầu trang ↑</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="bg-toast" id="bgToast" role="status" aria-live="polite">
+    <svg width="16" height="16" fill="none" stroke="#6ee7b7" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+    <span id="toastMessage">Thông báo</span>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      
+      // 1. Theme Toggle & Dark Mode Persist
+      const btnThemeToggle = document.getElementById('btn-theme-toggle');
+      if (btnThemeToggle) {
+        btnThemeToggle.addEventListener('click', function () {
+          document.body.classList.toggle('dark-mode');
+          const isDark = document.body.classList.contains('dark-mode');
+          try {
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+          } catch(e) {}
+        });
+      }
+      try {
+        if (localStorage.getItem('theme') === 'dark') {
+          document.body.classList.add('dark-mode');
+        }
+      } catch(e) {}
+
+      // 2. Mobile Menu
+      const btnMobileMenu = document.getElementById('btn-mobile-menu');
+      const navLinks = document.getElementById('nav-links');
+      if (btnMobileMenu && navLinks) {
+        btnMobileMenu.addEventListener('click', function () {
+          navLinks.classList.toggle('active');
+          btnMobileMenu.classList.toggle('active');
+        });
+      }
+
+      // 3. Toast Feedback Helper
+      const toast = document.getElementById('bgToast');
+      const toastMessage = document.getElementById('toastMessage');
+      let toastTimer = null;
+      function showToast(msg) {
+        if (!toast || !toastMessage) return;
+        toastMessage.textContent = msg;
+        toast.classList.add('show');
+        if (toastTimer) clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () {
+          toast.classList.remove('show');
+        }, 3200);
+      }
+
+      // 4. Cơ sở dữ liệu và tương tác GÓC VẤN ĐÁP PHẬT PHÁP
+      const qaDatabase = {
+        'qa-lai-xe': {
+          id: 'qa-lai-xe',
+          category: 'doi-song',
+          topic: '🌿 Đời Sống Thường Nhật',
+          question: 'Đang làm việc nhà hoặc lái xe có được niệm Phật thầm không?',
+          core: '“Đức Phật không phân biệt nơi chốn; chỉ cần tâm luôn có Phật thì dù nấu cơm hay lái xe đều là chánh niệm sanh phước vô lượng.”',
+          tip: 'Mỗi khi lên xe hoặc gặp đèn đỏ, hãy niệm 3 câu “Nam Mô A Di Đà Phật” để khởi đầu hành trình an lành.'
+        },
+        'qa-gia-dinh': {
+          id: 'qa-gia-dinh',
+          category: 'doi-song',
+          topic: '🌿 Đời Sống Thường Nhật',
+          question: 'Người tại gia bận rộn mưu sinh, gia đình chưa đồng thuận ăn chay thì tu thế nào?',
+          core: '“Phật pháp tại thế gian, không rời thế gian pháp. Hãy chu toàn bổn phận làm người, chớ vì ăn chay mà sinh tranh cãi làm tổn phước gia đình.”',
+          tip: 'Hòa thuận trong gia đình là phước báu đầu tiên của người Phật tử tại gia.'
+        },
+        'qa-vong-tuong': {
+          id: 'qa-vong-tuong',
+          category: 'hanh-tri',
+          topic: '🧘 Công Phu Hành Trì',
+          question: 'Vọng tưởng khởi lên liên tục khi đang niệm Phật thì xử lý thế nào?',
+          core: '“Đừng sợ vọng tưởng khởi, chỉ sợ giác ngộ chậm. Vọng tưởng đến thì mặc kệ nó, quay lại lắng nghe rõ ràng tiếng Nam Mô A Di Đà Phật.”',
+          tip: 'Khi phát hiện tâm bay đi xa, chỉ cần mỉm cười nhận biết và tiếp tục câu Phật hiệu tiếp theo, tuyệt đối không tự trách mình.'
+        },
+        'qa-chuoi-hat': {
+          id: 'qa-chuoi-hat',
+          category: 'hanh-tri',
+          topic: '📿 Phương Tiện Tu Tập',
+          question: 'Nên lần tràng chuỗi hạt hay bấm máy số khi hành trì niệm Phật?',
+          core: '“Phương tiện tùy duyên; chuỗi hạt trợ giúp định tĩnh trầm sâu, máy bấm giúp giữ vững kỷ luật công phu. Cốt lõi là tâm có an trú nơi Phật hiệu hay không.”',
+          tip: 'Buổi sáng ngồi công phu tĩnh tọa hãy lần chuỗi hạt; trong ngày khi làm việc, đi lại hãy đeo máy bấm số ngón tay.'
+        },
+        'qa-nghiep-chuong': {
+          id: 'qa-nghiep-chuong',
+          category: 'tin-nguyen',
+          topic: '🪷 Tín Nguyện Vãng Sanh',
+          question: 'Một đời nghiệp chướng sâu dày, tạo nhiều lỗi lầm có vãng sanh được?',
+          core: '“Tịnh Độ tối thù thắng ở chỗ ‘Đới nghiệp vãng sanh’ — chỉ cần chí thành sám hối, tín nguyện kiên định thì mười niệm lâm chung vẫn được Phật tiếp dẫn.”',
+          tip: 'Mỗi tối trước khi ngủ, hãy thành tâm quỳ trước Phật sám hối điều chưa tốt trong ngày và phát nguyện vãng sanh cõi Cực Lạc.'
+        },
+        'qa-tam-tang': {
+          id: 'qa-tam-tang',
+          category: 'tin-nguyen',
+          topic: '📜 Giáo Lý Cốt Tủy',
+          question: 'Vì sao chư Tổ dạy một câu A Di Đà Phật gom trọn tam tạng kinh điển?',
+          core: '“Sáu chữ hồng danh thâu tóm toàn bộ vạn đức từ bi của mười phương chư Phật. Niệm Phật nhất tâm chính là thành tựu trọn vẹn cả Giới - Định - Tuệ.”',
+          tip: 'Dù bận rộn việc đời, mỗi ngày hãy giữ lấy 10–15 phút ngồi yên niệm Phật đều đặn, tạo thành thói quen chánh niệm.'
+        },
+        'qa-lam-chung': {
+          id: 'qa-lam-chung',
+          category: 'ho-niem',
+          topic: '🕊️ Lâm Chung & Hộ Niệm',
+          question: 'Vì sao tuyệt đối không được khóc than trước mặt người sắp lâm chung?',
+          core: '“Giọt nước mắt của người thân sẽ kích động tình cảm lưu luyến của thần thức, làm gián đoạn chánh niệm và bỏ lỡ cơ hội vãng sanh ngàn năm một thuở.”',
+          tip: 'Hãy chia sẻ trước lời khuyên quý báu này cho người thân trong gia đình khi mọi người còn khỏe mạnh để cùng thấu hiểu.'
+        },
+        'qa-tam-gio': {
+          id: 'qa-tam-gio',
+          category: 'ho-niem',
+          topic: '🕊️ Lâm Chung & Hộ Niệm',
+          question: 'Sau khi người thân trút hơi thở cuối cùng, nên làm gì trong 8 giờ đầu tiên?',
+          core: '“Trong 8 đến 12 giờ đầu, tuyệt đối không di dời thân xác hay thay y phục. Hãy giữ trang nghiêm thanh tịnh và đồng thanh niệm Phật trợ duyên.”',
+          tip: 'Giữ tĩnh lặng tuyệt đối quanh phòng bệnh, không để tiếng ồn hay than khóc làm kinh động hương linh.'
+        }
+      };
+
+      // Điều khiển bộ lọc & phân trang
+      const qaSearchInput = document.getElementById('qaSearchInput');
+      const qaSearchClear = document.getElementById('qaSearchClear');
+      const qaCategoryButtons = document.querySelectorAll('.bg-qa-cat-btn');
+      const qaCardsList = document.getElementById('qaCardsList');
+      const qaEmptyState = document.getElementById('qaEmptyState');
+      const btnEmptyReset = document.getElementById('btnEmptyReset');
+      const qaStreamCountText = document.getElementById('qaStreamCountText');
+      const btnToggleAllQa = document.getElementById('btnToggleAllQa');
+      const btnToggleAllQaText = document.getElementById('btnToggleAllQaText');
+
+      const QA_PER_PAGE = 6;
+      let currentQaPage = 1;
+      let currentQaCat = 'all';
+      let currentQaKeyword = '';
+      let isAllExpanded = false;
+
+      const qaPaginationBar = document.getElementById('qaPaginationBar');
+      const qaPaginationInfo = document.getElementById('qaPaginationInfo');
+      const qaPageNumbers = document.getElementById('qaPageNumbers');
+      const qaPagePrev = document.getElementById('qaPagePrev');
+      const qaPageNext = document.getElementById('qaPageNext');
+
+      function renderQaPagination(matchedCount) {
+        if (!qaPaginationBar) return;
+        if (matchedCount <= QA_PER_PAGE) {
+          qaPaginationBar.style.display = 'none';
+          return;
+        }
+
+        qaPaginationBar.style.display = 'flex';
+        const totalPages = Math.ceil(matchedCount / QA_PER_PAGE) || 1;
+        if (currentQaPage > totalPages) currentQaPage = totalPages;
+        if (currentQaPage < 1) currentQaPage = 1;
+
+        const startItem = (currentQaPage - 1) * QA_PER_PAGE + 1;
+        const endItem = Math.min(currentQaPage * QA_PER_PAGE, matchedCount);
+
+        if (qaPaginationInfo) {
+          qaPaginationInfo.innerHTML = `Hiển thị <strong>${startItem} - ${endItem}</strong> trong số <strong>${matchedCount}</strong> câu hỏi tu học`;
+        }
+
+        if (qaPagePrev) qaPagePrev.disabled = (currentQaPage <= 1);
+        if (qaPageNext) qaPageNext.disabled = (currentQaPage >= totalPages);
+
+        if (qaPageNumbers) {
+          qaPageNumbers.innerHTML = '';
+          for (let p = 1; p <= totalPages; p++) {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'bg-qa-page-num-btn' + (p === currentQaPage ? ' active' : '');
+            btn.textContent = p;
+            btn.title = `Trang ${p}`;
+            btn.addEventListener('click', function () {
+              goToQaPage(p);
+            });
+            qaPageNumbers.appendChild(btn);
+          }
+        }
+      }
+
+      function goToQaPage(page) {
+        currentQaPage = page;
+        filterWisdomCards(false);
+        const secQA = document.getElementById('secQA');
+        if (secQA) {
+          secQA.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+
+      function filterWisdomCards(resetPage = true) {
+        if (resetPage) currentQaPage = 1;
+
+        const cards = Array.from(document.querySelectorAll('.bg-wisdom-card'));
+        const q = currentQaKeyword.trim().toLowerCase();
+        
+        const matchedCards = [];
+        cards.forEach(function (card) {
+          const category = card.getAttribute('data-category') || '';
+          const matchCat = (currentQaCat === 'all' || category === currentQaCat);
+          
+          let matchText = true;
+          if (q) {
+            const textContent = card.textContent.toLowerCase();
+            matchText = textContent.includes(q);
+          }
+
+          if (matchCat && matchText) {
+            matchedCards.push(card);
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        const matchedCount = matchedCards.length;
+        const totalPages = Math.ceil(matchedCount / QA_PER_PAGE) || 1;
+        if (currentQaPage > totalPages) currentQaPage = totalPages;
+        if (currentQaPage < 1) currentQaPage = 1;
+
+        const startIdx = (currentQaPage - 1) * QA_PER_PAGE;
+        const endIdx = startIdx + QA_PER_PAGE;
+
+        matchedCards.forEach(function (card, index) {
+          if (index >= startIdx && index < endIdx) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        if (qaStreamCountText) {
+          if (matchedCount === 0) {
+            qaStreamCountText.innerHTML = 'Không tìm thấy câu hỏi phù hợp';
+          } else if (currentQaCat === 'all' && !q) {
+            qaStreamCountText.innerHTML = `Hiển thị <strong>${matchedCount}</strong> câu hỏi tu học`;
+          } else {
+            qaStreamCountText.innerHTML = `Tìm thấy <strong>${matchedCount}</strong> câu hỏi phù hợp`;
+          }
+        }
+
+        if (matchedCount === 0) {
+          if (qaCardsList) qaCardsList.style.display = 'none';
+          if (qaEmptyState) qaEmptyState.style.display = 'block';
+        } else {
+          if (qaCardsList) qaCardsList.style.display = 'flex';
+          if (qaEmptyState) qaEmptyState.style.display = 'none';
+        }
+
+        renderQaPagination(matchedCount);
+      }
+
+      if (qaPagePrev) {
+        qaPagePrev.addEventListener('click', function () {
+          if (currentQaPage > 1) goToQaPage(currentQaPage - 1);
+        });
+      }
+
+      if (qaPageNext) {
+        qaPageNext.addEventListener('click', function () {
+          const cards = Array.from(document.querySelectorAll('.bg-wisdom-card'));
+          const q = currentQaKeyword.trim().toLowerCase();
+          const matchedCount = cards.filter(function (card) {
+            const category = card.getAttribute('data-category') || '';
+            const matchCat = (currentQaCat === 'all' || category === currentQaCat);
+            const matchText = !q || card.textContent.toLowerCase().includes(q);
+            return matchCat && matchText;
+          }).length;
+          const totalPages = Math.ceil(matchedCount / QA_PER_PAGE);
+          if (currentQaPage < totalPages) goToQaPage(currentQaPage + 1);
+        });
+      }
+
+      qaCategoryButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          qaCategoryButtons.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          currentQaCat = btn.getAttribute('data-category') || 'all';
+          filterWisdomCards(true);
+        });
+      });
+
+      if (qaSearchInput) {
+        qaSearchInput.addEventListener('input', function (e) {
+          currentQaKeyword = e.target.value;
+          if (qaSearchClear) {
+            qaSearchClear.style.display = currentQaKeyword.length > 0 ? 'flex' : 'none';
+          }
+          filterWisdomCards(true);
+        });
+      }
+
+      if (qaSearchClear) {
+        qaSearchClear.addEventListener('click', function () {
+          if (qaSearchInput) qaSearchInput.value = '';
+          currentQaKeyword = '';
+          qaSearchClear.style.display = 'none';
+          filterWisdomCards(true);
+          if (qaSearchInput) qaSearchInput.focus();
+        });
+      }
+
+      // Accordion
+      document.querySelectorAll('.bg-wisdom-card').forEach(function (card) {
+        const header = card.querySelector('.bg-wisdom-header');
+        const toggleBtn = card.querySelector('.bg-wisdom-toggle-btn');
+
+        function toggleCard() {
+          const isOpen = card.classList.contains('is-open');
+          card.classList.toggle('is-open', !isOpen);
+          if (toggleBtn) {
+            toggleBtn.setAttribute('aria-expanded', !isOpen ? 'true' : 'false');
+          }
+        }
+
+        if (header) {
+          header.addEventListener('click', function (e) {
+            if (e.target.closest('a') || e.target.closest('button.bg-wisdom-copy-btn')) return;
+            toggleCard();
+          });
+        }
+      });
+
+      if (btnToggleAllQa) {
+        btnToggleAllQa.addEventListener('click', function () {
+          isAllExpanded = !isAllExpanded;
+          const cards = document.querySelectorAll('.bg-wisdom-card');
+          cards.forEach(function (card) {
+            if (card.style.display !== 'none') {
+              card.classList.toggle('is-open', isAllExpanded);
+              const tBtn = card.querySelector('.bg-wisdom-toggle-btn');
+              if (tBtn) tBtn.setAttribute('aria-expanded', isAllExpanded ? 'true' : 'false');
+            }
+          });
+
+          if (btnToggleAllQaText) {
+            btnToggleAllQaText.textContent = isAllExpanded ? 'Thu gọn tất cả' : 'Mở tất cả';
+          }
+          btnToggleAllQa.classList.toggle('active', isAllExpanded);
+        });
+      }
+
+      // Copy text
+      document.querySelectorAll('.bg-wisdom-copy-btn').forEach(function (copyBtn) {
+        copyBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          const qaId = copyBtn.getAttribute('data-qa-id');
+          const item = qaDatabase[qaId];
+          if (!item) return;
+
+          const textToCopy = `[Vấn Đáp Tu Học Phật Pháp]
+❓ Câu hỏi: ${item.question}
+
+📜 Lời giải đáp:
+${item.core}
+
+💡 Bí quyết hành trì:
+${item.tip}
+
+(Nguồn: Tịnh Độ An Trú - Góc Vấn Đáp Tu Học)`;
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(textToCopy).then(function () {
+              showToast('✓ Đã sao chép câu trả lời vào bộ nhớ tạm!');
+            });
+          } else {
+            const temp = document.createElement('textarea');
+            temp.value = textToCopy;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+            showToast('✓ Đã sao chép câu trả lời vào bộ nhớ tạm!');
+          }
+        });
+      });
+
+      document.querySelectorAll('.bg-qa-sug-tag').forEach(function (tag) {
+        tag.addEventListener('click', function () {
+          const kw = tag.getAttribute('data-keyword') || '';
+          if (qaSearchInput) {
+            qaSearchInput.value = kw;
+            currentQaKeyword = kw;
+            if (qaSearchClear) qaSearchClear.style.display = 'flex';
+            filterWisdomCards(true);
+          }
+        });
+      });
+
+      function resetQaFilters() {
+        currentQaCat = 'all';
+        currentQaKeyword = '';
+        if (qaSearchInput) qaSearchInput.value = '';
+        if (qaSearchClear) qaSearchClear.style.display = 'none';
+        qaCategoryButtons.forEach(function (b) {
+          if (b.getAttribute('data-category') === 'all') b.classList.add('active');
+          else b.classList.remove('active');
+        });
+        filterWisdomCards(true);
+      }
+
+      if (btnEmptyReset) btnEmptyReset.addEventListener('click', resetQaFilters);
+
+      // Modal
+      const btnAskQuestion = document.getElementById('btnAskQuestion');
+      const heroBtnAskQuestion = document.getElementById('heroBtnAskQuestion');
+      const footerBtnAsk = document.getElementById('footerBtnAsk');
+      const qaAskModalBackdrop = document.getElementById('qaAskModalBackdrop');
+      const btnCloseAskModal = document.getElementById('btnCloseAskModal');
+      const btnCancelAskModal = document.getElementById('btnCancelAskModal');
+      const formAskQuestion = document.getElementById('formAskQuestion');
+
+      function openAskModal() {
+        if (!qaAskModalBackdrop) return;
+        qaAskModalBackdrop.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeAskModal() {
+        if (!qaAskModalBackdrop) return;
+        qaAskModalBackdrop.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      if (btnAskQuestion) btnAskQuestion.addEventListener('click', openAskModal);
+      if (heroBtnAskQuestion) heroBtnAskQuestion.addEventListener('click', openAskModal);
+      if (footerBtnAsk) footerBtnAsk.addEventListener('click', openAskModal);
+      if (btnCloseAskModal) btnCloseAskModal.addEventListener('click', closeAskModal);
+      if (btnCancelAskModal) btnCancelAskModal.addEventListener('click', closeAskModal);
+      if (qaAskModalBackdrop) {
+        qaAskModalBackdrop.addEventListener('click', function (e) {
+          if (e.target === qaAskModalBackdrop) closeAskModal();
+        });
+      }
+
+      if (formAskQuestion) {
+        formAskQuestion.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const name = document.getElementById('askUserName').value.trim();
+          const topic = document.getElementById('askUserTopic').value;
+          const content = document.getElementById('askUserQuestion').value.trim();
+          if (!name || !content) return;
+
+          closeAskModal();
+          formAskQuestion.reset();
+          showToast(`✓ Đã gửi câu hỏi của bạn đạo ${name} tới Ban Giảng Sư! Chúc bạn thân tâm an lạc.`);
+        });
+      }
+
+      // Khởi tạo hiển thị trang 1
+      filterWisdomCards(true);
+    });
+  </script>
+</body>
+</html>

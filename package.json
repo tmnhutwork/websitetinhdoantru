@@ -1,0 +1,13 @@
+{
+  "name": "tinh-do-an-tru",
+  "version": "1.0.0",
+  "description": "Website Phật giáo Tịnh Độ hiện đại, thanh tịnh và dễ tiếp cận cho Phật tử",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["tinh-do", "phat-giao", "buddhism", "pure-land", "a-di-da"],
+  "author": "Tịnh Độ An Trú",
+  "license": "MIT"
+}

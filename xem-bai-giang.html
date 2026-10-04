@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">Xem Bài Giảng Video · Tịnh Độ An Trú</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="xem-bai-giang.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪷</text></svg>">
+</head>
+<body class="sutra-page">
+
+  <!-- Top Navigation Bar -->
+  <header class="watch-navbar">
+    <div class="watch-nav-inner">
+      <div class="watch-nav-left">
+        <a href="bai-giang.html" class="watch-btn-back" title="Quay lại danh mục bài giảng">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+          <span>Kho Bài Giảng</span>
+        </a>
+        <div class="watch-divider"></div>
+        <div class="watch-breadcrumbs">
+          <span class="watch-breadcrumb-series" id="navSeriesTitle">Kinh Đại Thừa Vô Lượng Thọ</span>
+          <span class="watch-breadcrumb-sep">/</span>
+          <span class="watch-breadcrumb-ep" id="navEpisodeTitle">Tập 01</span>
+        </div>
+      </div>
+
+      <div class="watch-nav-right">
+        <button class="watch-btn-share-top" id="btnShareTop" title="Sao chép đường link tập này để gửi chia sẻ">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
+          <span>Sao chép liên kết</span>
+        </button>
+
+        <button class="icon-btn theme-toggle" id="btnThemeToggle" title="Chuyển chế độ ban đêm" aria-label="Chuyển chế độ ban đêm">
+          <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path><path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path><path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main 2-Column Watch Theater Layout -->
+  <main class="watch-main-layout">
+
+    <!-- CỘT TRÁI: VIDEO PLAYER & CHI TIẾT BÀI GIẢNG (70%) -->
+    <section class="watch-main-col">
+      
+      <!-- Video Player Screen (16:9 Standard) -->
+      <div class="watch-player-frame" id="watchPlayerFrame">
+        <img src="assets/images/BaiGiang/bg_hero_landscape.jpg" alt="Video bài giảng" class="watch-player-poster" id="videoPoster">
+        <div class="watch-player-overlay"></div>
+
+        <!-- Watermark Badge -->
+        <div class="watch-player-watermark">
+          <span class="watch-watermark-dot"></span>
+          <span id="playerWatermarkText">Tịnh Độ An Trú · Pháp Âm Trực Tuyến</span>
+        </div>
+
+        <!-- Big Center Play Button -->
+        <button class="watch-big-play-btn" id="btnBigPlay" aria-label="Phát video">
+          <svg width="34" height="34" fill="currentColor" viewBox="0 0 24 24"><polygon points="7,5 19,12 7,19"/></svg>
+        </button>
+
+        <!-- Subtitles Bar -->
+        <div class="watch-subtitles-bar">
+          <span class="watch-subtitle-text" id="videoSubtitle">"Đức Phật Thích Ca Mâu Ni đối trước đại chúng thuyết Kinh Vô Lượng Thọ trang nghiêm..."</span>
+        </div>
+
+        <!-- Custom Bottom Controls Bar -->
+        <div class="watch-controls-bar">
+          <!-- Scrub Progress Bar -->
+          <div class="watch-scrub-bar" id="watchScrubBar">
+            <div class="watch-scrub-fill" id="watchScrubFill"></div>
+            <div class="watch-scrub-handle" id="watchScrubHandle"></div>
+          </div>
+
+          <div class="watch-controls-row">
+            <div class="watch-controls-left">
+              <button class="watch-ctrl-btn" id="btnPlayPause" title="Phát / Dừng">
+                <svg id="ctrlPlayIcon" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><polygon points="7,5 19,12 7,19"/></svg>
+              </button>
+              <button class="watch-ctrl-btn" id="btnRewind10" title="Lùi 10 giây">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12.066 11.2a1 1 0 000 1.6l5.334 4A1 1 0 0019 16V8a1 1 0 00-1.6-.8l-5.334 4zM4.066 11.2a1 1 0 000 1.6l5.334 4A1 1 0 0011 16V8a1 1 0 00-1.6-.8l-5.334 4z"/></svg>
+              </button>
+              <button class="watch-ctrl-btn" id="btnForward10" title="Tua tới 10 giây">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.933 12.8a1 1 0 000-1.6L6.6 7.2A1 1 0 005 8v8a1 1 0 001.6.8l5.333-4zM19.933 12.8a1 1 0 000-1.6l-5.333-4A1 1 0 0013 8v8a1 1 0 001.6.8l5.333-4z"/></svg>
+              </button>
+              <span class="watch-time-display" id="watchTimeDisplay">14:20 / 60:00</span>
+            </div>
+
+            <div class="watch-controls-right">
+              <button class="watch-ctrl-btn" id="btnSpeed" title="Tốc độ phát">
+                <span id="speedLabel" style="font-weight: 600;">1.0x</span>
+              </button>
+              <button class="watch-ctrl-btn" id="btnVolume" title="Âm lượng">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+              </button>
+              <button class="watch-ctrl-btn" id="btnFullscreen" title="Toàn màn hình">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Episode Meta Card & Action Toolbar -->
+      <article class="watch-episode-meta">
+        <div class="watch-episode-top-row">
+          <div class="watch-badge-group">
+            <span class="watch-ep-badge" id="epBadge">Tập 01 / 80</span>
+            <span class="watch-series-badge" id="seriesBadgeTag">Trọn Bộ Kinh Giảng</span>
+            <span class="watch-series-badge">Video HD 1080p</span>
+          </div>
+          <span style="font-size: 13px; color: var(--text-muted);" id="epDurationText">⏱ Thời lượng: 60:00</span>
+        </div>
+
+        <h1 class="watch-episode-title" id="episodeMainTitle">Tập 01: Duyên Khởi Pháp Hội & Đại Ý Kinh Vô Lượng Thọ</h1>
+
+        <!-- Giảng Sư -->
+        <div class="watch-speaker-row">
+          <img src="assets/images/BaiGiang/bg_author_portrait.jpg" alt="Giảng sư" class="watch-speaker-avatar" id="speakerAvatar">
+          <span class="watch-speaker-name" id="speakerFullName">HT. Thích Tịnh Không Giảng Giải</span>
+        </div>
+
+        <!-- Thanh công cụ hữu ích cho Phật tử -->
+        <div class="watch-toolbar">
+          <div class="watch-actions-left">
+            <button class="watch-action-btn share-btn" id="btnCopyEpisodeLink" title="Sao chép liên kết tập này gửi Zalo/Facebook">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+              <span>Chia sẻ tập này</span>
+            </button>
+            <button class="watch-action-btn" id="btnAudioMode" title="Chuyển sang chỉ nghe Audio (tiết kiệm pin)">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path></svg>
+              <span>Chế độ Audio</span>
+            </button>
+            <button class="watch-action-btn" id="btnPdfNotes" title="Tải kinh văn đối chiếu chữ Hán / Việt">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              <span>Tải Kinh Văn (PDF)</span>
+            </button>
+            <button class="watch-action-btn" id="btnBookmarkEp" title="Lưu vào sổ tay tu học">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/></svg>
+              <span id="bookmarkText">Lưu bài giảng</span>
+            </button>
+          </div>
+
+          <!-- Nút chuyển Tập Trước / Tập Sau -->
+          <div class="watch-nav-ep-btns">
+            <button class="watch-btn-prev-ep" id="btnPrevEp" title="Xem tập trước">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+              <span>Tập trước</span>
+            </button>
+            <button class="watch-btn-next-ep" id="btnNextEp" title="Xem tập kế tiếp">
+              <span>Tập sau</span>
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Khung Cốt Tủy Giảng Giải & Pháp Ngữ Trích Dẫn -->
+      <article class="watch-synopsis-card">
+        <h3 class="watch-synopsis-title">
+          <span>📜</span>
+          <span>Cốt Tủy Giảng Giải Của Tập Này</span>
+        </h3>
+        <p class="watch-synopsis-desc" id="episodeSynopsis">
+          Tập mở đầu trình bày hoàn cảnh duyên khởi của Pháp Hội Vô Lượng Thọ. Hòa Thượng phân tích vì sao bộ kinh này là viên đốn bậc nhất của Đại Thừa, chỉ cần lòng chí thành tin tưởng và xưng niệm sáu chữ hồng danh Nam Mô A Di Đà Phật là có thể đới nghiệp vãng sanh.
+        </p>
+
+        <div class="watch-quote-highlight">
+          <svg class="bg-quote-mark" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+          <div class="watch-quote-content" id="episodeQuote">
+            "Pháp môn Tịnh Độ thù thắng ở chỗ một đời viên mãn, đới nghiệp vãng sanh, bất thoái chuyển thành Phật."
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- CỘT PHẢI: PLAYLIST DANH SÁCH TẬP (30%) -->
+    <aside class="watch-sidebar-col">
+      <div class="watch-playlist-card">
+        
+        <!-- Header Playlist -->
+        <div class="watch-playlist-header">
+          <div class="watch-playlist-title-wrap">
+            <h3 class="watch-playlist-heading" id="sidebarSeriesHeading">Kinh Đại Thừa Vô Lượng Thọ</h3>
+            <span class="watch-playlist-count-badge" id="sidebarEpBadge">80 tập</span>
+          </div>
+
+          <!-- Tiến độ học tập -->
+          <div class="watch-playlist-progress-wrap">
+            <div class="watch-progress-label-row">
+              <span id="progressText">Đang học: Tập 1 / 80</span>
+              <span id="progressPercent">1%</span>
+            </div>
+            <div class="watch-progress-track">
+              <div class="watch-progress-fill" id="progressFill" style="width: 1.25%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bộ lọc & Công cụ Playlist -->
+        <div class="watch-playlist-controls">
+          <div class="watch-search-input-wrap">
+            <svg class="watch-search-icon" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35"></path></svg>
+            <input type="text" class="watch-search-input" id="sidebarSearchInput" placeholder="Tìm tập (ví dụ: Tập 5, 48 đại nguyện)...">
+          </div>
+
+          <div class="watch-autonext-row">
+            <label class="watch-toggle-wrap">
+              <input type="checkbox" id="chkAutoNext" checked style="accent-color: #166534; cursor: pointer;">
+              <span>Tự động chuyển tập kế tiếp</span>
+            </label>
+            <span style="color: var(--text-muted);" id="sidebarEpCountFiltered">80 tập</span>
+          </div>
+        </div>
+
+        <!-- Danh sách các tập có thanh cuộn mượt -->
+        <div class="watch-episodes-list" id="sidebarEpisodesList">
+          <!-- Rendered dynamically by JavaScript -->
+        </div>
+
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- Toast Notification Feedback -->
+  <div class="watch-toast" id="watchToast" role="status" aria-live="polite">
+    <svg width="18" height="18" fill="none" stroke="#6ee7b7" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+    <span id="watchToastMsg">Thông báo</span>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // 1. Kho cơ sở dữ liệu các bộ Series trọn bộ
+      const seriesDatabase = {
+        'vlt-tinh-khong': {
+          id: 'vlt-tinh-khong',
+          title: 'Kinh Đại Thừa Vô Lượng Thọ Giảng Giải',
+          shortTitle: 'Kinh Vô Lượng Thọ',
+          speaker: 'HT. Thích Tịnh Không Giảng Giải',
+          speakerSub: 'Đại Lão Hòa Thượng Tịnh Tông Học Hội',
+          speakerAvatar: 'assets/images/BaiGiang/bg_author_portrait.jpg',
+          total: 80,
+          img: 'assets/images/Kinh/kinh-vo-luong-tho.png',
+          synopsis: 'Bộ kinh căn bản và cốt tủy đệ nhất của tông Tịnh Độ thời hiện đại. Đại Lão Hòa Thượng Thích Tịnh Không dành trọn tâm huyết giảng giải từng câu kinh, phân tích cặn kẽ 48 đại nguyện của Đức Phật A Di Đà, lý giải chân tướng cõi Tây Phương Cực Lạc và phương pháp nhất hướng chuyên niệm để người tu đạt vãng sanh bất thoái chuyển.',
+          quote: '"Pháp môn Tịnh Độ thù thắng ở chỗ một đời viên mãn, đới nghiệp vãng sanh, bất thoái chuyển thành Phật."',
+          episodes: [
+            { ep: 1, title: 'Tập 01: Duyên Khởi Pháp Hội & Đại Ý Kinh Vô Lượng Thọ', duration: '60:00', quote: '"Đại ý Kinh Vô Lượng Thọ chỉ rõ con đường cứu cánh thoát sanh tử của muôn loài."' },
+            { ep: 2, title: 'Tập 02: Đức Tuân Phổ Hiền - Hạnh Nguyện Đại Thừa', duration: '58:00', quote: '"Hành giả Tịnh Độ noi theo mười đại nguyện vương của Bồ Tát Phổ Hiền quy hướng Cực Lạc."' },
+            { ep: 3, title: 'Tập 03: Pháp Tạng Bồ Tát Phát Đại Thệ Nguyện', duration: '62:00', quote: '"Bồ Tát Pháp Tạng đối trước Phật Thế Tự Tại Vương phát thệ lập nên cõi Tây Phương vi diệu."' },
+            { ep: 4, title: 'Tập 04: 48 Đại Nguyện Cứu Độ Chúng Sanh (Nguyện 1 - 10)', duration: '60:00', quote: '"Mỗi một đại nguyện là một giọt máu từ bi vô tận vì chúng sanh chìm đắm trong biển khổ."' },
+            { ep: 5, title: 'Tập 05: 48 Đại Nguyện Cứu Độ Chúng Sanh (Nguyện 11 - 20)', duration: '61:00', quote: '"Nguyện thứ 18 là tâm ấn căn bản: Mười niệm ắt sanh cõi Phật."' },
+            { ep: 6, title: 'Tập 06: 48 Đại Nguyện Cứu Độ Chúng Sanh (Nguyện 21 - 48)', duration: '65:00', quote: '"Đại nguyện hoàn mãn, trang nghiêm cõi báu thù thắng vi diệu."' },
+            { ep: 7, title: 'Tập 07: Thọ Dụng Y Báo & Chánh Báo Cực Lạc Tây Phương', duration: '59:00', quote: '"Nước thất bảo, cây báu vi diệu, chim trời hót diễn pháp âm thanh tịnh."' },
+            { ep: 8, title: 'Tập 08: Ba Bậc Vãng Sanh (Thượng Phẩm, Trung Phẩm, Hạ Phẩm)', duration: '63:00', quote: '"Bất luận căn cơ cao thấp, ai phát tâm bồ đề chuyên niệm Di Đà đều được thâu nhận."' },
+            { ep: 9, title: 'Tập 09: Khuyên Tu Tịnh Nghiệp - Răn Trừ Năm Ác & Năm Đau', duration: '58:00', quote: '"Đời mạt pháp cạm bẫy trùng trùng, giữ giới niệm Phật là chiếc bè vượt sóng gió."' },
+            { ep: 10, title: 'Tập 10: Nhất Hướng Chuyên Niệm Nam Mô A Di Đà Phật', duration: '65:00', quote: '"Mỗi một câu Phật hiệu là một hạt sen vàng trổ hoa nơi ao thất bảo cõi Cực Lạc."' }
+          ]
+        },
+        'dia-tang-tuyen-hoa': {
+          id: 'dia-tang-tuyen-hoa',
+          title: 'Kinh Địa Tạng Bồ Tát Bổn Nguyện Giảng Giải',
+          shortTitle: 'Kinh Địa Tạng Giảng Giải',
+          speaker: 'HT. Tuyên Hóa Khai Thị Sơ Giải',
+          speakerSub: 'Khai sơn Vạn Phật Thánh Thành',
+          speakerAvatar: 'assets/images/BaiGiang/bg_author_portrait.jpg',
+          total: 45,
+          img: 'assets/images/Kinh/kinh-dia-tang.png',
+          synopsis: 'Kinh Địa Tạng được xem là Hiếu Kinh của đạo Phật. Qua lời giảng giải bình dị, chân thật và trí tuệ thâm sâu của Hòa Thượng Tuyên Hóa, đại chúng thấu suốt tường tận nhân quả nghiệp báo, sự đọa lạc nơi chốn u minh và hạnh nguyện đại bi vô lượng cứu vớt sanh linh của Đức Địa Tạng Vương.',
+          quote: '"Địa ngục vị không, thệ bất thành Phật; chúng sanh độ tận, phương chứng bồ đề."',
+          episodes: [
+            { ep: 1, title: 'Tập 01: Thần Thông Cảm Ứng Nơi Cung Trời Đao Lợi', duration: '55:00', quote: '"Đức Phật thăng lên cung trời Đao Lợi vì thân mẫu thuyết pháp báo đền ân sanh thành."' },
+            { ep: 2, title: 'Tập 02: Phân Thân Tập Hội & Hiếu Hạnh Quang Mục Cứu Mẹ', duration: '52:00', quote: '"Lòng hiếu thảo cảm động mười phương chư Phật, chuyển hóa tội chướng vô gián thành phước lành."' },
+            { ep: 3, title: 'Tập 03: Quán Chúng Sanh Nghiệp Duyên & Tội Báo Địa Ngục', duration: '54:00', quote: '"Chúng sanh Nam Diêm Phù Đề khởi tâm động niệm không gì là chẳng phải tội, phải nghiệp."' },
+            { ep: 4, title: 'Tập 04: Nghiệp Cảm Của Chúng Sanh Nơi Cõi Diêm Phù', duration: '56:00', quote: '"Tâm tạo tác muôn nghiệp, nghiệp lại trói buộc tâm thọ khổ không cùng."' },
+            { ep: 5, title: 'Tập 05: Danh Hiệu Các Tầng Địa Ngục & Hình Phạt Nghiệp Cảm', duration: '50:00', quote: '"Hiểu rõ nhân quả địa ngục để sanh tâm kính sợ, dứt ác tu lành từng sát-na."' },
+            { ep: 6, title: 'Tập 06: Như Lai Tán Thán Hạnh Nguyện Bồ Tát Địa Tạng', duration: '53:00', quote: '"Hạnh nguyện của Địa Tạng Vương Bồ Tát sâu rộng như biển, không bờ không bến."' },
+            { ep: 7, title: 'Tập 07: Lợi Ích Kẻ Còn Người Mất Khi Tu Phước Cúng Dường', duration: '58:00', quote: '"Làm phước bảy phần, người mất hưởng một, người sống hưởng trọn sáu phần công đức."' },
+            { ep: 8, title: 'Tập 08: Diêm La Vương Chúng Kính Cẩn Tán Thán Địa Tạng', duration: '52:00', quote: '"Chư vương địa phủ đều thuận theo từ bi mà dẫn dắt chúng sanh hồi tâm hướng thiện."' }
+          ]
+        },
+        'thap-yeu-thien-tam': {
+          id: 'thap-yeu-thien-tam',
+          title: 'Niệm Phật Thập Yếu - Cẩm Nang Tu Tịnh Nghiệp',
+          shortTitle: 'Niệm Phật Thập Yếu',
+          speaker: 'HT. Thích Thiền Tâm Biên Soạn & Khai Thị',
+          speakerSub: 'Cố Viện chủ Hương Nghiêm Tịnh Viện',
+          speakerAvatar: 'assets/images/BaiGiang/bg_author_portrait.jpg',
+          total: 15,
+          img: 'assets/images/Kinh/dai-the-chi-niem-phat.png',
+          synopsis: 'Cẩm nang tu tập kinh điển của Phật giáo Tịnh Độ Việt Nam do Cố Viện chủ Hương Nghiêm Tịnh Viện - HT. Thích Thiền Tâm trút cạn tâm can biên soạn. Bộ giảng tháo gỡ 10 then chốt trọng yếu nhất từ phát tâm bồ đề, dứt trừ hoài nghi, nhiếp tâm niệm Phật đến đối trị chướng duyên và chuẩn bị hộ niệm giờ phút lâm chung.',
+          quote: '"Niệm Phật là cội rễ của sự giải thoát, mười điều cốt yếu ví như la bàn dẫn lối cho hành giả Tịnh Độ."',
+          episodes: [
+            { ep: 1, title: 'Tiết 01: Lời Tựa & Bối Cảnh Soạn Thuật Niệm Phật Thập Yếu', duration: '42:00', quote: '"Soạn thuật cẩm nang này mong người tu Tịnh Độ không lạc bước vào đường tà thiên kiến."' },
+            { ep: 2, title: 'Tiết 02: Yếu Thứ Nhất - Phát Khởi Tâm Bồ Đề Rộng Lớn', duration: '45:00', quote: '"Tu Tịnh Độ mà chẳng phát tâm Bồ Đề thì như gieo hạt giống lép nơi ruộng khô."' },
+            { ep: 3, title: 'Tiết 03: Yếu Thứ Hai - Dứt Trừ Mối Nghi & Kiên Định Tín Tâm', duration: '48:00', quote: '"Nghi là chướng ngại lớn nhất; dứt nghi thì sen báu nở ngay trong tâm."' },
+            { ep: 4, title: 'Tiết 04: Yếu Thứ Ba - Quyết Chí Xả Ly Duyên Trần Ô Trược', duration: '44:00', quote: '"Cõi Ta Bà như nhà lửa rực cháy; muốn về Cực Lạc tâm phải dứt bớt trần duyên bám víu."' },
+            { ep: 5, title: 'Tiết 05: Yếu Thứ Bốn - Khế Hợp Căn Cơ Muôn Người Cùng Tu', duration: '40:00', quote: '"Pháp môn tam căn phổ bị, từ hàng thượng trí đến kẻ sơ cơ đều được tiếp dẫn."' },
+            { ep: 6, title: 'Tiết 06: Yếu Thứ Năm - Trì Danh Niệm Phật Đúng Pháp Môn', duration: '46:00', quote: '"Tâm niệm rành rẽ, miệng niệm rõ ràng, tai lắng nghe chân thật không gián đoạn."' },
+            { ep: 7, title: 'Tiết 07: Yếu Thứ Sáu - Đương Đầu & Đối Trị Chướng Ma Khi Tu', duration: '43:00', quote: '"Gặp chướng duyên hay ma sự, chỉ một câu Phật hiệu chí thành là vạn ma tự lui."' },
+            { ep: 8, title: 'Tiết 08: Yếu Thứ Bảy - Nghiệm Chứng Tướng Lành Thân Tâm Khi Hành Trì', duration: '45:00', quote: '"Thân tâm thơ thới an lạc, ngủ không mộng mị, đó là điềm lành sơ khởi của tịnh niệm."' },
+            { ep: 9, title: 'Tiết 09: Yếu Thứ Tám - Trợ Niệm Giờ Phút Lâm Chung Thoát Khổ', duration: '52:00', quote: '"Thời khắc lâm chung tựa như ngàn cân treo sợi tóc; trợ niệm đúng cách là phước báu vô lượng."' },
+            { ep: 10, title: 'Tiết 10: Yếu Thứ Chín - Thể Nhập Tự Tánh Di Đà Duy Tâm Tịnh Độ', duration: '47:00', quote: '"Tự tánh Di Đà vốn sẵn có nơi mỗi chúng sanh; niệm Phật là quay về với tánh giác."' },
+            { ep: 11, title: 'Tiết 11: Yếu Thứ Mười - Khuyên Người Tu Tịnh Độ Đồng Sanh An Lạc', duration: '46:00', quote: '"Khuyên một người vãng sanh bằng cứu cả một gia tộc thoát khỏi biển trầm luân."' },
+            { ep: 12, title: 'Tiết 12: Phụ Lục 1: Giải Nghi Cho Người Thế Tục Bận Rộn', duration: '38:00', quote: '"Dù việc đời trăm mối tơ vò, sáng tối mười niệm chí tâm vẫn kết duyên lành vãng sanh."' },
+            { ep: 13, title: 'Tiết 13: Phụ Lục 2: Khai Thị Bệnh Khổ & Chuyển Hóa Nghiệp Chướng', duration: '41:00', quote: '"Lấy bệnh làm thầy, lấy khổ làm động lực dũng mãnh cầu vãng sanh Tây Phương."' },
+            { ep: 14, title: 'Tiết 14: Phụ Lục 3: Nghi Thức Pháp Hội Niệm Phật Thất Nhật Tinh Tấn', duration: '45:00', quote: '"Bảy ngày chuyên nhất một lòng không tán loạn, huân tu chánh niệm vô thượng."' },
+            { ep: 15, title: 'Tiết 15: Lời Kết: Nguyện Cùng Đồng Tu Đồng Về Cực Lạc Hoa Sen', duration: '39:00', quote: '"Nguyện đem công đức này, hướng về khắp tất cả; đệ tử cùng chúng sanh, đều trọn thành Phật đạo."' }
+          ]
+        },
+        'quan-vlt-tri-quang': {
+          id: 'quan-vlt-tri-quang',
+          title: 'Kinh Quán Vô Lượng Thọ Phật & Thập Lục Quán Môn',
+          shortTitle: 'Kinh Quán Vô Lượng Thọ',
+          speaker: 'HT. Thích Trí Quảng Giảng Luận',
+          speakerSub: 'Viện chủ Chùa Pháp Hoa',
+          speakerAvatar: 'assets/images/BaiGiang/bg_author_portrait.jpg',
+          total: 24,
+          img: 'assets/images/Kinh/kinh-quan-vo-luong-tho.png',
+          synopsis: 'Bộ giảng luận khai mở cánh cửa quán tưởng thế giới Cực Lạc qua 16 phép quán vi diệu từ quán mặt trời lặn, đất báu lưu ly cho đến quán chân thân Phật và Bồ Tát. Hòa Thượng Thích Trí Quảng phân tích sâu về Tịnh Nghiệp Tam Phước và Chín Phẩm Sen Vãng Sanh, giúp người tu thời hiện đại vừa an định nội tâm, vừa xây dựng tư lương vãng sanh vững chắc.',
+          quote: '"Quán tâm thanh tịnh tức thấy Phật Di Đà; 16 phép quán đưa tâm phàm phu tiếp cận cảnh giới Tây Phương thất bảo."',
+          episodes: [
+            { ep: 1, title: 'Tập 01: Duyên Khởi Bi Kịch Thành Vương Xá & Vi Đề Hy Cầu Cứu', duration: '45:00', quote: '"Nỗi đau nơi hồng trần mở ra con đường tìm về cõi Tịnh Độ thanh tịnh của Hoàng hậu Vi Đề Hy."' },
+            { ep: 2, title: 'Tập 02: Phật Thị Hiện Quang Minh Khuyên Chọn Cực Lạc Tây Phương', duration: '42:00', quote: '"Mười phương cõi Phật đều hiện nơi đỉnh tướng, Cực Lạc Tây Phương thù thắng đệ nhất."' },
+            { ep: 3, title: 'Tập 03: Tịnh Nghiệp Tam Phước - Cội Gốc Căn Bản Vãng Sanh', duration: '48:00', quote: '"Hiếu dưỡng cha mẹ, phụng sự sư trưởng, từ tâm bất sát, tu thập thiện nghiệp là nền tảng tam phước."' },
+            { ep: 4, title: 'Tập 04: Quán Thứ 1: Nhật Tưởng Quán (Quán Mặt Trời Lặn Phía Tây)', duration: '40:00', quote: '"Nhìn vầng thái dương lặn nơi phương Tây tròn đầy như chiếc trống treo, định tâm rành rẽ."' },
+            { ep: 5, title: 'Tập 05: Quán Thứ 2: Thủy Tưởng Quán (Quán Nước Đóng Băng Lưu Ly)', duration: '42:00', quote: '"Nước trong veo đóng thành băng, băng hóa lưu ly sáng ngời soi thấu lòng đất báu."' },
+            { ep: 6, title: 'Tập 06: Quán Thứ 3: Địa Tưởng Quán (Quán Mặt Đất Cực Lạc)', duration: '46:00', quote: '"Đất báu lưu ly bằng phẳng, dây vàng giăng lối, hoa báu trang nghiêm rải khắp lối đi."' },
+            { ep: 7, title: 'Tập 07: Quán Thứ 4 & 5: Bảo Thụ Quán & Bát Công Đức Thủy Quán', duration: '44:00', quote: '"Cây báu bảy tầng trổ hoa ngọc quý, nước tám công đức chảy êm đềm diễn nói diệu pháp."' },
+            { ep: 8, title: 'Tập 08: Quán Thứ 6: Tổng Tưởng Quán Toàn Cảnh Cực Lạc', duration: '45:00', quote: '"Tâm cảnh hợp nhất, thấy toàn bộ cõi báu Tây Phương hiện tiền nơi tịnh lự."' },
+            { ep: 9, title: 'Tập 09: Quán Thứ 7: Hoa Tòa Quán (Quán Tòa Sen Thất Bảo)', duration: '43:00', quote: '"Tòa sen báu tám vạn bốn nghìn cánh, mỗi cánh tỏa ánh hào quang chiếu khắp mười phương."' },
+            { ep: 10, title: 'Tập 10: Quán Thứ 8: Tượng Tưởng Quán (Quán Tượng Phật Di Đà)', duration: '45:00', quote: '"Chư Phật Như Lai là pháp giới thân, nhập vào trong tâm tưởng của tất cả chúng sanh."' },
+            { ep: 11, title: 'Tập 11: Quán Thứ 9: Chân Thân Phật A Di Đà Sắc Vàng Kim', duration: '48:00', quote: '"Thân Phật cao lớn sắc vàng rực rỡ, ánh sáng nhiếp thọ không bỏ sót kẻ niệm Phật."' },
+            { ep: 12, title: 'Tập 12: Quán Thứ 10: Quán Thế Âm Bồ Tát Sắc Thân Tướng Hảo', duration: '46:00', quote: '"Đỉnh đầu Bồ Tát mang tượng Phật hóa thân, tay báu rưới cam lộ cứu khổ muôn loài."' }
+          ]
+        }
+      };
+
+      // Tự động bổ sung tập cho đủ số lượng nếu cần
+      Object.keys(seriesDatabase).forEach(function (key) {
+        const s = seriesDatabase[key];
+        if (s.episodes.length < s.total) {
+          const start = s.episodes.length + 1;
+          for (let i = start; i <= s.total; i++) {
+            const pad = i < 10 ? '0' + i : i;
+            s.episodes.push({
+              ep: i,
+              title: `Tập ${pad}: Khai Thị & Giảng Luận Chuyên Đề Pháp Ngữ (${pad}/${s.total})`,
+              duration: '50:00',
+              quote: s.quote
+            });
+          }
+        }
+      });
+
+      // 2. Đọc thông số URL
+      const urlParams = new URLSearchParams(window.location.search);
+      let seriesId = urlParams.get('series') || 'vlt-tinh-khong';
+      let epNum = parseInt(urlParams.get('ep') || '1', 10);
+
+      if (!seriesDatabase[seriesId]) {
+        seriesId = 'vlt-tinh-khong';
+      }
+
+      const series = seriesDatabase[seriesId];
+      if (isNaN(epNum) || epNum < 1 || epNum > series.total) {
+        epNum = 1;
+      }
+
+      // 3. Các phần tử DOM
+      const pageTitle = document.getElementById('pageTitle');
+      const navSeriesTitle = document.getElementById('navSeriesTitle');
+      const navEpisodeTitle = document.getElementById('navEpisodeTitle');
+      const videoPoster = document.getElementById('videoPoster');
+      const videoSubtitle = document.getElementById('videoSubtitle');
+      const epBadge = document.getElementById('epBadge');
+      const epDurationText = document.getElementById('epDurationText');
+      const episodeMainTitle = document.getElementById('episodeMainTitle');
+      const speakerAvatar = document.getElementById('speakerAvatar');
+      const speakerFullName = document.getElementById('speakerFullName');
+      const episodeSynopsis = document.getElementById('episodeSynopsis');
+      const episodeQuote = document.getElementById('episodeQuote');
+      const btnPrevEp = document.getElementById('btnPrevEp');
+      const btnNextEp = document.getElementById('btnNextEp');
+
+      const sidebarSeriesHeading = document.getElementById('sidebarSeriesHeading');
+      const sidebarEpBadge = document.getElementById('sidebarEpBadge');
+      const progressText = document.getElementById('progressText');
+      const progressPercent = document.getElementById('progressPercent');
+      const progressFill = document.getElementById('progressFill');
+      const sidebarEpisodesList = document.getElementById('sidebarEpisodesList');
+      const sidebarSearchInput = document.getElementById('sidebarSearchInput');
+      const sidebarEpCountFiltered = document.getElementById('sidebarEpCountFiltered');
+
+      const btnCopyEpisodeLink = document.getElementById('btnCopyEpisodeLink');
+      const btnShareTop = document.getElementById('btnShareTop');
+      const btnAudioMode = document.getElementById('btnAudioMode');
+      const btnPdfNotes = document.getElementById('btnPdfNotes');
+      const btnBookmarkEp = document.getElementById('btnBookmarkEp');
+      const bookmarkText = document.getElementById('bookmarkText');
+
+      const btnBigPlay = document.getElementById('btnBigPlay');
+      const btnPlayPause = document.getElementById('btnPlayPause');
+      const ctrlPlayIcon = document.getElementById('ctrlPlayIcon');
+      const btnRewind10 = document.getElementById('btnRewind10');
+      const btnForward10 = document.getElementById('btnForward10');
+      const btnSpeed = document.getElementById('btnSpeed');
+      const speedLabel = document.getElementById('speedLabel');
+      const btnFullscreen = document.getElementById('btnFullscreen');
+      const watchPlayerFrame = document.getElementById('watchPlayerFrame');
+      const watchScrubBar = document.getElementById('watchScrubBar');
+      const watchScrubFill = document.getElementById('watchScrubFill');
+      const watchScrubHandle = document.getElementById('watchScrubHandle');
+      const watchTimeDisplay = document.getElementById('watchTimeDisplay');
+
+      const toast = document.getElementById('watchToast');
+      const toastMsg = document.getElementById('watchToastMsg');
+
+      let isPlaying = false;
+      let isAudioOnly = false;
+      let isBookmarked = false;
+      let toastTimer = null;
+      const speeds = ['1.0x', '1.25x', '1.5x', '0.75x'];
+      let speedIdx = 0;
+      let currentProgress = 24; // %
+
+      // Quản lý trạng thái "Đã Huân Tu" lưu trong localStorage
+      const completedStorageKey = `huantu_${series.id}`;
+      let completedEpisodes = new Set();
+
+      function loadCompletedEpisodes() {
+        try {
+          const raw = localStorage.getItem(completedStorageKey);
+          if (raw) {
+            completedEpisodes = new Set(JSON.parse(raw));
+            return;
+          }
+        } catch (e) {}
+
+        // Mặc định ban đầu: các tập trước tập hiện tại (ep < epNum) được ghi nhận là Đã huân tu
+        completedEpisodes = new Set();
+        for (let i = 1; i < epNum; i++) {
+          completedEpisodes.add(i);
+        }
+        saveCompletedEpisodes();
+      }
+
+      function saveCompletedEpisodes() {
+        try {
+          localStorage.setItem(completedStorageKey, JSON.stringify(Array.from(completedEpisodes)));
+        } catch (e) {}
+      }
+
+      function updateProgressDisplay() {
+        const completedCount = completedEpisodes.size;
+        const percent = Math.min(100, Math.round((completedCount / series.total) * 100));
+        progressText.innerHTML = `Đang học: Tập ${epNum} / ${series.total} <span class="watch-progress-huantu">• Đã huân tu ${completedCount} tập</span>`;
+        progressPercent.textContent = `${percent}%`;
+        progressFill.style.width = `${Math.max(percent, (completedCount > 0 ? 4 : 1))}%`;
+      }
+
+      function showToast(msg) {
+        if (!toast || !toastMsg) return;
+        toastMsg.textContent = msg;
+        toast.classList.add('show');
+        if (toastTimer) clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () {
+          toast.classList.remove('show');
+        }, 3200);
+      }
+
+      // 4. Hàm cập nhật giao diện theo tập
+      function loadEpisode(targetEpNum, shouldPlay) {
+        if (targetEpNum < 1) targetEpNum = 1;
+        if (targetEpNum > series.total) targetEpNum = series.total;
+        epNum = targetEpNum;
+
+        const epData = series.episodes.find(function (e) { return e.ep === epNum; }) || series.episodes[0];
+        const epPad = epNum < 10 ? '0' + epNum : epNum;
+
+        // Cập nhật Document Title & Navigation
+        pageTitle.textContent = `Tập ${epPad} - ${epData.title} | ${series.title} · Tịnh Độ An Trú`;
+        navSeriesTitle.textContent = series.shortTitle || series.title;
+        navEpisodeTitle.textContent = `Tập ${epPad}`;
+
+        // Cập nhật URL trình duyệt không cần reload trang để tiện copy share
+        const newUrl = `${window.location.pathname}?series=${series.id}&ep=${epNum}`;
+        window.history.pushState({ series: series.id, ep: epNum }, '', newUrl);
+
+        // Cập nhật Player & Meta
+        if (epBadge) epBadge.textContent = `Tập ${epPad} / ${series.total}`;
+        if (epDurationText) epDurationText.textContent = `⏱ Thời lượng: ${epData.duration}`;
+        if (episodeMainTitle) episodeMainTitle.textContent = epData.title;
+        if (videoSubtitle) videoSubtitle.textContent = `"${epData.title} - Lời dạy sâu xa của Đức Phật dẫn lối vãng sanh..."`;
+        if (speakerAvatar) speakerAvatar.src = series.speakerAvatar || series.img;
+        if (speakerFullName) speakerFullName.textContent = series.speaker;
+        if (episodeSynopsis) episodeSynopsis.textContent = epData.synopsis || series.synopsis;
+        if (episodeQuote) episodeQuote.textContent = epData.quote || series.quote;
+        if (videoPoster) videoPoster.src = series.img;
+
+        // Cập nhật nút Prev/Next
+        btnPrevEp.disabled = (epNum <= 1);
+        btnNextEp.disabled = (epNum >= series.total);
+
+        // Cập nhật Tiến độ Playlist
+        updateProgressDisplay();
+
+        // Đánh dấu active trong Sidebar List
+        sidebarEpisodesList.querySelectorAll('.watch-ep-item').forEach(function (el) {
+          const thisEp = parseInt(el.getAttribute('data-ep'), 10);
+          if (thisEp === epNum) {
+            el.classList.add('active');
+            el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          } else {
+            el.classList.remove('active');
+          }
+        });
+
+        if (shouldPlay) {
+          setPlayState(true);
+          showToast(`Đang phát: ${epData.title}`);
+        }
+      }
+
+      function setPlayState(playing) {
+        isPlaying = playing;
+        const PAUSE_SVG = '<rect x="6" y="5" width="4" height="14"></rect><rect x="14" y="5" width="4" height="14"></rect>';
+        const PLAY_SVG = '<polygon points="7,5 19,12 7,19"/>';
+
+        if (isPlaying) {
+          ctrlPlayIcon.innerHTML = PAUSE_SVG;
+          btnBigPlay.style.opacity = '0';
+          btnBigPlay.style.pointerEvents = 'none';
+        } else {
+          ctrlPlayIcon.innerHTML = PLAY_SVG;
+          btnBigPlay.style.opacity = '1';
+          btnBigPlay.style.pointerEvents = 'auto';
+        }
+      }
+
+      // 5. Render Sidebar Episodes List
+      function renderSidebarList(filterText) {
+        const q = (filterText || '').trim().toLowerCase();
+        const filtered = series.episodes.filter(function (ep) {
+          if (!q) return true;
+          return ep.title.toLowerCase().includes(q) || String(ep.ep).includes(q);
+        });
+
+        sidebarEpCountFiltered.textContent = `${filtered.length} tập`;
+
+        if (filtered.length === 0) {
+          sidebarEpisodesList.innerHTML = `
+            <div style="text-align: center; padding: 36px 12px; font-size: 13px; color: var(--text-muted);">
+              Không tìm thấy tập phù hợp với "<strong>${filterText}</strong>"
+            </div>
+          `;
+          return;
+        }
+
+        sidebarEpisodesList.innerHTML = filtered.map(function (ep) {
+          const isActive = (ep.ep === epNum) ? 'active' : '';
+          const isCompleted = completedEpisodes.has(ep.ep);
+          const epPad = ep.ep < 10 ? '0' + ep.ep : ep.ep;
+          return `
+            <div class="watch-ep-item ${isActive} ${isCompleted ? 'is-completed' : ''}" data-ep="${ep.ep}" role="button" tabindex="0">
+              <div class="watch-ep-left">
+                <span class="watch-ep-num">Tập ${epPad}</span>
+                <div class="watch-ep-info">
+                  <span class="watch-ep-name" title="${ep.title}">${ep.title}</span>
+                  <div class="watch-ep-meta-row">
+                    <span class="watch-ep-duration">${ep.duration} • Pháp âm HD</span>
+                    ${isCompleted ? `
+                      <span class="watch-ep-completed-tag" title="Tập này bạn đã hoàn thành huân tu">
+                        <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                        <span>Đã huân tu</span>
+                      </span>
+                    ` : ''}
+                  </div>
+                </div>
+              </div>
+              <div class="watch-ep-right-icon">
+                <div class="watch-audio-visualizer">
+                  <span class="watch-wave-bar"></span>
+                  <span class="watch-wave-bar"></span>
+                  <span class="watch-wave-bar"></span>
+                </div>
+                ${isCompleted ? `
+                  <div class="watch-check-badge" title="Đã huân tu • Nhấn để nghe lại">
+                    <svg class="watch-check-svg" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    <svg class="watch-play-hover-svg" width="11" height="11" fill="currentColor" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
+                  </div>
+                ` : `
+                  <svg class="watch-play-default-svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
+                `}
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        sidebarEpisodesList.querySelectorAll('.watch-ep-item').forEach(function (itemEl) {
+          itemEl.addEventListener('click', function () {
+            const chosenEp = parseInt(itemEl.getAttribute('data-ep'), 10);
+            loadEpisode(chosenEp, true);
+          });
+        });
+      }
+
+      // Khởi tạo Lịch sử Huân Tu & Sidebar
+      loadCompletedEpisodes();
+      sidebarSeriesHeading.textContent = series.title;
+      sidebarEpBadge.textContent = `${series.total} tập`;
+      renderSidebarList('');
+
+      // Nạp tập ban đầu
+      loadEpisode(epNum, false);
+
+      // 6. Xử lý sự kiện tìm kiếm tập
+      if (sidebarSearchInput) {
+        sidebarSearchInput.addEventListener('input', function (e) {
+          renderSidebarList(e.target.value);
+        });
+      }
+
+      // 7. Xử lý nút Tập Trước / Tập Sau
+      btnPrevEp.addEventListener('click', function () {
+        if (epNum > 1) loadEpisode(epNum - 1, true);
+      });
+
+      btnNextEp.addEventListener('click', function () {
+        // Tự động ghi nhận tập hiện tại đã hoàn thành huân tu khi chuyển tiếp
+        completedEpisodes.add(epNum);
+        saveCompletedEpisodes();
+        if (epNum < series.total) {
+          loadEpisode(epNum + 1, true);
+          renderSidebarList(sidebarSearchInput ? sidebarSearchInput.value : '');
+        }
+      });
+
+      // 8. Tương tác phát video (Play / Pause / Scrub)
+      btnBigPlay.addEventListener('click', function () {
+        setPlayState(true);
+        showToast('Đang phát bài giảng video');
+      });
+
+      btnPlayPause.addEventListener('click', function () {
+        setPlayState(!isPlaying);
+      });
+
+      btnRewind10.addEventListener('click', function () {
+        showToast('Đã lùi 10 giây');
+      });
+
+      btnForward10.addEventListener('click', function () {
+        showToast('Đã tua tới 10 giây');
+      });
+
+      btnSpeed.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        speedLabel.textContent = speeds[speedIdx];
+        showToast(`Tốc độ phát: ${speeds[speedIdx]}`);
+      });
+
+      btnFullscreen.addEventListener('click', function () {
+        if (!document.fullscreenElement) {
+          watchPlayerFrame.requestFullscreen().catch(function () {});
+        } else {
+          document.exitFullscreen().catch(function () {});
+        }
+      });
+
+      watchScrubBar.addEventListener('click', function (e) {
+        const rect = watchScrubBar.getBoundingClientRect();
+        const clickX = e.clientX - rect.left;
+        const width = rect.width;
+        currentProgress = Math.max(0, Math.min(100, Math.round((clickX / width) * 100)));
+        watchScrubFill.style.width = currentProgress + '%';
+        watchScrubHandle.style.left = currentProgress + '%';
+        const mins = Math.floor((currentProgress / 100) * 60);
+        const secs = Math.floor((currentProgress % 1) * 60);
+        watchTimeDisplay.textContent = `${mins < 10 ? '0' + mins : mins}:${secs < 10 ? '0' + secs : secs} / 60:00`;
+      });
+
+      // 9. Tính năng "Sao chép liên kết" để gửi chia sẻ
+      function copyCurrentUrl() {
+        const fullUrl = window.location.href;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(fullUrl).then(function () {
+            showToast(`✓ Đã sao chép liên kết Tập ${epNum}! Bạn có thể gửi chia sẻ ngay.`);
+          }).catch(function () {
+            fallbackCopy(fullUrl);
+          });
+        } else {
+          fallbackCopy(fullUrl);
+        }
+      }
+
+      function fallbackCopy(text) {
+        const temp = document.createElement('textarea');
+        temp.value = text;
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand('copy');
+        document.body.removeChild(temp);
+        showToast(`✓ Đã sao chép liên kết Tập ${epNum}! Bạn có thể gửi chia sẻ ngay.`);
+      }
+
+      btnCopyEpisodeLink.addEventListener('click', copyCurrentUrl);
+      btnShareTop.addEventListener('click', copyCurrentUrl);
+
+      // 10. Chế độ chỉ nghe Audio (Tắt video tiết kiệm pin)
+      btnAudioMode.addEventListener('click', function () {
+        isAudioOnly = !isAudioOnly;
+        if (isAudioOnly) {
+          btnAudioMode.style.backgroundColor = 'var(--btn-dark)';
+          btnAudioMode.style.color = '#ffffff';
+          videoPoster.style.filter = 'brightness(0.35) blur(4px)';
+          showToast('🎧 Đã chuyển sang chế độ chỉ nghe Audio (tiết kiệm pin)');
+        } else {
+          btnAudioMode.style.backgroundColor = '';
+          btnAudioMode.style.color = '';
+          videoPoster.style.filter = 'brightness(0.85)';
+          showToast('📺 Đã bật lại chế độ xem Video');
+        }
+      });
+
+      // 11. Tải bản in kinh văn PDF
+      btnPdfNotes.addEventListener('click', function () {
+        showToast(`📄 Đang mở tài liệu kinh văn bản in của Tập ${epNum}...`);
+      });
+
+      // 12. Lưu bài giảng
+      btnBookmarkEp.addEventListener('click', function () {
+        isBookmarked = !isBookmarked;
+        if (isBookmarked) {
+          btnBookmarkEp.style.backgroundColor = 'var(--zen-green-bg)';
+          btnBookmarkEp.style.borderColor = 'var(--zen-green-border)';
+          btnBookmarkEp.style.color = 'var(--zen-green-text)';
+          bookmarkText.textContent = 'Đã lưu sổ tay';
+          showToast(`⭐ Đã lưu Tập ${epNum} vào sổ tay tu học!`);
+        } else {
+          btnBookmarkEp.style.backgroundColor = '';
+          btnBookmarkEp.style.borderColor = '';
+          btnBookmarkEp.style.color = '';
+          bookmarkText.textContent = 'Lưu bài giảng';
+          showToast('Đã bỏ lưu bài giảng');
+        }
+      });
+
+      // 13. Chuyển đổi Dark Mode
+      const btnThemeToggle = document.getElementById('btnThemeToggle');
+      if (btnThemeToggle) {
+        if (localStorage.getItem('theme_preference') === 'dark') {
+          document.body.classList.add('dark-mode');
+        }
+        btnThemeToggle.addEventListener('click', function () {
+          document.body.classList.toggle('dark-mode');
+          const isDark = document.body.classList.contains('dark-mode');
+          localStorage.setItem('theme_preference', isDark ? 'dark' : 'light');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

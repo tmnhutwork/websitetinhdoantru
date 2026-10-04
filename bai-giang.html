@@ -1,0 +1,2039 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pháp Âm & Bài Giảng · Tịnh Độ An Trú</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="bai-giang.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪷</text></svg>">
+</head>
+<body class="sutra-page bai-giang-body">
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo" id="brand-logo">
+        <span class="lotus-icon">🪷</span>
+        <span class="brand-name">tịnh độ <span class="brand-dot">·</span> <em class="brand-sub">an trú</em></span>
+      </a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html#kham-pha" class="nav-link">Giáo Lý</a>
+        <a href="bai-giang.html" class="nav-link active">Bài Giảng</a>
+        <a href="kinh-dien.html" class="nav-link">Kinh Điển</a>
+        <a href="index.html#thoi-khoa" class="nav-link">Thời Khóa</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#" class="btn btn-ghost" style="padding: 8px 16px;">Đăng nhập</a>
+        <a href="#" class="btn btn-primary" style="padding: 8px 20px;">Đăng ký</a>
+        <button class="icon-btn theme-toggle" id="btn-theme-toggle" title="Chuyển chế độ đọc ban đêm" aria-label="Chuyển chế độ đọc">
+          <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path><path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path><path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+        </button>
+        <button class="mobile-menu-btn" id="btn-mobile-menu" aria-label="Mở menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main class="bai-giang-page">
+    
+    <!-- Hero Section (Panoramic Watercolor Blend Layout - Frosted Glass Island) -->
+    <section class="bg-hero" id="bgHeroSection">
+      <!-- Lớp tranh phong cảnh tràn viền hòa tan xuống nền -->
+      <div class="bg-hero-backdrop">
+        <img src="assets/images/BaiGiang/bg_hero_zen_landscape.jpg" alt="Tranh sơn thủy thiền tịnh Tây Phương" class="bg-hero-backdrop-img">
+        <div class="bg-hero-backdrop-gradient"></div>
+      </div>
+
+      <!-- Khối nội dung trung tâm -->
+      <div class="bg-hero-content">
+        <div class="bg-hero-badge">
+          <span class="bg-hero-badge-icon">🪷</span>
+          <span class="bg-hero-badge-text">Kho Pháp Âm Tịnh Độ</span>
+        </div>
+        
+        <h1 class="bg-hero-title">
+          <span class="bg-hero-title-main">Lắng nghe để hiểu,</span><br>
+          <em class="bg-hero-title-accent">thực hành để an tâm</em>
+        </h1>
+        
+        <p class="bg-hero-desc">
+          Những lời dạy quý báu của chư Tôn đức, giúp bạn thảnh thơi<br class="bg-desc-br">an trú trong hiện tại và nuôi dưỡng tâm lành mỗi ngày.
+        </p>
+        
+        <!-- Thanh Tìm Kiếm Đảo Thủy Tinh (Frosted Glass Search Island) -->
+        <div class="bg-hero-search-hub">
+          <div class="bg-search-wrapper">
+            <svg class="bg-search-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            <input type="text" class="bg-search-input" id="bgHeroSearchInput" placeholder="Tìm bài giảng, giảng sư, chủ đề tu học...">
+            <button class="bg-search-submit" id="bgHeroSearchBtn" title="Tìm kiếm" aria-label="Tìm kiếm">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </button>
+          </div>
+
+          <!-- Quick Suggestion Chips (Gợi ý từ khóa một chạm cho Phật tử) -->
+          <div class="bg-hero-quick-tags">
+            <span class="bg-quick-tag-label">
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>
+              Gợi ý nhanh:
+            </span>
+            <div class="bg-quick-tags-list">
+              <button type="button" class="bg-quick-chip" data-search-term="Kinh Vô Lượng Thọ" data-scroll-target="secSeries">
+                <span>📿 Kinh Vô Lượng Thọ</span>
+              </button>
+              <button type="button" class="bg-quick-chip" data-search-term="HT. Thích Tịnh Không" data-filter-speaker="tinh-khong" data-scroll-target="secSeries">
+                <span>🌸 HT. Tịnh Không</span>
+              </button>
+              <button type="button" class="bg-quick-chip" data-search-term="Thập Niệm Ký Số" data-scroll-target="secPathway">
+                <span>🧘 Thập Niệm Ký Số</span>
+              </button>
+              <a href="van-dap.html" class="bg-quick-chip" style="text-decoration: none;">
+                <span>🌿 Trừ Vọng Niệm</span>
+              </a>
+              <a href="van-dap.html" class="bg-quick-chip" style="text-decoration: none;">
+                <span>🕊️ Hộ Niệm Lâm Chung</span>
+              </a>
+              <button type="button" class="bg-quick-chip" data-search-term="Nhạc Niệm Phật" data-scroll-target="secChanting">
+                <span>🎵 Nhạc Niệm Phật</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LA BÀN 3 CÁNH CỬA ĐI VÀO PHÁP MÔN TỊNH ĐỘ (POST-HERO GATEWAYS) -->
+    <section class="bg-gateways-section" id="secGateways">
+      <div class="bg-gateways-container">
+        <div class="bg-bento-header">
+          <div class="bg-bento-badge">
+            <span>🧭</span>
+            <span>La Bàn Khám Phá</span>
+          </div>
+          <h2 class="bg-bento-title">Ba Cánh Cửa Đi Vào Pháp Môn Tịnh Độ</h2>
+          <p class="bg-bento-subtitle">Định hướng con đường tu học phù hợp với trình độ, thời gian và chí nguyện của bạn</p>
+        </div>
+
+        <div class="bg-bento-grid">
+          <!-- Cánh cửa 1: Lộ Trình (Featured Card) -->
+          <div class="bg-bento-card bg-bento-card-primary" id="bentoCardPathway">
+            <div class="bg-bento-card-top">
+              <span class="bg-bento-tag">Nền tảng căn bản</span>
+              <span class="bg-bento-icon">🧭</span>
+            </div>
+            <h3 class="bg-bento-card-title">Lộ Trình Tín – Nguyện – Hạnh</h3>
+            <p class="bg-bento-card-desc">Khám phá lộ trình 3 chặng tuần tự: Khởi Tín kiên cố, Phát Nguyện tha thiết và Hành Trì niệm Phật nhất tâm bất loạn.</p>
+            <div class="bg-bento-pillars">
+              <span class="bg-bento-pill">🌱 1. Khởi Tín</span>
+              <span class="bg-bento-pill">🕊️ 2. Phát Nguyện</span>
+              <span class="bg-bento-pill">📿 3. Hành Trì</span>
+            </div>
+            <a href="#secPathway" class="bg-bento-action-link" data-scroll-to="secPathway">
+              <span>Vào Lộ Trình Tu Học</span>
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            </a>
+          </div>
+
+          <!-- Cánh cửa 2: Kho Trọn Bộ Series -->
+          <div class="bg-bento-card bg-bento-card-series" id="bentoCardSeries">
+            <div class="bg-bento-card-top">
+              <span class="bg-bento-tag">Huân tu sâu sắc</span>
+              <span class="bg-bento-icon">📚</span>
+            </div>
+            <h3 class="bg-bento-card-title">Kho Trọn Bộ Giảng Kinh</h3>
+            <p class="bg-bento-card-desc">Hệ thống Boxset các bộ đại kinh Tịnh Độ (Kinh Vô Lượng Thọ, Quán Kinh, Địa Tạng, Niệm Phật Thập Yếu) giảng giải từng tập từ đầu đến cuối.</p>
+            <a href="#secSeries" class="bg-bento-action-link secondary" data-scroll-to="secSeries">
+              <span>Khám phá các Series</span>
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            </a>
+          </div>
+
+          <!-- Cánh cửa 3: Vấn Đáp Phật Pháp -->
+          <div class="bg-bento-card bg-bento-card-qa" id="bentoCardQA">
+            <div class="bg-bento-card-top">
+              <span class="bg-bento-tag">Tháo gỡ khúc mắc</span>
+              <span class="bg-bento-icon">💬</span>
+            </div>
+            <h3 class="bg-bento-card-title">Góc Vấn Đáp Tu Học</h3>
+            <p class="bg-bento-card-desc">Giải mã hơn 100 thắc mắc thực tiễn khi niệm Phật, hóa giải các chướng duyên gia đình, công việc và phút lâm chung.</p>
+            <a href="van-dap.html" class="bg-bento-action-link secondary">
+              <span>Xem trang Vấn Đáp</span>
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- 1. LỘ TRÌNH TU HỌC: TÍN – NGUYỆN – HẠNH -->
+    <section class="bg-pathway-section" id="secPathway">
+      
+      <div class="bg-pathway-header">
+        <div class="bg-pathway-badge">
+          <span>🪷</span>
+          <span>Ba Món Tư Lương Thiết Yếu</span>
+        </div>
+        <h2 class="bg-pathway-title">Lộ Trình Tu Học: Tín – Nguyện – Hạnh</h2>
+        <p class="bg-pathway-quote">“Được vãng sanh hay không toàn do Tín – Nguyện có hay không; Phẩm vị cao hay thấp do Trì Danh sâu hay cạn.” — Ngẫu Ích Đại Sư</p>
+      </div>
+
+      <div class="bg-opt3-pillars-grid">
+        <!-- Cột 1: Khởi Tín -->
+          <div class="bg-opt3-col">
+            <!-- Hình ảnh nguyên bản bo tròn 4 góc -->
+            <div class="bg-opt3-media">
+              <img src="assets/images/Muon-hieu-Phat-Phap-co-ban.png" alt="Khởi Tín Kiên Cố" class="bg-opt3-img">
+              <span class="bg-opt3-stage-badge">Chặng 01 · Khởi Tín</span>
+            </div>
+
+            <!-- Nội dung chi tiết chặng 1 -->
+            <div class="bg-opt3-content">
+              <div class="bg-opt3-head-group">
+                <h4 class="bg-opt3-col-title">Khởi Tín Kiên Cố</h4>
+                <p class="bg-opt3-col-desc">Chánh tín kiên cố như núi Tu Di vào Bản Nguyện Di Đà.</p>
+              </div>
+
+              <!-- Chỉ giữ lại phần nhãn (Labels) cốt tủy -->
+              <div class="bg-opt3-keys-row">
+                <span class="bg-opt3-key-tag">✦ Phá Nghi Sinh Tín</span>
+                <span class="bg-opt3-key-tag">✦ Định Vị Tín Tâm</span>
+                <span class="bg-opt3-key-tag">✦ 48 Đại Nguyện</span>
+              </div>
+
+              <!-- Danh sách 3 bài pháp âm -->
+              <div class="bg-opt3-tracks-wrap">
+                <div class="bg-opt3-tracks-heading">3 Bài Pháp Âm Trọng Yếu</div>
+                <div class="bg-opt3-mini-track" data-track-id="p1-t1">
+                  <span class="bg-opt3-mini-dot">1</span>
+                  <div class="bg-opt3-mini-track-info">
+                    <span class="bg-opt3-mini-name">Tịnh Độ có thật hay không?</span>
+                    <span class="bg-opt3-mini-speaker">TT. Thích Chân Quang</span>
+                  </div>
+                  <span class="bg-opt3-mini-time">35p</span>
+                </div>
+                <div class="bg-opt3-mini-track" data-track-id="p1-t2">
+                  <span class="bg-opt3-mini-dot">2</span>
+                  <div class="bg-opt3-mini-track-info">
+                    <span class="bg-opt3-mini-name">Khởi phát niềm tin kiên cố</span>
+                    <span class="bg-opt3-mini-speaker">HT. Thích Trí Quảng</span>
+                  </div>
+                  <span class="bg-opt3-mini-time">28p</span>
+                </div>
+                <div class="bg-opt3-mini-track" data-track-id="p1-t3">
+                  <span class="bg-opt3-mini-dot">3</span>
+                  <div class="bg-opt3-mini-track-info">
+                    <span class="bg-opt3-mini-name">48 Lời Đại Nguyện Di Đà</span>
+                    <span class="bg-opt3-mini-speaker">HT. Tuyên Hóa</span>
+                  </div>
+                  <span class="bg-opt3-mini-time">42p</span>
+                </div>
+              </div>
+
+              <!-- Hàng hành động: Nút Học + Xem chi tiết -->
+              <div class="bg-opt3-action-row">
+                <button class="bg-opt3-btn-study" data-opt3-stage="0">
+                  <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><polygon points="7,5 19,12 7,19"/></svg>
+                  <span>Vào học ngay</span>
+                </button>
+                <a href="javascript:void(0)" class="bg-opt3-link-detail" data-opt3-stage="0">
+                  <span>Xem chi tiết</span>
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cột 2: Phát Nguyện -->
+          <div class="bg-opt3-col">
+            <!-- Hình ảnh nguyên bản bo tròn 4 góc -->
+            <div class="bg-opt3-media">
+              <img src="assets/images/BaiGiang/bg_card_lotus.jpg" alt="Phát Nguyện Tha Thiết" class="bg-opt3-img">
+              <span class="bg-opt3-stage-badge">Chặng 02 · Phát Nguyện</span>
+            </div>
+
+            <!-- Nội dung chi tiết chặng 2 -->
+            <div class="bg-opt3-content">
+              <div class="bg-opt3-head-group">
+                <h4 class="bg-opt3-col-title">Phát Nguyện Tha Thiết</h4>
+                <p class="bg-opt3-col-desc">Buông xả duyên trần, phát bồ đề tâm cầu sanh Cực Lạc.</p>
+              </div>
+
+              <!-- Chỉ giữ lại phần nhãn (Labels) cốt tủy -->
+              <div class="bg-opt3-keys-row">
+                <span class="bg-opt3-key-tag">✦ Nhận Diện Khổ Đau</span>
+                <span class="bg-opt3-key-tag">✦ Phát Tâm Bồ Đề</span>
+                <span class="bg-opt3-key-tag">✦ Quán Chiếu Cực Lạc</span>
+              </div>
+
+              <!-- Danh sách 3 bài pháp âm -->
+              <div class="bg-opt3-tracks-wrap">
+                <div class="bg-opt3-tracks-heading">3 Bài Pháp Âm Trọng Yếu</div>
+                <div class="bg-opt3-mini-track" data-track-id="p2-t1">
+                  <span class="bg-opt3-mini-dot">1</span>
+                  <div class="bg-opt3-mini-track-info">
+                    <span class="bg-opt3-mini-name">Bồ Đề Tâm & Vãng Sanh</span>
+                    <span class="bg-opt3-mini-speaker">ĐĐ. Thích Phước Tiến</span>
+                  </div>
+                  <span class="bg-opt3-mini-time">32p</span>
+                </div>
+                <div class="bg-opt3-mini-track" data-track-id="p2-t2">
+                  <span class="bg-opt3-mini-dot">2</span>
+                  <div class="bg-opt3-mini-track-info">
+                    <span class="bg-opt3-mini-name">Buông xả duyên trần lập nguyện</span>
+                    <span class="bg-opt3-mini-speaker">HT. Thích Thanh Từ</span>
+                  </div>
+                  <span class="bg-opt3-mini-time">30p</span>
+                </div>
+                <div class="bg-opt3-mini-track" data-track-id="p2-t3">
+                  <span class="bg-opt3-mini-dot">3</span>
+                  <div class="bg-opt3-mini-track-info">
+                    <span class="bg-opt3-mini-name">Cảnh giới Cực Lạc trang nghiêm</span>
+                    <span class="bg-opt3-mini-speaker">TT. Thích Nhật Từ</span>
+                  </div>
+                  <span class="bg-opt3-mini-time">40p</span>
+                </div>
+              </div>
+
+              <!-- Hàng hành động: Nút Học + Xem chi tiết -->
+              <div class="bg-opt3-action-row">
+                <button class="bg-opt3-btn-study" data-opt3-stage="1">
+                  <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><polygon points="7,5 19,12 7,19"/></svg>
+                  <span>Vào học ngay</span>
+                </button>
+                <a href="javascript:void(0)" class="bg-opt3-link-detail" data-opt3-stage="1">
+                  <span>Xem chi tiết</span>
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cột 3: Chuyên Hạnh -->
+          <div class="bg-opt3-col">
+            <!-- Hình ảnh nguyên bản bo tròn 4 góc -->
+            <div class="bg-opt3-media">
+              <img src="assets/images/BaiGiang/bg_card_meditation.jpg" alt="Chuyên Hạnh Trì Danh" class="bg-opt3-img">
+              <span class="bg-opt3-stage-badge">Chặng 03 · Chuyên Hạnh</span>
+            </div>
+
+            <!-- Nội dung chi tiết chặng 3 -->
+            <div class="bg-opt3-content">
+              <div class="bg-opt3-head-group">
+                <h4 class="bg-opt3-col-title">Chuyên Hạnh Trì Danh</h4>
+                <p class="bg-opt3-col-desc">Nhiếp trọn sáu căn, an trú câu hồng danh nối tiếp đời thường.</p>
+              </div>
+
+              <!-- Chỉ giữ lại phần nhãn (Labels) cốt tủy -->
+              <div class="bg-opt3-keys-row">
+                <span class="bg-opt3-key-tag">✦ Thập Niệm Ký Số</span>
+                <span class="bg-opt3-key-tag">✦ Chuyển Hóa Vọng Niệm</span>
+                <span class="bg-opt3-key-tag">✦ An Trú Đời Thường</span>
+              </div>
+
+              <!-- Danh sách 3 bài pháp âm -->
+              <div class="bg-opt3-tracks-wrap">
+                <div class="bg-opt3-tracks-heading">3 Bài Pháp Âm Trọng Yếu</div>
+                <div class="bg-opt3-mini-track" data-track-id="p3-t1">
+                  <span class="bg-opt3-mini-dot">1</span>
+                  <div class="bg-opt3-mini-track-info">
+                    <span class="bg-opt3-mini-name">Thập Niệm Ký Số Ấn Quang</span>
+                    <span class="bg-opt3-mini-speaker">HT. Tịnh Không</span>
+                  </div>
+                  <span class="bg-opt3-mini-time">25p</span>
+                </div>
+                <div class="bg-opt3-mini-track" data-track-id="p3-t2">
+                  <span class="bg-opt3-mini-dot">2</span>
+                  <div class="bg-opt3-mini-track-info">
+                    <span class="bg-opt3-mini-name">Nhiếp tâm trừ vọng niệm</span>
+                    <span class="bg-opt3-mini-speaker">HT. Thích Trí Quảng</span>
+                  </div>
+                  <span class="bg-opt3-mini-time">34p</span>
+                </div>
+                <div class="bg-opt3-mini-track" data-track-id="p3-t3">
+                  <span class="bg-opt3-mini-dot">3</span>
+                  <div class="bg-opt3-mini-track-info">
+                    <span class="bg-opt3-mini-name">Thường niệm trong đời sống</span>
+                    <span class="bg-opt3-mini-speaker">NS. Thích Nữ Hương Nhũ</span>
+                  </div>
+                  <span class="bg-opt3-mini-time">27p</span>
+                </div>
+              </div>
+
+              <!-- Hàng hành động: Nút Học + Xem chi tiết -->
+              <div class="bg-opt3-action-row">
+                <button class="bg-opt3-btn-study" data-opt3-stage="2">
+                  <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><polygon points="7,5 19,12 7,19"/></svg>
+                  <span>Vào học ngay</span>
+                </button>
+                <a href="javascript:void(0)" class="bg-opt3-link-detail" data-opt3-stage="2">
+                  <span>Xem chi tiết</span>
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+<!-- 2. KHO TRỌN BỘ SERIES GIẢNG KINH (EPISODIC SERIES HUB) -->
+    <section class="bg-series-section" id="secSeries">
+      <div class="bg-series-header">
+        <span class="bg-series-badge">
+          <span>📚</span>
+          <span>Pháp Bảo Trọn Bộ</span>
+        </span>
+        <h2 class="bg-series-title">Kho Trọn Bộ Series Giảng Kinh Tuyển Chọn</h2>
+        <p class="bg-series-desc">
+          Các bộ kinh điển Đại Thừa và chuyên luận Tịnh Độ được chư Đại Đức, Tôn Đức giảng giải tuần tự từng tập từ đầu đến cuối. Bố trí dạng bộ (Boxset) giúp quý Phật tử huân tu sâu sắc, nghe xuyên suốt và có hệ thống mà không bị rối mắt.
+        </p>
+      </div>
+
+      <!-- Giảng Sư Filter Pills -->
+      <div class="bg-series-filters" role="tablist" aria-label="Lọc theo giảng sư">
+        <button class="bg-series-filter-pill active" data-speaker="all">Tất cả bộ giảng</button>
+        <button class="bg-series-filter-pill" data-speaker="tinh-khong">HT. Thích Tịnh Không</button>
+        <button class="bg-series-filter-pill" data-speaker="tuyen-hoa">HT. Tuyên Hóa</button>
+        <button class="bg-series-filter-pill" data-speaker="thien-tam">HT. Thích Thiền Tâm</button>
+        <button class="bg-series-filter-pill" data-speaker="tri-quang">HT. Thích Trí Quảng</button>
+      </div>
+
+      <!-- Series Grid (4 Series Boxset Cards) -->
+      <div class="bg-series-grid">
+
+        <!-- Series 1: Kinh Vô Lượng Thọ - HT. Tịnh Không -->
+        <article class="bg-series-card" data-speaker-key="tinh-khong" data-series-id="vlt-tinh-khong" title="Bấm để xem tổng quan và chọn tập">
+          <div class="bg-series-thumb-wrap" aria-label="Mở danh sách tập Kinh Vô Lượng Thọ">
+            <img src="assets/images/Kinh/kinh-vo-luong-tho.png" alt="Kinh Đại Thừa Vô Lượng Thọ" class="bg-series-thumb" loading="lazy">
+          </div>
+          <div class="bg-series-info">
+            <div class="bg-series-info-top">
+              <span class="bg-series-speaker">HT. Thích Tịnh Không Giảng Giải</span>
+              <h3 class="bg-series-name">Kinh Đại Thừa Vô Lượng Thọ Trang Nghiêm Thanh Tịnh Bình Đẳng Giác</h3>
+              <p class="bg-series-desc-short">Bộ kinh cốt tủy đệ nhất Tịnh Độ tông, xiển dương 48 đại nguyện của Đức Phật A Di Đà.</p>
+            </div>
+            <div class="bg-series-actions">
+              <button class="bg-btn-series-primary" data-series-id="vlt-tinh-khong" data-ep="1">
+                <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <span>Xem tập 1</span>
+              </button>
+              <button class="bg-btn-series-secondary" data-series-id="vlt-tinh-khong">
+                <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                <span>Chọn tập (80)</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Series 2: Kinh Địa Tạng - HT. Tuyên Hóa -->
+        <article class="bg-series-card" data-speaker-key="tuyen-hoa" data-series-id="dia-tang-tuyen-hoa" title="Bấm để xem tổng quan và chọn tập">
+          <div class="bg-series-thumb-wrap" aria-label="Mở danh sách tập Kinh Địa Tạng">
+            <img src="assets/images/Kinh/kinh-dia-tang.png" alt="Kinh Địa Tạng Bồ Tát Bổn Nguyện" class="bg-series-thumb" loading="lazy">
+          </div>
+          <div class="bg-series-info">
+            <div class="bg-series-info-top">
+              <span class="bg-series-speaker">HT. Tuyên Hóa Khai Thị Sơ Giải</span>
+              <h3 class="bg-series-name">Kinh Địa Tạng Bồ Tát Bổn Nguyện Giảng Giải</h3>
+              <p class="bg-series-desc-short">Bộ kinh nền tảng về hiếu đạo, thấu suốt nhân quả và đại nguyện của Đức Địa Tạng.</p>
+            </div>
+            <div class="bg-series-actions">
+              <button class="bg-btn-series-primary" data-series-id="dia-tang-tuyen-hoa" data-ep="1">
+                <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <span>Xem tập 1</span>
+              </button>
+              <button class="bg-btn-series-secondary" data-series-id="dia-tang-tuyen-hoa">
+                <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                <span>Chọn tập (45)</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Series 3: Niệm Phật Thập Yếu - HT. Thích Thiền Tâm -->
+        <article class="bg-series-card" data-speaker-key="thien-tam" data-series-id="thap-yeu-thien-tam" title="Bấm để xem tổng quan và chọn tập">
+          <div class="bg-series-thumb-wrap" aria-label="Mở danh sách tập Niệm Phật Thập Yếu">
+            <img src="assets/images/Kinh/dai-the-chi-niem-phat.png" alt="Niệm Phật Thập Yếu" class="bg-series-thumb" loading="lazy">
+          </div>
+          <div class="bg-series-info">
+            <div class="bg-series-info-top">
+              <span class="bg-series-speaker">HT. Thích Thiền Tâm Biên Soạn & Khai Thị</span>
+              <h3 class="bg-series-name">Niệm Phật Thập Yếu - Cẩm Nang Tu Tịnh Nghiệp</h3>
+              <p class="bg-series-desc-short">10 điều trọng yếu thực hành chuyên tu Tịnh Độ từ phát tâm đến giờ phút vãng sanh.</p>
+            </div>
+            <div class="bg-series-actions">
+              <button class="bg-btn-series-primary" data-series-id="thap-yeu-thien-tam" data-ep="1">
+                <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <span>Xem tập 1</span>
+              </button>
+              <button class="bg-btn-series-secondary" data-series-id="thap-yeu-thien-tam">
+                <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                <span>Chọn tập (15)</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Series 4: Kinh Quán Vô Lượng Thọ - HT. Thích Trí Quảng -->
+        <article class="bg-series-card" data-speaker-key="tri-quang" data-series-id="quan-vlt-tri-quang" title="Bấm để xem tổng quan và chọn tập">
+          <div class="bg-series-thumb-wrap" aria-label="Mở danh sách tập Kinh Quán Vô Lượng Thọ">
+            <img src="assets/images/Kinh/kinh-quan-vo-luong-tho.png" alt="Kinh Quán Vô Lượng Thọ" class="bg-series-thumb" loading="lazy">
+          </div>
+          <div class="bg-series-info">
+            <div class="bg-series-info-top">
+              <span class="bg-series-speaker">HT. Thích Trí Quảng Giảng Luận</span>
+              <h3 class="bg-series-name">Kinh Quán Vô Lượng Thọ Phật & Thập Lục Quán Môn</h3>
+              <p class="bg-series-desc-short">Phương pháp quán tưởng Cực Lạc Tây Phương, Tam Phước và Chín phẩm sen vàng.</p>
+            </div>
+            <div class="bg-series-actions">
+              <button class="bg-btn-series-primary" data-series-id="quan-vlt-tri-quang" data-ep="1">
+                <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <span>Xem tập 1</span>
+              </button>
+              <button class="bg-btn-series-secondary" data-series-id="quan-vlt-tri-quang">
+                <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                <span>Chọn tập (24)</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 2.5 NHẠC NIỆM PHẬT & THANH ÂM CỰC LẠC (PHONG CÁCH ELEVENLABS HERO CAROUSEL) -->
+    <section class="bg-chant-section" id="secChanting">
+      <div class="bg-chant-container">
+        
+        <!-- Header Section -->
+        <div class="bg-chant-header">
+          <div class="bg-chant-badge">
+            <span>🌿</span>
+            <span>Trợ Duyên Dưỡng Tâm · Không Gian Thanh Âm</span>
+          </div>
+          <h2 class="bg-chant-title">Nhạc Niệm Phật & Thanh Âm Cực Lạc</h2>
+          <p class="bg-chant-subtitle">
+            Khi tâm mỏi mệt sau giờ huân tu giáo lý, hãy thả lỏng thân tâm, lắng nghe từng giai điệu vi diệu và thầm niệm theo từng nhịp thở để an định tâm thức, tăng trưởng tín tâm.
+          </p>
+        </div>
+
+        <!-- ELEVENLABS 3D SPHERES STAGE -->
+        <div class="bg-eleven-stage-wrap">
+          <div class="bg-eleven-stage" id="elevenSpheresStage">
+            
+            <!-- Sphere 0: Sen Hồng Sương Mai -->
+            <div class="bg-eleven-sphere slot-center" data-index="0" data-title="Sen Hồng Sương Mai" data-speaker="TT. Thích Trí Thoát" data-sub="Điệu 6 Chữ Trầm Ấm · TT. Thích Trí Thoát · 45 phút" data-duration="45:00" data-img="assets/images/BaiGiang/bg_zen_lotus.jpg" data-quote="Âm điệu khoan thai, trang nghiêm từng câu chữ giúp định tâm trọn vẹn.">
+              <img src="assets/images/BaiGiang/bg_zen_lotus.jpg" alt="Sen Hồng Sương Mai" class="bg-eleven-sphere-img">
+              <div class="bg-eleven-sphere-overlay"></div>
+              <button type="button" class="bg-eleven-play-btn" aria-label="Phát nhạc">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><polygon points="7,5 19,12 7,19"/></svg>
+              </button>
+            </div>
+
+            <!-- Sphere 1: Chuông Ngân Chùa Xưa -->
+            <div class="bg-eleven-sphere slot-right-1" data-index="1" data-title="Chuông Ngân Chùa Xưa" data-speaker="Ca Đoàn Liên Hoa" data-sub="Tiếng Chuông & Tán Ca Di Đà · Ca Đoàn Liên Hoa · 38 phút" data-duration="38:00" data-img="assets/images/BaiGiang/bg_card_temple.jpg" data-quote="Âm vang tiếng chuông thanh tịnh đánh thức giác tánh, lắng dịu muôn vàn phiền não.">
+              <img src="assets/images/BaiGiang/bg_card_temple.jpg" alt="Chuông Ngân Chùa Xưa" class="bg-eleven-sphere-img">
+              <div class="bg-eleven-sphere-overlay"></div>
+              <button type="button" class="bg-eleven-play-btn" aria-label="Phát nhạc">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><polygon points="7,5 19,12 7,19"/></svg>
+              </button>
+            </div>
+
+            <!-- Sphere 2: Nhịp Mõ Thập Niệm -->
+            <div class="bg-eleven-sphere slot-right-2" data-index="2" data-title="Nhịp Mõ Thập Niệm" data-speaker="Đạo Tràng Giác Ngộ" data-sub="Đếm Số 3-3-4 Ấn Quang · Đạo Tràng Giác Ngộ · 60 phút" data-duration="60:00" data-img="assets/images/BaiGiang/bg_zen_mala.jpg" data-quote="Phương pháp đếm 1-10 của Ấn Quang Đại Sư, mỗi tiếng mõ đưa tâm về chánh niệm.">
+              <img src="assets/images/BaiGiang/bg_zen_mala.jpg" alt="Nhịp Mõ Thập Niệm" class="bg-eleven-sphere-img">
+              <div class="bg-eleven-sphere-overlay"></div>
+              <button type="button" class="bg-eleven-play-btn" aria-label="Phát nhạc">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><polygon points="7,5 19,12 7,19"/></svg>
+              </button>
+            </div>
+
+            <!-- Sphere 3: Tiếng Trúc Bên Hồ -->
+            <div class="bg-eleven-sphere slot-right-out" data-index="3" data-title="Tiếng Trúc Bên Hồ" data-speaker="Tịnh Độ Nhã Nhạc" data-sub="Hòa Tấu Cổ Tranh & Sáo · Tịnh Độ Nhã Nhạc · 32 phút" data-duration="32:00" data-img="assets/images/lotus.jpg" data-quote="Tiếng sáo trúc êm đềm như làn gió Tây Phương xua tan căng thẳng mệt mỏi.">
+              <img src="assets/images/lotus.jpg" alt="Tiếng Trúc Bên Hồ" class="bg-eleven-sphere-img">
+              <div class="bg-eleven-sphere-overlay"></div>
+              <button type="button" class="bg-eleven-play-btn" aria-label="Phát nhạc">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><polygon points="7,5 19,12 7,19"/></svg>
+              </button>
+            </div>
+
+            <!-- Sphere 4: Suối Ngọc Cực Lạc -->
+            <div class="bg-eleven-sphere slot-left-2" data-index="4" data-title="Suối Ngọc Cực Lạc" data-speaker="Ban Hộ Niệm Vãng Sanh" data-sub="Thanh Âm Suối Reo & Hồng Danh · Ban Hộ Niệm · 50 phút" data-duration="50:00" data-img="assets/images/Muon-tim-su-binh-an.png" data-quote="Dòng nước bát công đức reo ca pháp âm vi diệu, nâng niu giấc ngủ an lành.">
+              <img src="assets/images/Muon-tim-su-binh-an.png" alt="Suối Ngọc Cực Lạc" class="bg-eleven-sphere-img">
+              <div class="bg-eleven-sphere-overlay"></div>
+              <button type="button" class="bg-eleven-play-btn" aria-label="Phát nhạc">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><polygon points="7,5 19,12 7,19"/></svg>
+              </button>
+            </div>
+
+            <!-- Sphere 5: Sen Vàng Chiếu Sáng -->
+            <div class="bg-eleven-sphere slot-left-1" data-index="5" data-title="Sen Vàng Chiếu Sáng" data-speaker="Tịnh Tông Học Hội" data-sub="Niệm Phật Tứ Cú Thanh Thoát · Tịnh Tông Học Hội · 45 phút" data-duration="45:00" data-img="assets/images/Hinh ao sen.png" data-quote="Giai điệu thanh thoát du dương mở rộng tâm lượng hướng về cõi Tịnh Độ trang nghiêm.">
+              <img src="assets/images/Hinh ao sen.png" alt="Sen Vàng Chiếu Sáng" class="bg-eleven-sphere-img">
+              <div class="bg-eleven-sphere-overlay"></div>
+              <button type="button" class="bg-eleven-play-btn" aria-label="Phát nhạc">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><polygon points="7,5 19,12 7,19"/></svg>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ELEVENLABS INFO ROW: ARROW PREV + TITLE & QUOTE + ARROW NEXT -->
+        <div class="bg-eleven-info-row">
+          <button type="button" class="bg-eleven-arrow prev" id="btnElevenPrev" title="Giai điệu trước" aria-label="Giai điệu trước">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+          </button>
+
+          <div class="bg-eleven-center-info">
+            <div class="bg-eleven-title-line">
+              <h3 class="bg-eleven-title" id="elevenActiveTitle">Sen Hồng Sương Mai</h3>
+              <svg class="bg-eleven-arrow-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </div>
+            <p class="bg-eleven-desc" id="elevenActiveQuote">Âm điệu khoan thai, trang nghiêm từng câu chữ giúp định tâm&nbsp;trọn&nbsp;vẹn.</p>
+          </div>
+
+          <button type="button" class="bg-eleven-arrow next" id="btnElevenNext" title="Giai điệu kế tiếp" aria-label="Giai điệu kế tiếp">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+
+
+<!-- ==========================================================================
+       KHOẢNG THỞ CUỐI TRANG: MẢNG NGHỆ THUẬT & KHAI THỊ CỐT TỦY (ZEN QUOTE BANNER)
+       ========================================================================== -->
+  <section class="bg-quote-banner-section" id="secQuoteBanner">
+    <div class="bg-quote-banner-container">
+
+      <!-- THẺ BANNER: CHUỖI TRẦM & ĐẠI SƯ ẤN QUANG -->
+      <div class="bg-quote-card" id="quoteCard">
+        <div class="bg-quote-card-content">
+          <div class="bg-quote-badge">
+            <span class="bg-quote-badge-dot"></span>
+            <span>Khai Thị Cốt Tủy · Tổ Thứ 13 Tịnh Độ Tông</span>
+          </div>
+          <blockquote class="bg-quote-text">
+            “Buông xả vạn duyên, một câu A Di Đà Phật niệm đến cùng.”
+          </blockquote>
+          <div class="bg-quote-author">
+            <span class="bg-quote-author-name">— Đại Sư Ấn Quang</span>
+            <span class="bg-quote-author-note">(Ấn Quang Đại Sư Gia Ngôn Lục)</span>
+          </div>
+          <p class="bg-quote-desc">
+            Giữa trăm mối lo toan của cuộc sống thường nhật, chỉ cần giữ tâm an trú nơi câu Phật hiệu, muôn nghìn vọng niệm tự khắc lắng trong như nước đứng yên.
+          </p>
+          <div class="bg-quote-actions">
+            <a href="index.html#thoi-khoa" class="bg-quote-btn-primary">
+              <span>Bắt đầu niệm Phật</span>
+              <span class="bg-quote-btn-icon">📿</span>
+            </a>
+            <a href="#secPathway" class="bg-quote-btn-secondary">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+              <span>Xem Lộ Trình Tu Học</span>
+            </a>
+          </div>
+        </div>
+        <div class="bg-quote-card-visual">
+          <img src="assets/images/BaiGiang/bg_zen_mala.jpg" alt="Chuỗi bồ đề trầm hương và tách trà thiền tĩnh lặng" class="bg-quote-img" loading="lazy">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  </main>
+
+  <!-- ==========================================================================
+       SITE FOOTER (TRANG NGHIÊM, HÒA HỢP & TINH TẾ)
+       ========================================================================== -->
+  <footer class="site-footer" id="siteFooter">
+    <!-- Đường viền hào quang kim sắc trên đỉnh footer -->
+    <div class="footer-top-accent"></div>
+
+    <div class="footer-container">
+      <!-- Tầng 1: Giới thiệu & Lời Vàng Khai Thị (Tổ Ấn Quang) -->
+      <div class="footer-top-tier">
+        <div class="footer-about-col">
+          <div class="footer-brand-header">
+            <span class="footer-logo-icon">🪷</span>
+            <div class="footer-brand-titles">
+              <h3 class="footer-brand-title">tịnh độ <span class="brand-dot">·</span> <em class="brand-sub">an trú</em></h3>
+              <span class="footer-brand-sub">Pháp Bảo &amp; Hành Trì Thời Hiện Đại</span>
+            </div>
+          </div>
+          <p class="footer-about-desc">
+            Không gian Phật pháp thanh tịnh trợ duyên cho bạn đạo đồng tu trên con đường <strong>Tín - Nguyện - Trì Danh</strong> niệm Phật cầu sanh Cực Lạc. Toàn bộ kinh điển, bài giảng và âm thanh niệm Phật được biên tập công phu, phụng sự hoàn toàn <strong>phi thương mại</strong> vì an lạc của số đông.
+          </p>
+          <div class="footer-badges-row">
+            <span class="footer-badge">🪷 Pháp Thí Vô Lượng</span>
+            <span class="footer-badge">🕊️ Phi Thương Mại</span>
+            <div class="footer-socials">
+              <a href="https://youtube.com" target="_blank" rel="noopener" class="footer-social-link" title="Kênh YouTube Pháp Âm" aria-label="YouTube">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener" class="footer-social-link" title="Cộng Đồng Đồng Tu Facebook" aria-label="Facebook">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+              <a href="bai-giang.html" class="footer-social-link" title="Thư Viện Bài Giảng &amp; Audio" aria-label="Audio">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+              </a>
+              <a href="kinh-dien.html" class="footer-social-link" title="Kinh Điển Tịnh Độ" aria-label="Kinh">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Thẻ Lời Vàng Khai Thị (Tổ Ấn Quang) -->
+        <div class="footer-quote-card">
+          <div class="footer-card-pill">📜 Lời Khuyên Tấn Khắc Tâm</div>
+          <p class="footer-quote-text">
+            "Thế sự vô thường, thân mạng khó giữ. Đừng hẹn ngày mai, hãy trân quý từng hơi thở mà tha thiết xưng niệm A Di Đà Phật."
+          </p>
+          <div class="footer-quote-footer">
+            <div class="footer-quote-author">
+              <strong>— Ấn Quang Đại Sư</strong>
+              <span>Tổ Thứ 13 Tịnh Độ Tông</span>
+            </div>
+            <a href="van-dap.html" class="footer-qa-btn">
+              <span>Góc Vấn Đáp</span>
+              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tầng 2: Bản Đồ Pháp Bảo 4 Cột Gọn Gàng (Gap 7px) -->
+      <div class="footer-links-grid">
+        <div class="footer-nav-col">
+          <h4 class="footer-col-title">Về Dự Án</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Tôn Chỉ Tịnh Độ An Trú</a></li>
+            <li><a href="index.html#kham-pha">Sứ Mệnh Pháp Thí</a></li>
+            <li><a href="index.html#thoi-khoa">Lời Ngỏ Cùng Bạn Đạo</a></li>
+            <li><a href="van-dap.html#hoi-dap">Đóng Góp &amp; Hiệu Đính</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4 class="footer-col-title">Hệ Thống Pháp Bảo</h4>
+          <ul class="footer-links-list">
+            <li><a href="kinh-dien.html">Kinh Điển Tịnh Độ (Tam Kinh)</a></li>
+            <li><a href="bai-giang.html">Tuyển Tập Pháp Âm &amp; Bài Giảng</a></li>
+            <li><a href="index.html#niem-phat">Máy Niệm Phật Trực Tuyến</a></li>
+            <li><a href="index.html#thoi-khoa">Nghi Thức Thời Khóa Sớm Tối</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4 class="footer-col-title">Lộ Trình Hành Trì</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html#tam-tu-luong">Ba Món Tư Lương: Tín - Nguyện - Hạnh</a></li>
+            <li><a href="index.html#kham-pha">Phương Pháp Thập Niệm Ký Số</a></li>
+            <li><a href="index.html#thoi-khoa">48 Lời Đại Nguyện A Di Đà</a></li>
+            <li><a href="index.html#kham-pha">Lời Khai Thị Chư Tổ Tịnh Tông</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4 class="footer-col-title">Trợ Duyên Đồng Tu</h4>
+          <ul class="footer-links-list">
+            <li><a href="van-dap.html">Góc Vấn Đáp Tu Học Khúc Mắc</a></li>
+            <li><a href="van-dap.html">Khái Yếu Hộ Niệm Lâm Chung</a></li>
+            <li><a href="kinh-dien.html">Tải Kinh Sách Bản In (PDF)</a></li>
+            <li><a href="van-dap.html#cau-hoi-moi">Gửi Thắc Mắc Đến Ban Biên Tập</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tầng 3: Dải Hồi Hướng & Bản Quyền Liền Mạch -->
+      <div class="footer-bottom-tier">
+        <div class="footer-dedication-bar">
+          <p class="footer-dedication-verse">
+            🪷 "Nguyện đem công đức này · Trang nghiêm Phật Tịnh Độ · Trên đền bốn ơn nặng · Dưới cứu khổ tam đồ" 🪷
+          </p>
+        </div>
+        <div class="footer-legal-bar">
+          <span class="footer-legal-copy">© 2026 Tịnh Độ An Trú · Phật Pháp truyền đăng, phụng sự tha nhân vô vụ lợi. Nguyện khắp chúng sanh đồng sanh Cực Lạc.</span>
+          <div class="footer-legal-nav">
+            <a href="index.html">Trang Chủ</a>
+            <span>·</span>
+            <a href="bai-giang.html">Bài Giảng</a>
+            <span>·</span>
+            <a href="kinh-dien.html">Kinh Điển</a>
+            <span>·</span>
+            <a href="van-dap.html">Vấn Đáp</a>
+            <span>·</span>
+            <a href="#navbar" class="footer-top-btn" title="Lên đầu trang">Lên đầu trang ↑</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Player Bar (Hidden initially, appears when user clicks 'Nghe ngay') -->
+  <div class="bg-player-bar" id="audioPlayerBar" aria-label="Trình phát bài giảng">
+    <!-- Info -->
+    <div class="bg-player-info">
+      <img src="assets/images/BaiGiang/bg_author_portrait.jpg" alt="Đang phát" class="bg-player-img" id="playerThumb">
+      <div class="bg-player-text">
+        <div class="bg-player-title"><span id="playerTitleText">Tịnh Độ là về nhà</span> <span class="bg-player-badge" id="playerStatusBadge">Đang nghe</span></div>
+        <div class="bg-player-author" id="playerAuthor">HT. Thích Trí Quảng</div>
+      </div>
+    </div>
+    
+    <!-- Controls -->
+    <div class="bg-player-controls">
+      <div class="bg-player-buttons">
+        <button class="bg-player-btn" id="playerRewindBtn" title="Lùi 15 giây" aria-label="Lùi 15 giây">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12.066 11.2a1 1 0 000 1.6l5.334 4A1 1 0 0019 16V8a1 1 0 00-1.6-.8l-5.334 4zM4.066 11.2a1 1 0 000 1.6l5.334 4A1 1 0 0011 16V8a1 1 0 00-1.6-.8l-5.334 4z"></path></svg>
+        </button>
+        <button class="bg-player-btn bg-player-play" id="playerPlayBtn" title="Tạm dừng / Tiếp tục" aria-label="Tạm dừng / Tiếp tục phát">
+          <svg id="playerPlayIcon" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+        </button>
+        <button class="bg-player-btn" id="playerForwardBtn" title="Tới 15 giây" aria-label="Tới 15 giây">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.933 12.8a1 1 0 000-1.6L6.6 7.2A1 1 0 005 8v8a1 1 0 001.6.8l5.333-4zM19.933 12.8a1 1 0 000-1.6l-5.333-4A1 1 0 0013 8v8a1 1 0 001.6.8l5.333-4z"></path></svg>
+        </button>
+      </div>
+      <div class="bg-player-progress-wrapper">
+        <span id="playerCurrentTime">12:15</span>
+        <div class="bg-player-progress-bar" id="playerProgressBar" role="slider" aria-label="Tiến trình phát" tabindex="0">
+          <div class="bg-player-progress-fill" id="playerProgressFill"></div>
+          <div class="bg-player-progress-handle" id="playerProgressHandle"></div>
+        </div>
+        <span id="playerTotalTime">32:00</span>
+      </div>
+    </div>
+    
+    <!-- Actions -->
+    <div class="bg-player-actions">
+      <button class="bg-player-action" id="btnPlaybackSpeed" title="Tốc độ phát">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <span id="speedDisplay">Tốc độ 1.0x</span>
+      </button>
+      <button class="bg-player-action" id="btnSleepTimer" title="Hẹn giờ tắt">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <span id="sleepTimerDisplay">Hẹn giờ</span>
+      </button>
+      <button class="bg-player-action" id="btnPlaylist" title="Danh sách phát">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        <span>DS Phát</span>
+      </button>
+      <button class="bg-player-action" id="btnTranscript" title="Chép lời bài giảng">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+        <span>Chép lời</span>
+      </button>
+      <button class="bg-player-action" id="btnPlayerBookmark" title="Lưu bài giảng">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path></svg>
+        <span>Đã lưu</span>
+      </button>
+      <button class="bg-player-close-btn" id="playerCloseBtn" title="Thu gọn trình phát" aria-label="Đóng trình phát">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Sleep Timer Popover -->
+  <div class="bg-sleep-timer-popover" id="sleepTimerPopover" role="dialog" aria-label="Hẹn giờ tắt bài giảng">
+    <div class="bg-sleep-timer-title">
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+      <span>Hẹn giờ tắt tự động</span>
+    </div>
+    <button class="bg-timer-option active" data-minutes="0">Tắt hẹn giờ</button>
+    <button class="bg-timer-option" data-minutes="15">Sau 15 phút</button>
+    <button class="bg-timer-option" data-minutes="30">Sau 30 phút</button>
+    <button class="bg-timer-option" data-minutes="45">Sau 45 phút</button>
+    <button class="bg-timer-option" data-minutes="60">Sau 60 phút</button>
+  </div>
+
+  <!-- Playlist Popover -->
+  <div class="bg-playlist-popover" id="playlistPopover" role="dialog" aria-label="Danh sách phát">
+    <div class="bg-playlist-title">
+      <span>Danh sách pháp âm</span>
+      <span style="font-size: 11px; color: var(--text-muted); font-weight: normal;">6 bài tuyển chọn</span>
+    </div>
+    <div class="bg-playlist-list" id="playlistItemsList">
+      <!-- Items generated in JS -->
+    </div>
+  </div>
+
+  <!-- Transcript Modal -->
+  <div class="bg-modal-backdrop" id="transcriptModalBackdrop" role="dialog" aria-modal="true" aria-label="Bản chép lời bài giảng">
+    <div class="bg-transcript-modal">
+      <div class="bg-transcript-header">
+        <div class="bg-transcript-header-info">
+          <h3 class="bg-transcript-title" id="transcriptTitle">Tịnh Độ là về nhà</h3>
+          <span class="bg-transcript-author" id="transcriptAuthor">HT. Thích Trí Quảng · Chùa Pháp Hoa</span>
+        </div>
+        <button class="bg-transcript-close" id="btnCloseTranscript" aria-label="Đóng bản chép lời">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+      <div class="bg-transcript-body">
+        <div class="bg-transcript-highlight">
+          <div class="bg-transcript-highlight-title">Trích đoạn cốt tủy</div>
+          <p class="bg-transcript-highlight-text" id="transcriptHighlightQuote">"Tịnh Độ không ở đâu xa, mà là tâm thanh tịnh ngay trong hiện tại của chúng ta. Khi một niệm niệm Phật khởi lên không xen tạp vọng duyên, sát-na ấy chính là sen vàng nở ngát nơi ao thất bảo."</p>
+        </div>
+        <div class="bg-transcript-content" id="transcriptFullText">
+          <p><span class="bg-transcript-stamp">[00:00]</span> Kính thưa toàn thể quý Phật tử đạo tràng niệm Phật. Hôm nay chúng ta cùng hội ngộ về đây để cùng chiêm nghiệm lại ý nghĩa của hai chữ 'Tịnh Độ'. Người đời thường nghĩ Tịnh Độ là một cõi xa xôi muôn trùng mười muôn ức cõi.</p>
+          <p><span class="bg-transcript-stamp">[08:45]</span> Nhưng Kinh Di Đà dạy rằng: 'Tâm tịnh tắc Phật độ tịnh'. Khi tâm chúng ta lắng xuống mọi toan tính hơn thua của thế sự, chuyên chú vào câu danh hiệu Nam Mô A Di Đà Phật, cõi lòng ta bỗng chốc trở nên nhẹ bẫng.</p>
+          <p><span class="bg-transcript-stamp">[16:20]</span> Niệm Phật là trở về nguồn cội, là về lại ngôi nhà xưa thanh tịnh vốn có trong tự tánh. Đừng đợi đến khi hơi tàn lực kiệt mới cầu Phật, mà ngay từng bước đi, từng hơi thở hôm nay hãy an trú trong câu niệm Phật.</p>
+          <p><span class="bg-transcript-stamp">[27:10]</span> Xin chúc toàn thể đại chúng thân tâm thường an lạc, bồ đề tâm kiên cố, ngày đêm sáu thời đều được chư Phật mười phương gia hộ, tín tâm trọn vẹn.</p>
+        </div>
+      </div>
+      <div class="bg-transcript-footer">
+        <span style="font-size: 12px; color: var(--text-muted);">Bản chép lời hỗ trợ học tập & hành trì</span>
+        <button class="bg-btn-copy-quote" id="btnCopyQuote">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"></path></svg>
+          Sao chép trích đoạn
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Series Episodes Drawer Backdrop & Panel -->
+  <div class="bg-drawer-backdrop" id="seriesDrawerBackdrop" role="dialog" aria-modal="true" aria-label="Tổng quan và danh sách tập bài giảng">
+    <div class="bg-series-drawer" id="seriesDrawer">
+      <div class="bg-drawer-header">
+        <div class="bg-drawer-title-wrap">
+          <span class="bg-drawer-series-speaker" id="drawerSeriesSpeaker">HT. Thích Tịnh Không Giảng Giải</span>
+          <h3 class="bg-drawer-series-title" id="drawerSeriesTitle">Kinh Đại Thừa Vô Lượng Thọ</h3>
+        </div>
+        <button class="bg-drawer-close-btn" id="btnCloseSeriesDrawer" aria-label="Đóng danh sách tập" title="Đóng">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Vùng cuộn chứa cả Tổng Quan và Chỗ Chọn Tập -->
+      <div class="bg-drawer-scrollable">
+        
+        <!-- 1. Phần Tổng Quan Giới Thiệu Về Bộ Giảng (Ngắn Gọn & Súc Tích) -->
+        <div class="bg-drawer-overview-card">
+          <div class="bg-drawer-overview-top">
+            <img id="drawerOverviewThumb" src="assets/images/Kinh/kinh-vo-luong-tho.png" alt="Bìa bộ kinh" class="bg-drawer-overview-thumb">
+            <div class="bg-drawer-overview-meta">
+              <div class="bg-drawer-overview-tags">
+                <span class="bg-drawer-tag-pill" id="drawerTagCount">80 Tập Trọn Bộ</span>
+                <span class="bg-drawer-tag-pill subtle">Pháp Âm Tuyển Chọn</span>
+                <span class="bg-drawer-tag-pill subtle">Tông Tịnh Độ</span>
+              </div>
+              <p class="bg-drawer-overview-synopsis" id="drawerOverviewSynopsis">
+                Bộ kinh căn bản và cốt tủy đệ nhất của tông Tịnh Độ. Hòa Thượng giảng giải tường tận từng câu kinh, giúp hành giả thấu suốt 48 đại nguyện của Phật A Di Đà và phương pháp chấp trì danh hiệu vãng sanh.
+              </p>
+              <div class="bg-drawer-overview-actions">
+                <button class="bg-btn-drawer-play" id="btnDrawerPlayEp1">
+                  <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
+                  <span>Xem tập 1</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Khung Trích dẫn Pháp Ngữ Cốt Tủy -->
+          <div class="bg-drawer-quote-box">
+            <svg class="bg-quote-mark-small" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+            <div class="bg-drawer-quote-text" id="drawerOverviewQuote">
+              "Pháp môn Tịnh Độ thù thắng ở chỗ một đời viên mãn, đới nghiệp vãng sanh, bất thoái chuyển thành Phật."
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Chỗ Chọn Tập Giảng (Episode Selector) -->
+        <div class="bg-drawer-episodes-section">
+          <div class="bg-drawer-episodes-header">
+            <div class="bg-drawer-episodes-heading">
+              <span class="bg-drawer-episodes-icon">
+                <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+              </span>
+              <h4 class="bg-drawer-episodes-title">Chọn Tập Để Xem Video</h4>
+            </div>
+            <span class="bg-drawer-episodes-badge" id="drawerEpisodesCount">Hiển thị 80 tập</span>
+          </div>
+
+          <div class="bg-drawer-controls">
+            <div class="bg-drawer-search-wrap">
+              <svg class="bg-drawer-search-icon" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35"></path></svg>
+              <input type="text" class="bg-drawer-search-input" id="seriesDrawerSearchInput" placeholder="Tìm kiếm theo tập hoặc chủ đề (ví dụ: Tập 1, 48 đại nguyện)...">
+            </div>
+          </div>
+
+          <div class="bg-drawer-episodes-list" id="seriesEpisodesList">
+            <!-- Rendered dynamically by JS -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="bg-toast" id="bgToast" role="status" aria-live="polite">
+    <svg width="16" height="16" fill="none" stroke="#6ee7b7" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+    <span id="toastMessage">Thông báo</span>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const playerBar = document.getElementById('audioPlayerBar');
+      const btnPlayFeatured = document.getElementById('btnPlayFeatured');
+      const featuredImgWrapper = document.getElementById('featuredImgWrapper');
+      const playerCloseBtn = document.getElementById('playerCloseBtn');
+      const playerPlayBtn = document.getElementById('playerPlayBtn');
+      const playerPlayIcon = document.getElementById('playerPlayIcon');
+      const playerStatusBadge = document.getElementById('playerStatusBadge');
+      const playerTitleText = document.getElementById('playerTitleText');
+      const playerAuthor = document.getElementById('playerAuthor');
+      const playerThumb = document.getElementById('playerThumb');
+      const playerCurrentTime = document.getElementById('playerCurrentTime');
+      const playerTotalTime = document.getElementById('playerTotalTime');
+      const playerProgressBar = document.getElementById('playerProgressBar');
+      const playerProgressFill = document.getElementById('playerProgressFill');
+      const playerProgressHandle = document.getElementById('playerProgressHandle');
+      const btnPlaybackSpeed = document.getElementById('btnPlaybackSpeed');
+      const speedDisplay = document.getElementById('speedDisplay');
+      const btnPlayerBookmark = document.getElementById('btnPlayerBookmark');
+
+      // Enhanced utility elements
+      const btnSleepTimer = document.getElementById('btnSleepTimer');
+      const sleepTimerDisplay = document.getElementById('sleepTimerDisplay');
+      const sleepTimerPopover = document.getElementById('sleepTimerPopover');
+      const btnPlaylist = document.getElementById('btnPlaylist');
+      const playlistPopover = document.getElementById('playlistPopover');
+      const playlistItemsList = document.getElementById('playlistItemsList');
+      const btnTranscript = document.getElementById('btnTranscript');
+      const transcriptModalBackdrop = document.getElementById('transcriptModalBackdrop');
+      const btnCloseTranscript = document.getElementById('btnCloseTranscript');
+      const transcriptTitle = document.getElementById('transcriptTitle');
+      const transcriptAuthor = document.getElementById('transcriptAuthor');
+      const transcriptHighlightQuote = document.getElementById('transcriptHighlightQuote');
+      const btnCopyQuote = document.getElementById('btnCopyQuote');
+      const toast = document.getElementById('bgToast');
+      const toastMessage = document.getElementById('toastMessage');
+
+      let isPlaying = false;
+      let currentProgress = 38;
+      const speeds = ['1.0x', '1.25x', '1.5x', '0.75x'];
+      let speedIndex = 0;
+
+      const PAUSE_SVG = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+      const PLAY_SVG = '<polygon points="7,5 19,12 7,19"/>';
+
+      // Curated Playlist Data
+      const playlistTracks = [
+        {
+          title: 'Tịnh Độ là về nhà',
+          author: 'HT. Thích Trí Quảng',
+          duration: '32:00',
+          img: 'assets/images/BaiGiang/bg_author_portrait.jpg',
+          quote: '"Tịnh Độ không ở đâu xa, mà là tâm thanh tịnh ngay trong hiện tại của chúng ta. Khi một niệm niệm Phật khởi lên không xen tạp vọng duyên, sát-na ấy chính là sen vàng nở ngát nơi ao thất bảo."'
+        },
+        {
+          title: 'Phương pháp Thập Niệm Ký Số',
+          author: 'HT. Tịnh Không',
+          duration: '25:00',
+          img: 'assets/images/BaiGiang/bg_card_meditation.jpg',
+          quote: '"Từ một đến mười câu hiệu Phật, nhớ rành rẽ trong tâm không dùng chuỗi hạt. Vừa niệm vừa đếm, tâm nương vào số, vọng niệm tự tiêu tan."'
+        },
+        {
+          title: 'Khai thị then chốt giờ lâm chung',
+          author: 'Cư sĩ Diệu Âm',
+          duration: '48:00',
+          img: 'assets/images/BaiGiang/bg_card_temple.jpg',
+          quote: '"Phút lâm chung muôn duyên đều phải buông bỏ; của cải, người thân không ai theo ta được, duy chỉ có câu A Di Đà Phật dẫn đường về cõi Cực Lạc."'
+        },
+        {
+          title: 'Đang làm việc nhà hoặc lái xe có được niệm Phật?',
+          author: 'HT. Thích Trí Quảng',
+          duration: '03:45',
+          img: 'assets/images/BaiGiang/bg_author_portrait.jpg',
+          quote: '"Pháp môn Niệm Phật uyển chuyển vô ngại. Miễn là giữ được lòng thành kính, đi đứng nằm ngồi niệm thầm hay niệm nhỏ tiếng đều sanh vô lượng công đức."'
+        },
+        {
+          title: 'A Di Đà Phật - 48 Lời Nguyện',
+          author: 'HT. Tuyên Hóa',
+          duration: '42:00',
+          img: 'assets/images/Kinh/kinh-a-di-da.png',
+          quote: '"Đại nguyện của Phật A Di Đà rộng lớn như hư không, không bỏ sót một chúng sanh nào có lòng tha thiết quay về nương tựa."'
+        },
+        {
+          title: 'Nhiếp tâm khi vọng niệm khởi sinh',
+          author: 'NS. Thích Nữ Hương Nhũ',
+          duration: '27:00',
+          img: 'assets/images/BaiGiang/bg_card_lotus.jpg',
+          quote: '"Vọng niệm như mây bay qua núi, chớ níu giữ cũng chớ bực bội; cứ hướng tai lắng nghe âm thanh tiếng Phật rành rẽ."'
+        }
+      ];
+
+      let currentTrack = playlistTracks[0];
+
+      // Toast feedback helper
+      let toastTimer = null;
+      function showToast(msg) {
+        if (!toast || !toastMessage) return;
+        toastMessage.textContent = msg;
+        toast.classList.add('show');
+        if (toastTimer) clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () {
+          toast.classList.remove('show');
+        }, 3200);
+      }
+
+      // Render playlist items
+      function renderPlaylist() {
+        if (!playlistItemsList) return;
+        playlistItemsList.innerHTML = playlistTracks.map(function (item, idx) {
+          const isActive = currentTrack && currentTrack.title === item.title ? 'active' : '';
+          return `
+            <div class="bg-playlist-item ${isActive}" data-index="${idx}">
+              <img src="${item.img}" alt="${item.title}" class="bg-playlist-thumb">
+              <div class="bg-playlist-info">
+                <span class="bg-playlist-name">${item.title}</span>
+                <span class="bg-playlist-sub">${item.author} • ${item.duration}</span>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        playlistItemsList.querySelectorAll('.bg-playlist-item').forEach(function (el) {
+          el.addEventListener('click', function () {
+            const idx = parseInt(el.getAttribute('data-index'), 10);
+            if (!isNaN(idx) && playlistTracks[idx]) {
+              showPlayer(playlistTracks[idx]);
+              renderPlaylist();
+              if (playlistPopover) playlistPopover.classList.remove('active');
+            }
+          });
+        });
+      }
+      renderPlaylist();
+
+      function showPlayer(item) {
+        if (item) {
+          currentTrack = item;
+          if (item.title && playerTitleText) playerTitleText.textContent = item.title;
+          if (item.author && playerAuthor) playerAuthor.textContent = item.author;
+          if (item.img && playerThumb) playerThumb.src = item.img;
+          if (item.duration && playerTotalTime) playerTotalTime.textContent = item.duration;
+
+          // Update transcript modal info
+          if (transcriptTitle) transcriptTitle.textContent = item.title;
+          if (transcriptAuthor) transcriptAuthor.textContent = item.author;
+          if (transcriptHighlightQuote && item.quote) {
+            transcriptHighlightQuote.textContent = item.quote;
+          }
+          renderPlaylist();
+        }
+
+        isPlaying = true;
+        if (playerPlayIcon) playerPlayIcon.innerHTML = PAUSE_SVG;
+        if (playerStatusBadge) {
+          playerStatusBadge.textContent = 'Đang nghe';
+          playerStatusBadge.style.backgroundColor = '#EBF5EE';
+          playerStatusBadge.style.color = '#166534';
+        }
+
+        if (playerBar) playerBar.classList.add('active');
+        document.body.classList.add('has-active-player');
+      }
+
+      function hidePlayer() {
+        if (playerBar) playerBar.classList.remove('active');
+        document.body.classList.remove('has-active-player');
+        isPlaying = false;
+        if (playerPlayIcon) playerPlayIcon.innerHTML = PLAY_SVG;
+        if (sleepTimerPopover) sleepTimerPopover.classList.remove('active');
+        if (playlistPopover) playlistPopover.classList.remove('active');
+      }
+
+      function togglePlayPause() {
+        isPlaying = !isPlaying;
+        if (isPlaying) {
+          playerPlayIcon.innerHTML = PAUSE_SVG;
+          if (playerStatusBadge) {
+            playerStatusBadge.textContent = 'Đang nghe';
+            playerStatusBadge.style.backgroundColor = '#EBF5EE';
+            playerStatusBadge.style.color = '#166534';
+          }
+        } else {
+          playerPlayIcon.innerHTML = PLAY_SVG;
+          if (playerStatusBadge) {
+            playerStatusBadge.textContent = 'Tạm dừng';
+            playerStatusBadge.style.backgroundColor = '#f3f4f6';
+            playerStatusBadge.style.color = '#4b5563';
+          }
+        }
+      }
+
+      // 1. Nhấn nút "Nghe ngay" ở bài giảng nổi bật
+      if (btnPlayFeatured) {
+        btnPlayFeatured.addEventListener('click', function (e) {
+          e.preventDefault();
+          showPlayer(playlistTracks[0]);
+        });
+      }
+
+      // 2. Nhấn vào hình ảnh bài giảng nổi bật
+      if (featuredImgWrapper) {
+        featuredImgWrapper.addEventListener('click', function () {
+          showPlayer(playlistTracks[0]);
+        });
+      }
+
+      // 3. Nút đóng trình phát
+      if (playerCloseBtn) {
+        playerCloseBtn.addEventListener('click', hidePlayer);
+      }
+
+      // 4. Play / Pause
+      if (playerPlayBtn) {
+        playerPlayBtn.addEventListener('click', togglePlayPause);
+      }
+
+      // 5. Thay đổi tốc độ phát
+      if (btnPlaybackSpeed && speedDisplay) {
+        btnPlaybackSpeed.addEventListener('click', function () {
+          speedIndex = (speedIndex + 1) % speeds.length;
+          speedDisplay.textContent = 'Tốc độ ' + speeds[speedIndex];
+          showToast('Tốc độ phát: ' + speeds[speedIndex]);
+        });
+      }
+
+      // 6. Tua lại 15s / Tua tới 15s
+      const playerRewindBtn = document.getElementById('playerRewindBtn');
+      const playerForwardBtn = document.getElementById('playerForwardBtn');
+
+      function updateProgress(percent) {
+        if (playerProgressFill) playerProgressFill.style.width = percent + '%';
+        if (playerProgressHandle) playerProgressHandle.style.left = percent + '%';
+      }
+
+      if (playerRewindBtn) {
+        playerRewindBtn.addEventListener('click', function () {
+          currentProgress = Math.max(0, currentProgress - 5);
+          updateProgress(currentProgress);
+        });
+      }
+
+      if (playerForwardBtn) {
+        playerForwardBtn.addEventListener('click', function () {
+          currentProgress = Math.min(100, currentProgress + 5);
+          updateProgress(currentProgress);
+        });
+      }
+
+      // 7. Nhấp vào thanh thời gian để tua
+      if (playerProgressBar) {
+        playerProgressBar.addEventListener('click', function (e) {
+          const rect = playerProgressBar.getBoundingClientRect();
+          const clickX = e.clientX - rect.left;
+          const pct = Math.max(0, Math.min(100, (clickX / rect.width) * 100));
+          currentProgress = pct;
+          updateProgress(pct);
+        });
+      }
+
+      // 8. Bookmark
+      if (btnPlayerBookmark) {
+        btnPlayerBookmark.addEventListener('click', function () {
+          const isSaved = btnPlayerBookmark.classList.toggle('is-saved');
+          btnPlayerBookmark.style.color = isSaved ? 'var(--accent-gold)' : '';
+          showToast(isSaved ? 'Đã lưu bài giảng vào mục yêu thích' : 'Đã bỏ lưu bài giảng');
+        });
+      }
+
+      // 9. Sleep Timer
+      let sleepCountdownInterval = null;
+      let sleepSecondsLeft = 0;
+
+      if (btnSleepTimer && sleepTimerPopover) {
+        btnSleepTimer.addEventListener('click', function (e) {
+          e.stopPropagation();
+          if (playlistPopover) playlistPopover.classList.remove('active');
+          sleepTimerPopover.classList.toggle('active');
+        });
+      }
+
+      document.querySelectorAll('.bg-timer-option').forEach(function (opt) {
+        opt.addEventListener('click', function () {
+          const minutes = parseInt(opt.getAttribute('data-minutes'), 10);
+          document.querySelectorAll('.bg-timer-option').forEach(o => o.classList.remove('active'));
+          opt.classList.add('active');
+
+          if (sleepCountdownInterval) clearInterval(sleepCountdownInterval);
+
+          if (minutes === 0) {
+            sleepSecondsLeft = 0;
+            if (sleepTimerDisplay) sleepTimerDisplay.textContent = 'Hẹn giờ';
+            showToast('Đã tắt hẹn giờ');
+          } else {
+            sleepSecondsLeft = minutes * 60;
+            if (sleepTimerDisplay) sleepTimerDisplay.textContent = 'Hẹn: ' + minutes + 'p';
+            showToast('Đã hẹn giờ tắt bài giảng sau ' + minutes + ' phút');
+
+            sleepCountdownInterval = setInterval(function () {
+              sleepSecondsLeft--;
+              const mins = Math.ceil(sleepSecondsLeft / 60);
+              if (sleepTimerDisplay) sleepTimerDisplay.textContent = 'Hẹn: ' + mins + 'p';
+
+              if (sleepSecondsLeft <= 0) {
+                clearInterval(sleepCountdownInterval);
+                if (isPlaying) togglePlayPause();
+                if (sleepTimerDisplay) sleepTimerDisplay.textContent = 'Hẹn giờ';
+                document.querySelectorAll('.bg-timer-option').forEach(o => o.classList.remove('active'));
+                const off = document.querySelector('.bg-timer-option[data-minutes="0"]');
+                if (off) off.classList.add('active');
+                showToast('Đã đến giờ tắt bài giảng. Chúc bạn một giấc ngủ an lành.');
+              }
+            }, 1000);
+          }
+
+          if (sleepTimerPopover) sleepTimerPopover.classList.remove('active');
+        });
+      });
+
+      // 10. Playlist Popover
+      if (btnPlaylist && playlistPopover) {
+        btnPlaylist.addEventListener('click', function (e) {
+          e.stopPropagation();
+          if (sleepTimerPopover) sleepTimerPopover.classList.remove('active');
+          playlistPopover.classList.toggle('active');
+        });
+      }
+
+      // 11. Transcript Modal
+      if (btnTranscript && transcriptModalBackdrop) {
+        btnTranscript.addEventListener('click', function () {
+          transcriptModalBackdrop.classList.add('active');
+        });
+      }
+
+      const btnFeaturedTranscript = document.getElementById('btnFeaturedTranscript');
+      if (btnFeaturedTranscript && transcriptModalBackdrop) {
+        btnFeaturedTranscript.addEventListener('click', function () {
+          if (transcriptTitle) transcriptTitle.textContent = 'Tịnh Độ là về nhà';
+          if (transcriptAuthor) transcriptAuthor.textContent = 'HT. Thích Trí Quảng · Chùa Pháp Hoa';
+          transcriptModalBackdrop.classList.add('active');
+        });
+      }
+
+      if (btnCloseTranscript && transcriptModalBackdrop) {
+        btnCloseTranscript.addEventListener('click', function () {
+          transcriptModalBackdrop.classList.remove('active');
+        });
+      }
+
+      if (transcriptModalBackdrop) {
+        transcriptModalBackdrop.addEventListener('click', function (e) {
+          if (e.target === transcriptModalBackdrop) {
+            transcriptModalBackdrop.classList.remove('active');
+          }
+        });
+      }
+
+      // Copy Quote button
+      if (btnCopyQuote && transcriptHighlightQuote) {
+        btnCopyQuote.addEventListener('click', function () {
+          const text = transcriptHighlightQuote.textContent.trim();
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(function () {
+              showToast('Đã sao chép trích đoạn tâm đắc vào bộ nhớ tạm');
+            }).catch(function () {
+              showToast('Đã sao chép trích đoạn!');
+            });
+          } else {
+            showToast('Đã sao chép trích đoạn!');
+          }
+        });
+      }
+
+      // Click outside popovers to close
+      document.addEventListener('click', function (e) {
+        if (sleepTimerPopover && !sleepTimerPopover.contains(e.target) && e.target !== btnSleepTimer) {
+          sleepTimerPopover.classList.remove('active');
+        }
+        if (playlistPopover && !playlistPopover.contains(e.target) && e.target !== btnPlaylist) {
+          playlistPopover.classList.remove('active');
+        }
+      });
+
+      // ESC key to close modal/popovers
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          if (transcriptModalBackdrop) transcriptModalBackdrop.classList.remove('active');
+          if (sleepTimerPopover) sleepTimerPopover.classList.remove('active');
+          if (playlistPopover) playlistPopover.classList.remove('active');
+        }
+      });
+
+      // 12. Clicks on Pathway items
+      document.querySelectorAll('.bg-pathway-item').forEach(function (item) {
+        item.addEventListener('click', function () {
+          const title = item.getAttribute('data-title');
+          const author = item.getAttribute('data-author');
+          const duration = item.getAttribute('data-duration');
+          const img = item.getAttribute('data-img');
+          const quote = item.getAttribute('data-quote');
+
+          showPlayer({
+            title: title || 'Pháp Âm Tịnh Độ',
+            author: author || 'Chư Tôn Đức',
+            duration: duration || '30 phút',
+            img: img || 'assets/images/BaiGiang/bg_author_portrait.jpg',
+            quote: quote || '"Tịnh tâm xưng niệm hồng danh A Di Đà Phật."'
+          });
+        });
+      });
+
+      // Pathway card footer button
+      document.querySelectorAll('.bg-btn-pathway').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const trackTitle = btn.getAttribute('data-track-title');
+          const item = document.querySelector(`.bg-pathway-item[data-title="${trackTitle}"]`);
+          if (item) {
+            item.click();
+          } else {
+            showPlayer(playlistTracks[0]);
+          }
+        });
+      });
+
+      // (Lưu ý: Góc Vấn Đáp Tu Học Phật Pháp đã được chuyển sang trang riêng: van-dap.html)
+
+      // ======================================================================
+      // 15. KHO TRỌN BỘ SERIES GIẢNG KINH & EPISODE DRAWER LOGIC
+      // ======================================================================
+      const seriesDatabase = {
+        'vlt-tinh-khong': {
+          id: 'vlt-tinh-khong',
+          title: 'Kinh Đại Thừa Vô Lượng Thọ Giảng Giải',
+          speaker: 'HT. Thích Tịnh Không Giảng Giải',
+          total: 80,
+          img: 'assets/images/Kinh/kinh-vo-luong-tho.png',
+          synopsis: 'Bộ kinh căn bản và cốt tủy đệ nhất của tông Tịnh Độ thời hiện đại. Đại Lão Hòa Thượng Thích Tịnh Không dành trọn tâm huyết giảng giải từng câu kinh, phân tích cặn kẽ 48 đại nguyện của Đức Phật A Di Đà, lý giải chân tướng cõi Tây Phương Cực Lạc và phương pháp nhất hướng chuyên niệm để người tu đạt vãng sanh bất thoái chuyển.',
+          quote: '"Pháp môn Tịnh Độ thù thắng ở chỗ một đời viên mãn, đới nghiệp vãng sanh, bất thoái chuyển thành Phật."',
+          episodes: [
+            { ep: 1, title: 'Tập 01: Duyên Khởi Pháp Hội & Đại Ý Kinh Vô Lượng Thọ', duration: '60:00', quote: '"Đại ý Kinh Vô Lượng Thọ chỉ rõ con đường cứu cánh thoát sanh tử của muôn loài."' },
+            { ep: 2, title: 'Tập 02: Đức Tuân Phổ Hiền - Hạnh Nguyện Đại Thừa', duration: '58:00', quote: '"Hành giả Tịnh Độ noi theo mười đại nguyện vương của Bồ Tát Phổ Hiền quy hướng Cực Lạc."' },
+            { ep: 3, title: 'Tập 03: Pháp Tạng Bồ Tát Phát Đại Thệ Nguyện', duration: '62:00', quote: '"Bồ Tát Pháp Tạng đối trước Phật Thế Tự Tại Vương phát thệ lập nên cõi Tây Phương vi diệu."' },
+            { ep: 4, title: 'Tập 04: 48 Đại Nguyện Cứu Độ Chúng Sanh (Nguyện 1 - 10)', duration: '60:00', quote: '"Mỗi một đại nguyện là một giọt máu từ bi vô tận vì chúng sanh chìm đắm trong biển khổ."' },
+            { ep: 5, title: 'Tập 05: 48 Đại Nguyện Cứu Độ Chúng Sanh (Nguyện 11 - 20)', duration: '61:00', quote: '"Nguyện thứ 18 là tâm ấn căn bản: Mười niệm ắt sanh cõi Phật."' },
+            { ep: 6, title: 'Tập 06: 48 Đại Nguyện Cứu Độ Chúng Sanh (Nguyện 21 - 48)', duration: '65:00', quote: '"Đại nguyện hoàn mãn, trang nghiêm cõi báu thù thắng vi diệu."' },
+            { ep: 7, title: 'Tập 07: Thọ Dụng Y Báo & Chánh Báo Cực Lạc Tây Phương', duration: '59:00', quote: '"Nước thất bảo, cây báu vi diệu, chim trời hót diễn pháp âm thanh tịnh."' },
+            { ep: 8, title: 'Tập 08: Ba Bậc Vãng Sanh (Thượng Phẩm, Trung Phẩm, Hạ Phẩm)', duration: '63:00', quote: '"Bất luận căn cơ cao thấp, ai phát tâm bồ đề chuyên niệm Di Đà đều được thâu nhận."' },
+            { ep: 9, title: 'Tập 09: Khuyên Tu Tịnh Nghiệp - Răn Trừ Năm Ác & Năm Đau', duration: '58:00', quote: '"Đời mạt pháp cạm bẫy trùng trùng, giữ giới niệm Phật là chiếc bè vượt sóng gió."' },
+            { ep: 10, title: 'Tập 10: Nhất Hướng Chuyên Niệm Nam Mô A Di Đà Phật', duration: '65:00', quote: '"Mỗi một câu Phật hiệu là một hạt sen vàng trổ hoa nơi ao thất bảo cõi Cực Lạc."' }
+          ]
+        },
+        'dia-tang-tuyen-hoa': {
+          id: 'dia-tang-tuyen-hoa',
+          title: 'Kinh Địa Tạng Bồ Tát Bổn Nguyện Giảng Giải',
+          speaker: 'HT. Tuyên Hóa Khai Thị Sơ Giải',
+          total: 45,
+          img: 'assets/images/Kinh/kinh-dia-tang.png',
+          synopsis: 'Kinh Địa Tạng được xem là Hiếu Kinh của đạo Phật. Qua lời giảng giải bình dị, chân thật và trí tuệ thâm sâu của Hòa Thượng Tuyên Hóa, đại chúng thấu suốt tường tận nhân quả nghiệp báo, sự đọa lạc nơi chốn u minh và hạnh nguyện đại bi vô lượng cứu vớt sanh linh của Đức Địa Tạng Vương.',
+          quote: '"Địa ngục vị không, thệ bất thành Phật; chúng sanh độ tận, phương chứng bồ đề."',
+          episodes: [
+            { ep: 1, title: 'Tập 01: Thần Thông Cảm Ứng Nơi Cung Trời Đao Lợi', duration: '55:00', quote: '"Đức Phật thăng lên cung trời Đao Lợi vì thân mẫu thuyết pháp báo đền ân sanh thành."' },
+            { ep: 2, title: 'Tập 02: Phân Thân Tập Hội & Hiếu Hạnh Quang Mục Cứu Mẹ', duration: '52:00', quote: '"Lòng hiếu thảo cảm động mười phương chư Phật, chuyển hóa tội chướng vô gián thành phước lành."' },
+            { ep: 3, title: 'Tập 03: Quán Chúng Sanh Nghiệp Duyên & Tội Báo Địa Ngục', duration: '54:00', quote: '"Chúng sanh Nam Diêm Phù Đề khởi tâm động niệm không gì là chẳng phải tội, phải nghiệp."' },
+            { ep: 4, title: 'Tập 04: Nghiệp Cảm Của Chúng Sanh Nơi Cõi Diêm Phù', duration: '56:00', quote: '"Tâm tạo tác muôn nghiệp, nghiệp lại trói buộc tâm thọ khổ không cùng."' },
+            { ep: 5, title: 'Tập 05: Danh Hiệu Các Tầng Địa Ngục & Hình Phạt Nghiệp Cảm', duration: '50:00', quote: '"Hiểu rõ nhân quả địa ngục để sanh tâm kính sợ, dứt ác tu lành từng sát-na."' },
+            { ep: 6, title: 'Tập 06: Như Lai Tán Thán Hạnh Nguyện Bồ Tát Địa Tạng', duration: '53:00', quote: '"Hạnh nguyện của Địa Tạng Vương Bồ Tát sâu rộng như biển, không bờ không bến."' },
+            { ep: 7, title: 'Tập 07: Lợi Ích Kẻ Còn Người Mất Khi Tu Phước Cúng Dường', duration: '58:00', quote: '"Làm phước bảy phần, người mất hưởng một, người sống hưởng trọn sáu phần công đức."' },
+            { ep: 8, title: 'Tập 08: Diêm La Vương Chúng Kính Cẩn Tán Thán Địa Tạng', duration: '52:00', quote: '"Chư vương địa phủ đều thuận theo từ bi mà dẫn dắt chúng sanh hồi tâm hướng thiện."' }
+          ]
+        },
+        'thap-yeu-thien-tam': {
+          id: 'thap-yeu-thien-tam',
+          title: 'Niệm Phật Thập Yếu - Cẩm Nang Tu Tịnh Nghiệp',
+          speaker: 'HT. Thích Thiền Tâm Biên Soạn & Khai Thị',
+          total: 15,
+          img: 'assets/images/Kinh/dai-the-chi-niem-phat.png',
+          synopsis: 'Cẩm nang tu tập kinh điển của Phật giáo Tịnh Độ Việt Nam do Cố Viện chủ Hương Nghiêm Tịnh Viện - HT. Thích Thiền Tâm trút cạn tâm can biên soạn. Bộ giảng tháo gỡ 10 then chốt trọng yếu nhất từ phát tâm bồ đề, dứt trừ hoài nghi, nhiếp tâm niệm Phật đến đối trị chướng duyên và chuẩn bị hộ niệm giờ phút lâm chung.',
+          quote: '"Niệm Phật là cội rễ của sự giải thoát, mười điều cốt yếu ví như la bàn dẫn lối cho hành giả Tịnh Độ."',
+          episodes: [
+            { ep: 1, title: 'Tiết 01: Lời Tựa & Bối Cảnh Soạn Thuật Niệm Phật Thập Yếu', duration: '42:00', quote: '"Soạn thuật cẩm nang này mong người tu Tịnh Độ không lạc bước vào đường tà thiên kiến."' },
+            { ep: 2, title: 'Tiết 02: Yếu Thứ Nhất - Phát Khởi Tâm Bồ Đề Rộng Lớn', duration: '45:00', quote: '"Tu Tịnh Độ mà chẳng phát tâm Bồ Đề thì như gieo hạt giống lép nơi ruộng khô."' },
+            { ep: 3, title: 'Tiết 03: Yếu Thứ Hai - Dứt Trừ Mối Nghi & Kiên Định Tín Tâm', duration: '48:00', quote: '"Nghi là chướng ngại lớn nhất; dứt nghi thì sen báu nở ngay trong tâm."' },
+            { ep: 4, title: 'Tiết 04: Yếu Thứ Ba - Quyết Chí Xả Ly Duyên Trần Ô Trược', duration: '44:00', quote: '"Cõi Ta Bà như nhà lửa rực cháy; muốn về Cực Lạc tâm phải dứt bớt trần duyên bám víu."' },
+            { ep: 5, title: 'Tiết 05: Yếu Thứ Bốn - Khế Hợp Căn Cơ Muôn Người Cùng Tu', duration: '40:00', quote: '"Pháp môn tam căn phổ bị, từ hàng thượng trí đến kẻ sơ cơ đều được tiếp dẫn."' },
+            { ep: 6, title: 'Tiết 06: Yếu Thứ Năm - Trì Danh Niệm Phật Đúng Pháp Môn', duration: '46:00', quote: '"Tâm niệm rành rẽ, miệng niệm rõ ràng, tai lắng nghe chân thật không gián đoạn."' },
+            { ep: 7, title: 'Tiết 07: Yếu Thứ Sáu - Đương Đầu & Đối Trị Chướng Ma Khi Tu', duration: '43:00', quote: '"Gặp chướng duyên hay ma sự, chỉ một câu Phật hiệu chí thành là vạn ma tự lui."' },
+            { ep: 8, title: 'Tiết 08: Yếu Thứ Bảy - Nghiệm Chứng Tướng Lành Thân Tâm Khi Hành Trì', duration: '45:00', quote: '"Thân tâm thơ thới an lạc, ngủ không mộng mị, đó là điềm lành sơ khởi của tịnh niệm."' },
+            { ep: 9, title: 'Tiết 09: Yếu Thứ Tám - Trợ Niệm Giờ Phút Lâm Chung Thoát Khổ', duration: '52:00', quote: '"Thời khắc lâm chung tựa như ngàn cân treo sợi tóc; trợ niệm đúng cách là phước báu vô lượng."' },
+            { ep: 10, title: 'Tiết 10: Yếu Thứ Chín - Thể Nhập Tự Tánh Di Đà Duy Tâm Tịnh Độ', duration: '47:00', quote: '"Tự tánh Di Đà vốn sẵn có nơi mỗi chúng sanh; niệm Phật là quay về với tánh giác."' },
+            { ep: 11, title: 'Tiết 11: Yếu Thứ Mười - Khuyên Người Tu Tịnh Độ Đồng Sanh An Lạc', duration: '46:00', quote: '"Khuyên một người vãng sanh bằng cứu cả một gia tộc thoát khỏi biển trầm luân."' },
+            { ep: 12, title: 'Tiết 12: Phụ Lục 1: Giải Nghi Cho Người Thế Tục Bận Rộn', duration: '38:00', quote: '"Dù việc đời trăm mối tơ vò, sáng tối mười niệm chí tâm vẫn kết duyên lành vãng sanh."' },
+            { ep: 13, title: 'Tiết 13: Phụ Lục 2: Khai Thị Bệnh Khổ & Chuyển Hóa Nghiệp Chướng', duration: '41:00', quote: '"Lấy bệnh làm thầy, lấy khổ làm động lực dũng mãnh cầu vãng sanh Tây Phương."' },
+            { ep: 14, title: 'Tiết 14: Phụ Lục 3: Nghi Thức Pháp Hội Niệm Phật Thất Nhật Tinh Tấn', duration: '45:00', quote: '"Bảy ngày chuyên nhất một lòng không tán loạn, huân tu chánh niệm vô thượng."' },
+            { ep: 15, title: 'Tiết 15: Lời Kết: Nguyện Cùng Đồng Tu Đồng Về Cực Lạc Hoa Sen', duration: '39:00', quote: '"Nguyện đem công đức này, hướng về khắp tất cả; đệ tử cùng chúng sanh, đều trọn thành Phật đạo."' }
+          ]
+        },
+        'quan-vlt-tri-quang': {
+          id: 'quan-vlt-tri-quang',
+          title: 'Kinh Quán Vô Lượng Thọ Phật & Thập Lục Quán Môn',
+          speaker: 'HT. Thích Trí Quảng Giảng Luận',
+          total: 24,
+          img: 'assets/images/Kinh/kinh-quan-vo-luong-tho.png',
+          synopsis: 'Bộ giảng luận khai mở cánh cửa quán tưởng thế giới Cực Lạc qua 16 phép quán vi diệu từ quán mặt trời lặn, đất báu lưu ly cho đến quán chân thân Phật và Bồ Tát. Hòa Thượng Thích Trí Quảng phân tích sâu về Tịnh Nghiệp Tam Phước và Chín Phẩm Sen Vãng Sanh, giúp người tu thời hiện đại vừa an định nội tâm, vừa xây dựng tư lương vãng sanh vững chắc.',
+          quote: '"Quán tâm thanh tịnh tức thấy Phật Di Đà; 16 phép quán đưa tâm phàm phu tiếp cận cảnh giới Tây Phương thất bảo."',
+          episodes: [
+            { ep: 1, title: 'Tập 01: Duyên Khởi Bi Kịch Thành Vương Xá & Vi Đề Hy Cầu Cứu', duration: '45:00', quote: '"Nỗi đau nơi hồng trần mở ra con đường tìm về cõi Tịnh Độ thanh tịnh của Hoàng hậu Vi Đề Hy."' },
+            { ep: 2, title: 'Tập 02: Phật Thị Hiện Quang Minh Khuyên Chọn Cực Lạc Tây Phương', duration: '42:00', quote: '"Mười phương cõi Phật đều hiện nơi đỉnh tướng, Cực Lạc Tây Phương thù thắng đệ nhất."' },
+            { ep: 3, title: 'Tập 03: Tịnh Nghiệp Tam Phước - Cội Gốc Căn Bản Vãng Sanh', duration: '48:00', quote: '"Hiếu dưỡng cha mẹ, phụng sự sư trưởng, từ tâm bất sát, tu thập thiện nghiệp là nền tảng tam phước."' },
+            { ep: 4, title: 'Tập 04: Quán Thứ 1: Nhật Tưởng Quán (Quán Mặt Trời Lặn Phía Tây)', duration: '40:00', quote: '"Nhìn vầng thái dương lặn nơi phương Tây tròn đầy như chiếc trống treo, định tâm rành rẽ."' },
+            { ep: 5, title: 'Tập 05: Quán Thứ 2: Thủy Tưởng Quán (Quán Nước Đóng Băng Lưu Ly)', duration: '42:00', quote: '"Nước trong veo đóng thành băng, băng hóa lưu ly sáng ngời soi thấu lòng đất báu."' },
+            { ep: 6, title: 'Tập 06: Quán Thứ 3: Địa Tưởng Quán (Quán Mặt Đất Cực Lạc)', duration: '46:00', quote: '"Đất báu lưu ly bằng phẳng, dây vàng giăng lối, hoa báu trang nghiêm rải khắp lối đi."' },
+            { ep: 7, title: 'Tập 07: Quán Thứ 4 & 5: Bảo Thụ Quán & Bát Công Đức Thủy Quán', duration: '44:00', quote: '"Cây báu bảy tầng trổ hoa ngọc quý, nước tám công đức chảy êm đềm diễn nói diệu pháp."' },
+            { ep: 8, title: 'Tập 08: Quán Thứ 6: Tổng Tưởng Quán Toàn Cảnh Cực Lạc', duration: '45:00', quote: '"Tâm cảnh hợp nhất, thấy toàn bộ cõi báu Tây Phương hiện tiền nơi tịnh lự."' },
+            { ep: 9, title: 'Tập 09: Quán Thứ 7: Hoa Tòa Quán (Quán Tòa Sen Thất Bảo)', duration: '43:00', quote: '"Tòa sen báu tám vạn bốn nghìn cánh, mỗi cánh tỏa ánh hào quang chiếu khắp mười phương."' },
+            { ep: 10, title: 'Tập 10: Quán Thứ 8: Tượng Tưởng Quán (Quán Tượng Phật Di Đà)', duration: '45:00', quote: '"Chư Phật Như Lai là pháp giới thân, nhập vào trong tâm tưởng của tất cả chúng sanh."' },
+            { ep: 11, title: 'Tập 11: Quán Thứ 9: Chân Thân Phật A Di Đà Sắc Vàng Kim', duration: '48:00', quote: '"Thân Phật cao lớn sắc vàng rực rỡ, ánh sáng nhiếp thọ không bỏ sót kẻ niệm Phật."' },
+            { ep: 12, title: 'Tập 12: Quán Thứ 10: Quán Thế Âm Bồ Tát Sắc Thân Tướng Hảo', duration: '46:00', quote: '"Đỉnh đầu Bồ Tát mang tượng Phật hóa thân, tay báu rưới cam lộ cứu khổ muôn loài."' }
+          ]
+        }
+      };
+
+      // Tự động bổ sung đủ số tập cho các bộ dài (như bộ 80 tập và 45 tập)
+      Object.keys(seriesDatabase).forEach(function (sKey) {
+        const s = seriesDatabase[sKey];
+        if (s.episodes.length < s.total) {
+          const start = s.episodes.length + 1;
+          for (let i = start; i <= s.total; i++) {
+            const pad = i < 10 ? '0' + i : i;
+            s.episodes.push({
+              ep: i,
+              title: `Tập ${pad}: Khai Thị & Giảng Luận Chuyên Đề Pháp Ngữ (${pad}/${s.total})`,
+              duration: '50:00',
+              quote: s.quote
+            });
+          }
+        }
+      });
+
+      let currentActiveSeriesId = 'vlt-tinh-khong';
+      const drawerBackdrop = document.getElementById('seriesDrawerBackdrop');
+      const btnCloseSeriesDrawer = document.getElementById('btnCloseSeriesDrawer');
+      const drawerSeriesSpeaker = document.getElementById('drawerSeriesSpeaker');
+      const drawerSeriesTitle = document.getElementById('drawerSeriesTitle');
+      const drawerOverviewThumb = document.getElementById('drawerOverviewThumb');
+      const drawerTagCount = document.getElementById('drawerTagCount');
+      const drawerOverviewSynopsis = document.getElementById('drawerOverviewSynopsis');
+      const drawerOverviewQuote = document.getElementById('drawerOverviewQuote');
+      const btnDrawerPlayEp1 = document.getElementById('btnDrawerPlayEp1');
+      const seriesDrawerSearchInput = document.getElementById('seriesDrawerSearchInput');
+      const drawerEpisodesCount = document.getElementById('drawerEpisodesCount');
+      const seriesEpisodesList = document.getElementById('seriesEpisodesList');
+
+      function openSeriesDrawer(seriesId) {
+        const s = seriesDatabase[seriesId];
+        if (!s || !drawerBackdrop) return;
+        currentActiveSeriesId = seriesId;
+        if (drawerSeriesSpeaker) drawerSeriesSpeaker.textContent = s.speaker;
+        if (drawerSeriesTitle) drawerSeriesTitle.textContent = s.title;
+        if (drawerOverviewThumb) {
+          drawerOverviewThumb.src = s.img;
+          drawerOverviewThumb.alt = s.title;
+        }
+        if (drawerTagCount) drawerTagCount.textContent = `${s.total} Tập Trọn Bộ`;
+        if (drawerOverviewSynopsis) drawerOverviewSynopsis.textContent = s.synopsis;
+        if (drawerOverviewQuote) drawerOverviewQuote.textContent = s.quote;
+        if (seriesDrawerSearchInput) seriesDrawerSearchInput.value = '';
+        renderDrawerEpisodes(seriesId, '');
+        drawerBackdrop.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeSeriesDrawer() {
+        if (!drawerBackdrop) return;
+        drawerBackdrop.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      if (btnCloseSeriesDrawer) {
+        btnCloseSeriesDrawer.addEventListener('click', closeSeriesDrawer);
+      }
+
+      if (drawerBackdrop) {
+        drawerBackdrop.addEventListener('click', function (e) {
+          if (e.target === drawerBackdrop) {
+            closeSeriesDrawer();
+          }
+        });
+      }
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && drawerBackdrop && drawerBackdrop.classList.contains('active')) {
+          closeSeriesDrawer();
+        }
+      });
+
+      // Nút "Xem video Tập 1" bên trong phần Tổng quan
+      if (btnDrawerPlayEp1) {
+        btnDrawerPlayEp1.addEventListener('click', function () {
+          window.location.href = `xem-bai-giang.html?series=${currentActiveSeriesId}&ep=1`;
+        });
+      }
+
+      function renderDrawerEpisodes(seriesId, filterQuery) {
+        const s = seriesDatabase[seriesId];
+        if (!s || !seriesEpisodesList) return;
+        const q = (filterQuery || '').trim().toLowerCase();
+        const filtered = s.episodes.filter(function (ep) {
+          if (!q) return true;
+          return ep.title.toLowerCase().includes(q) || String(ep.ep).includes(q);
+        });
+
+        if (drawerEpisodesCount) {
+          drawerEpisodesCount.textContent = `Hiển thị ${filtered.length} / ${s.total} tập`;
+        }
+
+        if (filtered.length === 0) {
+          seriesEpisodesList.innerHTML = `
+            <div style="text-align: center; padding: 36px 16px; color: var(--text-muted); font-size: 13.5px;">
+              Không tìm thấy tập nào phù hợp với từ khóa "<strong>${filterQuery}</strong>"
+            </div>
+          `;
+          return;
+        }
+
+        seriesEpisodesList.innerHTML = filtered.map(function (ep) {
+          const epNumLabel = ep.ep < 10 ? 'Tập 0' + ep.ep : 'Tập ' + ep.ep;
+          return `
+            <div class="bg-drawer-episode-item" data-ep="${ep.ep}" role="button" tabindex="0">
+              <div class="bg-drawer-ep-left">
+                <span class="bg-drawer-ep-num">${epNumLabel}</span>
+                <div class="bg-drawer-ep-info">
+                  <span class="bg-drawer-ep-title" title="${ep.title}">${ep.title}</span>
+                  <span class="bg-drawer-ep-duration">${ep.duration} • Bài giảng Video HD</span>
+                </div>
+              </div>
+              <div class="bg-drawer-ep-play-icon" title="Xem video tập này">
+                <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        seriesEpisodesList.querySelectorAll('.bg-drawer-episode-item').forEach(function (itemEl) {
+          itemEl.addEventListener('click', function () {
+            const epNum = parseInt(itemEl.getAttribute('data-ep'), 10);
+            window.location.href = `xem-bai-giang.html?series=${currentActiveSeriesId}&ep=${epNum}`;
+          });
+        });
+      }
+
+      if (seriesDrawerSearchInput) {
+        seriesDrawerSearchInput.addEventListener('input', function (e) {
+          renderDrawerEpisodes(currentActiveSeriesId, e.target.value);
+        });
+      }
+
+      // Series Card Interactions: Nút "Xem video Tập 1" trên card ngoài
+      document.querySelectorAll('.bg-btn-series-primary').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          const seriesId = btn.getAttribute('data-series-id');
+          window.location.href = `xem-bai-giang.html?series=${seriesId}&ep=1`;
+        });
+      });
+
+      // Bấm vào bất kỳ đâu trên Card (hoặc nút "Tổng quan & Chọn tập") để mở Drawer Tổng Quan & Chọn Tập
+      document.querySelectorAll('.bg-series-card').forEach(function (card) {
+        card.addEventListener('click', function (e) {
+          // Bỏ qua nếu bấm trúng nút "Xem video Tập 1"
+          if (e.target.closest('.bg-btn-series-primary')) return;
+          const seriesId = card.getAttribute('data-series-id');
+          openSeriesDrawer(seriesId);
+        });
+      });
+
+      // Lọc danh sách bộ giảng theo Giảng Sư
+      document.querySelectorAll('.bg-series-filter-pill').forEach(function (pill) {
+        pill.addEventListener('click', function () {
+          document.querySelectorAll('.bg-series-filter-pill').forEach(function (p) {
+            p.classList.remove('active');
+          });
+          pill.classList.add('active');
+
+          const speaker = pill.getAttribute('data-speaker');
+          document.querySelectorAll('.bg-series-card').forEach(function (card) {
+            if (speaker === 'all' || card.getAttribute('data-speaker-key') === speaker) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // 16. Hiệu ứng Navbar mờ trong suốt khi ở đỉnh Hero & đục nhẹ khi cuộn
+      const navbarEl = document.getElementById('navbar');
+      if (navbarEl) {
+        const updateNavbarScroll = () => {
+          if (window.scrollY > 40) {
+            navbarEl.classList.add('is-scrolled');
+          } else {
+            navbarEl.classList.remove('is-scrolled');
+          }
+        };
+        window.addEventListener('scroll', updateNavbarScroll, { passive: true });
+        updateNavbarScroll();
+      }
+
+      // 17. Xử lý cuộn êm đến từng phân đoạn (Lộ Trình, Series, Vấn Đáp) không bị che khuất nội dung
+      const gatewayActionLinks = document.querySelectorAll('.bg-bento-action-link');
+      gatewayActionLinks.forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('data-scroll-to') || (this.getAttribute('href') ? this.getAttribute('href').replace('#', '') : '');
+          if (!targetId) return;
+          const targetEl = document.getElementById(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            // Đo chiều cao thực tế của thanh navbar đang ghim
+            const navbar = document.getElementById('navbar');
+            const navHeight = navbar ? navbar.offsetHeight : 70;
+            // Khoảng đệm thoáng mắt 24px phía trên tiêu đề/badge để không bị cắt chữ
+            const extraPadding = 24;
+            const elementTop = targetEl.getBoundingClientRect().top + window.pageYOffset;
+            const targetScrollPosition = Math.max(0, elementTop - navHeight - extraPadding);
+
+            window.scrollTo({
+              top: targetScrollPosition,
+              behavior: 'smooth'
+            });
+
+            // Cập nhật URL hash nhẹ nhàng mà không bị giật trang
+            if (window.history && window.history.pushState) {
+              window.history.pushState(null, null, '#' + targetId);
+            }
+          }
+        });
+      });
+
+      // 18. Xử lý bấm gợi ý tìm kiếm nhanh (Hero Quick Tags Chips)
+      const heroSearchInput = document.getElementById('bgHeroSearchInput');
+      const heroQuickChips = document.querySelectorAll('.bg-quick-chip');
+      heroQuickChips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          const searchTerm = this.getAttribute('data-search-term');
+          const scrollTarget = this.getAttribute('data-scroll-target');
+          const filterSpeaker = this.getAttribute('data-filter-speaker');
+
+          if (heroSearchInput && searchTerm) {
+            heroSearchInput.value = searchTerm;
+            heroSearchInput.focus();
+          }
+
+          // Nếu có lọc giảng sư ở phần Series
+          if (filterSpeaker) {
+            const speakerPill = document.querySelector(`.bg-series-filter-pill[data-speaker="${filterSpeaker}"]`);
+            if (speakerPill) {
+              speakerPill.click();
+            }
+          }
+
+          // Cuộn mượt đến section đích
+          if (scrollTarget) {
+            const targetEl = document.getElementById(scrollTarget);
+            if (targetEl) {
+              const navbar = document.getElementById('navbar');
+              const navHeight = navbar ? navbar.offsetHeight : 70;
+              const elementTop = targetEl.getBoundingClientRect().top + window.pageYOffset;
+              window.scrollTo({
+                top: Math.max(0, elementTop - navHeight - 20),
+                behavior: 'smooth'
+              });
+            }
+          }
+        });
+      });
+
+      // 19. DỮ LIỆU & XỬ LÝ LỘ TRÌNH TU HỌC (TÍN - NGUYỆN - HẠNH)
+      const pathwayStagesData = [
+        {
+          badge: "🌱 Chặng 01 / 03 · Nền Tảng Căn Bản",
+          title: "Khởi Tín Kiên Cố",
+          question: "Làm sao dứt sạch nghi ngờ để đặt trọn niềm tin sâu chắc vào cõi Cực Lạc và Bản Nguyện Di Đà?",
+          keys: [
+            { tag: "Phá Nghi Sinh Tín", desc: "Thấu triệt cõi Tây Phương có thật hay chỉ là biểu tượng tâm thức." },
+            { tag: "Định Vị Tín Tâm", desc: "Xây dựng niềm tin kiên cố như núi Tu Di, gió nghiệp không lay chuyển." },
+            { tag: "48 Đại Nguyện", desc: "Hiểu trọn vẹn sức từ bi tiếp dẫn vô điều kiện của Phật A Di Đà." }
+          ],
+          img: "assets/images/Muon-hieu-Phat-Phap-co-ban.png",
+          meta: "3 bài giảng • 105 phút",
+          stepLabel: "Bước 1 trên 3 chặng",
+          startBtnText: "Vào học Chặng 1",
+          tracks: [
+            { num: "01", title: "Tịnh Độ có thật hay không?", speaker: "TT. Thích Chân Quang", duration: "35 phút", highlight: "Phá nghi sanh tín, nhận thức chân xác về cõi Tây Phương." },
+            { num: "02", title: "Khởi phát niềm tin kiên cố với pháp môn Niệm Phật", speaker: "HT. Thích Trí Quảng", duration: "28 phút", highlight: "Tín tâm vững chãi như núi Tu Di, gió nghiệp không lay chuyển." },
+            { num: "03", title: "Ý nghĩa 48 Lời Đại Nguyện của Phật A Di Đà", speaker: "HT. Tuyên Hóa", duration: "42 phút", highlight: "Bổn nguyện sâu rộng, cứu vớt chúng sanh trong mười phương." }
+          ]
+        },
+        {
+          badge: "🕊️ Chặng 02 / 03 · Chí Nguyện Sâu Dày",
+          title: "Phát Nguyện Tha Thiết",
+          question: "Vì sao phải buông bỏ bám chấp Ta Bà và tha thiết phát khởi tâm nguyện cầu sanh Cực Lạc?",
+          keys: [
+            { tag: "Nhận Diện Khổ Đau", desc: "Thấu tỏ vô thường uế trược Ta Bà để tâm không còn luyến ái trần duyên." },
+            { tag: "Phát Tâm Bồ Đề", desc: "Cầu sanh Tịnh Độ để thành tựu đạo quả quay lại cứu vớt vạn loài." },
+            { tag: "Quán Chiếu Cực Lạc", desc: "Chiêm nghiệm cảnh giới sen vàng thanh tịnh nuôi dưỡng Phật tánh." }
+          ],
+          img: "assets/images/BaiGiang/bg_card_lotus.jpg",
+          meta: "3 bài giảng • 102 phút",
+          stepLabel: "Bước 2 trên 3 chặng",
+          startBtnText: "Vào học Chặng 2",
+          tracks: [
+            { num: "01", title: "Bồ Đề Tâm & Bổn Nguyện Vãng Sanh", speaker: "ĐĐ. Thích Phước Tiến", duration: "32 phút", highlight: "Phát bồ đề tâm, chí nguyện tha thiết làm thuyền từ vượt bể khổ." },
+            { num: "02", title: "Buông xả duyên trần – Thiết thực lập nguyện", speaker: "HT. Thích Thanh Từ", duration: "30 phút", highlight: "Tùy duyên sống giữa đời thường, tâm an định nơi Tịnh Độ." },
+            { num: "03", title: "Cảnh giới Cực Lạc: Y báo và Chánh báo trang nghiêm", speaker: "TT. Thích Nhật Từ", duration: "40 phút", highlight: "Ao sen thất bảo, cảnh giới giải thoát nuôi dưỡng Phật quả." }
+          ]
+        },
+        {
+          badge: "📿 Chặng 03 / 03 · Công Phu Chuyên Nhất",
+          title: "Chuyên Hạnh Trì Danh",
+          question: "Làm thế nào để nhiếp trọn sáu căn, niệm câu danh hiệu Phật dứt bặt mọi tạp niệm?",
+          keys: [
+            { tag: "Thập Niệm Ký Số", desc: "Thực hành phương pháp đếm số 1-10 của Ấn Quang Đại Sư để nhiếp tâm." },
+            { tag: "Chuyển Hóa Vọng Niệm", desc: "Không xua đuổi vọng tưởng mà nhẹ nhàng quay về hơi thở và câu hiệu Phật." },
+            { tag: "An Trú Đời Thường", desc: "Ứng dụng niệm Phật trong mọi oai nghi, biến sinh hoạt thành công phu." }
+          ],
+          img: "assets/images/BaiGiang/bg_card_meditation.jpg",
+          meta: "3 bài giảng • 86 phút",
+          stepLabel: "Bước 3 trên 3 chặng",
+          startBtnText: "Vào học Chặng 3",
+          tracks: [
+            { num: "01", title: "Phương pháp Thập Niệm Ký Số của Ấn Quang Đại Sư", speaker: "HT. Tịnh Không", duration: "25 phút", highlight: "Niệm 1 đến 10, phương pháp tối ưu nhiếp phục vọng tâm thời nay." },
+            { num: "02", title: "Khai thị cách nhiếp tâm khi vọng niệm khởi sinh", speaker: "HT. Thích Trí Quảng", duration: "34 phút", highlight: "Đừng xua đuổi vọng tưởng, chỉ cần kiên trì quay về câu hiệu Phật." },
+            { num: "03", title: "Tọa niệm, kinh hành và thường niệm trong sinh hoạt", speaker: "NS. Thích Nữ Hương Nhũ", duration: "27 phút", highlight: "Biến từng hơi thở cuộc đời hòa nhập vào tiếng niệm Nam Mô A Di Đà Phật." }
+          ]
+        }
+      ];
+
+      // ======================================================================
+      // 19A. LOGIC PHÁT AUDIO & BẮT ĐẦU HỌC CHO LỘ TRÌNH TU HỌC (TÍN - NGUYỆN - HẠNH)
+      // ======================================================================
+      document.querySelectorAll('.bg-opt3-mini-track').forEach(function(el) {
+        el.addEventListener('click', function() {
+          const col = this.closest('.bg-opt3-col');
+          const title = this.querySelector('.bg-opt3-mini-name')?.textContent?.trim() || '';
+          const speaker = this.querySelector('.bg-opt3-mini-speaker')?.textContent?.trim() || 'Chư Tôn Đức Giảng Giải';
+          const quote = col?.querySelector('.bg-opt3-col-desc')?.textContent?.trim() || '';
+          const img = col?.querySelector('.bg-opt3-img')?.src || 'assets/images/Muon-hieu-Phat-Phap-co-ban.png';
+          showPlayer({
+            title: title,
+            author: speaker,
+            duration: '30:00',
+            img: img,
+            quote: quote
+          });
+          showToast(`Đang phát: ${title}`);
+        });
+      });
+
+      // Xử lý cả nút Vào học ngay và link Xem chi tiết
+      document.querySelectorAll('.bg-opt3-btn-study, .bg-opt3-link-detail').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const stageIdx = parseInt(this.getAttribute('data-opt3-stage'), 10);
+          const stage = pathwayStagesData[stageIdx];
+          if (stage) {
+            const first = stage.tracks[0];
+            showPlayer({
+              title: first.title,
+              author: first.speaker,
+              duration: first.duration,
+              img: stage.img,
+              quote: first.highlight
+            });
+            showToast(`Bắt đầu học: ${stage.title} - ${first.title}`);
+          }
+        });
+      });
+
+      // ======================================================================
+      // 20. NHẠC NIỆM PHẬT & THANH ÂM CỰC LẠC (PHONG CÁCH ELEVENLABS HERO CAROUSEL)
+      // ======================================================================
+      const elevenSpheres = Array.from(document.querySelectorAll('.bg-eleven-sphere'));
+      const elevenActiveTitle = document.getElementById('elevenActiveTitle');
+      const elevenActiveQuote = document.getElementById('elevenActiveQuote');
+      const btnElevenPrev = document.getElementById('btnElevenPrev');
+      const btnElevenNext = document.getElementById('btnElevenNext');
+
+      let currentElevenIndex = 0;
+      const totalSpheres = elevenSpheres.length; // 6 spheres
+
+      const PLAY_ICON_SVG = '<svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><polygon points="7,5 19,12 7,19"/></svg>';
+      const PAUSE_ICON_SVG = '<svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>';
+
+      function preventWidow(str) {
+        if (!str) return '';
+        const trimmed = str.replace(/^“|”$/g, '').trim();
+        const words = trimmed.split(' ');
+        if (words.length <= 4) return trimmed;
+        const lastPart = words.slice(-3).join('\u00A0');
+        return words.slice(0, -3).join(' ') + ' ' + lastPart;
+      }
+
+      function updateElevenInfo(idx, shouldPlay) {
+        const activeSphere = elevenSpheres[idx];
+        if (activeSphere) {
+          const title = activeSphere.getAttribute('data-title') || '';
+          const quote = activeSphere.getAttribute('data-quote') || '';
+          const speaker = activeSphere.getAttribute('data-speaker') || '';
+          const duration = activeSphere.getAttribute('data-duration') || '45:00';
+          const img = activeSphere.getAttribute('data-img') || '';
+
+          if (elevenActiveTitle) elevenActiveTitle.textContent = title;
+          if (elevenActiveQuote) elevenActiveQuote.textContent = preventWidow(quote);
+
+          if (shouldPlay) {
+            activeSphere.classList.add('playing');
+            const playBtn = activeSphere.querySelector('.bg-eleven-play-btn');
+            if (playBtn) playBtn.innerHTML = PAUSE_ICON_SVG;
+
+            showPlayer({
+              title: title,
+              author: speaker,
+              duration: duration,
+              img: img,
+              quote: quote
+            });
+            showToast('Đang phát: ' + title);
+          } else {
+            // Khi di chuyển qua lại giữa các icon: KHÔNG tự động phát nhạc
+            activeSphere.classList.remove('playing');
+            const playBtn = activeSphere.querySelector('.bg-eleven-play-btn');
+            if (playBtn) playBtn.innerHTML = PLAY_ICON_SVG;
+          }
+        }
+      }
+
+      function updateElevenCarousel(newIdx, shouldPlay = false) {
+        newIdx = (newIdx + totalSpheres) % totalSpheres;
+        if (newIdx === currentElevenIndex && elevenSpheres[currentElevenIndex].classList.contains('slot-center')) {
+          if (shouldPlay) {
+            updateElevenInfo(currentElevenIndex, true);
+          }
+          return;
+        }
+
+        // Xác định hướng lướt ngang phẳng (Linear Horizontal Flow):
+        // direction > 0: Chuyển sang icon bên phải => Các icon đồng loạt lướt sang TRÁI
+        // direction < 0: Chuyển sang icon bên trái => Các icon đồng loạt lướt sang PHẢI
+        let diff = (newIdx - currentElevenIndex + totalSpheres) % totalSpheres;
+        if (diff > totalSpheres / 2) diff -= totalSpheres;
+        const direction = diff >= 0 ? 1 : -1;
+
+        // Phân bổ vị trí các slot mục tiêu quanh newIdx
+        const targetSlots = new Map();
+        targetSlots.set(newIdx, 'slot-center');
+        targetSlots.set((newIdx + 1) % totalSpheres, 'slot-right-1');
+        targetSlots.set((newIdx + 2) % totalSpheres, 'slot-right-2');
+        targetSlots.set((newIdx - 1 + totalSpheres) % totalSpheres, 'slot-left-1');
+        targetSlots.set((newIdx - 2 + totalSpheres) % totalSpheres, 'slot-left-2');
+
+        const offscreenIdx = (newIdx + 3) % totalSpheres;
+        targetSlots.set(offscreenIdx, direction > 0 ? 'slot-left-out' : 'slot-right-out');
+
+        // BƯỚC 1: CHUẨN BỊ (Không Transition)
+        // Đặt thẻ sắp vào màn hình sẵn ở vị trí ngoài rìa tương ứng mà không tạo hiệu ứng quay vòng
+        elevenSpheres.forEach(function(sphere) {
+          const sIdx = parseInt(sphere.getAttribute('data-index'), 10);
+          const currentClass = sphere.className;
+          const target = targetSlots.get(sIdx);
+
+          if (direction > 0) {
+            // Khi lướt sang TRÁI: Thẻ mới chuẩn bị vào từ bên phải phải sẵn sàng ở slot-right-out
+            if ((target === 'slot-right-2' || target === 'slot-right-1') &&
+                (currentClass.includes('slot-left') || currentClass.includes('slot-hidden'))) {
+              sphere.className = 'bg-eleven-sphere slot-right-out no-transition';
+            }
+          } else {
+            // Khi lướt sang PHẢI: Thẻ mới chuẩn bị vào từ bên trái phải sẵn sàng ở slot-left-out
+            if ((target === 'slot-left-2' || target === 'slot-left-1') &&
+                (currentClass.includes('slot-right') || currentClass.includes('slot-hidden'))) {
+              sphere.className = 'bg-eleven-sphere slot-left-out no-transition';
+            }
+          }
+        });
+
+        // Kích hoạt Layout Reflow để browser lưu trạng thái đón đầu
+        const stageEl = document.getElementById('elevenSpheresStage');
+        if (stageEl) void stageEl.offsetHeight;
+
+        // BƯỚC 2: ĐỒNG LOẠT LƯỚT NGANG CÙNG MỘT CHIỀU DUY NHẤT
+        requestAnimationFrame(function() {
+          elevenSpheres.forEach(function(sphere) {
+            const sIdx = parseInt(sphere.getAttribute('data-index'), 10);
+            const target = targetSlots.get(sIdx);
+            sphere.className = 'bg-eleven-sphere ' + target;
+
+            // Reset icon play ở các thẻ không ở trung tâm
+            const btn = sphere.querySelector('.bg-eleven-play-btn');
+            if (btn && sIdx !== newIdx) btn.innerHTML = PLAY_ICON_SVG;
+          });
+
+          currentElevenIndex = newIdx;
+
+          // Cập nhật thông tin bài giảng mà KHÔNG tự phát nhạc
+          updateElevenInfo(currentElevenIndex, shouldPlay);
+        });
+      }
+
+      // Event Listeners cho các thẻ Pebble
+      elevenSpheres.forEach(function(sphere) {
+        sphere.addEventListener('click', function(e) {
+          const clickedIdx = parseInt(this.getAttribute('data-index'), 10);
+          if (clickedIdx === currentElevenIndex) {
+            // Nhấn vào thẻ ở giữa -> Bật/Tắt phát nhạc
+            const isPlaying = this.classList.contains('playing');
+            if (isPlaying) {
+              this.classList.remove('playing');
+              const playBtn = this.querySelector('.bg-eleven-play-btn');
+              if (playBtn) playBtn.innerHTML = PLAY_ICON_SVG;
+              showToast('Tạm dừng phát');
+              togglePlayPause();
+            } else {
+              this.classList.add('playing');
+              const playBtn = this.querySelector('.bg-eleven-play-btn');
+              if (playBtn) playBtn.innerHTML = PAUSE_ICON_SVG;
+              updateElevenInfo(clickedIdx, true);
+            }
+          } else {
+            // Nhấn vào thẻ bên cạnh -> Lướt thẻ đó vào giữa (KHÔNG tự động play nhạc)
+            updateElevenCarousel(clickedIdx, false);
+          }
+        });
+      });
+
+      // Arrow Nav Buttons: Chuyển bài nhưng KHÔNG tự động play
+      if (btnElevenPrev) {
+        btnElevenPrev.addEventListener('click', function() {
+          updateElevenCarousel(currentElevenIndex - 1, false);
+        });
+      }
+
+      if (btnElevenNext) {
+        btnElevenNext.addEventListener('click', function() {
+          updateElevenCarousel(currentElevenIndex + 1, false);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

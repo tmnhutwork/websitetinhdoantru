@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đọc Kinh & Sổ Tay Tinh Tấn · Tịnh Độ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="sutra.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪷</text></svg>">
+</head>
+<body class="sutra-page">
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo" id="brand-logo">
+        <span class="lotus-icon">🪷</span>
+        <span class="brand-name">tịnh độ <span class="brand-dot">·</span> <em class="brand-sub">an trú</em></span>
+      </a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html#kham-pha" class="nav-link">Giáo Lý</a>
+        <a href="bai-giang.html" class="nav-link">Bài Giảng</a>
+        <a href="kinh-dien.html" class="nav-link active">Kinh Điển</a>
+        <a href="index.html#thoi-khoa" class="nav-link">Thời Khóa</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#" class="btn btn-ghost" style="padding: 8px 16px;">Đăng nhập</a>
+        <a href="#" class="btn btn-primary" style="padding: 8px 20px;">Đăng ký</a>
+        <button class="icon-btn theme-toggle" id="btn-theme-toggle" title="Chuyển chế độ đọc ban đêm" aria-label="Chuyển chế độ đọc">
+          <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path><path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path><path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+        </button>
+        <button class="mobile-menu-btn" id="btn-mobile-menu" aria-label="Mở menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="sutra-layout">
+    
+        <!-- New Page Header -->
+        <div class="sutra-page-header" id="sutra-page-header">
+      <h1 class="sutra-page-title">Kho Tàng Kinh Điển <span class="text-italic-gold">Tịnh Độ</span></h1>
+      <p class="sutra-page-desc">Kinh điển, lời vàng giảng giải của chư tôn đức, thời khóa niệm Phật và khóa tu an lạc — cùng nhau tiếp cận giáo lý giải thoát một cách giản dị, thảnh thơi.</p>
+      
+      <div class="sutra-search-wrapper">
+        <svg class="sutra-search-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        <input type="text" class="sutra-search-input" placeholder="Tìm kiếm bài giảng, kinh văn, phương pháp niệm Phật..." />
+        <button class="sutra-search-btn">Tra cứu</button>
+      </div>
+      
+      <div class="sutra-filter-pills">
+        <button class="filter-pill active">Tất cả <span class="filter-pill-count">6</span></button>
+        <button class="filter-pill"><span class="pill-dot" style="background-color: #d97706"></span> Tịnh Độ Ngũ Kinh</button>
+        <button class="filter-pill"><span class="pill-dot" style="background-color: #059669"></span> Kinh Điển Đại Thừa</button>
+        <button class="filter-pill"><span class="pill-dot" style="background-color: #4f46e5"></span> Kinh Tụng Hằng Ngày</button>
+        <button class="filter-pill"><span class="pill-dot" style="background-color: #e11d48"></span> Sám Hối & Nghi Thức</button>
+      </div>
+    </div>
+
+    <!-- SELECTION VIEW -->
+    <div id="sutra-selection-view">
+      
+      <!-- CATEGORY 1 -->
+      <div class="sutra-category-header">
+         <h2 class="sutra-category-title">Tịnh Độ Ngũ Kinh</h2>
+         <p class="sutra-category-desc">Năm bộ kinh cốt tủy của pháp môn Tịnh Độ, là kim chỉ nam cho hành giả trên bước đường vãng sanh Cực Lạc.</p>
+      </div>
+      
+      <div class="sutra-list-view">
+        <div class="kinh-card-horizontal" onclick="openSutraReader('kinh-vo-luong-tho')">
+          
+            <div class="card-img-actions">
+              <button class="action-icon-btn" title="Yêu thích">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                </button>
+              <button class="action-icon-btn" title="Chia sẻ">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
+                </button>
+            </div>
+          <div class="kinh-card-img">
+            <img src="assets/images/Kinh/kinh-vo-luong-tho.png" alt="Kinh Vô Lượng Thọ">
+          </div>
+          <div class="kinh-card-content">
+            <div class="kinh-text">
+              <h3>Kinh Vô Lượng Thọ <span class="sutra-chinese">佛說無量壽經</span></h3>
+            <div class="sutra-meta">Hán dịch: Ngài Khương Tăng Khải <span class="meta-dot">|</span> Việt dịch: HT. Thích Trí Tịnh</div>
+              <p>Trình bày chi tiết về 48 đại nguyện của Phật A Di Đà và cảnh giới trang nghiêm của cõi Tây phương Cực Lạc.</p>
+            </div>
+            <div class="kinh-card-footer">
+<div class="sutra-progress-container">
+                <span class="sutra-progress-text">Đã hoàn thành: 45%</span>
+                <div class="sutra-progress-bar"><div class="sutra-progress-fill" style="width: 45%"></div></div>
+              </div>
+              <div class="sutra-actions">
+                <button class="btn btn-secondary-sm">Đọc từ đầu</button>
+                <button class="btn btn-primary-sm">Đọc tiếp</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="kinh-card-horizontal" onclick="openSutraReader('kinh-a-di-da')">
+          
+            <div class="card-img-actions">
+              <button class="action-icon-btn" title="Yêu thích">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                </button>
+              <button class="action-icon-btn" title="Chia sẻ">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
+                </button>
+            </div>
+          <div class="kinh-card-img">
+            <img src="assets/images/Kinh/kinh-a-di-da.png" alt="Kinh Phật Thuyết A Di Đà">
+          </div>
+          <div class="kinh-card-content">
+            <div class="kinh-text">
+              <h3>Kinh Phật Thuyết A Di Đà <span class="sutra-chinese">佛說阿彌陀經</span></h3>
+            <div class="sutra-meta">Hán dịch: Pháp sư Cưu Ma La Thập <span class="meta-dot">|</span> Việt dịch: HT. Thích Trí Tịnh</div>
+              <p>Nói về y, chính báo trang nghiêm của cõi Cực Lạc và phương pháp trì niệm danh hiệu Phật A Di Đà để được vãng sanh.</p>
+            </div>
+            <div class="kinh-card-footer">
+<div class="sutra-progress-container">
+                <span class="sutra-progress-text">Đã hoàn thành: 68%</span>
+                <div class="sutra-progress-bar"><div class="sutra-progress-fill" style="width: 68%"></div></div>
+              </div>
+              <div class="sutra-actions">
+                <button class="btn btn-secondary-sm">Đọc từ đầu</button>
+                <button class="btn btn-primary-sm">Đọc tiếp</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="kinh-card-horizontal" onclick="openSutraReader('kinh-quan')">
+          
+            <div class="card-img-actions">
+              <button class="action-icon-btn" title="Yêu thích">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                </button>
+              <button class="action-icon-btn" title="Chia sẻ">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
+                </button>
+            </div>
+          <div class="kinh-card-img">
+            <img src="assets/images/Kinh/kinh-quan-vo-luong-tho.png" alt="Kinh Quán Vô Lượng Thọ">
+          </div>
+          <div class="kinh-card-content">
+            <div class="kinh-text">
+              <h3>Kinh Quán Vô Lượng Thọ <span class="sutra-chinese">佛說觀無量壽佛經</span></h3>
+            <div class="sutra-meta">Hán dịch: Ngài Cương Lương Da Xá <span class="meta-dot">|</span> Việt dịch: HT. Thích Trí Tịnh</div>
+              <p>Hướng dẫn 16 phép quán tưởng tịnh độ và chỉ bày cách thức tu tập các nghiệp thiện để vãng sanh theo từng bậc khác nhau.</p>
+            </div>
+            <div class="kinh-card-footer">
+<div class="sutra-progress-container">
+                <span class="sutra-progress-text">Chưa bắt đầu</span>
+                <div class="sutra-progress-bar"><div class="sutra-progress-fill" style="width: 0%"></div></div>
+              </div>
+              <div class="sutra-actions">
+                <button class="btn btn-primary-sm">Bắt đầu đọc</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="kinh-card-horizontal" onclick="openSutraReader('pho-hien')">
+          
+            <div class="card-img-actions">
+              <button class="action-icon-btn" title="Yêu thích">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                </button>
+              <button class="action-icon-btn" title="Chia sẻ">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
+                </button>
+            </div>
+          <div class="kinh-card-img">
+            <img src="assets/images/Kinh/pho-hien-hanh-nguyen-pham.png" alt="Phổ Hiền Hạnh Nguyện Phẩm">
+          </div>
+          <div class="kinh-card-content">
+            <div class="kinh-text">
+              <h3>Phổ Hiền Hạnh Nguyện Phẩm <span class="sutra-chinese">普賢行願品</span></h3>
+            <div class="sutra-meta">Hán dịch: Bát Nhã Tam Tạng <span class="meta-dot">|</span> Việt dịch: HT. Thích Trí Tịnh</div>
+              <p>Dạy về 10 đại hạnh nguyện của Bồ Tát Phổ Hiền, đem công đức tu hành hướng về cầu vãng sanh Cực Lạc.</p>
+            </div>
+            <div class="kinh-card-footer">
+<div class="sutra-progress-container">
+                <span class="sutra-progress-text">Đã hoàn thành: 12%</span>
+                <div class="sutra-progress-bar"><div class="sutra-progress-fill" style="width: 12%"></div></div>
+              </div>
+              <div class="sutra-actions">
+                <button class="btn btn-secondary-sm">Đọc từ đầu</button>
+                <button class="btn btn-primary-sm">Đọc tiếp</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="kinh-card-horizontal" onclick="openSutraReader('dai-the-chi')">
+          
+            <div class="card-img-actions">
+              <button class="action-icon-btn" title="Yêu thích">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                </button>
+              <button class="action-icon-btn" title="Chia sẻ">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
+                </button>
+            </div>
+          <div class="kinh-card-img">
+            <img src="assets/images/Kinh/dai-the-chi-niem-phat.png" alt="Đại Thế Chí Niệm Phật Viên Thông Chương">
+          </div>
+          <div class="kinh-card-content">
+            <div class="kinh-text">
+              <h3>Đại Thế Chí Niệm Phật Viên Thông Chương <span class="sutra-chinese">大勢至菩薩念佛圓通章</span></h3>
+            <div class="sutra-meta">Hán dịch: Ngài Bát Lạt Mật Đế <span class="meta-dot">|</span> Việt dịch: HT. Thích Thiền Tâm</div>
+              <p>Ghi lại phương pháp niệm Phật "nhiếp lục căn, tịnh niệm kế tiếp" đạt đến Niệm Phật tam-muội.</p>
+            </div>
+            <div class="kinh-card-footer">
+<div class="sutra-progress-container">
+                <span class="sutra-progress-text">Chưa bắt đầu</span>
+                <div class="sutra-progress-bar"><div class="sutra-progress-fill" style="width: 0%"></div></div>
+              </div>
+              <div class="sutra-actions">
+                <button class="btn btn-primary-sm">Bắt đầu đọc</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sutra-category-divider"></div>
+
+      <!-- CATEGORY 2 -->
+      <div class="sutra-category-header">
+         <h2 class="sutra-category-title">Kinh Điển Đại Thừa</h2>
+         <p class="sutra-category-desc">Những bộ kinh quan trọng khác giúp hành giả liễu ngộ giáo lý, phát tâm bồ đề và tích lũy công đức.</p>
+      </div>
+
+      <div class="sutra-list-view">
+        <div class="kinh-card-horizontal" onclick="openSutraReader('kinh-dia-tang')">
+          
+            <div class="card-img-actions">
+              <button class="action-icon-btn" title="Yêu thích">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                </button>
+              <button class="action-icon-btn" title="Chia sẻ">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
+                </button>
+            </div>
+          <div class="kinh-card-img">
+            <img src="assets/images/Kinh/kinh-dia-tang.png" alt="Kinh Địa Tạng">
+          </div>
+          <div class="kinh-card-content">
+            <div class="kinh-text">
+              <h3>Kinh Địa Tạng Bồ Tát Bổn Nguyện <span class="sutra-chinese">地藏菩薩本願經</span></h3>
+            <div class="sutra-meta">Hán dịch: Ngài Thật Xoa Nan Đà <span class="meta-dot">|</span> Việt dịch: HT. Thích Trí Tịnh</div>
+              <p>Nêu rõ công đức độ sanh của Bồ tát Địa Tạng, nhấn mạnh luật nhân quả và đạo hiếu của người tu Phật, là nền tảng cốt lõi trong việc tu hành.</p>
+            </div>
+            <div class="kinh-card-footer">
+<div class="sutra-progress-container">
+                <span class="sutra-progress-text">Chưa bắt đầu</span>
+                <div class="sutra-progress-bar"><div class="sutra-progress-fill" style="width: 0%"></div></div>
+              </div>
+              <div class="sutra-actions">
+                <button class="btn btn-primary-sm">Bắt đầu đọc</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- READING VIEW -->
+    <div id="sutra-reading-view" class="sutra-columns" style="display: none;">
+      <!-- LEFT COLUMN -->
+      <div class="sutra-col-left">
+        <button class="btn-back-selection" onclick="backToSelection()">← Quay lại Mục lục Ngũ Kinh</button>
+        
+        <!-- Filters -->
+        <div class="sutra-toolbar">
+          <h3 class="toolbar-title">Mục Lục Tu Tập & Khóa Trì</h3>
+          <div class="toolbar-filters">
+            <div class="filter-group">
+              <label>Lịch sử đọc</label>
+              <select class="sutra-select"><option>Gần đây nhất (Kinh A Di Đà)</option></select>
+            </div>
+            <div class="filter-group">
+              <label>Kinh điển / Môn Tu</label>
+              <select class="sutra-select"><option>Kinh Phật Thuyết A Di Đà</option></select>
+            </div>
+            <div class="filter-group">
+              <label>Sổ tay Khóa Trì</option></label>
+              <select class="sutra-select"><option>Đang trì tụng: Quyển 1</option></select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reader Card -->
+        <article class="reader-card">
+          <div class="reader-header">
+            <h2 class="reader-title">Kinh Phật Thuyết A Di Đà — <span>Phẩm Thứ Nhất</span></h2>
+            <div class="reader-actions">
+              <button class="btn-text">A-</button>
+              <button class="btn-text active">A</button>
+              <button class="btn-text">A+</button>
+              <button class="btn-icon">🌓</button>
+            </div>
+          </div>
+          
+          <div class="reader-body">
+            <p>Ta nghe như vầy: Một thuở nọ Đức Phật ở nơi vườn Kỳ Thọ, cấp Cô Độc nước Xá Vệ, cùng với một nghìn hai trăm năm mươi vị đại Tỳ kheo câu hội. Đều là bậc đại A La Hán mọi người đều quen biết, như là: Trưởng lão Xá Lợi Phất, Ma ha Mục Kiền Liên, Ma ha Ca Diếp, Ma ha Ca Chiên Diên, Ma ha Câu Hy La, Ly Bà Đa, Châu Lợi Bàn Đà Già, Nan Đà, A Nan Đà, La Hầu La, Kiều Phạm Ba Đề, Tân Đầu Lô Phả La Đọa, Ca Lưu Đà Di, Ma ha Kiếp Tân Na, Bạc Câu La, A Nâu Lâu Đà, những vị đại đệ tử như thế.</p>
+            <p>Và cùng với các vị đại Bồ tát: Văn Thù Sư Lợi Pháp vương tử, A Dật Đa Bồ tát, Càn Đà Ha Đề Bồ tát, Thường Tinh Tấn Bồ tát... cùng với các vị Đại Bồ tát như thế và với vô lượng chư Thiên: ông Thích Đề Hoàn Nhân, v.v... đại chúng cùng đến dự hội.</p>
+            <p>Bấy giờ, Đức Phật bảo ngài Trưởng lão Xá Lợi Phất rằng: "Từ đây qua phương Tây quá mười muôn ức cõi Phật, có thế giới tên là Cực Lạc, trong thế giới đó có Đức Phật hiệu là A Di Đà hiện nay đương thuyết pháp."</p>
+            
+            <!-- Alert/Note -->
+            <div class="reader-alert">
+              <div class="alert-icon">💡</div>
+              <div class="alert-content">
+                <strong>Lưu ý khi tụng niệm</strong>
+                <p>Bạn có thể dừng hoặc lưu trạng thái đọc kinh. Hệ thống sẽ tự động ghi nhớ trang đang đọc để bạn tiếp tục vào lần sau.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="reader-footer">
+            <button class="btn btn-ghost">← Phẩm Trước</button>
+            <span>Trang 1/12</span>
+            <button class="btn btn-ghost">Phẩm Kế Tiếp →</button>
+          </div>
+        </article>
+
+        <!-- Course List -->
+        <div class="course-list-section">
+          <div class="course-list-header">
+            <h3>Danh Sách Khóa Lễ & Tụng Niệm Phật</h3>
+            <div class="course-filters">
+              <button class="pill-btn active">Tất cả</button>
+              <button class="pill-btn">Khóa Lễ</button>
+              <button class="pill-btn">Tụng Niệm</button>
+              <button class="pill-btn">Sám Hối</button>
+            </div>
+          </div>
+          
+          <div class="course-list">
+            <!-- Card 1 -->
+            <div class="course-card">
+              <div class="course-img"><img src="assets/images/Muon-tim-su-binh-an.png" alt="Chùa Hoằng Pháp" style="width:100%; height:100%; object-fit:cover; border-radius: 8px;"></div>
+              <div class="course-info">
+                <h4>Chùa Hoằng Pháp <span class="badge-tag">Khóa Lễ Buổi Sáng</span></h4>
+                <p>Khóa Lễ Buổi Sáng - Tụng Kinh A Di Đà</p>
+                <span class="course-meta">Thời gian: 60 phút • Có người hướng dẫn</span>
+              </div>
+              <div class="course-action">
+                <button class="btn btn-secondary-sm">Bắt đầu ngay</button>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="course-card">
+              <div class="course-img"><img src="assets/images/Muon-bat-dau-niem-Phat.png" alt="Đại Bi" style="width:100%; height:100%; object-fit:cover; border-radius: 8px;"></div>
+              <div class="course-info">
+                <h4>Trì Tụng Chú Đại Bi <span class="badge-tag highlight">Tự Do Trì Tụng</span></h4>
+                <p>108 Biến Chú Đại Bi - Tiêu Tai Diệt Tội</p>
+                <span class="course-meta">Thời gian: Tùy hỷ • Âm điệu: Thượng Tọa Trí Thoát</span>
+              </div>
+              <div class="course-action">
+                <button class="btn btn-secondary-sm">Bắt đầu ngay</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="sutra-col-right">
+        <!-- Notebook Card -->
+        <div class="notebook-card">
+          <div class="notebook-header">
+            <div class="notebook-user-info">
+              <div class="notebook-avatar">蓮</div>
+              <div class="notebook-user-text">
+                <h2 class="notebook-title">Sổ Tay Công Phu Cá Nhân</h2>
+                <p class="notebook-subtitle">Phật tử: Thiện Huệ • Pháp danh: Diệu Âm</p>
+              </div>
+            </div>
+            <div class="notebook-badge">
+              <span class="badge-icon">🎖</span> Tinh tấn 42 ngày
+            </div>
+          </div>
+
+          <div class="notebook-stats">
+            <div class="stat-card">
+              <h4 class="stat-label">TỔNG CÂU NIỆM HÔM NAY</h4>
+              <div class="stat-value">10,240 <span class="stat-unit">/ 12,000</span></div>
+              <div class="stat-progress">
+                <div class="stat-progress-fill" style="width: 85%;"></div>
+              </div>
+              <p class="stat-caption">Đạt 85% hạnh nguyện ngày</p>
+            </div>
+            <div class="stat-card">
+              <h4 class="stat-label">BIẾN TRÌ CHÚ ĐẠI BI</h4>
+              <div class="stat-value highlight">108 <span class="stat-unit">biến</span></div>
+              <div class="stat-progress highlight-bar">
+                <div class="stat-progress-fill" style="width: 100%;"></div>
+              </div>
+              <p class="stat-caption success">Đã viên mãn công khóa sáng</p>
+            </div>
+          </div>
+
+          <div class="notebook-weekly">
+            <div class="weekly-top">
+              <h4 class="weekly-title">Mục Tiêu Tu Tập Tuần (Tuần thứ 45)</h4>
+              <span class="weekly-status">6/7 Ngày Viên Mãn</span>
+            </div>
+            <div class="weekly-days">
+              <div class="day completed"><div class="day-circle">T2</div><div class="day-mark">✓</div></div>
+              <div class="day completed"><div class="day-circle">T3</div><div class="day-mark">✓</div></div>
+              <div class="day completed"><div class="day-circle">T4</div><div class="day-mark">✓</div></div>
+              <div class="day completed"><div class="day-circle">T5</div><div class="day-mark">✓</div></div>
+              <div class="day completed"><div class="day-circle">T6</div><div class="day-mark">✓</div></div>
+              <div class="day completed"><div class="day-circle">T7</div><div class="day-mark">✓</div></div>
+              <div class="day today"><div class="day-circle">CN</div><div class="day-mark dot"></div></div>
+            </div>
+          </div>
+
+          <div class="notebook-footer">
+            <button class="btn-add-practice">
+              <span class="plus-icon">⊕</span> +108 Câu Niệm Phật
+            </button>
+            <a href="#" class="history-link">Lịch sử hành trì</a>
+          </div>
+        </div>
+
+        <!-- Calendar Card -->
+        <div class="calendar-card">
+          <div class="calendar-header">
+            <h3>Lịch Âm Dương Phật Giáo</h3>
+            <span class="calendar-month">Tháng 10 - Năm Giáp Thìn</span>
+          </div>
+          <div class="calendar-today">
+            <div class="cal-left">
+              <p class="cal-lunar-date">Hôm nay - Ngày 14 Tháng 10 Âm Lịch</p>
+              <p class="cal-solar-date">26 Tháng 11, 2024</p>
+              <span class="cal-event-tag">Ngày Ăn Chay (Thập Trai)</span>
+            </div>
+            <div class="cal-right">
+              <div class="cal-icon">14</div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       SITE FOOTER (TRANG NGHIÊM, HÒA HỢP & TINH TẾ)
+       ========================================================================== -->
+  <footer class="site-footer" id="siteFooter">
+    <!-- Đường viền hào quang kim sắc trên đỉnh footer -->
+    <div class="footer-top-accent"></div>
+
+    <div class="footer-container">
+      <!-- Tầng 1: Giới thiệu & Lời Vàng Khai Thị (Tổ Ấn Quang) -->
+      <div class="footer-top-tier">
+        <div class="footer-about-col">
+          <div class="footer-brand-header">
+            <span class="footer-logo-icon">🪷</span>
+            <div class="footer-brand-titles">
+              <h3 class="footer-brand-title">tịnh độ <span class="brand-dot">·</span> <em class="brand-sub">an trú</em></h3>
+              <span class="footer-brand-sub">Pháp Bảo &amp; Hành Trì Thời Hiện Đại</span>
+            </div>
+          </div>
+          <p class="footer-about-desc">
+            Không gian Phật pháp thanh tịnh trợ duyên cho bạn đạo đồng tu trên con đường <strong>Tín - Nguyện - Trì Danh</strong> niệm Phật cầu sanh Cực Lạc. Toàn bộ kinh điển, bài giảng và âm thanh niệm Phật được biên tập công phu, phụng sự hoàn toàn <strong>phi thương mại</strong> vì an lạc của số đông.
+          </p>
+          <div class="footer-badges-row">
+            <span class="footer-badge">🪷 Pháp Thí Vô Lượng</span>
+            <span class="footer-badge">🕊️ Phi Thương Mại</span>
+            <div class="footer-socials">
+              <a href="https://youtube.com" target="_blank" rel="noopener" class="footer-social-link" title="Kênh YouTube Pháp Âm" aria-label="YouTube">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener" class="footer-social-link" title="Cộng Đồng Đồng Tu Facebook" aria-label="Facebook">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+              <a href="bai-giang.html" class="footer-social-link" title="Thư Viện Bài Giảng &amp; Audio" aria-label="Audio">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+              </a>
+              <a href="kinh-dien.html" class="footer-social-link" title="Kinh Điển Tịnh Độ" aria-label="Kinh">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Thẻ Lời Vàng Khai Thị (Tổ Ấn Quang) -->
+        <div class="footer-quote-card">
+          <div class="footer-card-pill">📜 Lời Khuyên Tấn Khắc Tâm</div>
+          <p class="footer-quote-text">
+            "Thế sự vô thường, thân mạng khó giữ. Đừng hẹn ngày mai, hãy trân quý từng hơi thở mà tha thiết xưng niệm A Di Đà Phật."
+          </p>
+          <div class="footer-quote-footer">
+            <div class="footer-quote-author">
+              <strong>— Ấn Quang Đại Sư</strong>
+              <span>Tổ Thứ 13 Tịnh Độ Tông</span>
+            </div>
+            <a href="van-dap.html" class="footer-qa-btn">
+              <span>Góc Vấn Đáp</span>
+              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tầng 2: Bản Đồ Pháp Bảo 4 Cột Gọn Gàng (Gap 7px) -->
+      <div class="footer-links-grid">
+        <div class="footer-nav-col">
+          <h4 class="footer-col-title">Về Dự Án</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Tôn Chỉ Tịnh Độ An Trú</a></li>
+            <li><a href="index.html#kham-pha">Sứ Mệnh Pháp Thí</a></li>
+            <li><a href="index.html#thoi-khoa">Lời Ngỏ Cùng Bạn Đạo</a></li>
+            <li><a href="van-dap.html#hoi-dap">Đóng Góp &amp; Hiệu Đính</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4 class="footer-col-title">Hệ Thống Pháp Bảo</h4>
+          <ul class="footer-links-list">
+            <li><a href="kinh-dien.html">Kinh Điển Tịnh Độ (Tam Kinh)</a></li>
+            <li><a href="bai-giang.html">Tuyển Tập Pháp Âm &amp; Bài Giảng</a></li>
+            <li><a href="index.html#niem-phat">Máy Niệm Phật Trực Tuyến</a></li>
+            <li><a href="index.html#thoi-khoa">Nghi Thức Thời Khóa Sớm Tối</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4 class="footer-col-title">Lộ Trình Hành Trì</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html#tam-tu-luong">Ba Món Tư Lương: Tín - Nguyện - Hạnh</a></li>
+            <li><a href="index.html#kham-pha">Phương Pháp Thập Niệm Ký Số</a></li>
+            <li><a href="index.html#thoi-khoa">48 Lời Đại Nguyện A Di Đà</a></li>
+            <li><a href="index.html#kham-pha">Lời Khai Thị Chư Tổ Tịnh Tông</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4 class="footer-col-title">Trợ Duyên Đồng Tu</h4>
+          <ul class="footer-links-list">
+            <li><a href="van-dap.html">Góc Vấn Đáp Tu Học Khúc Mắc</a></li>
+            <li><a href="van-dap.html">Khái Yếu Hộ Niệm Lâm Chung</a></li>
+            <li><a href="kinh-dien.html">Tải Kinh Sách Bản In (PDF)</a></li>
+            <li><a href="van-dap.html#cau-hoi-moi">Gửi Thắc Mắc Đến Ban Biên Tập</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tầng 3: Dải Hồi Hướng & Bản Quyền Liền Mạch -->
+      <div class="footer-bottom-tier">
+        <div class="footer-dedication-bar">
+          <p class="footer-dedication-verse">
+            🪷 "Nguyện đem công đức này · Trang nghiêm Phật Tịnh Độ · Trên đền bốn ơn nặng · Dưới cứu khổ tam đồ" 🪷
+          </p>
+        </div>
+        <div class="footer-legal-bar">
+          <span class="footer-legal-copy">© 2026 Tịnh Độ An Trú · Phật Pháp truyền đăng, phụng sự tha nhân vô vụ lợi. Nguyện khắp chúng sanh đồng sanh Cực Lạc.</span>
+          <div class="footer-legal-nav">
+            <a href="index.html">Trang Chủ</a>
+            <span>·</span>
+            <a href="bai-giang.html">Bài Giảng</a>
+            <span>·</span>
+            <a href="kinh-dien.html">Kinh Điển</a>
+            <span>·</span>
+            <a href="van-dap.html">Vấn Đáp</a>
+            <span>·</span>
+            <a href="#navbar" class="footer-top-btn" title="Lên đầu trang">Lên đầu trang ↑</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    function openSutraReader(sutraId) {
+      document.getElementById('sutra-selection-view').style.display = 'none';
+      document.getElementById('sutra-reading-view').style.display = 'grid';
+      document.getElementById('sutra-page-header').style.display = 'block';
+      window.scrollTo(0, 0);
+    }
+    
+    function backToSelection() {
+      document.getElementById('sutra-reading-view').style.display = 'none';
+      document.getElementById('sutra-page-header').style.display = 'none';
+      document.getElementById('sutra-selection-view').style.display = 'block';
+      window.scrollTo(0, 0);
+    }
+  </script>
+</body>
+</html>

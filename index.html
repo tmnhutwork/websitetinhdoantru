@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tịnh Độ · Cõi An Yên Cho Người Con Phật</title>
+  <meta name="description" content="Trang web Phật giáo Tịnh Độ hiện đại, đơn giản và dễ tiếp cận: giáo lý Bài Giảng, 48 Đại Nguyện, kinh điển cốt tủy, thời khóa tu học và máy niệm Phật chánh niệm.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪷</text></svg>">
+</head>
+<body>
+
+
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo" id="brand-logo">
+        <span class="lotus-icon">🪷</span>
+        <span class="brand-name">tịnh độ <span class="brand-dot">·</span> <em class="brand-sub">an trú</em></span>
+      </a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#kham-pha" class="nav-link active">Giáo Lý</a>
+        <a href="bai-giang.html" class="nav-link">Bài Giảng</a>
+        <a href="kinh-dien.html" class="nav-link">Kinh Điển</a>
+        <a href="#thoi-khoa" class="nav-link">Thời Khóa</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Auth Buttons -->
+        <a href="#" class="btn btn-ghost" style="padding: 8px 16px;">Đăng nhập</a>
+        <a href="#" class="btn btn-primary" style="padding: 8px 20px;">Đăng ký</a>
+
+        <!-- Dark/Light Mode Toggle -->
+        <button class="icon-btn theme-toggle" id="btn-theme-toggle" title="Chuyển chế độ đọc ban đêm" aria-label="Chuyển chế độ đọc">
+          <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path><path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path><path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-btn" id="btn-mobile-menu" aria-label="Mở menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section (Townhall inspired editorial layout) -->
+  <main>
+    <section class="hero-section" id="hero-section">
+      <div class="hero-container hero-container-centered">
+        <div class="hero-top-badge">
+          <span class="pulse-dot-green"></span>
+          <span>Không gian đối thoại tĩnh lặng • Lắng nghe và vỗ về tâm hồn</span>
+        </div>
+        
+        <h1 class="hero-title hero-title-centered">
+          Bạn đang tìm kiếm <em class="hero-italic">điều gì</em><br>hôm nay?
+        </h1>
+
+        <p class="hero-subtitle hero-subtitle-centered">
+          Dù bạn đang trĩu nặng âu lo, tò mò tìm hiểu hay chỉ mong vài phút<br>
+          nghỉ ngơi, hãy chọn một tâm trạng lúc này. Chúng tôi ở đây cùng bạn.
+        </p>
+
+        <!-- Mood Selector Pills -->
+        <div class="mood-pills-group" id="mood-selector">
+          <button class="mood-pill active" data-mood="binh-an">Tôi muốn tìm sự bình an</button>
+          <button class="mood-pill" data-mood="kho-dau">Tôi muốn học cách đối diện khổ đau</button>
+          <button class="mood-pill" data-mood="co-ban">Tôi muốn hiểu Phật pháp cơ bản</button>
+          <button class="mood-pill" data-mood="niem-phat">Tôi muốn bắt đầu niệm Phật</button>
+          <button class="mood-pill" data-mood="tinh-do">Tôi muốn tìm hiểu Tịnh Độ</button>
+        </div>
+
+        <!-- Dynamic Solution Card -->
+        <div class="solution-card" id="solution-card">
+          <!-- Left: Message -->
+          <div class="solution-left" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div class="solution-label" style="color: #059669;"><span class="icon-leaf">🍃</span> LỜI NHẮN CHO BẠN</div>
+              <h3 class="solution-title" id="sol-title">Thở sâu một hơi, buông lỏng hai vai xuống...</h3>
+              <div id="sol-body-content" style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px;">
+                <div class="sol-section">
+                  <h4 class="sol-sec-title" style="font-size: 12.5px; font-weight: 700; text-transform: uppercase; color: var(--accent-gold); letter-spacing: 0.05em; margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">Ý nghĩa</h4>
+                  <p class="sol-sec-desc" id="sol-meaning" style="font-size: 14.5px; line-height: 1.6; color: var(--text-secondary); margin: 0;">
+                    Bình an không phải là không có bão giông, mà là tâm thế nhẹ nhõm giữa dòng đời bộn bề.
+                  </p>
+                </div>
+                <div class="sol-section">
+                  <h4 class="sol-sec-title" style="font-size: 12.5px; font-weight: 700; text-transform: uppercase; color: var(--accent-gold); letter-spacing: 0.05em; margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">Hành trì nhanh</h4>
+                  <p class="sol-sec-desc" id="sol-practice" style="font-size: 14.5px; line-height: 1.6; color: var(--text-secondary); margin: 0;">
+                    Nhận diện hơi thở vào ra. Thả lỏng căng thẳng trên cơ thể.
+                  </p>
+                </div>
+                <div class="sol-section">
+                  <h4 class="sol-sec-title" style="font-size: 12.5px; font-weight: 700; text-transform: uppercase; color: var(--accent-gold); letter-spacing: 0.05em; margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">Kết quả</h4>
+                  <p class="sol-sec-desc" id="sol-result" style="font-size: 14.5px; line-height: 1.6; color: var(--text-secondary); margin: 0;">
+                    Tâm trí tĩnh lặng, khôi phục lại sự minh mẫn.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          
+          <!-- Right: Resource -->
+          <div class="solution-right" style="height: 100%; display: flex;">
+            <div class="resource-image-wrap" style="position: relative; border-radius: var(--radius-xl); overflow: hidden; height: 100%; width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+              <img src="assets/images/Muon-tim-su-binh-an.png" alt="Pháp thoại" class="resource-img" id="res-img" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Hub with Filter & Search -->
+    <section class="content-section" id="kham-pha">
+      <div class="content-container">
+        
+        <div class="section-header" style="margin-bottom: 32px; border-top: 1px solid var(--border-subtle); padding-top: 64px;">
+          <h2 class="section-title" style="font-family: var(--font-display); font-size: 36px; font-weight: 400; color: var(--text-main); margin-bottom: 8px;">Khám Phá Giáo Lý</h2>
+          <p class="section-subtitle" style="color: var(--text-secondary); font-size: 16px;">Tuyển tập các bài giảng, phương pháp tu học và kinh điển quan trọng.</p>
+        </div>
+
+        <!-- Controls Bar: Search & Category Pills -->
+        <div class="filter-wrapper">
+          <div class="filter-top-row">
+            <!-- Search Input -->
+            <div class="search-input-wrap">
+              <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="search-input" class="search-input" placeholder="Tìm kinh điển, phương pháp niệm, lời khai thị..." autocomplete="off">
+              <button class="clear-search-btn" id="btn-clear-search" aria-label="Xóa tìm kiếm">&times;</button>
+            </div>
+
+            <!-- View Switcher -->
+            <div class="view-switch-wrap">
+              <button class="view-btn active" id="view-grid" title="Xem dạng lưới (Grid)" aria-label="Xem dạng lưới">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+              </button>
+              <button class="view-btn" id="view-list" title="Xem dạng danh sách (List)" aria-label="Xem dạng danh sách">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="8" y1="6" x2="21" y2="6"></line>
+                  <line x1="8" y1="12" x2="21" y2="12"></line>
+                  <line x1="8" y1="18" x2="21" y2="18"></line>
+                  <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                  <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                  <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Category Pills Row -->
+          <div class="category-pills" id="category-pills">
+            <button class="pill-btn active" data-category="all">
+              Tất cả <span class="pill-count" id="count-all">0</span>
+            </button>
+            <button class="pill-btn" data-category="nhap-mon">
+              <span class="category-dot dot-amber"></span> Nhập Môn Tịnh Độ
+            </button>
+            <button class="pill-btn" data-category="tam-tu-luong">
+              <span class="category-dot dot-emerald"></span> Bài Giảng
+            </button>
+            <button class="pill-btn" data-category="kinh-dien">
+              <span class="category-dot dot-indigo"></span> Kinh Điển Cốt Tủy
+            </button>
+            <button class="pill-btn" data-category="phuong-phap">
+              <span class="category-dot dot-rose"></span> Phương Pháp Niệm Phật
+            </button>
+            <button class="pill-btn" data-category="khai-thi">
+              <span class="category-dot dot-gold"></span> Khai Thị Cao Tăng
+            </button>
+            <button class="pill-btn" data-category="vang-sanh">
+              <span class="category-dot dot-stone"></span> Chuyện Vãng Sanh
+            </button>
+          </div>
+        </div>
+
+        <!-- Section Header -->
+        <div class="articles-header">
+          <h2 class="section-title">
+            Học Pháp & Tu Trì <em class="section-italic">mỗi ngày</em>
+          </h2>
+          <p class="section-desc" id="filter-status-desc">
+            Hiển thị các nội dung hướng dẫn chọn lọc dành cho người sơ cơ và hành giả Tịnh Độ.
+          </p>
+        </div>
+
+        <!-- Dynamic Cards Grid / List Container -->
+        <div class="cards-grid" id="cards-container">
+          <!-- Dynamic cards injected by JavaScript -->
+        </div>
+
+        <!-- No Results Fallback -->
+        <div class="empty-state" id="empty-state" style="display: none;">
+          <p class="empty-title">Không tìm thấy bài viết phù hợp</p>
+          <p class="empty-desc">Thử tìm kiếm với từ khóa khác hoặc bấm nút "Tất cả" bên trên để xem toàn bộ nội dung.</p>
+          <button class="btn btn-secondary" id="btn-reset-filters">Xem toàn bộ bài viết</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bài Giảng Deep Dive Section -->
+    <section class="tu-luong-section" id="tam-tu-luong">
+      <div class="content-container">
+        <div class="section-header-centered">
+          <span class="sub-label">Cốt Lõi Vãng Sanh</span>
+          <h2 class="section-title-large">
+            Ba Món Tư Lương: <em class="serif-italic">Tín · Nguyện · Hạnh</em>
+          </h2>
+          <p class="section-intro">
+            Ngẫu Ích Đại Sư dạy: "Được vãng sanh hay không hoàn toàn do Tín - Nguyện có hay không; phẩm vị cao hay thấp do Trì Danh sâu hay cạn." Đây là chiếc kiềng ba chân vững chắc cho hành giả.
+          </p>
+        </div>
+
+        <div class="tu-luong-grid">
+          <!-- Card 1: Tín -->
+          <div class="tu-luong-card">
+            <div class="card-icon-badge">01 · TÍN</div>
+            <h3 class="tu-luong-title">Lòng Tin Vững Chắc</h3>
+            <p class="tu-luong-text">
+              Tin vào lời dạy chân thật của Đức Bổn Sư Thích Ca Mâu Ni. Tin cõi Cực Lạc của Đức Phật A Di Đà là có thật, cách đây mười muôn ức cõi Phật. Tin sâu bản tâm thanh tịnh của chính mình vốn đồng thể với Chư Phật.
+            </p>
+            <ul class="tu-luong-points">
+              <li>Tin Phật lực đại nguyện không dối lừa</li>
+              <li>Tin tự tâm mình có khả năng thành Phật</li>
+              <li>Tin nhân niệm Phật là quả giác ngộ</li>
+            </ul>
+          </div>
+
+          <!-- Card 2: Nguyện -->
+          <div class="tu-luong-card featured">
+            <div class="card-icon-badge">02 · NGUYỆN</div>
+            <h3 class="tu-luong-title">Ý Nguyện Tha Thiết</h3>
+            <p class="tu-luong-text">
+              Chán lìa cõi Ta Bà đầy dẫy khổ đau, phiền não và sanh tử luân hồi. Thiết tha mong cầu vãng sanh về cõi Tây Phương Cực Lạc để diện kiến Đức Phật A Di Đà, nghe chánh pháp và sớm chứng quả Bồ Đề độ khắp chúng sanh.
+            </p>
+            <ul class="tu-luong-points">
+              <li>Buông xả tâm chấp trước Ta Bà</li>
+              <li>Tâm tâm niệm niệm quy hướng Cực Lạc</li>
+              <li>Phát tâm Bồ Đề vì muôn loài</li>
+            </ul>
+          </div>
+
+          <!-- Card 3: Hạnh -->
+          <div class="tu-luong-card">
+            <div class="card-icon-badge">03 · HẠNH</div>
+            <h3 class="tu-luong-title">Thực Hành Chuyên Nhất</h3>
+            <p class="tu-luong-text">
+              Nhất tâm xưng niệm danh hiệu "Nam Mô A Di Đà Phật" hoặc "A Di Đà Phật". Đi, đứng, nằm, ngồi, lúc rảnh rỗi cũng như lúc làm việc thong thả, giữ cho câu Phật hiệu luôn tương tục trong tâm.
+            </p>
+            <ul class="tu-luong-points">
+              <li>Trì danh niệm Phật mỗi ngày</li>
+              <li>Kết hợp giữ giới, phóng sanh, làm lành</li>
+              <li>Thập niệm ký số điều phục vọng tưởng</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Digital Mala & Buddha Chanting Counter -->
+    <section class="mala-section" id="niem-phat">
+      <div class="content-container">
+        <div class="mala-container">
+          <div class="mala-info">
+            <span class="sub-label">Chánh Niệm Hiện Tiền</span>
+            <h2 class="mala-title">
+              Máy Niệm Phật <em class="serif-italic">& Chuỗi Hạt Kỹ Thuật Số</em>
+            </h2>
+            <p class="mala-desc">
+              Một công cụ tối giản giúp quý Phật tử giữ tâm chuyên chú khi ngồi tại bàn làm việc hoặc tĩnh tọa. Mỗi lượt niệm có thể gõ vào vòng chuỗi hoặc bấm phím <kbd class="kbd-pill">Phím Cách (Space)</kbd> để ghi nhận số câu.
+            </p>
+
+            <div class="mala-chant-choice">
+              <span class="choice-label">Chọn câu xưng niệm:</span>
+              <div class="chant-toggle-group">
+                <button class="chant-toggle-btn active" id="btn-chant-6">Nam Mô A Di Đà Phật</button>
+                <button class="chant-toggle-btn" id="btn-chant-4">A Di Đà Phật</button>
+              </div>
+            </div>
+
+            <div class="mala-chant-choice" style="margin-top: 16px;">
+              <span class="choice-label">Chế độ niệm:</span>
+              <div class="chant-toggle-group">
+                <button class="chant-toggle-btn active" id="btn-mode-manual">Thủ công</button>
+                <button class="chant-toggle-btn" id="btn-mode-auto">Tự động</button>
+              </div>
+            </div>
+
+            <!-- Auto Mode Settings (Hidden by default) -->
+            <div class="mala-auto-settings" id="auto-mode-settings" style="display: none; margin-top: 16px; margin-bottom: 16px; padding: 16px; background: var(--bg-surface-subtle); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                <span class="choice-label" style="margin-bottom: 0;">Tốc độ niệm:</span>
+                <span id="auto-speed-val" style="font-weight: 600; color: var(--text-main); font-size: 14px;">3 giây/câu</span>
+              </div>
+              <input type="range" id="auto-speed-slider" min="1" max="10" value="3" style="width: 100%; margin-bottom: 16px; accent-color: var(--accent-gold);">
+              <button class="btn btn-primary" id="btn-auto-toggle" style="width: 100%; justify-content: center;">Bắt Đầu Niệm Tự Động</button>
+            </div>
+
+            <div class="mala-sound-options">
+              <label class="sound-toggle-label">
+                <input type="checkbox" id="check-sound" checked>
+                <span class="custom-checkbox"></span>
+                <span>Âm thanh tiếng chuông / mõ thiền khi lần chuỗi</span>
+              </label>
+            </div>
+
+          </div>
+
+          <!-- Interactive Bead Circle & Stats -->
+          <div class="mala-bead-widget">
+            <div class="bead-circle-container" id="bead-interactive-area" role="button" tabindex="0" title="Bấm vào đây để niệm Phật một câu">
+              <div class="bead-circle-glow"></div>
+              <div class="bead-circle" id="bead-circle">
+                <!-- SVG bead track generated by JS -->
+                <svg class="bead-svg" viewBox="0 0 300 300">
+                  <circle cx="150" cy="150" r="120" class="track-bg" />
+                  <circle cx="150" cy="150" r="120" class="track-progress" id="track-progress" />
+                </svg>
+                <div class="bead-center-content">
+                  <span class="bead-lotus-icon">🪷</span>
+                  <div class="bead-number" id="bead-number">0</div>
+                  <div class="bead-text" id="bead-text">Nam Mô A Di Đà Phật</div>
+                  <span class="bead-instruction">Chạm để niệm</span>
+                </div>
+              </div>
+            </div>
+            
+            <p class="mala-hint" style="margin-bottom: 24px;">Gợi ý: Quý Phật tử có thể nhấn phím <strong>Space</strong> (phím cách) trên bàn phím để niệm.</p>
+
+            <div class="mala-stats-row" style="width: 100%; max-width: 400px; margin-bottom: 24px;">
+              <div class="mini-stat">
+                <span class="mini-val" id="stat-count-today">0</span>
+                <span class="mini-lbl">Hôm nay</span>
+              </div>
+              <div class="mini-stat">
+                <span class="mini-val" id="stat-count-total">0</span>
+                <span class="mini-lbl">Tổng tích lũy</span>
+              </div>
+              <div class="mini-stat">
+                <span class="mini-val" id="stat-target">108</span>
+                <span class="mini-lbl">Mục tiêu chuỗi</span>
+              </div>
+            </div>
+
+            <div class="mala-action-btns">
+              <button class="btn btn-secondary-sm" id="btn-reset-counter">Lập Lại Vòng Mới</button>
+              <button class="btn btn-secondary-sm" id="btn-hoi-huong">Đọc Bài Hồi Hướng</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Daily Schedule & Buddhist Calendar -->
+    <section class="schedule-section" id="thoi-khoa">
+      <div class="content-container">
+        <div class="section-header-split">
+          <div>
+            <span class="sub-label">Khuyến Tấn Tu Trì</span>
+            <h2 class="section-title">
+              Thời Khóa Hằng Ngày <em class="section-italic">& Lịch Tu Học</em>
+            </h2>
+          </div>
+          <p class="section-subtitle-split">
+            Duy trì thời khóa đều đặn như dòng nước chảy êm đềm, lâu dần sẽ tạo nên chủng tử Phật pháp vững chắc trong tâm thức.
+          </p>
+        </div>
+
+        <div class="schedule-grid">
+          <!-- Morning Routine -->
+          <div class="schedule-card">
+            <div class="schedule-time-badge">05:30 - 06:30 · Khóa Lễ Sáng</div>
+            <h3 class="schedule-title">Công Phu & Khởi Tâm Tinh Tấn</h3>
+            <p class="schedule-desc">Thức dậy tĩnh tâm, súc miệng rửa mặt, thắp một nén hương thanh tịnh trước ban thờ Phật.</p>
+            <div class="schedule-steps">
+              <span class="step-pill">1. Tịnh pháp giới chân ngôn</span>
+              <span class="step-pill">2. Tụng Chú Đại Bi</span>
+              <span class="step-pill">3. Xưng danh A Di Đà (15 phút)</span>
+              <span class="step-pill">4. Phục nguyện an lành</span>
+            </div>
+          </div>
+
+          <!-- Noon Routine -->
+          <div class="schedule-card">
+            <div class="schedule-time-badge">11:30 - 12:00 · Giữa Ngày</div>
+            <h3 class="schedule-title">Kinh Hành & Thọ Trai Chánh Niệm</h3>
+            <p class="schedule-desc">Sau bữa cơm chay thanh đạm, bước chậm rãi 15 phút, mỗi bước chân là một câu Phật hiệu.</p>
+            <div class="schedule-steps">
+              <span class="step-pill">1. Ăn trong yên lặng biết ơn</span>
+              <span class="step-pill">2. Kinh hành chậm rãi</span>
+              <span class="step-pill">3. Nghỉ ngơi buông thư</span>
+            </div>
+          </div>
+
+          <!-- Evening Routine -->
+          <div class="schedule-card featured-schedule">
+            <div class="schedule-time-badge">19:30 - 20:30 · Khóa Lễ Tối</div>
+            <h3 class="schedule-title">Khóa Lễ Tịnh Độ & Sám Hối</h3>
+            <p class="schedule-desc">Khóa lễ quan trọng nhất trong ngày của người tu Tịnh Độ. Buông hết mọi lo toan công việc trần gian.</p>
+            <div class="schedule-steps">
+              <span class="step-pill">1. Tụng Kinh A Di Đà</span>
+              <span class="step-pill">2. Niệm Phật kinh hành & tọa niệm</span>
+              <span class="step-pill">3. Sám hối tam nghiệp</span>
+              <span class="step-pill">4. Đọc văn Hồi Hướng Tây Phương</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 48 Vows Accordion Preview -->
+        <div class="vows-banner">
+          <div class="vows-banner-text">
+            <h3 class="vows-title">48 Lời Đại Nguyện Của Đức Phật A Di Đà</h3>
+            <p class="vows-desc">
+              Đặc biệt là <strong>Nguyện thứ 18</strong>: "Nếu con thành Phật, chúng sanh mười phương chí tâm tin ưa, muốn sanh về cõi nước con, cho đến mười niệm, nếu không được vãng sanh thì con không ở ngôi Chánh Giác."
+            </p>
+          </div>
+          <button class="btn btn-secondary-sm" id="btn-view-48-vows">Đọc Toàn Bộ 48 Lời Nguyện</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reader Modal (Full immersive reading experience) -->
+    <div class="reader-modal-overlay" id="reader-modal-overlay">
+      <div class="reader-modal" id="reader-modal" role="dialog" aria-modal="true" aria-labelledby="modal-article-title">
+        
+        <!-- Modal Sticky Top Bar -->
+        <div class="modal-top-bar">
+          <div class="modal-meta-left">
+            <span class="modal-category-pill" id="modal-category-pill">Giáo Lý</span>
+            <span class="modal-read-time" id="modal-read-time">5 phút đọc</span>
+          </div>
+
+          <div class="modal-actions-right">
+            <!-- Font Size Buttons -->
+            <div class="font-size-controls">
+              <button class="control-btn" id="btn-font-decrease" title="Giảm cỡ chữ" aria-label="Giảm cỡ chữ">A-</button>
+              <button class="control-btn" id="btn-font-increase" title="Tăng cỡ chữ (dành cho người lớn tuổi)" aria-label="Tăng cỡ chữ">A+</button>
+            </div>
+
+            <!-- Print / Copy Link -->
+            <button class="control-btn" id="btn-copy-quote" title="Sao chép trích dẫn" aria-label="Sao chép trích dẫn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+            </button>
+
+            <!-- Close Modal -->
+            <button class="modal-close-btn" id="btn-close-modal" aria-label="Đóng cửa sổ">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Modal Reading Content -->
+        <div class="modal-body" id="modal-body">
+          <div class="modal-content-container">
+            <h1 class="modal-title" id="modal-article-title">Tiêu đề bài viết</h1>
+            <p class="modal-author-date" id="modal-author-date">Tác giả · Ngày đăng</p>
+            
+            <div class="modal-hero-image-wrap" id="modal-image-wrap">
+              <img src="" alt="" id="modal-hero-image" class="modal-hero-image">
+            </div>
+
+            <div class="modal-article-text" id="modal-article-text">
+              <!-- Dynamically injected rich content -->
+            </div>
+
+            <div class="modal-footer-callout">
+              <span class="callout-lotus">🪷</span>
+              <p class="callout-text">
+                "Một câu A Di Đà Phật là muôn pháp quy tông. Trì niệm chuyên cần, quyết định một đời giải thoát."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 48 Vows Modal -->
+    <div class="vows-modal-overlay" id="vows-modal-overlay">
+      <div class="vows-modal" role="dialog" aria-modal="true" aria-labelledby="vows-modal-title">
+        <div class="modal-top-bar">
+          <div>
+            <span class="modal-category-pill">Kinh Điển Đại Thừa</span>
+            <h2 id="vows-modal-title" class="vows-modal-heading">48 Đại Nguyện Của Phật A Di Đà</h2>
+          </div>
+          <button class="modal-close-btn" id="btn-close-vows" aria-label="Đóng">&times;</button>
+        </div>
+        <div class="vows-modal-body" id="vows-list-container">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Dedication (Hồi Hướng) Modal -->
+    <div class="dedication-modal-overlay" id="dedication-modal-overlay">
+      <div class="dedication-modal" role="dialog" aria-modal="true">
+        <div class="modal-top-bar">
+          <span class="modal-category-pill">Công Đức Viên Mãn</span>
+          <button class="modal-close-btn" id="btn-close-dedication" aria-label="Đóng">&times;</button>
+        </div>
+        <div class="dedication-body">
+          <span class="dedication-icon">🪷</span>
+          <h3 class="dedication-title">Văn Phát Nguyện Hồi Hướng</h3>
+          <div class="dedication-poem">
+            <p>Nguyện đem công đức này,</p>
+            <p>Trang nghiêm Phật Tịnh Độ.</p>
+            <p>Trên đền bốn ơn nặng,</p>
+            <p>Dưới cứu khổ ba đường.</p>
+            <br>
+            <p>Nếu có ai thấy nghe,</p>
+            <p>Đều phát tâm bồ đề.</p>
+            <p>Hết một báo thân này,</p>
+            <p>Đồng sanh cõi Cực Lạc.</p>
+            <br>
+            <p class="dedication-buddha"><strong>NAM MÔ A DI ĐÀ PHẬT</strong></p>
+          </div>
+          <button class="btn btn-primary" id="btn-finish-dedication">Tùy Hỷ Công Đức</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ==========================================================================
+       SITE FOOTER (TRANG NGHIÊM, HÒA HỢP & TINH TẾ)
+       ========================================================================== -->
+  <footer class="site-footer" id="siteFooter">
+    <!-- Đường viền hào quang kim sắc trên đỉnh footer -->
+    <div class="footer-top-accent"></div>
+
+    <div class="footer-container">
+      <!-- Tầng 1: Giới thiệu & Lời Vàng Khai Thị (Tổ Ấn Quang) -->
+      <div class="footer-top-tier">
+        <div class="footer-about-col">
+          <div class="footer-brand-header">
+            <span class="footer-logo-icon">🪷</span>
+            <div class="footer-brand-titles">
+              <h3 class="footer-brand-title">tịnh độ <span class="brand-dot">·</span> <em class="brand-sub">an trú</em></h3>
+              <span class="footer-brand-sub">Pháp Bảo &amp; Hành Trì Thời Hiện Đại</span>
+            </div>
+          </div>
+          <p class="footer-about-desc">
+            Không gian Phật pháp thanh tịnh trợ duyên cho bạn đạo đồng tu trên con đường <strong>Tín - Nguyện - Trì Danh</strong> niệm Phật cầu sanh Cực Lạc. Toàn bộ kinh điển, bài giảng và âm thanh niệm Phật được biên tập công phu, phụng sự hoàn toàn <strong>phi thương mại</strong> vì an lạc của số đông.
+          </p>
+          <div class="footer-badges-row">
+            <span class="footer-badge">🪷 Pháp Thí Vô Lượng</span>
+            <span class="footer-badge">🕊️ Phi Thương Mại</span>
+            <div class="footer-socials">
+              <a href="https://youtube.com" target="_blank" rel="noopener" class="footer-social-link" title="Kênh YouTube Pháp Âm" aria-label="YouTube">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener" class="footer-social-link" title="Cộng Đồng Đồng Tu Facebook" aria-label="Facebook">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+              <a href="bai-giang.html" class="footer-social-link" title="Thư Viện Bài Giảng &amp; Audio" aria-label="Audio">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+              </a>
+              <a href="kinh-dien.html" class="footer-social-link" title="Kinh Điển Tịnh Độ" aria-label="Kinh">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Thẻ Lời Vàng Khai Thị (Tổ Ấn Quang) -->
+        <div class="footer-quote-card">
+          <div class="footer-card-pill">📜 Lời Khuyên Tấn Khắc Tâm</div>
+          <p class="footer-quote-text">
+            "Thế sự vô thường, thân mạng khó giữ. Đừng hẹn ngày mai, hãy trân quý từng hơi thở mà tha thiết xưng niệm A Di Đà Phật."
+          </p>
+          <div class="footer-quote-footer">
+            <div class="footer-quote-author">
+              <strong>— Ấn Quang Đại Sư</strong>
+              <span>Tổ Thứ 13 Tịnh Độ Tông</span>
+            </div>
+            <a href="van-dap.html" class="footer-qa-btn">
+              <span>Góc Vấn Đáp</span>
+              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tầng 2: Bản Đồ Pháp Bảo 4 Cột Gọn Gàng (Gap 7px) -->
+      <div class="footer-links-grid">
+        <div class="footer-nav-col">
+          <h4 class="footer-col-title">Về Dự Án</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Tôn Chỉ Tịnh Độ An Trú</a></li>
+            <li><a href="index.html#kham-pha">Sứ Mệnh Pháp Thí</a></li>
+            <li><a href="index.html#thoi-khoa">Lời Ngỏ Cùng Bạn Đạo</a></li>
+            <li><a href="van-dap.html#hoi-dap">Đóng Góp &amp; Hiệu Đính</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4 class="footer-col-title">Hệ Thống Pháp Bảo</h4>
+          <ul class="footer-links-list">
+            <li><a href="kinh-dien.html">Kinh Điển Tịnh Độ (Tam Kinh)</a></li>
+            <li><a href="bai-giang.html">Tuyển Tập Pháp Âm &amp; Bài Giảng</a></li>
+            <li><a href="index.html#niem-phat">Máy Niệm Phật Trực Tuyến</a></li>
+            <li><a href="index.html#thoi-khoa">Nghi Thức Thời Khóa Sớm Tối</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4 class="footer-col-title">Lộ Trình Hành Trì</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html#tam-tu-luong">Ba Món Tư Lương: Tín - Nguyện - Hạnh</a></li>
+            <li><a href="index.html#kham-pha">Phương Pháp Thập Niệm Ký Số</a></li>
+            <li><a href="index.html#thoi-khoa">48 Lời Đại Nguyện A Di Đà</a></li>
+            <li><a href="index.html#kham-pha">Lời Khai Thị Chư Tổ Tịnh Tông</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4 class="footer-col-title">Trợ Duyên Đồng Tu</h4>
+          <ul class="footer-links-list">
+            <li><a href="van-dap.html">Góc Vấn Đáp Tu Học Khúc Mắc</a></li>
+            <li><a href="van-dap.html">Khái Yếu Hộ Niệm Lâm Chung</a></li>
+            <li><a href="kinh-dien.html">Tải Kinh Sách Bản In (PDF)</a></li>
+            <li><a href="van-dap.html#cau-hoi-moi">Gửi Thắc Mắc Đến Ban Biên Tập</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tầng 3: Dải Hồi Hướng & Bản Quyền Liền Mạch -->
+      <div class="footer-bottom-tier">
+        <div class="footer-dedication-bar">
+          <p class="footer-dedication-verse">
+            🪷 "Nguyện đem công đức này · Trang nghiêm Phật Tịnh Độ · Trên đền bốn ơn nặng · Dưới cứu khổ tam đồ" 🪷
+          </p>
+        </div>
+        <div class="footer-legal-bar">
+          <span class="footer-legal-copy">© 2026 Tịnh Độ An Trú · Phật Pháp truyền đăng, phụng sự tha nhân vô vụ lợi. Nguyện khắp chúng sanh đồng sanh Cực Lạc.</span>
+          <div class="footer-legal-nav">
+            <a href="index.html">Trang Chủ</a>
+            <span>·</span>
+            <a href="bai-giang.html">Bài Giảng</a>
+            <span>·</span>
+            <a href="kinh-dien.html">Kinh Điển</a>
+            <span>·</span>
+            <a href="van-dap.html">Vấn Đáp</a>
+            <span>·</span>
+            <a href="#navbar" class="footer-top-btn" title="Lên đầu trang">Lên đầu trang ↑</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
