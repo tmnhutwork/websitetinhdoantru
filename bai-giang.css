@@ -4730,7 +4730,7 @@ body.dark-mode .bg-quote-banner-section {
 .bg-eleven-stage {
   position: relative;
   width: 100%;
-  height: 310px;
+  height: 340px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4741,7 +4741,7 @@ body.dark-mode .bg-quote-banner-section {
   position: absolute;
   top: 50%;
   width: 175px;
-  height: 245px;
+  height: 275px;
   border-radius: 9999px; /* Dáng viên thuốc bo cong hoàn toàn chuẩn TIDE pill card */
   overflow: hidden;
   cursor: pointer;
@@ -4756,13 +4756,12 @@ body.dark-mode .bg-quote-banner-section {
   backface-visibility: hidden;
   isolation: isolate;
   transform-style: preserve-3d;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: none; /* Bỏ toàn bộ shadow ở các card */
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
               left 0.45s cubic-bezier(0.16, 1, 0.3, 1),
               opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
               filter 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+              border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .bg-eleven-sphere-img {
@@ -4801,7 +4800,7 @@ body.dark-mode .bg-quote-banner-section {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
   opacity: 0;
   pointer-events: none;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -4821,7 +4820,7 @@ body.dark-mode .bg-quote-banner-section {
 .bg-eleven-sphere.slot-center .bg-eleven-play-btn:hover {
   transform: translate(-50%, -50%) scale(1.12);
   border-color: #b45309;
-  box-shadow: 0 8px 24px rgba(180, 83, 9, 0.32);
+  box-shadow: 0 6px 18px rgba(180, 83, 9, 0.25);
 }
 
 /* Trạng thái đang phát của nút Play ở giữa */
@@ -4829,7 +4828,7 @@ body.dark-mode .bg-quote-banner-section {
   background: #ffffff;
   color: #b45309;
   border-color: rgba(224, 139, 56, 0.7);
-  box-shadow: 0 0 0 3px rgba(224, 139, 56, 0.25), 0 8px 22px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0 3px rgba(224, 139, 56, 0.25);
 }
 
 .bg-eleven-sphere.slot-center.playing .bg-eleven-play-btn svg {
@@ -4841,7 +4840,7 @@ body.dark-mode .bg-quote-banner-section {
    CHỈ ICON Ở GIỮA CÓ VIỀN MỎNG (2px), NHỮNG ICON CÒN LẠI KHÔNG CÓ VIỀN
    ========================================================================== */
 
-/* 1. Thẻ Ở Giữa (Card To Nhất - VIỀN MỎNG TINH TẾ CHUẨN VIÊN THUỐC) */
+/* 1. Thẻ Ở Giữa (Card To Nhất - VIỀN MỎNG TINH TẾ CHUẨN VIÊN THUỐC, BỎ OUTER GLOW) */
 .bg-eleven-sphere.slot-center {
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
@@ -4849,12 +4848,12 @@ body.dark-mode .bg-quote-banner-section {
   opacity: 1;
   filter: none;
   border-color: rgba(224, 139, 56, 0.95); /* Viền mỏng 2px cam ấm thanh thoát */
-  box-shadow: 0 16px 36px -6px rgba(217, 130, 43, 0.28), 0 8px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: none; /* Bỏ hoàn toàn outer glow */
 }
 
 .bg-eleven-sphere.slot-center.playing {
   border-color: #e08b38;
-  box-shadow: 0 0 0 2px rgba(224, 139, 56, 0.22), 0 18px 40px -6px rgba(180, 83, 9, 0.3);
+  box-shadow: none; /* Bỏ hoàn toàn outer glow khi playing */
 }
 
 /* 2. Thẻ Kế Bên Trái & Phải (KHÔNG CÓ VIỀN, khoảng cách đều 27.5px) */
@@ -5191,11 +5190,11 @@ body.dark-mode .bg-eleven-desc {
 /* --- RESPONSIVE TIDE PEBBLES --- */
 @media (max-width: 1024px) {
   .bg-eleven-stage {
-    height: 280px;
+    height: 305px;
   }
   .bg-eleven-sphere {
     width: 155px;
-    height: 215px;
+    height: 245px;
     border-radius: 9999px;
   }
   .bg-eleven-sphere-img,
@@ -5233,11 +5232,11 @@ body.dark-mode .bg-eleven-desc {
 
 @media (max-width: 640px) {
   .bg-eleven-stage {
-    height: 240px;
+    height: 260px;
   }
   .bg-eleven-sphere {
     width: 130px;
-    height: 180px;
+    height: 205px;
     border-radius: 9999px;
   }
   .bg-eleven-sphere-img,
