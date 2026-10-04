@@ -216,6 +216,14 @@
             <input type="text" class="watch-search-input" id="sidebarSearchInput" placeholder="Tìm tập (ví dụ: Tập 5, 48 đại nguyện)...">
           </div>
 
+          <!-- Bộ chọn nhanh các chặng (Chỉ hiện khi là Lộ Trình Tu Học) -->
+          <div class="watch-stage-filter-pills" id="watchStageFilterPills" style="display: none;">
+            <button type="button" class="watch-stage-filter-pill active" data-stage-filter="all">Tất cả (3 chặng)</button>
+            <button type="button" class="watch-stage-filter-pill" data-stage-filter="1">Chặng 1: Khởi Tín</button>
+            <button type="button" class="watch-stage-filter-pill" data-stage-filter="2">Chặng 2: Phát Nguyện</button>
+            <button type="button" class="watch-stage-filter-pill" data-stage-filter="3">Chặng 3: Chuyên Hạnh</button>
+          </div>
+
           <div class="watch-autonext-row">
             <label class="watch-toggle-wrap">
               <input type="checkbox" id="chkAutoNext" checked style="accent-color: #166534; cursor: pointer;">
@@ -345,8 +353,198 @@
             { ep: 11, title: 'Tập 11: Quán Thứ 9: Chân Thân Phật A Di Đà Sắc Vàng Kim', duration: '48:00', quote: '"Thân Phật cao lớn sắc vàng rực rỡ, ánh sáng nhiếp thọ không bỏ sót kẻ niệm Phật."' },
             { ep: 12, title: 'Tập 12: Quán Thứ 10: Quán Thế Âm Bồ Tát Sắc Thân Tướng Hảo', duration: '46:00', quote: '"Đỉnh đầu Bồ Tát mang tượng Phật hóa thân, tay báu rưới cam lộ cứu khổ muôn loài."' }
           ]
+        },
+        'lo-trinh-tu-hoc': {
+          id: 'lo-trinh-tu-hoc',
+          title: 'Lộ Trình Tu Học: Tín – Nguyện – Hạnh',
+          shortTitle: 'Lộ Trình Tín - Nguyện - Hạnh',
+          speaker: 'Chư Tôn Đức Giảng Sư',
+          speakerSub: 'Ba Món Tư Lương Thiết Yếu Vãng Sanh',
+          speakerAvatar: 'assets/images/Muon-hieu-Phat-Phap-co-ban.png',
+          total: 9,
+          img: 'assets/images/Muon-hieu-Phat-Phap-co-ban.png',
+          synopsis: 'Ba món tư lương thiết yếu của người tu Tịnh Độ: Tín sâu - Nguyện thiết - Hạnh chuyên. Lộ trình gồm trọn vẹn 3 chặng tuần tự từ xây dựng chánh tín kiên cố, phát tâm bồ đề nguyện sanh Cực Lạc đến phương pháp hành trì trì danh niệm Phật thực tế mỗi ngày.',
+          quote: '“Được vãng sanh hay không toàn do Tín – Nguyện có hay không; Phẩm vị cao hay thấp do Trì Danh sâu hay cạn.” — Ngẫu Ích Đại Sư',
+          isGroupedStages: true,
+          stages: [
+            {
+              id: 'stage-1',
+              stageNum: 1,
+              stageBadge: 'Chặng 01 · Khởi Tín',
+              stageTitle: 'Khởi Tín Kiên Cố',
+              desc: 'Chánh tín kiên cố như núi Tu Di vào Bản Nguyện Di Đà.',
+              img: 'assets/images/Muon-hieu-Phat-Phap-co-ban.png',
+              episodes: [
+                {
+                  ep: 1,
+                  stageEp: 1,
+                  stageNum: 1,
+                  stageBadge: 'Chặng 01 · Khởi Tín',
+                  stageTitle: 'Khởi Tín Kiên Cố',
+                  title: 'Tập 01: Tịnh Độ Có Thật Hay Không? Phá Nghi Sinh Tín',
+                  shortTitle: 'Tịnh Độ có thật hay không?',
+                  speaker: 'TT. Thích Chân Quang',
+                  speakerAvatar: 'assets/images/Muon-hieu-Phat-Phap-co-ban.png',
+                  duration: '35:00',
+                  img: 'assets/images/Muon-hieu-Phat-Phap-co-ban.png',
+                  synopsis: 'Bài giảng giúp Phật tử thấu triệt cõi Tây Phương Cực Lạc có thật hay chỉ là cảnh giới biểu tượng tâm thức; phân tích thế giới duyên khởi và niềm tin khoa học vào pháp môn niệm Phật, phá tan các mối nghi ngờ sơ khởi để phát khởi chánh tín kiên cố.',
+                  quote: '“Lòng tin là mẹ của tất cả công đức. Dứt nghi ngờ thì sen báu tự nhiên nở rực rỡ nơi ao thất bảo cõi Phật Di Đà.”'
+                },
+                {
+                  ep: 2,
+                  stageEp: 2,
+                  stageNum: 1,
+                  stageBadge: 'Chặng 01 · Khởi Tín',
+                  stageTitle: 'Khởi Tín Kiên Cố',
+                  title: 'Tập 02: Khởi Phát Niềm Tin Kiên Cố Với Pháp Môn Niệm Phật',
+                  shortTitle: 'Khởi phát niềm tin kiên cố',
+                  speaker: 'HT. Thích Trí Quảng',
+                  speakerAvatar: 'assets/images/Muon-hieu-Phat-Phap-co-ban.png',
+                  duration: '28:00',
+                  img: 'assets/images/Muon-hieu-Phat-Phap-co-ban.png',
+                  synopsis: 'Hòa Thượng Trí Quảng phân tích sâu về Tín Tâm chân thật như núi Tu Di không bao giờ lay chuyển trước nghịch duyên, gió nghiệp và tà thuyết. Đặt trọn niềm tin nơi Bản Nguyện Cứu Độ vô điều kiện của Đức Từ Phụ A Di Đà.',
+                  quote: '“Tín tâm kiên cố như kim cương, gió nghiệp đời mạt pháp dù có lay động cách mấy cũng không chuyển lay chí nguyện vãng sanh.”'
+                },
+                {
+                  ep: 3,
+                  stageEp: 3,
+                  stageNum: 1,
+                  stageBadge: 'Chặng 01 · Khởi Tín',
+                  stageTitle: 'Khởi Tín Kiên Cố',
+                  title: 'Tập 03: Ý Nghĩa 48 Lời Đại Nguyện Của Phật A Di Đà',
+                  shortTitle: '48 Lời Đại Nguyện Di Đà',
+                  speaker: 'HT. Tuyên Hóa',
+                  speakerAvatar: 'assets/images/Muon-hieu-Phat-Phap-co-ban.png',
+                  duration: '42:00',
+                  img: 'assets/images/Muon-hieu-Phat-Phap-co-ban.png',
+                  synopsis: 'Phân tích trọn vẹn 48 đại nguyện mà Bồ Tát Pháp Tạng đã lập nên trước Đức Phật Thế Tự Tại Vương. Đặc biệt nhấn mạnh Nguyện thứ 18: Thập niệm vãng sanh - cánh cửa đại từ bi mở toang cho mọi tầng lớp chúng sanh.',
+                  quote: '“Bốn mươi tám lời thệ nguyện thâm sâu như biển cả, không bỏ sót bất kỳ một chúng sanh nào tha thiết xưng danh hướng về.”'
+                }
+              ]
+            },
+            {
+              id: 'stage-2',
+              stageNum: 2,
+              stageBadge: 'Chặng 02 · Phát Nguyện',
+              stageTitle: 'Phát Nguyện Tha Thiết',
+              desc: 'Buông xả duyên trần, phát bồ đề tâm cầu sanh Cực Lạc.',
+              img: 'assets/images/BaiGiang/bg_card_lotus.jpg',
+              episodes: [
+                {
+                  ep: 4,
+                  stageEp: 1,
+                  stageNum: 2,
+                  stageBadge: 'Chặng 02 · Phát Nguyện',
+                  stageTitle: 'Phát Nguyện Tha Thiết',
+                  title: 'Tập 04: Bồ Đề Tâm & Bổn Nguyện Cầu Sanh Cực Lạc',
+                  shortTitle: 'Bồ Đề Tâm & Vãng Sanh',
+                  speaker: 'ĐĐ. Thích Phước Tiến',
+                  speakerAvatar: 'assets/images/BaiGiang/bg_card_lotus.jpg',
+                  duration: '32:00',
+                  img: 'assets/images/BaiGiang/bg_card_lotus.jpg',
+                  synopsis: 'Đại Đức Thích Phước Tiến giảng giải tường tận về mối liên hệ mật thiết giữa Bồ Đề Tâm và Nguyện vãng sanh. Cầu sanh Tịnh Độ không phải là trốn chạy cõi đời khổ đau mà chính là phát tâm đại bi thành tựu đạo quả để quay lại Ta Bà cứu độ vạn loài chúng sanh.',
+                  quote: '“Phát tâm Bồ Đề xưng niệm danh hiệu Phật, đó là chiếc bè đại từ bi đưa người con Phật vượt thoát biển luân hồi sinh tử.”'
+                },
+                {
+                  ep: 5,
+                  stageEp: 2,
+                  stageNum: 2,
+                  stageBadge: 'Chặng 02 · Phát Nguyện',
+                  stageTitle: 'Phát Nguyện Tha Thiết',
+                  title: 'Tập 05: Buông Xả Duyên Trần – Thiết Thực Lập Nguyện',
+                  shortTitle: 'Buông xả duyên trần lập nguyện',
+                  speaker: 'HT. Thích Thanh Từ',
+                  speakerAvatar: 'assets/images/BaiGiang/bg_card_lotus.jpg',
+                  duration: '30:00',
+                  img: 'assets/images/BaiGiang/bg_card_lotus.jpg',
+                  synopsis: 'Hòa Thượng Thích Thanh Từ chỉ dạy phương pháp buông xả các duyên trần luyến ái ràng buộc, tùy duyên giữa đời thường mà nội tâm luôn tha thiết lập nguyện hướng về cảnh giới Cực Lạc hoa sen thanh tịnh.',
+                  quote: '“Buông xả không phải là bỏ bê trách nhiệm, mà là làm trọn bổn phận mà lòng không vướng bận, tâm hồn thanh thản quy hướng Tây Phương.”'
+                },
+                {
+                  ep: 6,
+                  stageEp: 3,
+                  stageNum: 2,
+                  stageBadge: 'Chặng 02 · Phát Nguyện',
+                  stageTitle: 'Phát Nguyện Tha Thiết',
+                  title: 'Tập 06: Cảnh Giới Cực Lạc: Y Báo & Chánh Báo Trang Nghiêm',
+                  shortTitle: 'Cảnh giới Cực Lạc trang nghiêm',
+                  speaker: 'TT. Thích Nhật Từ',
+                  speakerAvatar: 'assets/images/BaiGiang/bg_card_lotus.jpg',
+                  duration: '40:00',
+                  img: 'assets/images/BaiGiang/bg_card_lotus.jpg',
+                  synopsis: 'Quán chiếu vẻ đẹp vi diệu của cảnh giới Cực Lạc: Ao thất bảo, nước bát công đức, hoa sen bốn màu rực rỡ, chim trời diễn pháp, chư thượng thiện nhân đồng tụ hội một nơi để un đúc hạnh nguyện giải thoát trọn vẹn.',
+                  quote: '“Quán chiếu trang nghiêm cõi Phật để nuôi dưỡng tâm nguyện tha thiết, chuyển hóa tâm phàm phu thành tâm Phật thanh tịnh.”'
+                }
+              ]
+            },
+            {
+              id: 'stage-3',
+              stageNum: 3,
+              stageBadge: 'Chặng 03 · Chuyên Hạnh',
+              stageTitle: 'Chuyên Hạnh Trì Danh',
+              desc: 'Nhiếp trọn sáu căn, an trú câu hồng danh nối tiếp đời thường.',
+              img: 'assets/images/BaiGiang/bg_card_meditation.jpg',
+              episodes: [
+                {
+                  ep: 7,
+                  stageEp: 1,
+                  stageNum: 3,
+                  stageBadge: 'Chặng 03 · Chuyên Hạnh',
+                  stageTitle: 'Chuyên Hạnh Trì Danh',
+                  title: 'Tập 07: Phương Pháp Thập Niệm Ký Số Của Ấn Quang Đại Sư',
+                  shortTitle: 'Thập Niệm Ký Số Ấn Quang',
+                  speaker: 'HT. Thích Tịnh Không',
+                  speakerAvatar: 'assets/images/BaiGiang/bg_card_meditation.jpg',
+                  duration: '25:00',
+                  img: 'assets/images/BaiGiang/bg_card_meditation.jpg',
+                  synopsis: 'Đại lão Hòa Thượng Tịnh Không hướng dẫn chi tiết bí quyết Thập Niệm Ký Số từ Tổ sư Ấn Quang: Niệm từ 1 đến 10 rõ ràng, phân thành 3-3-4 hoặc 5-5. Phương pháp tối ưu đệ nhất giúp người bận rộn nhiếp phục tâm vượn ý mã giữa thời hiện đại.',
+                  quote: '“Tâm niệm rõ ràng, miệng niệm rõ ràng, tai nghe rõ ràng, đếm số rành rẽ từ một đến mười, không có chỗ cho vọng niệm chen vào.”'
+                },
+                {
+                  ep: 8,
+                  stageEp: 2,
+                  stageNum: 3,
+                  stageBadge: 'Chặng 03 · Chuyên Hạnh',
+                  stageTitle: 'Chuyên Hạnh Trì Danh',
+                  title: 'Tập 08: Khai Thị Cách Nhiếp Tâm Trừ Vọng Niệm Khi Trì Danh',
+                  shortTitle: 'Nhiếp tâm trừ vọng niệm',
+                  speaker: 'HT. Thích Trí Quảng',
+                  speakerAvatar: 'assets/images/BaiGiang/bg_card_meditation.jpg',
+                  duration: '34:00',
+                  img: 'assets/images/BaiGiang/bg_card_meditation.jpg',
+                  synopsis: 'Hòa Thượng Trí Quảng chỉ rõ: Khi niệm Phật mà khởi vọng niệm, đừng vội xua đuổi hay bực bội tức giận. Chỉ cần bình thản nhận diện và nhẹ nhàng hướng tâm quay về câu hồng danh Nam Mô A Di Đà Phật, vọng niệm tự nhiên tiêu tan.',
+                  quote: '“Không sợ vọng niệm khởi, chỉ sợ giác chậm. Vọng niệm vừa dấy lên liền nhớ đến câu Phật hiệu, ấy chính là công phu đắc lực.”'
+                },
+                {
+                  ep: 9,
+                  stageEp: 3,
+                  stageNum: 3,
+                  stageBadge: 'Chặng 03 · Chuyên Hạnh',
+                  stageTitle: 'Chuyên Hạnh Trì Danh',
+                  title: 'Tập 09: Thường Niệm Trong Đời Sống: Tọa Niệm, Kinh Hành & Sinh Hoạt',
+                  shortTitle: 'Thường niệm trong đời sống',
+                  speaker: 'NS. Thích Nữ Hương Nhũ',
+                  speakerAvatar: 'assets/images/BaiGiang/bg_card_meditation.jpg',
+                  duration: '27:00',
+                  img: 'assets/images/BaiGiang/bg_card_meditation.jpg',
+                  synopsis: 'Ni Sư Hương Nhũ chia sẻ nghệ thuật đưa câu niệm Phật vào từng nhịp sống: Khi nấu cơm, khi đi làm, khi rửa chén, khi lái xe hay trước giờ đi ngủ. Biến mọi hoạt động đời thường thành đạo tràng an lạc thanh tịnh nhiệm mầu.',
+                  quote: '“Đi đứng nằm ngồi đều không rời câu niệm Phật; một niệm thanh tịnh là một niệm Phật, niệm niệm thanh tịnh là trọn ngày an trú Cực Lạc.”'
+                }
+              ]
+            }
+          ],
+          episodes: []
         }
       };
+
+      // Tự động gộp phẳng các tập cho bộ có chia Chặng
+      if (seriesDatabase['lo-trinh-tu-hoc'] && seriesDatabase['lo-trinh-tu-hoc'].stages) {
+        seriesDatabase['lo-trinh-tu-hoc'].episodes = [
+          ...seriesDatabase['lo-trinh-tu-hoc'].stages[0].episodes,
+          ...seriesDatabase['lo-trinh-tu-hoc'].stages[1].episodes,
+          ...seriesDatabase['lo-trinh-tu-hoc'].stages[2].episodes
+        ];
+      }
 
       // Tự động bổ sung tập cho đủ số lượng nếu cần
       Object.keys(seriesDatabase).forEach(function (key) {
@@ -466,9 +664,14 @@
       function updateProgressDisplay() {
         const completedCount = completedEpisodes.size;
         const percent = Math.min(100, Math.round((completedCount / series.total) * 100));
-        progressText.innerHTML = `Đang học: Tập ${epNum} / ${series.total} <span class="watch-progress-huantu">• Đã huân tu ${completedCount} tập</span>`;
+        const curEp = series.episodes.find(function(e) { return e.ep === epNum; }) || series.episodes[0];
+        if (series.stages && curEp.stageBadge) {
+          progressText.innerHTML = `Đang học: ${curEp.stageBadge} · Tập ${epNum} / ${series.total} <span class="watch-progress-huantu">• Đã huân tu ${completedCount} / ${series.total} bài</span>`;
+        } else {
+          progressText.innerHTML = `Đang học: Tập ${epNum} / ${series.total} <span class="watch-progress-huantu">• Đã huân tu ${completedCount} tập</span>`;
+        }
         progressPercent.textContent = `${percent}%`;
-        progressFill.style.width = `${Math.max(percent, (completedCount > 0 ? 4 : 1))}%`;
+        progressFill.style.width = `${Math.max(percent, (completedCount > 0 ? 5 : 1))}%`;
       }
 
       function showToast(msg) {
@@ -491,24 +694,60 @@
         const epPad = epNum < 10 ? '0' + epNum : epNum;
 
         // Cập nhật Document Title & Navigation
-        pageTitle.textContent = `Tập ${epPad} - ${epData.title} | ${series.title} · Tịnh Độ An Trú`;
-        navSeriesTitle.textContent = series.shortTitle || series.title;
-        navEpisodeTitle.textContent = `Tập ${epPad}`;
+        if (epData.stageNum) {
+          pageTitle.textContent = `Tập ${epPad} (${epData.stageBadge}) - ${epData.shortTitle || epData.title} | ${series.title} · Tịnh Độ An Trú`;
+          navSeriesTitle.textContent = series.shortTitle || series.title;
+          navEpisodeTitle.textContent = `${epData.stageBadge} · Tập ${epPad}`;
+        } else {
+          pageTitle.textContent = `Tập ${epPad} - ${epData.title} | ${series.title} · Tịnh Độ An Trú`;
+          navSeriesTitle.textContent = series.shortTitle || series.title;
+          navEpisodeTitle.textContent = `Tập ${epPad}`;
+        }
 
         // Cập nhật URL trình duyệt không cần reload trang để tiện copy share
         const newUrl = `${window.location.pathname}?series=${series.id}&ep=${epNum}`;
         window.history.pushState({ series: series.id, ep: epNum }, '', newUrl);
 
         // Cập nhật Player & Meta
-        if (epBadge) epBadge.textContent = `Tập ${epPad} / ${series.total}`;
+        if (epBadge) {
+          if (epData.stageNum) {
+            epBadge.textContent = `${epData.stageBadge} · Bài ${epData.stageEp}/3`;
+          } else {
+            epBadge.textContent = `Tập ${epPad} / ${series.total}`;
+          }
+        }
+        if (seriesBadgeTag) {
+          seriesBadgeTag.textContent = epData.stageNum ? 'Ba Món Tư Lương' : 'Trọn Bộ Kinh Giảng';
+        }
         if (epDurationText) epDurationText.textContent = `⏱ Thời lượng: ${epData.duration}`;
         if (episodeMainTitle) episodeMainTitle.textContent = epData.title;
-        if (videoSubtitle) videoSubtitle.textContent = `"${epData.title} - Lời dạy sâu xa của Đức Phật dẫn lối vãng sanh..."`;
-        if (speakerAvatar) speakerAvatar.src = series.speakerAvatar || series.img;
-        if (speakerFullName) speakerFullName.textContent = series.speaker;
+        if (videoSubtitle) {
+          videoSubtitle.textContent = `"${epData.title} - Lời dạy sâu xa dẫn lối người con Phật trên con đường vãng sanh..."`;
+        }
+        if (speakerAvatar) speakerAvatar.src = epData.speakerAvatar || series.speakerAvatar || series.img;
+        if (speakerFullName) speakerFullName.textContent = epData.speaker || series.speaker;
         if (episodeSynopsis) episodeSynopsis.textContent = epData.synopsis || series.synopsis;
         if (episodeQuote) episodeQuote.textContent = epData.quote || series.quote;
-        if (videoPoster) videoPoster.src = series.img;
+        if (videoPoster) videoPoster.src = epData.img || series.img;
+        if (watchTimeDisplay) watchTimeDisplay.textContent = `00:00 / ${epData.duration || '60:00'}`;
+
+        const btnBack = document.querySelector('.watch-btn-back');
+        if (btnBack) {
+          if (series.id === 'lo-trinh-tu-hoc') {
+            btnBack.href = 'bai-giang.html#secPathway';
+            const backSpan = btnBack.querySelector('span');
+            if (backSpan) backSpan.textContent = 'Lộ Trình Tu Học';
+          } else {
+            btnBack.href = 'bai-giang.html#secSeries';
+            const backSpan = btnBack.querySelector('span');
+            if (backSpan) backSpan.textContent = 'Kho Bài Giảng';
+          }
+        }
+
+        const playerWatermarkText = document.getElementById('playerWatermarkText');
+        if (playerWatermarkText) {
+          playerWatermarkText.textContent = epData.stageBadge ? `Tịnh Độ An Trú · ${epData.stageBadge}` : 'Tịnh Độ An Trú · Pháp Âm Trực Tuyến';
+        }
 
         // Cập nhật nút Prev/Next
         btnPrevEp.disabled = (epNum <= 1);
@@ -550,9 +789,114 @@
         }
       }
 
-      // 5. Render Sidebar Episodes List
+      // 5. Render Sidebar Episodes List (Hỗ trợ cả 3 chặng của Lộ Trình Tu Học & Bộ giảng thường)
+      let currentStageFilter = 'all'; // 'all', 1, 2, 3
+
       function renderSidebarList(filterText) {
         const q = (filterText || '').trim().toLowerCase();
+
+        // TRƯỜNG HỢP A: Lộ Trình Tu Học có chia thành 3 Chặng (Tín - Nguyện - Hạnh)
+        if (series.stages && series.stages.length > 0) {
+          let visibleStages = series.stages;
+          if (currentStageFilter !== 'all') {
+            const filterStageNum = parseInt(currentStageFilter, 10);
+            visibleStages = series.stages.filter(function (stg) { return stg.stageNum === filterStageNum; });
+          }
+
+          let totalMatchingEps = 0;
+          let html = '';
+
+          visibleStages.forEach(function (stg) {
+            const matchingEps = stg.episodes.filter(function (ep) {
+              if (!q) return true;
+              return ep.title.toLowerCase().includes(q) ||
+                     (ep.shortTitle && ep.shortTitle.toLowerCase().includes(q)) ||
+                     (ep.speaker && ep.speaker.toLowerCase().includes(q)) ||
+                     String(ep.ep).includes(q);
+            });
+
+            if (matchingEps.length > 0) {
+              totalMatchingEps += matchingEps.length;
+              html += `
+                <div class="watch-stage-group" data-stage="${stg.stageNum}">
+                  <div class="watch-stage-divider">
+                    <div class="watch-stage-divider-top">
+                      <span class="watch-stage-pill">${stg.stageBadge}</span>
+                      <h4 class="watch-stage-name">${stg.stageTitle}</h4>
+                      <span class="watch-stage-count">${matchingEps.length} bài</span>
+                    </div>
+                    <p class="watch-stage-desc">${stg.desc}</p>
+                  </div>
+                  <div class="watch-stage-episodes">
+                    ${matchingEps.map(function (ep) {
+                      const isActive = (ep.ep === epNum) ? 'active' : '';
+                      const isCompleted = completedEpisodes.has(ep.ep);
+                      const epPad = ep.ep < 10 ? '0' + ep.ep : ep.ep;
+                      return `
+                        <div class="watch-ep-item ${isActive} ${isCompleted ? 'is-completed' : ''}" data-ep="${ep.ep}" role="button" tabindex="0">
+                          <div class="watch-ep-left">
+                            <span class="watch-ep-num">Tập ${epPad}</span>
+                            <div class="watch-ep-info">
+                              <span class="watch-ep-name" title="${ep.title}">${ep.shortTitle || ep.title}</span>
+                              <div class="watch-ep-meta-row">
+                                <span class="watch-ep-speaker">${ep.speaker}</span>
+                                <span class="watch-ep-duration">• ${ep.duration}</span>
+                                ${isCompleted ? `
+                                  <span class="watch-ep-completed-tag" title="Bài học này bạn đã hoàn thành huân tu">
+                                    <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                    <span>Đã huân tu</span>
+                                  </span>
+                                ` : ''}
+                              </div>
+                            </div>
+                          </div>
+                          <div class="watch-ep-right-icon">
+                            <div class="watch-audio-visualizer">
+                              <span class="watch-wave-bar"></span>
+                              <span class="watch-wave-bar"></span>
+                              <span class="watch-wave-bar"></span>
+                            </div>
+                            ${isCompleted ? `
+                              <div class="watch-check-badge" title="Đã huân tu • Nhấn để nghe lại">
+                                <svg class="watch-check-svg" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                <svg class="watch-play-hover-svg" width="11" height="11" fill="currentColor" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
+                              </div>
+                            ` : `
+                              <svg class="watch-play-default-svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
+                            `}
+                          </div>
+                        </div>
+                      `;
+                    }).join('')}
+                  </div>
+                </div>
+              `;
+            }
+          });
+
+          sidebarEpCountFiltered.textContent = `${totalMatchingEps} bài học`;
+
+          if (totalMatchingEps === 0) {
+            sidebarEpisodesList.innerHTML = `
+              <div style="text-align: center; padding: 36px 12px; font-size: 13px; color: var(--text-muted);">
+                Không tìm thấy bài học phù hợp với "<strong>${filterText}</strong>"
+              </div>
+            `;
+            return;
+          }
+
+          sidebarEpisodesList.innerHTML = html;
+
+          sidebarEpisodesList.querySelectorAll('.watch-ep-item').forEach(function (itemEl) {
+            itemEl.addEventListener('click', function () {
+              const chosenEp = parseInt(itemEl.getAttribute('data-ep'), 10);
+              loadEpisode(chosenEp, true);
+            });
+          });
+          return;
+        }
+
+        // TRƯỜNG HỢP B: Danh sách phẳng thông thường (Kinh Vô Lượng Thọ, Kinh Địa Tạng, v.v.)
         const filtered = series.episodes.filter(function (ep) {
           if (!q) return true;
           return ep.title.toLowerCase().includes(q) || String(ep.ep).includes(q);
@@ -620,7 +964,24 @@
       // Khởi tạo Lịch sử Huân Tu & Sidebar
       loadCompletedEpisodes();
       sidebarSeriesHeading.textContent = series.title;
-      sidebarEpBadge.textContent = `${series.total} tập`;
+      sidebarEpBadge.textContent = series.stages ? '3 chặng · 9 bài' : `${series.total} tập`;
+
+      // Kích hoạt thanh chọn Chặng nếu là Lộ Trình Tu Học
+      const watchStageFilterPills = document.getElementById('watchStageFilterPills');
+      if (series.stages && series.stages.length > 0 && watchStageFilterPills) {
+        watchStageFilterPills.style.display = 'flex';
+        watchStageFilterPills.querySelectorAll('.watch-stage-filter-pill').forEach(function (pill) {
+          pill.addEventListener('click', function () {
+            watchStageFilterPills.querySelectorAll('.watch-stage-filter-pill').forEach(function (p) {
+              p.classList.remove('active');
+            });
+            this.classList.add('active');
+            currentStageFilter = this.getAttribute('data-stage-filter');
+            renderSidebarList(sidebarSearchInput ? sidebarSearchInput.value : '');
+          });
+        });
+      }
+
       renderSidebarList('');
 
       // Nạp tập ban đầu
@@ -628,6 +989,9 @@
 
       // 6. Xử lý sự kiện tìm kiếm tập
       if (sidebarSearchInput) {
+        if (series.stages) {
+          sidebarSearchInput.placeholder = 'Tìm bài học (ví dụ: Chân Quang, 48 đại nguyện, Ấn Quang)...';
+        }
         sidebarSearchInput.addEventListener('input', function (e) {
           renderSidebarList(e.target.value);
         });
