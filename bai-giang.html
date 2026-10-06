@@ -13,6 +13,9 @@
 </head>
 <body class="sutra-page bai-giang-body">
 
+  <!-- Bức Màn Trang Web (Sliding Curtain Layer - z-index: 2) -->
+  <div class="site-curtain-wrapper">
+
   <!-- Navigation Bar -->
   <header class="navbar" id="navbar">
     <div class="nav-container">
@@ -678,44 +681,34 @@
             </div>
           </div>
           <p class="footer-about-desc">
-            Không gian Phật pháp thanh tịnh trợ duyên cho bạn đạo đồng tu trên con đường <strong>Tín - Nguyện - Trì Danh</strong> niệm Phật cầu sanh Cực Lạc. Toàn bộ kinh điển, bài giảng và âm thanh niệm Phật được biên tập công phu, phụng sự hoàn toàn <strong>phi thương mại</strong> vì an lạc của số đông.
+            <strong>“Học Phật là sự hưởng thụ cao nhất của đời người.”</strong> Kính mong không gian này là nơi trợ duyên cho bạn đạo đồng tu mỗi ngày an trú thân tâm trong câu Phật hiệu, và cùng nhau chia sẻ, lan tỏa chánh pháp đến những người hữu duyên.
+          </p>
+          <p class="footer-about-gratitude">
+            Với lòng kính trọng sâu sắc, cầu chúc đại chúng luôn gặp may mắn và hạnh phúc trong cuộc sống.
           </p>
           <div class="footer-badges-row">
             <span class="footer-badge">🪷 Pháp Thí Vô Lượng</span>
             <span class="footer-badge">🕊️ Phi Thương Mại</span>
-            <div class="footer-socials">
-              <a href="https://youtube.com" target="_blank" rel="noopener" class="footer-social-link" title="Kênh YouTube Pháp Âm" aria-label="YouTube">
-                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-              </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener" class="footer-social-link" title="Cộng Đồng Đồng Tu Facebook" aria-label="Facebook">
-                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-              </a>
-              <a href="bai-giang.html" class="footer-social-link" title="Thư Viện Bài Giảng &amp; Audio" aria-label="Audio">
-                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
-              </a>
-              <a href="kinh-dien.html" class="footer-social-link" title="Kinh Điển Tịnh Độ" aria-label="Kinh">
-                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
-              </a>
-            </div>
+          </div>
+          <div class="footer-socials">
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="footer-social-link" title="Kênh YouTube Pháp Âm" aria-label="YouTube">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="footer-social-link" title="Cộng Đồng Đồng Tu Facebook" aria-label="Facebook">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="bai-giang.html" class="footer-social-link" title="Thư Viện Bài Giảng &amp; Audio" aria-label="Audio">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+            </a>
+            <a href="kinh-dien.html" class="footer-social-link" title="Kinh Điển Tịnh Độ" aria-label="Kinh">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+            </a>
           </div>
         </div>
 
-        <!-- Thẻ Lời Vàng Khai Thị (Tổ Ấn Quang) -->
-        <div class="footer-quote-card">
-          <div class="footer-card-pill">📜 Lời Khuyên Tấn Khắc Tâm</div>
-          <p class="footer-quote-text">
-            "Thế sự vô thường, thân mạng khó giữ. Đừng hẹn ngày mai, hãy trân quý từng hơi thở mà tha thiết xưng niệm A Di Đà Phật."
-          </p>
-          <div class="footer-quote-footer">
-            <div class="footer-quote-author">
-              <strong>— Ấn Quang Đại Sư</strong>
-              <span>Tổ Thứ 13 Tịnh Độ Tông</span>
-            </div>
-            <a href="van-dap.html" class="footer-qa-btn">
-              <span>Góc Vấn Đáp</span>
-              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-            </a>
-          </div>
+        <!-- Thư Pháp Khai Pháp Tạng -->
+        <div class="footer-artwork-col">
+          <img src="assets/images/thu-phap-khai-phap-tang.png" alt="Vì Chúng Khai Pháp Tạng, Quảng Thí Công Đức Bảo" class="footer-artwork-img" loading="lazy">
         </div>
       </div>
 
@@ -759,15 +752,10 @@
         </div>
       </div>
 
-      <!-- Tầng 3: Dải Hồi Hướng & Bản Quyền Liền Mạch -->
+      <!-- Tầng 3: Bản Quyền & Điều Hướng Nhanh -->
       <div class="footer-bottom-tier">
-        <div class="footer-dedication-bar">
-          <p class="footer-dedication-verse">
-            🪷 "Nguyện đem công đức này · Trang nghiêm Phật Tịnh Độ · Trên đền bốn ơn nặng · Dưới cứu khổ tam đồ" 🪷
-          </p>
-        </div>
         <div class="footer-legal-bar">
-          <span class="footer-legal-copy">© 2026 Tịnh Độ An Trú · Phật Pháp truyền đăng, phụng sự tha nhân vô vụ lợi. Nguyện khắp chúng sanh đồng sanh Cực Lạc.</span>
+          <span class="footer-legal-copy">© 2026 Tịnh Độ An Trú · Phật Pháp truyền đăng, phụng sự tha nhân vô vụ lợi.</span>
           <div class="footer-legal-nav">
             <a href="index.html">Trang Chủ</a>
             <span>·</span>
@@ -783,6 +771,14 @@
       </div>
     </div>
   </footer>
+
+  </div><!-- /.site-curtain-wrapper -->
+
+  <!-- Dải Màu Phật Hiệu Cố Định Nằm Dưới Đáy Toàn Trang (Curtain Reveal Layer - z-index: 1) -->
+  <div class="footer-mantra-strip" id="footerMantraStrip">
+    <div class="footer-mantra-glow"></div>
+    <h2 class="footer-mantra-title">Nam Mô A Di Đà Phật</h2>
+  </div>
 
   <!-- Player Bar (Hidden initially, appears when user clicks 'Nghe ngay') -->
   <div class="bg-player-bar" id="audioPlayerBar" aria-label="Trình phát bài giảng">
@@ -984,6 +980,10 @@
     <svg width="16" height="16" fill="none" stroke="#6ee7b7" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
     <span id="toastMessage">Thông báo</span>
   </div>
+
+  <!-- GSAP & ScrollTrigger (Official CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
   <script src="app.js"></script>
   <script>
@@ -2057,5 +2057,8 @@
       }
     });
   </script>
+
+  <!-- Custom Animations (GSAP) -->
+  <script src="animations.js"></script>
 </body>
 </html>

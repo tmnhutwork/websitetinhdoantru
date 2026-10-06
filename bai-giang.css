@@ -697,7 +697,7 @@ body.dark-mode .bg-search-input {
 
 .bg-bento-action-link:hover {
   background-color: #14532d;
-  transform: translateY(-1px);
+  transform: none;
   box-shadow: 0 5px 14px rgba(22, 101, 52, 0.25);
 }
 
@@ -709,7 +709,7 @@ body.dark-mode .bg-search-input {
 
 .bg-bento-action-link.secondary:hover {
   background-color: #2b1f13;
-  transform: translateY(-1px);
+  transform: none;
   box-shadow: 0 5px 14px rgba(67, 48, 29, 0.25);
 }
 
@@ -1048,7 +1048,7 @@ body.dark-mode .bg-bento-action-link.secondary:hover {
 
 .bg-btn-primary:hover {
   background-color: #2b1f13;
-  transform: translateY(-1px);
+  transform: none;
   box-shadow: 0 4px 12px rgba(67, 48, 29, 0.25);
 }
 
@@ -1886,6 +1886,73 @@ body.dark-mode .bg-qa-cat-btn.active .bg-qa-cat-count {
   color: #fbbf24;
 }
 
+/* Thẻ Lời Vàng Khai Thị (Tổ Ấn Quang) Trong Sidebar Vấn Đáp */
+.bg-qa-sidebar-quote {
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(194, 136, 52, 0.22);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 4px 16px rgba(67, 48, 29, 0.04);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  margin-bottom: 16px;
+}
+
+body.dark-mode .bg-qa-sidebar-quote {
+  background: rgba(26, 22, 18, 0.78);
+  border-color: rgba(226, 168, 83, 0.22);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
+
+.bg-qa-sidebar-quote-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-gold-dark, #b45309);
+  margin-bottom: 8px;
+}
+
+body.dark-mode .bg-qa-sidebar-quote-pill {
+  color: #e2a853;
+}
+
+.bg-qa-sidebar-quote-text {
+  font-family: var(--font-display, 'Lora', serif);
+  font-size: 13.5px;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--text-main, #231f1a);
+  margin: 0 0 10px;
+}
+
+body.dark-mode .bg-qa-sidebar-quote-text {
+  color: #ede8e1;
+}
+
+.bg-qa-sidebar-quote-author strong {
+  display: block;
+  font-size: 12px;
+  color: var(--text-main, #231f1a);
+}
+
+body.dark-mode .bg-qa-sidebar-quote-author strong {
+  color: #ede8e1;
+}
+
+.bg-qa-sidebar-quote-author span {
+  display: block;
+  font-size: 11px;
+  color: var(--text-muted, #78716c);
+}
+
+body.dark-mode .bg-qa-sidebar-quote-author span {
+  color: #a89f91;
+}
+
 /* Hộp Gợi Ý Đặt Câu Hỏi (CTA Widget) */
 .bg-qa-ask-cta-box {
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(254, 250, 245, 0.9));
@@ -1957,7 +2024,7 @@ body.dark-mode .bg-qa-ask-cta-desc {
 
 .bg-qa-btn-ask-submit:hover {
   background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
-  transform: translateY(-1px);
+  transform: none;
   box-shadow: 0 5px 14px rgba(180, 83, 9, 0.32);
 }
 
@@ -2590,7 +2657,7 @@ body.dark-mode .bg-qa-sug-tag {
 
 .bg-qa-empty-reset-btn:hover {
   background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
-  transform: translateY(-1px);
+  transform: none;
 }
 
 /* ==========================================================================
@@ -3433,7 +3500,7 @@ body.dark-mode .bg-playlist-item.active {
 
 .bg-btn-series-primary:hover {
   background-color: #2b1f13;
-  transform: translateY(-1px);
+  transform: none;
 }
 
 .bg-btn-series-secondary {
@@ -3647,7 +3714,7 @@ body.dark-mode .bg-playlist-item.active {
 
 .bg-btn-drawer-play:hover {
   background-color: #2b1f13;
-  transform: translateY(-1px);
+  transform: none;
 }
 
 .bg-drawer-quote-box {
@@ -4105,14 +4172,19 @@ body.dark-mode .bg-drawer-episode-item.active {
   font-size: 13px;
   font-weight: 600;
   text-decoration: none;
-  box-shadow: 0 4px 14px rgba(67, 48, 29, 0.22);
-  transition: all 0.2s ease;
+  box-shadow: none;
+  transition: background-color 0.18s ease;
 }
 
 .bg-quote-btn-primary:hover {
   background-color: #2e2012;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(67, 48, 29, 0.3);
+  transform: none;
+  box-shadow: none;
+}
+
+.bg-quote-btn-primary:active {
+  transform: none;
+  box-shadow: none;
 }
 
 .bg-quote-btn-secondary {
@@ -4201,10 +4273,13 @@ body.dark-mode .bg-quote-desc {
 body.dark-mode .bg-quote-btn-primary {
   background-color: #e2a853;
   color: #1c1b18;
+  box-shadow: none;
 }
 
 body.dark-mode .bg-quote-btn-primary:hover {
   background-color: #f0bd74;
+  transform: none;
+  box-shadow: none;
 }
 
 body.dark-mode .bg-quote-btn-secondary {
@@ -4217,9 +4292,9 @@ body.dark-mode .bg-quote-btn-secondary:hover {
   background-color: rgba(255, 255, 255, 0.12);
 }
 
-/* Đảm bảo Footer có khoảng thở an toàn, không bị Fixed Audio Player Bar che khuất */
-.site-footer {
-  padding-bottom: 96px;
+/* Đảm bảo Dải Màu Footer có khoảng thở an toàn, không bị Fixed Audio Player Bar che khuất */
+.bai-giang-body .footer-mantra-strip {
+  padding-bottom: 110px;
 }
 
 
@@ -4628,14 +4703,19 @@ body.dark-mode .bg-quote-banner-section {
   font-size: 12.5px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(229, 138, 47, 0.28);
+  transition: background-color 0.18s ease;
+  box-shadow: none;
 }
 
 .bg-opt3-btn-study:hover {
   background: #b45309;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(180, 83, 9, 0.35);
+  transform: none;
+  box-shadow: none;
+}
+
+.bg-opt3-btn-study:active {
+  transform: none;
+  box-shadow: none;
 }
 
 .bg-opt3-link-detail {

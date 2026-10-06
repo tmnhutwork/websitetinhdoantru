@@ -1066,6 +1066,30 @@
     initMalaState();
     renderArticles();
     setupEventListeners();
+    syncFooterCurtainHeight();
   });
+
+  /* ==========================================================================
+     10. FOOTER CURTAIN REVEAL SYNC (CHUẨN SEED.COM)
+     Đo lường tự động chiều cao dải màu Tây Phương Cực Lạc để tạo hiệu ứng mở màn hoàn hảo
+     ========================================================================== */
+  function syncFooterCurtainHeight() {
+    const mantra = document.querySelector('.footer-mantra-strip');
+    if (mantra) {
+      const h = mantra.offsetHeight;
+      if (h > 0) {
+        document.documentElement.style.setProperty('--mantra-height', h + 'px');
+      }
+    }
+  }
+
+  window.addEventListener('resize', syncFooterCurtainHeight);
+  window.addEventListener('load', syncFooterCurtainHeight);
+  if ('ResizeObserver' in window) {
+    const mantraEl = document.querySelector('.footer-mantra-strip');
+    if (mantraEl) {
+      new ResizeObserver(syncFooterCurtainHeight).observe(mantraEl);
+    }
+  }
 
 })();
