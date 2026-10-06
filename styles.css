@@ -2,6 +2,7 @@
    TỊNH ĐỘ · AN TRÚ DESIGN SYSTEM
    Inspired by template-townhall-events: Minimalist, Editorial, Serene, Modern
    ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap');
 
 :root {
   /* Color Tokens - Light Mode */
@@ -1908,7 +1909,7 @@ body.dark-mode .footer-social-link:hover {
   color: #1a1714;
 }
 
-/* Thư Pháp Khai Pháp Tạng */
+/* Cụm Thư Pháp Khai Pháp Tạng (Phong cách Thư Pháp & Triện Ấn) */
 .footer-artwork-col {
   display: flex;
   align-items: center;
@@ -1917,27 +1918,122 @@ body.dark-mode .footer-social-link:hover {
   position: relative;
 }
 
-.footer-artwork-img {
+.calligraphy-frame {
   width: 100%;
   max-width: 480px;
-  height: auto;
-  display: block;
-  object-fit: contain;
-  mix-blend-mode: multiply;
-  -webkit-mask-image: radial-gradient(ellipse 92% 85% at 50% 50%, black 60%, rgba(0, 0, 0, 0.7) 80%, transparent 100%);
-  mask-image: radial-gradient(ellipse 92% 85% at 50% 50%, black 60%, rgba(0, 0, 0, 0.7) 80%, transparent 100%);
-  filter: contrast(1.04) saturate(1.05);
-  pointer-events: none;
+  background: linear-gradient(135deg, rgba(255, 252, 247, 0.94) 0%, rgba(250, 244, 233, 0.88) 100%);
+  border: 1px solid rgba(194, 136, 52, 0.24);
+  border-radius: 16px;
+  padding: 22px 26px 18px;
+  box-shadow: 0 4px 22px rgba(194, 136, 52, 0.08), inset 0 0 35px rgba(255, 255, 255, 0.6);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.35s ease;
   user-select: none;
-  transition: opacity 0.3s ease;
 }
 
-body.dark-mode .footer-artwork-img {
-  mix-blend-mode: normal;
-  opacity: 0.88;
-  filter: brightness(0.9) contrast(1.05) sepia(0.12);
-  -webkit-mask-image: radial-gradient(ellipse 90% 82% at 50% 50%, black 50%, rgba(0, 0, 0, 0.5) 78%, transparent 100%);
-  mask-image: radial-gradient(ellipse 90% 82% at 50% 50%, black 50%, rgba(0, 0, 0, 0.5) 78%, transparent 100%);
+.calligraphy-frame:hover {
+  transform: translateY(-2px);
+  border-color: rgba(194, 136, 52, 0.38);
+  box-shadow: 0 8px 30px rgba(194, 136, 52, 0.12), inset 0 0 45px rgba(255, 255, 255, 0.8);
+}
+
+body.dark-mode .calligraphy-frame {
+  background: linear-gradient(135deg, rgba(28, 24, 20, 0.88) 0%, rgba(20, 17, 14, 0.92) 100%);
+  border-color: rgba(226, 168, 83, 0.22);
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.45), inset 0 0 30px rgba(226, 168, 83, 0.03);
+}
+
+body.dark-mode .calligraphy-frame:hover {
+  border-color: rgba(226, 168, 83, 0.4);
+  box-shadow: 0 8px 34px rgba(0, 0, 0, 0.6), inset 0 0 40px rgba(226, 168, 83, 0.06);
+}
+
+/* 1. Dòng Tiếng Việt ở trên */
+.calligraphy-vietnamese {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14.5px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: #3d342a;
+  margin-bottom: 12px;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+body.dark-mode .calligraphy-vietnamese {
+  color: #dfd7cc;
+}
+
+/* 2. Dòng Chữ Hán Thư Pháp + Con Dấu Triện ở giữa */
+.calligraphy-chinese-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.calligraphy-seal {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 1px 3px rgba(186, 46, 34, 0.25));
+  transition: transform 0.3s ease;
+}
+
+.calligraphy-seal:hover {
+  transform: scale(1.06);
+}
+
+.calligraphy-seal-svg {
+  width: 36px;
+  height: 48px;
+  display: block;
+}
+
+.calligraphy-chinese {
+  font-family: 'Ma Shan Zheng', 'STKaiti', 'KaiTi', 'DFKai-SB', 'Noto Serif TC', serif;
+  font-size: 32px;
+  line-height: 1.15;
+  color: #1a1613;
+  letter-spacing: 0.16em;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  white-space: nowrap;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
+}
+
+body.dark-mode .calligraphy-chinese {
+  color: #f2ece2;
+  text-shadow: 0 0 12px rgba(242, 236, 226, 0.15);
+}
+
+.calligraphy-phrase {
+  display: inline-block;
+}
+
+/* 3. Dòng Tiếng Anh ở dưới */
+.calligraphy-english {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: #73675a;
+  letter-spacing: 0.015em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+body.dark-mode .calligraphy-english {
+  color: #9c9184;
 }
 
 /* 2. Tầng 2: Bản Đồ Pháp Bảo 4 Cột Gọn Gàng (Gap 7px, không bị thưa) */
@@ -2163,8 +2259,28 @@ body.dark-mode .footer-mantra-strip {
   .footer-artwork-col {
     justify-content: center;
   }
-  .footer-artwork-img {
+  .calligraphy-frame {
     max-width: 440px;
+    padding: 18px 20px 16px;
+  }
+  .calligraphy-vietnamese {
+    font-size: 13px;
+    white-space: normal;
+  }
+  .calligraphy-chinese {
+    font-size: 24px;
+    letter-spacing: 0.08em;
+    gap: 12px;
+  }
+  .calligraphy-seal-svg {
+    width: 30px;
+    height: 40px;
+  }
+  .calligraphy-chinese-row {
+    gap: 12px;
+  }
+  .calligraphy-english {
+    font-size: 10.5px;
   }
   .footer-links-grid {
     grid-template-columns: repeat(2, 1fr);
