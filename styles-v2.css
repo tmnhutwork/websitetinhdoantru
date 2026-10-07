@@ -1,0 +1,474 @@
+/* ==============================================================================
+   TỊNH ĐỘ · AN TRÚ - PHƯƠNG ÁN 2 (UX ĐỀ XUẤT MỚI: LIỀN MẠCH & DẪN DẮT THEO CHẶNG)
+   File CSS bổ trợ cho index-v2.html (An toàn tuyệt đối, không ghi đè layout gốc)
+   ============================================================================== */
+
+/* 1. THANH SO SÁNH PHIÊN BẢN (FLOATING AT BOTTOM-RIGHT) */
+.version-compare-bar {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 6px 10px 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(194, 136, 52, 0.38);
+  box-shadow: 0 10px 30px rgba(67, 48, 29, 0.18);
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.version-compare-bar:hover {
+  box-shadow: 0 12px 36px rgba(67, 48, 29, 0.25);
+  border-color: rgba(194, 136, 52, 0.6);
+  transform: translateY(-2px);
+}
+
+.compare-badge-icon {
+  font-size: 15px;
+}
+
+.compare-label {
+  font-weight: 600;
+  color: #43301D;
+  margin-right: 4px;
+}
+
+.compare-toggle-pills {
+  display: flex;
+  align-items: center;
+  background: #f5f4f0;
+  border-radius: 999px;
+  padding: 3px;
+  gap: 3px;
+}
+
+.compare-pill-link {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 13px;
+  border-radius: 999px;
+  color: #78716c;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.compare-pill-link:hover {
+  color: #1c1917;
+}
+
+.compare-pill-link.active {
+  background: #43301D;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(67, 48, 29, 0.25);
+}
+
+body.dark-mode .version-compare-bar {
+  background: rgba(24, 21, 18, 0.95);
+  border-color: rgba(226, 168, 83, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+}
+
+body.dark-mode .compare-label {
+  color: #e2a853;
+}
+
+body.dark-mode .compare-toggle-pills {
+  background: #151210;
+}
+
+body.dark-mode .compare-pill-link {
+  color: #a8a29e;
+}
+
+body.dark-mode .compare-pill-link.active {
+  background: #e2a853;
+  color: #1a1714 !important;
+}
+
+/* 2. CẢI TIẾN HÀNG NÚT BẤM (CTA) TRONG SOLUTION CARD */
+.sol-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px dashed rgba(194, 136, 52, 0.25);
+}
+
+.sol-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #b45309 0%, #92400e 100%);
+  color: #ffffff !important;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(180, 83, 9, 0.25);
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.sol-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(180, 83, 9, 0.35);
+  background: linear-gradient(135deg, #c28834 0%, #b45309 100%);
+}
+
+.sol-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(194, 136, 52, 0.08);
+  color: #43301D !important;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(194, 136, 52, 0.22);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.sol-secondary-btn:hover {
+  background: rgba(194, 136, 52, 0.16);
+  border-color: rgba(194, 136, 52, 0.35);
+  transform: translateY(-1px);
+}
+
+body.dark-mode .sol-secondary-btn {
+  background: rgba(226, 168, 83, 0.1);
+  color: #e2a853 !important;
+  border-color: rgba(226, 168, 83, 0.25);
+}
+
+/* Thẻ hình ảnh bên phải Solution Card có overlay thông tin */
+.res-floating-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(18, 16, 14, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fef3c7;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid rgba(254, 243, 199, 0.2);
+  z-index: 2;
+}
+
+.res-floating-title-box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(18, 16, 14, 0.88) 60%, rgba(18, 16, 14, 0.98) 100%);
+  padding: 24px 16px 14px;
+  color: #ffffff;
+  z-index: 2;
+}
+
+.res-box-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #f59e0b;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.res-box-title {
+  font-family: var(--font-display, 'Crimson Pro', serif);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* 3. CẦU NỐI DẪN CHUYỆN (NARRATIVE BRIDGES) */
+.v2-narrative-bridge {
+  padding: 42px 24px;
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.v2-bridge-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(194, 136, 52, 0.25) 30%, rgba(194, 136, 52, 0.45) 50%, rgba(194, 136, 52, 0.25) 70%, transparent 100%);
+  margin-bottom: 20px;
+}
+
+.v2-bridge-line.bottom {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.v2-bridge-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(194, 136, 52, 0.08);
+  border: 1px solid rgba(194, 136, 52, 0.25);
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.v2-bridge-quote {
+  font-family: var(--font-display, 'Crimson Pro', serif);
+  font-size: 19px;
+  line-height: 1.6;
+  font-style: italic;
+  color: #3b3127;
+  max-width: 740px;
+  margin: 0 auto 6px;
+}
+
+.v2-bridge-sub {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 13px;
+  color: #78716c;
+  letter-spacing: 0.02em;
+  display: block;
+}
+
+body.dark-mode .v2-bridge-quote {
+  color: #f3eee6;
+}
+
+body.dark-mode .v2-bridge-sub {
+  color: #a8a29e;
+}
+
+body.dark-mode .v2-bridge-icon {
+  background: rgba(226, 168, 83, 0.12);
+  border-color: rgba(226, 168, 83, 0.28);
+}
+
+/* 4. 3 TRỤ CỘT GIÁO LÝ CỐT TỦY (3 PILLARS TABS) */
+.v2-pillars-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 28px;
+}
+
+.v2-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(194, 136, 52, 0.1);
+  border: 1px solid rgba(194, 136, 52, 0.22);
+  color: #92400e;
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 14px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+body.dark-mode .v2-badge-pill {
+  background: rgba(226, 168, 83, 0.12);
+  border-color: rgba(226, 168, 83, 0.25);
+  color: #f59e0b;
+}
+
+.v2-pillars-selector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.v2-pillar-card-btn {
+  background: #ffffff;
+  border: 1px solid rgba(194, 136, 52, 0.2);
+  border-radius: 14px;
+  padding: 16px 18px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.v2-pillar-card-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(194, 136, 52, 0.45);
+  box-shadow: 0 6px 20px rgba(194, 136, 52, 0.08);
+}
+
+.v2-pillar-card-btn.active {
+  background: linear-gradient(145deg, #fffbf5 0%, #fff8eb 100%);
+  border-color: #c28834;
+  box-shadow: 0 8px 24px rgba(194, 136, 52, 0.14);
+}
+
+.v2-pillar-card-btn.active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  height: 3px;
+  background: #c28834;
+  border-radius: 0 0 3px 3px;
+}
+
+.pillar-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.pillar-step-badge {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #92400e;
+  letter-spacing: 0.04em;
+}
+
+.pillar-icon {
+  font-size: 18px;
+}
+
+.pillar-title {
+  font-family: var(--font-display, 'Crimson Pro', serif);
+  font-size: 17px;
+  font-weight: 600;
+  color: #1c1917;
+  margin: 0 0 4px;
+}
+
+.pillar-desc {
+  font-size: 12px;
+  line-height: 1.45;
+  color: #78716c;
+  margin: 0;
+}
+
+body.dark-mode .v2-pillar-card-btn {
+  background: #181512;
+  border-color: rgba(226, 168, 83, 0.18);
+}
+
+body.dark-mode .v2-pillar-card-btn:hover {
+  border-color: rgba(226, 168, 83, 0.35);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .v2-pillar-card-btn.active {
+  background: linear-gradient(145deg, #201c18 0%, #1a1714 100%);
+  border-color: #e2a853;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .v2-pillar-card-btn.active::before {
+  background: #e2a853;
+}
+
+body.dark-mode .pillar-step-badge {
+  color: #e2a853;
+}
+
+body.dark-mode .pillar-title {
+  color: #ede8e1;
+}
+
+body.dark-mode .pillar-desc {
+  color: #a8a29e;
+}
+
+/* 5. HIỆU ỨNG TỎA SÁNG KIM SẮC (HIGHLIGHT PULSE) KHI TỪ MOOD NHẢY XUỐNG */
+@keyframes goldPulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(194, 136, 52, 0.6);
+    border-color: #c28834;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 35px 8px rgba(194, 136, 52, 0.45);
+    border-color: #f59e0b;
+    transform: scale(1.02);
+  }
+  100% {
+    box-shadow: 0 8px 24px rgba(194, 136, 52, 0.12);
+    border-color: rgba(194, 136, 52, 0.25);
+    transform: scale(1);
+  }
+}
+
+.article-card.highlight-target {
+  animation: goldPulseGlow 1.8s ease-out 2;
+  border-color: #c28834 !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .v2-pillars-selector {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .version-compare-bar {
+    bottom: 16px;
+    right: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .sol-actions-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .sol-cta-btn,
+  .sol-secondary-btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+  .v2-narrative-bridge {
+    padding: 32px 16px;
+  }
+  .v2-bridge-quote {
+    font-size: 17px;
+  }
+  .version-compare-bar {
+    bottom: 12px;
+    right: 12px;
+    padding: 4px 8px 4px 10px;
+    font-size: 11.5px;
+  }
+  .compare-pill-link {
+    font-size: 11px;
+    padding: 4px 9px;
+  }
+}

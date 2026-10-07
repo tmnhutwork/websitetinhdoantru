@@ -9,22 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="hero-options.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪷</text></svg>">
 </head>
 <body>
-
-  <!-- Thanh Chuyển Đổi Nổi Giữa 4 Phương Án Hero -->
-  <aside class="hero-switcher-bar" aria-label="Chuyển đổi 4 phương án Hero tuyên dương Tịnh Độ">
-    <span class="switcher-title-tag">🪷 4 Hero:</span>
-    <div class="switcher-pills-list">
-      <a href="index.html" class="switcher-btn-pill active">Bản Gốc</a>
-      <a href="hero-opt-1.html" class="switcher-btn-pill">PA 1: Đại Thuyền</a>
-      <a href="hero-opt-2.html" class="switcher-btn-pill">PA 2: Hưởng Thụ</a>
-      <a href="hero-opt-3.html" class="switcher-btn-pill">PA 3: Đối Lập</a>
-      <a href="hero-opt-4.html" class="switcher-btn-pill">PA 4: Split Hero</a>
-    </div>
-  </aside>
 
   <!-- Bức Màn Trang Web (Sliding Curtain Layer - z-index: 2) -->
   <div class="site-curtain-wrapper">
@@ -32,13 +19,13 @@
   <!-- Navigation Bar -->
   <header class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="index.html" class="brand-logo" id="brand-logo">
+      <a href="#" class="brand-logo" id="brand-logo">
         <span class="lotus-icon">🪷</span>
         <span class="brand-name">tịnh độ <span class="brand-dot">·</span> <em class="brand-sub">an trú</em></span>
       </a>
 
       <nav class="nav-links" id="nav-links">
-        <a href="index.html" class="nav-link active">Giáo Lý</a>
+        <a href="#kham-pha" class="nav-link active">Giáo Lý</a>
         <a href="bai-giang.html" class="nav-link">Bài Giảng</a>
         <a href="kinh-dien.html" class="nav-link">Kinh Điển</a>
         <a href="#thoi-khoa" class="nav-link">Thời Khóa</a>
@@ -124,17 +111,6 @@
               </div>
             </div>
 
-            <!-- Nút Hành Động Trực Quan (Tối Giản, Không Còn Khối Bài Viết Nặng Nề) -->
-            <div style="display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap;">
-              <a href="#niem-phat" class="btn btn-primary" style="padding: 10px 20px; font-size: 13.5px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
-                <span>🪷</span>
-                <span>Niệm Phật an tâm ngay</span>
-              </a>
-              <a href="van-dap.html" class="btn btn-ghost" style="padding: 10px 18px; font-size: 13px; text-decoration: none; border: 1px solid var(--border-subtle); display: inline-flex; align-items: center; gap: 6px;">
-                <span>Góc Vấn Đáp &amp; Giáo Lý</span>
-                <span>→</span>
-              </a>
-            </div>
 
           </div>
           
@@ -144,6 +120,101 @@
               <img src="assets/images/Muon-tim-su-binh-an.png" alt="Pháp thoại" class="resource-img" id="res-img" style="width: 100%; height: 100%; object-fit: cover; display: block;">
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Hub with Filter & Search -->
+    <section class="content-section" id="kham-pha">
+      <div class="content-container">
+        
+        <div class="section-header" style="margin-bottom: 32px; border-top: 1px solid var(--border-subtle); padding-top: 64px;">
+          <h2 class="section-title" style="font-family: var(--font-display); font-size: 36px; font-weight: 400; color: var(--text-main); margin-bottom: 8px;">Khám Phá Giáo Lý</h2>
+          <p class="section-subtitle" style="color: var(--text-secondary); font-size: 16px;">Tuyển tập các bài giảng, phương pháp tu học và kinh điển quan trọng.</p>
+        </div>
+
+        <!-- Controls Bar: Search & Category Pills -->
+        <div class="filter-wrapper">
+          <div class="filter-top-row">
+            <!-- Search Input -->
+            <div class="search-input-wrap">
+              <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="search-input" class="search-input" placeholder="Tìm kinh điển, phương pháp niệm, lời khai thị..." autocomplete="off">
+              <button class="clear-search-btn" id="btn-clear-search" aria-label="Xóa tìm kiếm">&times;</button>
+            </div>
+
+            <!-- View Switcher -->
+            <div class="view-switch-wrap">
+              <button class="view-btn active" id="view-grid" title="Xem dạng lưới (Grid)" aria-label="Xem dạng lưới">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+              </button>
+              <button class="view-btn" id="view-list" title="Xem dạng danh sách (List)" aria-label="Xem dạng danh sách">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="8" y1="6" x2="21" y2="6"></line>
+                  <line x1="8" y1="12" x2="21" y2="12"></line>
+                  <line x1="8" y1="18" x2="21" y2="18"></line>
+                  <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                  <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                  <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Category Pills Row -->
+          <div class="category-pills" id="category-pills">
+            <button class="pill-btn active" data-category="all">
+              Tất cả <span class="pill-count" id="count-all">0</span>
+            </button>
+            <button class="pill-btn" data-category="nhap-mon">
+              <span class="category-dot dot-amber"></span> Nhập Môn Tịnh Độ
+            </button>
+            <button class="pill-btn" data-category="tam-tu-luong">
+              <span class="category-dot dot-emerald"></span> Bài Giảng
+            </button>
+            <button class="pill-btn" data-category="kinh-dien">
+              <span class="category-dot dot-indigo"></span> Kinh Điển Cốt Tủy
+            </button>
+            <button class="pill-btn" data-category="phuong-phap">
+              <span class="category-dot dot-rose"></span> Phương Pháp Niệm Phật
+            </button>
+            <button class="pill-btn" data-category="khai-thi">
+              <span class="category-dot dot-gold"></span> Khai Thị Cao Tăng
+            </button>
+            <button class="pill-btn" data-category="vang-sanh">
+              <span class="category-dot dot-stone"></span> Chuyện Vãng Sanh
+            </button>
+          </div>
+        </div>
+
+        <!-- Section Header -->
+        <div class="articles-header">
+          <h2 class="section-title">
+            Học Pháp & Tu Trì <em class="section-italic">mỗi ngày</em>
+          </h2>
+          <p class="section-desc" id="filter-status-desc">
+            Hiển thị các nội dung hướng dẫn chọn lọc dành cho người sơ cơ và hành giả Tịnh Độ.
+          </p>
+        </div>
+
+        <!-- Dynamic Cards Grid / List Container -->
+        <div class="cards-grid" id="cards-container">
+          <!-- Dynamic cards injected by JavaScript -->
+        </div>
+
+        <!-- No Results Fallback -->
+        <div class="empty-state" id="empty-state" style="display: none;">
+          <p class="empty-title">Không tìm thấy bài viết phù hợp</p>
+          <p class="empty-desc">Thử tìm kiếm với từ khóa khác hoặc bấm nút "Tất cả" bên trên để xem toàn bộ nội dung.</p>
+          <button class="btn btn-secondary" id="btn-reset-filters">Xem toàn bộ bài viết</button>
         </div>
       </div>
     </section>
@@ -204,25 +275,6 @@
             </ul>
           </div>
         </div>
-
-        <!-- Lối Mở Thanh Nhã Sang Góc Vấn Đáp & Khảo Cứu Giáo Lý -->
-        <div style="margin-top: 40px; padding: 22px 28px; border-radius: var(--radius-xl, 20px); background: var(--bg-surface, #ffffff); border: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; box-shadow: 0 4px 16px rgba(67, 48, 29, 0.04);">
-          <div style="display: flex; align-items: center; gap: 16px;">
-            <span style="font-size: 32px;">📖</span>
-            <div>
-              <h4 style="margin: 0 0 4px; font-family: var(--font-display); font-size: 19px; color: var(--text-main);">
-                Bạn có thắc mắc tu học hay muốn khảo cứu sâu giáo lý Tịnh Tông?
-              </h4>
-              <p style="margin: 0; font-size: 14px; color: var(--text-secondary);">
-                Xem trọn bộ các câu hỏi tháo gỡ khúc mắc công phu và các bài khảo cứu giáo lý tại Góc Vấn Đáp.
-              </p>
-            </div>
-          </div>
-          <a href="van-dap.html" class="btn btn-secondary-sm" style="white-space: nowrap; padding: 10px 20px; text-decoration: none;">
-            Xem Góc Vấn Đáp &amp; Giáo Lý →
-          </a>
-        </div>
-
       </div>
     </section>
 

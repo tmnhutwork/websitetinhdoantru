@@ -25,11 +25,12 @@
       </a>
 
       <nav class="nav-links" id="nav-links">
-        <a href="index.html#kham-pha" class="nav-link">Giáo Lý</a>
+        <a href="index.html" class="nav-link">Trang Chủ</a>
+        <a href="index.html#tam-tu-luong" class="nav-link">Tư Lương</a>
+        <a href="index.html#niem-phat" class="nav-link">Niệm Phật</a>
         <a href="bai-giang.html" class="nav-link">Bài Giảng</a>
         <a href="kinh-dien.html" class="nav-link">Kinh Điển</a>
-        <a href="index.html#thoi-khoa" class="nav-link">Thời Khóa</a>
-        <a href="van-dap.html" class="nav-link active">Vấn Đáp</a>
+        <a href="van-dap.html" class="nav-link active">Vấn Đáp &amp; Giáo Lý</a>
       </nav>
 
       <div class="nav-actions">
@@ -77,6 +78,9 @@
           <a href="#qaCardsList" class="bg-quote-btn-secondary" style="padding: 10px 22px; font-size: 14px;">
             <span>Xem các câu hỏi phổ biến</span>
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+          </a>
+          <a href="#kham-pha" class="bg-quote-btn-secondary" style="padding: 10px 22px; font-size: 14px;">
+            <span>📖 Khám Phá Giáo Lý</span>
           </a>
         </div>
       </div>
@@ -699,6 +703,112 @@
       </div> <!-- /.bg-qa-split-container -->
     </section>
 
+    <!-- ==========================================================================
+         SECTION: KHÁM PHÁ GIÁO LÝ & BÀI HỌC TU TRÌ (CHUYỂN TỪ TRANG CHỦ SANG ĐÂY)
+         ========================================================================== -->
+    <section class="content-section" id="kham-pha" style="padding: 70px 20px; background: var(--bg-surface); border-top: 1px solid var(--border-subtle);">
+      <div class="content-container">
+        
+        <div class="section-header" style="margin-bottom: 32px; text-align: center;">
+          <div class="bg-qa-badge" style="margin: 0 auto 12px; width: fit-content;">
+            <span class="bg-qa-badge-icon">📖</span>
+            <span>Khảo Cứu &amp; Học Pháp Chuyên Sâu</span>
+          </div>
+          <h2 class="section-title" style="font-family: var(--font-serif, 'Crimson Pro', Georgia, serif); font-size: clamp(28px, 3.5vw, 38px); font-weight: 700; color: var(--text-main); margin-bottom: 8px;">
+            Khám Phá Giáo Lý Tịnh Độ
+          </h2>
+          <p class="section-subtitle" style="color: var(--text-secondary); font-size: 15.5px; max-width: 680px; margin: 0 auto;">
+            Tuyển tập các bài giảng, phương pháp tu học, kinh điển cốt tủy và lời khai thị của chư Tổ Sư dành cho người sơ cơ và hành giả Tịnh Độ.
+          </p>
+        </div>
+
+        <!-- Controls Bar: Search & Category Pills -->
+        <div class="filter-wrapper">
+          <div class="filter-top-row">
+            <!-- Search Input -->
+            <div class="search-input-wrap">
+              <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="search-input" class="search-input" placeholder="Tìm kinh điển, phương pháp niệm, lời khai thị..." autocomplete="off">
+              <button class="clear-search-btn" id="btn-clear-search" aria-label="Xóa tìm kiếm">&times;</button>
+            </div>
+
+            <!-- View Switcher -->
+            <div class="view-switch-wrap">
+              <button class="view-btn active" id="view-grid" title="Xem dạng lưới (Grid)" aria-label="Xem dạng lưới">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+              </button>
+              <button class="view-btn" id="view-list" title="Xem dạng danh sách (List)" aria-label="Xem dạng danh sách">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="8" y1="6" x2="21" y2="6"></line>
+                  <line x1="8" y1="12" x2="21" y2="12"></line>
+                  <line x1="8" y1="18" x2="21" y2="18"></line>
+                  <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                  <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                  <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Category Pills Row -->
+          <div class="category-pills" id="category-pills">
+            <button class="pill-btn active" data-category="all">
+              Tất cả <span class="pill-count" id="count-all">0</span>
+            </button>
+            <button class="pill-btn" data-category="nhap-mon">
+              <span class="category-dot dot-amber"></span> Nhập Môn Tịnh Độ
+            </button>
+            <button class="pill-btn" data-category="tam-tu-luong">
+              <span class="category-dot dot-emerald"></span> Bài Giảng
+            </button>
+            <button class="pill-btn" data-category="kinh-dien">
+              <span class="category-dot dot-indigo"></span> Kinh Điển Cốt Tủy
+            </button>
+            <button class="pill-btn" data-category="phuong-phap">
+              <span class="category-dot dot-rose"></span> Phương Pháp Niệm Phật
+            </button>
+            <button class="pill-btn" data-category="khai-thi">
+              <span class="category-dot dot-gold"></span> Khai Thị Cao Tăng
+            </button>
+            <button class="pill-btn" data-category="vang-sanh">
+              <span class="category-dot dot-stone"></span> Chuyện Vãng Sanh
+            </button>
+          </div>
+        </div>
+
+        <!-- Section Header -->
+        <div class="articles-header" style="margin-top: 28px;">
+          <h3 class="section-title" style="font-size: 24px;">
+            Học Pháp &amp; Tu Trì <em class="section-italic">mỗi ngày</em>
+          </h3>
+          <p class="section-desc" id="filter-status-desc">
+            Hiển thị các nội dung hướng dẫn chọn lọc dành cho người sơ cơ và hành giả Tịnh Độ.
+          </p>
+        </div>
+
+        <!-- Dynamic Cards Grid / List Container -->
+        <div class="cards-grid" id="cards-container">
+          <!-- Dynamic cards injected by JavaScript -->
+        </div>
+
+        <!-- No Results Fallback -->
+        <div class="empty-state" id="empty-state" style="display: none;">
+          <p class="empty-title">Không tìm thấy bài viết phù hợp</p>
+          <p class="empty-desc">Thử tìm kiếm với từ khóa khác hoặc bấm nút "Tất cả" bên trên để xem toàn bộ nội dung.</p>
+          <button class="btn btn-secondary" id="btn-reset-filters">Xem toàn bộ bài viết</button>
+        </div>
+
+      </div>
+    </section>
+
     <!-- ZEN QUOTE BANNER: MẢNG NGHỆ THUẬT & KHAI THỊ CỐT TỦY -->
     <section class="bg-quote-banner-section" id="secQuoteBanner">
       <div class="bg-quote-banner-container">
@@ -773,6 +883,67 @@
             <button type="submit" class="bg-qa-hub-btn-ask" id="btnSubmitAskQuestion" style="padding: 9px 20px;">Gửi câu hỏi ngay</button>
           </div>
         </form>
+      </div>
+    </div>
+
+    <!-- Reader Modal (Full immersive reading experience) -->
+    <div class="reader-modal-overlay" id="reader-modal-overlay">
+      <div class="reader-modal" id="reader-modal" role="dialog" aria-modal="true" aria-labelledby="modal-article-title">
+        
+        <!-- Modal Sticky Top Bar -->
+        <div class="modal-top-bar">
+          <div class="modal-meta-left">
+            <span class="modal-category-pill" id="modal-category-pill">Giáo Lý</span>
+            <span class="modal-read-time" id="modal-read-time">5 phút đọc</span>
+          </div>
+
+          <div class="modal-actions-right">
+            <!-- Font Size Buttons -->
+            <div class="font-size-controls">
+              <button class="control-btn" id="btn-font-decrease" title="Giảm cỡ chữ" aria-label="Giảm cỡ chữ">A-</button>
+              <button class="control-btn" id="btn-font-increase" title="Tăng cỡ chữ (dành cho người lớn tuổi)" aria-label="Tăng cỡ chữ">A+</button>
+            </div>
+
+            <!-- Print / Copy Link -->
+            <button class="control-btn" id="btn-copy-quote" title="Sao chép trích dẫn" aria-label="Sao chép trích dẫn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+            </button>
+
+            <!-- Close Modal -->
+            <button class="modal-close-btn" id="btn-close-modal" aria-label="Đóng cửa sổ">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Modal Reading Content -->
+        <div class="modal-body" id="modal-body">
+          <div class="modal-content-container">
+            <h1 class="modal-title" id="modal-article-title">Tiêu đề bài viết</h1>
+            <p class="modal-author-date" id="modal-author-date">Tác giả · Ngày đăng</p>
+            
+            <div class="modal-hero-image-wrap" id="modal-image-wrap">
+              <img src="" alt="" id="modal-hero-image" class="modal-hero-image">
+            </div>
+
+            <div class="modal-article-text" id="modal-article-text">
+              <!-- Dynamically injected rich content -->
+            </div>
+
+            <div class="modal-footer-callout">
+              <span class="callout-lotus">🪷</span>
+              <p class="callout-text">
+                "Một câu A Di Đà Phật là muôn pháp quy tông. Trì niệm chuyên cần, quyết định một đời giải thoát."
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
