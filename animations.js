@@ -50,6 +50,10 @@
        2. HIỆU ỨNG ENTRANCE KHI VỪA VÀO TRANG (HERO / BANNER)
        ========================================================================== */
     const initHeroAnimation = () => {
+      // Hero có thuộc tính data-hero-static (trang chủ index.html): tiêu đề, phụ đề, nút
+      // hiện ngay, không fade-in. Các trang khác không có thuộc tính này nên giữ nguyên hiệu ứng.
+      if (document.querySelector('[data-hero-static]')) return;
+
       const heroTitle = document.querySelector('.hero-title, .hero-content h1, .banner-title');
       const heroSubtitle = document.querySelector('.hero-subtitle, .hero-content p, .banner-sub');
       const heroButtons = document.querySelectorAll('.hero-cta, .hero-actions .btn, .hero-content .btn');
@@ -205,4 +209,355 @@
     
 
   });
+})();
+
+/**
+ * ==============================================================================
+ * TAB BAR – VẠCH CHỈ BÁO TRƯỢT KHI CHUYỂN MỤC (KHÔNG CẦN GSAP)
+ * ==============================================================================
+ * Khối này chạy độc lập với khối GSAP ở trên: vẫn hoạt động khi GSAP chưa tải
+ * hoặc khi người dùng bật prefers-reduced-motion (lúc đó vạch đổi chỗ tức thì).
+ *
+ * 1. Tạo một vạch duy nhất .td-tabbar-indicator trong .td-tabbar, đặt dưới icon đang chọn.
+ * 2. Chạm mục khác: vạch trượt sang icon mới, màu active chuyển theo, trượt xong
+ *    (~260ms) mới chuyển trang. Trang chưa có mục chọn (van-dap.html): vạch hiện dần.
+ * 3. Neo trong cùng trang (index.html → #thoi-khoa): vạch trượt, trình duyệt tự cuộn.
+ *    Trên index.html vạch bám theo vị trí cuộn (IntersectionObserver): Thời Khóa / Giáo Lý.
+ * 4. Quay lại bằng nút Back (bfcache): vạch về đúng mục của trang đó.
+ * SLIDE_MS phải khớp với --td-tabbar-slide trong styles.css.
+ * ==============================================================================
+ */
+(function () {
+  'use strict';
+
+  var SLIDE_MS = 260;
+  var reduceQuery = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+
+  function reducedMotion() {
+    return !!(reduceQuery && reduceQuery.matches);
+  }
+
+  // "/" và "/index.html" là cùng một trang
+  function pagePath(url) {
+    return url.pathname.replace(/\/index\.html$/, '/');
+  }
+
+  function isSamePage(url) {
+    return url.origin === location.origin &&
+      pagePath(url) === pagePath(location) &&
+      url.search === location.search;
+  }
+
+  function initTabbarIndicator() {
+    var bar = document.querySelector('.td-tabbar');
+    if (!bar || bar.querySelector('.td-tabbar-indicator')) return;
+
+    var items = Array.prototype.slice.call(bar.querySelectorAll('.td-tabbar-item'));
+    if (!items.length) return;
+
+    // Mục active gốc của trang (theo HTML) và các mục neo tới section ngay trong trang này
+    var homeItem = null;
+    var spyItems = [];
+    items.forEach(function (item) {
+      if (!homeItem && item.getAttribute('aria-current') === 'page') homeItem = item;
+      var url = new URL(item.href, location.href);
+      if (url.hash && isSamePage(url)) {
+        var section = document.getElementById(decodeURIComponent(url.hash.slice(1)));
+        if (section) spyItems.push({ item: item, section: section, hash: url.hash, inBand: false });
+      }
+    });
+
+    var indicator = document.createElement('span');
+    indicator.className = 'td-tabbar-indicator';
+    indicator.setAttribute('aria-hidden', 'true');
+    bar.appendChild(indicator);
+    bar.classList.add('has-indicator');
+
+    var current = null;
+    var readyFrame = 0;
+
+    /* ---------- Vị trí & trạng thái ---------- */
+    function setCurrent(item) {
+      current = item;
+      items.forEach(function (el) {
+        if (el === item) el.setAttribute('aria-current', 'page');
+        else el.removeAttribute('aria-current');
+      });
+    }
+
+    function setX(item) {
+      if (!item || !bar.getClientRects().length) return; // TabBar đang ẩn (từ 1024px)
+      var barBox = bar.getBoundingClientRect();
+      var box = item.getBoundingClientRect();
+      var width = indicator.offsetWidth || 16;
+      var x = box.left - barBox.left - bar.clientLeft + (box.width - width) / 2;
+      indicator.style.transform = 'translateX(' + x.toFixed(2) + 'px)';
+    }
+
+    function setVisible(visible) {
+      indicator.classList.toggle('is-visible', visible);
+    }
+
+    // Đặt tức thì, không chuyển động; bật lại transition ở khung hình kế tiếp
+    function jumpTo(item) {
+      cancelAnimationFrame(readyFrame);
+      bar.classList.remove('is-ready');
+      setCurrent(item);
+      setX(item);
+      setVisible(!!item);
+      void indicator.offsetWidth; // ép trình duyệt áp dụng vị trí trước khi bật transition
+      readyFrame = requestAnimationFrame(function () {
+        bar.classList.add('is-ready');
+      });
+    }
+
+    // Trượt sang mục mới (hoặc hiện dần tại chỗ nếu trước đó chưa có vạch)
+    function slideTo(item) {
+      if (!item || reducedMotion() || !bar.classList.contains('is-ready')) {
+        jumpTo(item);
+        return;
+      }
+      if (!indicator.classList.contains('is-visible')) {
+        bar.classList.remove('is-ready');
+        setX(item);
+        void indicator.offsetWidth;
+        bar.classList.add('is-ready');
+      } else {
+        setX(item);
+      }
+      setCurrent(item);
+      setVisible(true);
+    }
+
+    /* ---------- Chuyển trang sau khi trượt xong ---------- */
+    var pendingHref = null;
+    var navTimer = 0;
+
+    function cancelPending() {
+      pendingHref = null;
+      clearTimeout(navTimer);
+      indicator.removeEventListener('transitionend', onSlideEnd);
+    }
+
+    function go() {
+      var href = pendingHref;
+      cancelPending();
+      if (href) location.href = href;
+    }
+
+    function onSlideEnd(event) {
+      if (event.target === indicator) go();
+    }
+
+    function navigateAfterSlide(href) {
+      cancelPending();
+      pendingHref = href;
+      indicator.addEventListener('transitionend', onSlideEnd);
+      navTimer = setTimeout(go, SLIDE_MS + 30); // dự phòng nếu transitionend không tới (tổng ≤ 300ms)
+    }
+
+    /* ---------- Bám theo vị trí cuộn trên trang có neo (index.html) ---------- */
+    var spyLocked = false;
+    var holdForLoad = false; // mở trang kèm neo: giữ mục của neo tới khi trang tải xong
+    var spyInstant = true;   // lúc mới tải: đổi mục tức thì, không trượt
+    var idleTimer = 0;
+    var lockTimer = 0;
+
+    // Section được xem là "đang xem" khi chạm dải giữa màn hình (49%–51% chiều cao)
+    function measureBands() {
+      var h = window.innerHeight;
+      spyItems.forEach(function (spy) {
+        var r = spy.section.getBoundingClientRect();
+        spy.inBand = r.top < h * 0.51 && r.bottom > h * 0.49;
+      });
+    }
+
+    function pickSpy() {
+      for (var i = 0; i < spyItems.length; i++) {
+        if (spyItems[i].inBand) return spyItems[i].item;
+      }
+      return homeItem;
+    }
+
+    function syncSpy() {
+      if (spyLocked || pendingHref) return;
+      var target = pickSpy();
+      if (target === current) return;
+      if (spyInstant) jumpTo(target);
+      else slideTo(target);
+    }
+
+    function releaseSpy() {
+      spyLocked = false;
+      holdForLoad = false;
+      clearTimeout(idleTimer);
+      clearTimeout(lockTimer);
+      measureBands();
+      syncSpy();
+    }
+
+    // Khoá tạm trong lúc trang tự cuộn tới mục vừa chạm, tránh vạch nhảy qua lại giữa chừng
+    function lockSpy() {
+      if (!spyItems.length) return;
+      spyLocked = true;
+      clearTimeout(idleTimer);
+      clearTimeout(lockTimer);
+      idleTimer = setTimeout(releaseSpy, 400);
+      lockTimer = setTimeout(releaseSpy, 2000);
+    }
+
+    // Tạm tắt scroll-behavior: smooth của trang; đọc lại style để trình duyệt áp dụng ngay
+    function suspendSmoothScroll() {
+      var root = document.documentElement;
+      root.style.scrollBehavior = 'auto';
+      void getComputedStyle(root).scrollBehavior;
+      return function () { root.style.scrollBehavior = ''; };
+    }
+
+    function instantScroll(fn) {
+      var restore = suspendSmoothScroll();
+      fn();
+      restore();
+    }
+
+    function scrollToTop() {
+      if (reducedMotion()) instantScroll(function () { window.scrollTo(0, 0); });
+      else window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* ---------- Khởi tạo ---------- */
+    var hashSpy = null;
+    spyItems.forEach(function (spy) {
+      if (spy.hash === location.hash) hashSpy = spy;
+    });
+
+    var initial = homeItem;
+    if (spyItems.length) {
+      measureBands();
+      initial = hashSpy ? hashSpy.item : pickSpy();
+    }
+    jumpTo(initial);
+
+    if (spyItems.length) {
+      if (hashSpy) {
+        spyLocked = true;
+        holdForLoad = true;
+      }
+
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            spyItems.forEach(function (spy) {
+              if (spy.section === entry.target) spy.inBand = entry.isIntersecting;
+            });
+          });
+          syncSpy();
+        }, { rootMargin: '-49% 0px -49% 0px', threshold: 0 });
+        spyItems.forEach(function (spy) { observer.observe(spy.section); });
+      }
+
+      window.addEventListener('scroll', function () {
+        if (!spyLocked) return;
+        clearTimeout(idleTimer);
+        idleTimer = setTimeout(releaseSpy, 150);
+      }, { passive: true });
+
+      var onLoaded = function () {
+        requestAnimationFrame(function () {
+          if (holdForLoad) {
+            // ScrollTrigger (khối GSAP ở trên) gọi scrollTo(0, 0) lúc load khiến trình duyệt bỏ qua
+            // việc cuộn tới neo (vd. bấm Thời Khóa từ trang con). Nếu người dùng chưa tự cuộn,
+            // đưa section của neo lên đầu màn hình như hành vi mặc định của trình duyệt.
+            var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+            measureBands();
+            if (!hashSpy.inBand && (!nav || nav.type === 'navigate')) {
+              instantScroll(function () { hashSpy.section.scrollIntoView({ block: 'start' }); });
+            }
+            releaseSpy();
+          }
+          setTimeout(function () { spyInstant = false; }, 300);
+        });
+      };
+      if (document.readyState === 'complete') onLoaded();
+      else window.addEventListener('load', onLoaded);
+    } else {
+      spyInstant = false;
+    }
+
+    /* ---------- Chạm vào mục ---------- */
+    bar.addEventListener('click', function (event) {
+      var link = event.target.closest ? event.target.closest('.td-tabbar-item') : null;
+      if (!link || !bar.contains(link) || event.defaultPrevented) return;
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      if ((link.target && link.target !== '_self') || link.hasAttribute('download')) return;
+
+      if (link === current) {
+        if (pendingHref) event.preventDefault(); // đang trượt tới chính mục này: chờ chuyển trang
+        return; // chạm lại mục đang chọn: giữ hành vi mặc định
+      }
+
+      var url = new URL(link.href, location.href);
+
+      if (isSamePage(url)) {
+        cancelPending();
+        lockSpy();
+        slideTo(link);
+        if (!url.hash) {
+          // Ví dụ "Giáo Lý" trên index.html: cuộn về đầu trang thay vì tải lại
+          event.preventDefault();
+          scrollToTop();
+          if (location.hash) history.pushState(null, '', url.pathname + url.search);
+        } else if (reducedMotion()) {
+          // Neo #... khi giảm chuyển động: trình duyệt nhảy thẳng tới section, không cuộn mượt
+          setTimeout(suspendSmoothScroll(), 0);
+        }
+        return; // neo #...: để trình duyệt tự cuộn tới section
+      }
+
+      if (url.origin !== location.origin) return;
+
+      if (reducedMotion()) {
+        cancelPending();
+        jumpTo(link); // đổi chỗ tức thì, trình duyệt chuyển trang ngay
+        return;
+      }
+
+      // Trượt xong mới chuyển trang; chạm mục khác trong lúc chờ thì đổi đích, trượt tiếp
+      event.preventDefault();
+      slideTo(link);
+      navigateAfterSlide(link.href);
+    });
+
+    /* ---------- Đổi kích thước / xoay màn hình ---------- */
+    // Chỉ tính lại khi bề ngang TabBar đổi (thanh địa chỉ co/giãn khi cuộn cũng gây resize).
+    // ResizeObserver chạy trước khi vẽ khung hình nên vạch không bị lệch dù chỉ một khung.
+    var lastBarWidth = bar.clientWidth;
+    function onBarResize() {
+      var width = bar.clientWidth;
+      if (width === lastBarWidth) return;
+      lastBarWidth = width;
+      jumpTo(current);
+    }
+    if ('ResizeObserver' in window) {
+      new ResizeObserver(onBarResize).observe(bar);
+    } else {
+      window.addEventListener('resize', onBarResize);
+      window.addEventListener('orientationchange', onBarResize);
+    }
+
+    /* ---------- Quay lại bằng Back/Forward (bfcache) ---------- */
+    window.addEventListener('pageshow', function (event) {
+      if (!event.persisted) return;
+      cancelPending();
+      spyLocked = false;
+      if (spyItems.length) measureBands();
+      jumpTo(spyItems.length ? pickSpy() : homeItem);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTabbarIndicator);
+  } else {
+    initTabbarIndicator();
+  }
 })();

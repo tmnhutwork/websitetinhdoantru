@@ -35,6 +35,12 @@
           <span>Sao chép liên kết</span>
         </button>
 
+        <!-- Mở danh sách tập (chỉ hiện từ 1080px trở xuống; trên máy tính danh sách luôn hiện ở cột phải) -->
+        <button type="button" class="watch-btn-list-top" id="btnOpenListTop" aria-controls="watchPlaylistPanel" aria-expanded="false">
+          <svg class="watch-list-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16"/><path d="M4 11.5h9"/><path d="M4 16.5h9"/><path d="M16 13.25v6.5l5-3.25z"/></svg>
+          <span class="watch-btn-list-label" data-unit-label="choose">Chọn tập</span>
+        </button>
+
         <button class="icon-btn theme-toggle" id="btnThemeToggle" title="Chuyển chế độ ban đêm" aria-label="Chuyển chế độ ban đêm">
           <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="4"></circle>
@@ -136,7 +142,7 @@
           <div class="watch-actions-left">
             <button class="watch-action-btn share-btn" id="btnCopyEpisodeLink" title="Sao chép liên kết tập này gửi Zalo/Facebook">
               <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
-              <span>Chia sẻ tập này</span>
+              <span id="shareEpisodeLabel">Chia sẻ tập này</span>
             </button>
             <button class="watch-action-btn" id="btnAudioMode" title="Chuyển sang chỉ nghe Audio (tiết kiệm pin)">
               <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path></svg>
@@ -156,10 +162,15 @@
           <div class="watch-nav-ep-btns">
             <button class="watch-btn-prev-ep" id="btnPrevEp" title="Xem tập trước">
               <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
-              <span>Tập trước</span>
+              <span id="btnPrevEpLabel">Tập trước</span>
+            </button>
+            <!-- Mở danh sách tập (chỉ hiện từ 1080px trở xuống) -->
+            <button type="button" class="watch-btn-choose-ep" id="btnOpenListInline" aria-controls="watchPlaylistPanel" aria-expanded="false">
+              <svg class="watch-list-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16"/><path d="M4 11.5h9"/><path d="M4 16.5h9"/><path d="M16 13.25v6.5l5-3.25z"/></svg>
+              <span data-unit-label="choose">Chọn tập</span>
             </button>
             <button class="watch-btn-next-ep" id="btnNextEp" title="Xem tập kế tiếp">
-              <span>Tập sau</span>
+              <span id="btnNextEpLabel">Tập sau</span>
               <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
             </button>
           </div>
@@ -170,7 +181,7 @@
       <article class="watch-synopsis-card">
         <h3 class="watch-synopsis-title">
           <span>📜</span>
-          <span>Cốt Tủy Giảng Giải Của Tập Này</span>
+          <span id="synopsisHeadingText">Cốt Tủy Giảng Giải Của Tập Này</span>
         </h3>
         <p class="watch-synopsis-desc" id="episodeSynopsis">
           Tập mở đầu trình bày hoàn cảnh duyên khởi của Pháp Hội Vô Lượng Thọ. Hòa Thượng phân tích vì sao bộ kinh này là viên đốn bậc nhất của Đại Thừa, chỉ cần lòng chí thành tin tưởng và xưng niệm sáu chữ hồng danh Nam Mô A Di Đà Phật là có thể đới nghiệp vãng sanh.
@@ -187,7 +198,14 @@
     </section>
 
     <!-- CỘT PHẢI: PLAYLIST DANH SÁCH TẬP (30%) -->
-    <aside class="watch-sidebar-col">
+    <!-- Trên máy tính (> 1080px): cột phải luôn hiện. Từ 1080px trở xuống: cùng khối này trượt ra từ cạnh phải thành bảng danh sách -->
+    <aside class="watch-sidebar-col" id="watchPlaylistPanel">
+      <div class="watch-panel-head">
+        <span class="watch-panel-title" id="watchPanelTitle">Danh sách tập</span>
+        <button type="button" class="watch-panel-close" id="btnPanelClose" aria-label="Đóng danh sách tập">
+          <svg class="watch-close-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11"/><path d="M17.5 6.5l-11 11"/></svg>
+        </button>
+      </div>
       <div class="watch-playlist-card">
         
         <!-- Header Playlist -->
@@ -219,7 +237,7 @@
           <div class="watch-autonext-row">
             <label class="watch-toggle-wrap">
               <input type="checkbox" id="chkAutoNext" checked style="accent-color: #166534; cursor: pointer;">
-              <span>Tự động chuyển tập kế tiếp</span>
+              <span id="autoNextLabel">Tự động chuyển tập kế tiếp</span>
             </label>
             <span style="color: var(--text-muted);" id="sidebarEpCountFiltered">80 tập</span>
           </div>
@@ -234,6 +252,9 @@
     </aside>
 
   </main>
+
+  <!-- Lớp phủ mờ phía sau bảng danh sách tập (chỉ dùng từ 1080px trở xuống) -->
+  <div class="watch-panel-backdrop" id="watchPanelBackdrop"></div>
 
   <!-- Toast Notification Feedback -->
   <div class="watch-toast" id="watchToast" role="status" aria-live="polite">
@@ -622,13 +643,36 @@
       const toast = document.getElementById('watchToast');
       const toastMsg = document.getElementById('watchToastMsg');
 
+      const chkAutoNext = document.getElementById('chkAutoNext');
+      const playlistPanel = document.getElementById('watchPlaylistPanel');
+      const panelBackdrop = document.getElementById('watchPanelBackdrop');
+      const btnPanelClose = document.getElementById('btnPanelClose');
+      const panelTriggers = [document.getElementById('btnOpenListTop'), document.getElementById('btnOpenListInline')];
+
+      // Chế độ Lộ Trình (chia chặng) gọi là "bài", bộ giảng thường gọi là "tập"
+      const isPathMode = !!(series.stages && series.stages.length);
+      const unitWord = isPathMode ? 'bài' : 'tập';
+      const UnitWord = isPathMode ? 'Bài' : 'Tập';
+
+      function getStageSize(epData) {
+        if (!isPathMode || !epData.stageNum) return 0;
+        const stg = series.stages.find(function (s) { return s.stageNum === epData.stageNum; });
+        return stg ? stg.episodes.length : 0;
+      }
+
+      // Nhãn ngắn của tập/bài hiện tại: "Tập 05" (bộ giảng) hoặc "Bài 2/3" (lộ trình)
+      function currentUnitLabel() {
+        const epData = series.episodes.find(function (e) { return e.ep === epNum; }) || series.episodes[0];
+        if (isPathMode && epData.stageNum) return `Bài ${epData.stageEp}/${getStageSize(epData)}`;
+        return `Tập ${epNum < 10 ? '0' + epNum : epNum}`;
+      }
+
       let isPlaying = false;
       let isAudioOnly = false;
       let isBookmarked = false;
       let toastTimer = null;
       const speeds = ['1.0x', '1.25x', '1.5x', '0.75x'];
       let speedIdx = 0;
-      let currentProgress = 24; // %
 
       // Quản lý trạng thái "Đã Huân Tu" lưu trong localStorage
       const completedStorageKey = `huantu_${series.id}`;
@@ -661,7 +705,7 @@
         const completedCount = completedEpisodes.size;
         const percent = Math.min(100, Math.round((completedCount / series.total) * 100));
         if (series.stages) {
-          progressText.innerHTML = `Đang học: Tập ${epNum} / ${series.total} <span class="watch-progress-huantu">• Đã học ${completedCount} bài</span>`;
+          progressText.innerHTML = `Đang học: Bài ${epNum} / ${series.total} <span class="watch-progress-huantu">• Đã học ${completedCount} bài</span>`;
         } else {
           progressText.innerHTML = `Đang học: Tập ${epNum} / ${series.total} <span class="watch-progress-huantu">• Đã huân tu ${completedCount} tập</span>`;
         }
@@ -679,20 +723,27 @@
         }, 3200);
       }
 
+      // Đường dẫn riêng của từng tập (dùng cho thanh địa chỉ và liên kết trong danh sách)
+      function episodeUrl(n) {
+        return `${window.location.pathname}?series=${encodeURIComponent(series.id)}&ep=${n}`;
+      }
+
       // 4. Hàm cập nhật giao diện theo tập
-      function loadEpisode(targetEpNum, shouldPlay) {
+      // historyMode: 'push' (mặc định, đổi tập: thêm 1 mục lịch sử), 'replace' (lần mở trang đầu), 'none' (khi bấm Back/Forward)
+      function loadEpisode(targetEpNum, shouldPlay, historyMode) {
         if (targetEpNum < 1) targetEpNum = 1;
         if (targetEpNum > series.total) targetEpNum = series.total;
         epNum = targetEpNum;
 
         const epData = series.episodes.find(function (e) { return e.ep === epNum; }) || series.episodes[0];
         const epPad = epNum < 10 ? '0' + epNum : epNum;
+        const stageSize = getStageSize(epData);
 
         // Cập nhật Document Title & Navigation
         if (epData.stageNum) {
-          pageTitle.textContent = `Tập ${epPad} (${epData.stageBadge}) - ${epData.shortTitle || epData.title} | ${series.title} · Tịnh Độ An Trú`;
+          pageTitle.textContent = `Bài ${epData.stageEp}/${stageSize} (${epData.stageBadge}) - ${epData.shortTitle || epData.title} | ${series.title} · Tịnh Độ An Trú`;
           navSeriesTitle.textContent = series.shortTitle || series.title;
-          navEpisodeTitle.textContent = `${epData.stageBadge} · Tập ${epPad}`;
+          navEpisodeTitle.textContent = `${epData.stageBadge} · Bài ${epData.stageEp}/${stageSize}`;
         } else {
           pageTitle.textContent = `Tập ${epPad} - ${epData.title} | ${series.title} · Tịnh Độ An Trú`;
           navSeriesTitle.textContent = series.shortTitle || series.title;
@@ -700,13 +751,18 @@
         }
 
         // Cập nhật URL trình duyệt không cần reload trang để tiện copy share
-        const newUrl = `${window.location.pathname}?series=${series.id}&ep=${epNum}`;
-        window.history.pushState({ series: series.id, ep: epNum }, '', newUrl);
+        const newUrl = episodeUrl(epNum);
+        const historyState = { series: series.id, ep: epNum };
+        if (historyMode === 'replace') {
+          window.history.replaceState(historyState, '', newUrl);
+        } else if (historyMode !== 'none' && (window.location.pathname + window.location.search) !== newUrl) {
+          window.history.pushState(historyState, '', newUrl);
+        }
 
         // Cập nhật Player & Meta
         if (epBadge) {
           if (epData.stageNum) {
-            epBadge.textContent = `${epData.stageBadge} · Bài ${epData.stageEp}/3`;
+            epBadge.textContent = `${epData.stageBadge} · Bài ${epData.stageEp}/${stageSize}`;
           } else {
             epBadge.textContent = `Tập ${epPad} / ${series.total}`;
           }
@@ -724,7 +780,13 @@
         if (episodeSynopsis) episodeSynopsis.textContent = epData.synopsis || series.synopsis;
         if (episodeQuote) episodeQuote.textContent = epData.quote || series.quote;
         if (videoPoster) videoPoster.src = epData.img || series.img;
-        if (watchTimeDisplay) watchTimeDisplay.textContent = `00:00 / ${epData.duration || '60:00'}`;
+
+        // Đưa trình phát (mô phỏng) về đầu tập mới
+        stopPlaybackTicker();
+        playDurationText = epData.duration || '60:00';
+        playDuration = parseDuration(playDurationText);
+        playPosition = 0;
+        renderPlaybackTime();
 
         const btnBack = document.querySelector('.watch-btn-back');
         if (btnBack) {
@@ -752,19 +814,103 @@
         updateProgressDisplay();
 
         // Đánh dấu active trong Sidebar List
-        sidebarEpisodesList.querySelectorAll('.watch-ep-item').forEach(function (el) {
-          const thisEp = parseInt(el.getAttribute('data-ep'), 10);
-          if (thisEp === epNum) {
-            el.classList.add('active');
-            el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-          } else {
-            el.classList.remove('active');
-          }
-        });
+        markActiveEpisode();
+        // Chỉ cuộn khung danh sách tới tập hiện tại, không bao giờ cuộn cả trang
+        scrollListToCurrent(false);
 
         if (shouldPlay) {
           setPlayState(true);
           showToast(`Đang phát: ${epData.title}`);
+        } else {
+          setPlayState(false);
+        }
+      }
+
+      function markActiveEpisode() {
+        sidebarEpisodesList.querySelectorAll('.watch-ep-item').forEach(function (el) {
+          const isCurrent = parseInt(el.getAttribute('data-ep'), 10) === epNum;
+          el.classList.toggle('active', isCurrent);
+          if (isCurrent) el.setAttribute('aria-current', 'page');
+          else el.removeAttribute('aria-current');
+        });
+      }
+
+      // Cuộn riêng khung danh sách (đặt scrollTop) để tập hiện tại nằm giữa khung.
+      // center = true: luôn canh giữa (khi mở bảng); false: chỉ cuộn khi tập đang nằm ngoài vùng nhìn thấy.
+      function scrollListToCurrent(center) {
+        const list = sidebarEpisodesList;
+        const el = list.querySelector('.watch-ep-item.active');
+        if (!el || list.clientHeight === 0) return;
+        const listRect = list.getBoundingClientRect();
+        const elRect = el.getBoundingClientRect();
+        const elTop = elRect.top - listRect.top + list.scrollTop;
+        const elBottom = elTop + elRect.height;
+        const viewTop = list.scrollTop;
+        const viewBottom = viewTop + list.clientHeight;
+        if (!center && elTop >= viewTop && elBottom <= viewBottom) return;
+        list.scrollTop = Math.max(0, elTop - (list.clientHeight - elRect.height) / 2);
+      }
+
+      // Trình phát mô phỏng: chạy thời gian khi đang phát, hết tập thì xử lý "Tự động chuyển tập"
+      let playDurationText = '60:00';
+      let playDuration = 3600;   // giây
+      let playPosition = 0;      // giây
+      let playbackTimer = null;
+      let lastTickAt = 0;
+
+      function parseDuration(text) {
+        const parts = String(text || '').split(':').map(function (p) { return parseInt(p, 10) || 0; });
+        if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2];
+        if (parts.length === 2) return parts[0] * 60 + parts[1];
+        return parts[0] || 0;
+      }
+
+      function formatTime(sec) {
+        const s = Math.max(0, Math.floor(sec));
+        const mm = Math.floor(s / 60);
+        const ss = s % 60;
+        return `${mm < 10 ? '0' + mm : mm}:${ss < 10 ? '0' + ss : ss}`;
+      }
+
+      function renderPlaybackTime() {
+        const pct = playDuration > 0 ? Math.min(100, (playPosition / playDuration) * 100) : 0;
+        watchScrubFill.style.width = pct + '%';
+        watchScrubHandle.style.left = pct + '%';
+        if (watchTimeDisplay) {
+          watchTimeDisplay.textContent = `${formatTime(playPosition)} / ${playDurationText}`;
+        }
+      }
+
+      function startPlaybackTicker() {
+        stopPlaybackTicker();
+        lastTickAt = performance.now();
+        playbackTimer = setInterval(function () {
+          const now = performance.now();
+          const rate = parseFloat(speeds[speedIdx]) || 1;
+          playPosition = Math.min(playDuration, playPosition + ((now - lastTickAt) / 1000) * rate);
+          lastTickAt = now;
+          renderPlaybackTime();
+          if (playPosition >= playDuration) handlePlaybackEnded();
+        }, 250);
+      }
+
+      function stopPlaybackTicker() {
+        if (playbackTimer) clearInterval(playbackTimer);
+        playbackTimer = null;
+      }
+
+      function handlePlaybackEnded() {
+        setPlayState(false);
+        completedEpisodes.add(epNum);
+        saveCompletedEpisodes();
+        updateProgressDisplay();
+        renderSidebarList(sidebarSearchInput ? sidebarSearchInput.value : '');
+        if (chkAutoNext && chkAutoNext.checked && epNum < series.total) {
+          loadEpisode(epNum + 1, true, 'push');
+        } else if (epNum < series.total) {
+          showToast(`Đã nghe hết ${unitWord} này`);
+        } else {
+          showToast(isPathMode ? 'Đã học hết lộ trình' : 'Đã nghe hết bộ giảng');
         }
       }
 
@@ -778,10 +924,17 @@
           ctrlPlayIcon.innerHTML = PAUSE_SVG;
           btnBigPlay.style.opacity = '0';
           btnBigPlay.style.pointerEvents = 'none';
+          // Phát lại từ đầu nếu đang đứng ở cuối tập
+          if (playPosition >= playDuration) {
+            playPosition = 0;
+            renderPlaybackTime();
+          }
+          startPlaybackTicker();
         } else {
           ctrlPlayIcon.innerHTML = PLAY_SVG;
           btnBigPlay.style.opacity = '1';
           btnBigPlay.style.pointerEvents = 'auto';
+          stopPlaybackTicker();
         }
       }
 
@@ -814,11 +967,10 @@
                 ${matchingEps.map(function (ep) {
                   const isActive = (ep.ep === epNum) ? 'active' : '';
                   const isCompleted = completedEpisodes.has(ep.ep);
-                  const epPad = ep.ep < 10 ? '0' + ep.ep : ep.ep;
                   return `
-                    <div class="watch-ep-item ${isActive} ${isCompleted ? 'is-completed' : ''}" data-ep="${ep.ep}" role="button" tabindex="0">
+                    <a class="watch-ep-item ${isActive} ${isCompleted ? 'is-completed' : ''}" href="${episodeUrl(ep.ep)}" data-ep="${ep.ep}"${isActive ? ' aria-current="page"' : ''}>
                       <div class="watch-ep-left">
-                        <span class="watch-ep-num">Tập ${epPad}</span>
+                        <span class="watch-ep-num">Bài ${ep.stageEp}</span>
                         <div class="watch-ep-info">
                           <span class="watch-ep-name" title="${ep.title}">${ep.shortTitle || ep.title}</span>
                           <div class="watch-ep-meta-row">
@@ -841,7 +993,7 @@
                           <svg class="watch-play-default-svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
                         `}
                       </div>
-                    </div>
+                    </a>
                   `;
                 }).join('')}
               `;
@@ -860,13 +1012,6 @@
           }
 
           sidebarEpisodesList.innerHTML = html;
-
-          sidebarEpisodesList.querySelectorAll('.watch-ep-item').forEach(function (itemEl) {
-            itemEl.addEventListener('click', function () {
-              const chosenEp = parseInt(itemEl.getAttribute('data-ep'), 10);
-              loadEpisode(chosenEp, true);
-            });
-          });
           return;
         }
 
@@ -892,7 +1037,7 @@
           const isCompleted = completedEpisodes.has(ep.ep);
           const epPad = ep.ep < 10 ? '0' + ep.ep : ep.ep;
           return `
-            <div class="watch-ep-item ${isActive} ${isCompleted ? 'is-completed' : ''}" data-ep="${ep.ep}" role="button" tabindex="0">
+            <a class="watch-ep-item ${isActive} ${isCompleted ? 'is-completed' : ''}" href="${episodeUrl(ep.ep)}" data-ep="${ep.ep}"${isActive ? ' aria-current="page"' : ''}>
               <div class="watch-ep-left">
                 <span class="watch-ep-num">Tập ${epPad}</span>
                 <div class="watch-ep-info">
@@ -917,26 +1062,47 @@
                   <svg class="watch-play-default-svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
                 `}
               </div>
-            </div>
+            </a>
           `;
         }).join('');
+      }
 
-        sidebarEpisodesList.querySelectorAll('.watch-ep-item').forEach(function (itemEl) {
-          itemEl.addEventListener('click', function () {
-            const chosenEp = parseInt(itemEl.getAttribute('data-ep'), 10);
-            loadEpisode(chosenEp, true);
-          });
+      // Nhãn theo chế độ: Lộ Trình dùng "bài" thống nhất (huy hiệu, số thứ tự, breadcrumb, nút)
+      function applyUnitLabels() {
+        document.querySelectorAll('[data-unit-label="choose"]').forEach(function (el) {
+          el.textContent = `Chọn ${unitWord}`;
         });
+        const prevLabel = document.getElementById('btnPrevEpLabel');
+        const nextLabel = document.getElementById('btnNextEpLabel');
+        if (prevLabel) prevLabel.textContent = `${UnitWord} trước`;
+        if (nextLabel) nextLabel.textContent = `${UnitWord} sau`;
+        btnPrevEp.title = `Xem ${unitWord} trước`;
+        btnNextEp.title = `Xem ${unitWord} kế tiếp`;
+        const autoNextLabel = document.getElementById('autoNextLabel');
+        if (autoNextLabel) autoNextLabel.textContent = `Tự động chuyển ${unitWord} kế tiếp`;
+        const panelTitle = document.getElementById('watchPanelTitle');
+        if (panelTitle) panelTitle.textContent = `Danh sách ${unitWord}`;
+        if (btnPanelClose) btnPanelClose.setAttribute('aria-label', `Đóng danh sách ${unitWord}`);
+        if (isPathMode) {
+          if (sidebarSearchInput) sidebarSearchInput.placeholder = 'Tìm bài học...';
+          const shareLabel = document.getElementById('shareEpisodeLabel');
+          if (shareLabel) shareLabel.textContent = 'Chia sẻ bài này';
+          const synopsisHeading = document.getElementById('synopsisHeadingText');
+          if (synopsisHeading) synopsisHeading.textContent = 'Cốt Tủy Giảng Giải Của Bài Này';
+          btnCopyEpisodeLink.title = 'Sao chép liên kết bài này gửi Zalo/Facebook';
+          btnShareTop.title = 'Sao chép đường link bài này để gửi chia sẻ';
+        }
       }
 
       // Khởi tạo Lịch sử Huân Tu & Sidebar
+      applyUnitLabels();
       loadCompletedEpisodes();
       sidebarSeriesHeading.textContent = series.title;
       sidebarEpBadge.textContent = series.stages ? '3 chặng · 9 bài' : `${series.total} tập`;
       renderSidebarList('');
 
-      // Nạp tập ban đầu
-      loadEpisode(epNum, false);
+      // Nạp tập ban đầu: thay (replaceState) mục lịch sử hiện tại, không thêm mục mới
+      loadEpisode(epNum, false, 'replace');
 
       // 6. Xử lý sự kiện tìm kiếm tập
       if (sidebarSearchInput) {
@@ -945,9 +1111,22 @@
         });
       }
 
+      // Chọn tập trong danh sách: mỗi tập là một liên kết thật (mở được tab mới, Ctrl/Cmd + bấm).
+      // Bấm thường thì đổi tập ngay trong trang (pushState) và đóng bảng danh sách.
+      sidebarEpisodesList.addEventListener('click', function (e) {
+        const link = e.target.closest('a.watch-ep-item');
+        if (!link || e.defaultPrevented) return;
+        if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        e.preventDefault();
+        const chosenEp = parseInt(link.getAttribute('data-ep'), 10);
+        if (isNaN(chosenEp)) return;
+        if (panelOpen) closePanel();
+        loadEpisode(chosenEp, true, 'push');
+      });
+
       // 7. Xử lý nút Tập Trước / Tập Sau
       btnPrevEp.addEventListener('click', function () {
-        if (epNum > 1) loadEpisode(epNum - 1, true);
+        if (epNum > 1) loadEpisode(epNum - 1, true, 'push');
       });
 
       btnNextEp.addEventListener('click', function () {
@@ -955,10 +1134,168 @@
         completedEpisodes.add(epNum);
         saveCompletedEpisodes();
         if (epNum < series.total) {
-          loadEpisode(epNum + 1, true);
           renderSidebarList(sidebarSearchInput ? sidebarSearchInput.value : '');
+          loadEpisode(epNum + 1, true, 'push');
         }
       });
+
+      // Back / Forward của trình duyệt: nạp lại đúng tập trong URL (không thêm lịch sử)
+      window.addEventListener('popstate', function (e) {
+        const params = new URLSearchParams(window.location.search);
+        const stateSeries = (e.state && e.state.series) || params.get('series') || series.id;
+        if (stateSeries !== series.id) {
+          window.location.reload();
+          return;
+        }
+        let targetEp = parseInt((e.state && e.state.ep) || params.get('ep') || '1', 10);
+        if (isNaN(targetEp) || targetEp < 1 || targetEp > series.total) targetEp = 1;
+        if (panelOpen) closePanel();
+        loadEpisode(targetEp, false, 'none');
+      });
+
+      // "Tự động chuyển tập kế tiếp": nhớ lựa chọn (nếu trình duyệt cho phép lưu)
+      const AUTONEXT_KEY = 'watch_autonext';
+      if (chkAutoNext) {
+        try {
+          const savedAutoNext = localStorage.getItem(AUTONEXT_KEY);
+          if (savedAutoNext === '0') chkAutoNext.checked = false;
+          if (savedAutoNext === '1') chkAutoNext.checked = true;
+        } catch (e) {}
+        chkAutoNext.addEventListener('change', function () {
+          try {
+            localStorage.setItem(AUTONEXT_KEY, chkAutoNext.checked ? '1' : '0');
+          } catch (e) {}
+        });
+      }
+
+      // ===== Bảng danh sách tập trượt từ cạnh phải (từ 1080px trở xuống) =====
+      const panelMedia = window.matchMedia('(max-width: 1080px)');
+      const inertTargets = [
+        document.querySelector('.watch-navbar'),
+        document.querySelector('.watch-main-col'),
+        document.querySelector('.td-tabbar')
+      ].filter(Boolean);
+      let panelOpen = false;
+      let panelOpener = null;
+      let lockedScrollY = 0;
+
+      function lockBodyScroll() {
+        // Khóa cuộn kiểu iOS Safari: body cố định, giữ nguyên vị trí đang xem
+        lockedScrollY = window.scrollY || window.pageYOffset || 0;
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+        const bs = document.body.style;
+        bs.position = 'fixed';
+        bs.top = `-${lockedScrollY}px`;
+        bs.left = '0';
+        bs.right = '0';
+        bs.width = '100%';
+        if (scrollbarWidth > 0) bs.paddingRight = `calc(env(safe-area-inset-right) + ${scrollbarWidth}px)`;
+      }
+
+      function unlockBodyScroll() {
+        const bs = document.body.style;
+        bs.position = '';
+        bs.top = '';
+        bs.left = '';
+        bs.right = '';
+        bs.width = '';
+        bs.paddingRight = '';
+        // Trả về đúng vị trí cũ ngay lập tức (trang đang dùng scroll-behavior: smooth)
+        const root = document.documentElement;
+        const prevBehavior = root.style.scrollBehavior;
+        root.style.scrollBehavior = 'auto';
+        void getComputedStyle(root).scrollBehavior; // áp dụng ngay trước khi cuộn
+        window.scrollTo(0, lockedScrollY);
+        root.style.scrollBehavior = prevBehavior;
+      }
+
+      function getPanelFocusables() {
+        return Array.prototype.filter.call(
+          playlistPanel.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])'),
+          function (el) { return el.getClientRects().length > 0; }
+        );
+      }
+
+      function onPanelKeydown(e) {
+        if (!panelOpen) return;
+        if (e.key === 'Escape' || e.key === 'Esc') {
+          e.preventDefault();
+          closePanel();
+          return;
+        }
+        if (e.key !== 'Tab') return;
+        // Giữ phím Tab đi vòng trong bảng
+        const items = getPanelFocusables();
+        if (!items.length) return;
+        const first = items[0];
+        const last = items[items.length - 1];
+        const active = document.activeElement;
+        if (!playlistPanel.contains(active)) {
+          e.preventDefault();
+          first.focus();
+        } else if (e.shiftKey && active === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && active === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+
+      function openPanel(opener) {
+        if (panelOpen || !panelMedia.matches) return;
+        panelOpen = true;
+        panelOpener = opener || null;
+        lockBodyScroll();
+        inertTargets.forEach(function (el) { el.setAttribute('inert', ''); });
+        playlistPanel.classList.add('is-open');
+        panelBackdrop.classList.add('is-open');
+        panelTriggers.forEach(function (btn) { if (btn) btn.setAttribute('aria-expanded', 'true'); });
+        scrollListToCurrent(true);
+        const current = sidebarEpisodesList.querySelector('.watch-ep-item.active');
+        if (current) current.focus({ preventScroll: true });
+        if (!current || document.activeElement !== current) btnPanelClose.focus({ preventScroll: true });
+        document.addEventListener('keydown', onPanelKeydown);
+      }
+
+      function closePanel(options) {
+        if (!panelOpen) return;
+        const restoreFocus = !(options && options.restoreFocus === false);
+        panelOpen = false;
+        document.removeEventListener('keydown', onPanelKeydown);
+        playlistPanel.classList.remove('is-open');
+        panelBackdrop.classList.remove('is-open');
+        inertTargets.forEach(function (el) { el.removeAttribute('inert'); });
+        panelTriggers.forEach(function (btn) { if (btn) btn.setAttribute('aria-expanded', 'false'); });
+        unlockBodyScroll();
+        if (restoreFocus && panelOpener && panelOpener.getClientRects().length > 0) {
+          panelOpener.focus({ preventScroll: true });
+        }
+        panelOpener = null;
+      }
+
+      // Vai trò hộp thoại chỉ có khi đang ở dạng bảng trượt (từ 1080px trở xuống)
+      function syncPanelMode() {
+        if (panelMedia.matches) {
+          playlistPanel.setAttribute('role', 'dialog');
+          playlistPanel.setAttribute('aria-modal', 'true');
+          playlistPanel.setAttribute('aria-label', `Danh sách ${unitWord}`);
+        } else {
+          closePanel({ restoreFocus: false });
+          playlistPanel.removeAttribute('role');
+          playlistPanel.removeAttribute('aria-modal');
+          playlistPanel.removeAttribute('aria-label');
+        }
+      }
+
+      panelTriggers.forEach(function (btn) {
+        if (btn) btn.addEventListener('click', function () { openPanel(btn); });
+      });
+      if (btnPanelClose) btnPanelClose.addEventListener('click', function () { closePanel(); });
+      if (panelBackdrop) panelBackdrop.addEventListener('click', function () { closePanel(); });
+      if (panelMedia.addEventListener) panelMedia.addEventListener('change', syncPanelMode);
+      else if (panelMedia.addListener) panelMedia.addListener(syncPanelMode);
+      syncPanelMode();
 
       // 8. Tương tác phát video (Play / Pause / Scrub)
       btnBigPlay.addEventListener('click', function () {
@@ -971,10 +1308,14 @@
       });
 
       btnRewind10.addEventListener('click', function () {
+        playPosition = Math.max(0, playPosition - 10);
+        renderPlaybackTime();
         showToast('Đã lùi 10 giây');
       });
 
       btnForward10.addEventListener('click', function () {
+        playPosition = Math.min(playDuration, playPosition + 10);
+        renderPlaybackTime();
         showToast('Đã tua tới 10 giây');
       });
 
@@ -994,14 +1335,9 @@
 
       watchScrubBar.addEventListener('click', function (e) {
         const rect = watchScrubBar.getBoundingClientRect();
-        const clickX = e.clientX - rect.left;
-        const width = rect.width;
-        currentProgress = Math.max(0, Math.min(100, Math.round((clickX / width) * 100)));
-        watchScrubFill.style.width = currentProgress + '%';
-        watchScrubHandle.style.left = currentProgress + '%';
-        const mins = Math.floor((currentProgress / 100) * 60);
-        const secs = Math.floor((currentProgress % 1) * 60);
-        watchTimeDisplay.textContent = `${mins < 10 ? '0' + mins : mins}:${secs < 10 ? '0' + secs : secs} / 60:00`;
+        const ratio = rect.width > 0 ? Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width)) : 0;
+        playPosition = ratio * playDuration;
+        renderPlaybackTime();
       });
 
       // 9. Tính năng "Sao chép liên kết" để gửi chia sẻ
@@ -1009,7 +1345,7 @@
         const fullUrl = window.location.href;
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(fullUrl).then(function () {
-            showToast(`✓ Đã sao chép liên kết Tập ${epNum}! Bạn có thể gửi chia sẻ ngay.`);
+            showToast(`✓ Đã sao chép liên kết ${currentUnitLabel()}! Bạn có thể gửi chia sẻ ngay.`);
           }).catch(function () {
             fallbackCopy(fullUrl);
           });
@@ -1025,7 +1361,7 @@
         temp.select();
         document.execCommand('copy');
         document.body.removeChild(temp);
-        showToast(`✓ Đã sao chép liên kết Tập ${epNum}! Bạn có thể gửi chia sẻ ngay.`);
+        showToast(`✓ Đã sao chép liên kết ${currentUnitLabel()}! Bạn có thể gửi chia sẻ ngay.`);
       }
 
       btnCopyEpisodeLink.addEventListener('click', copyCurrentUrl);
@@ -1049,7 +1385,7 @@
 
       // 11. Tải bản in kinh văn PDF
       btnPdfNotes.addEventListener('click', function () {
-        showToast(`📄 Đang mở tài liệu kinh văn bản in của Tập ${epNum}...`);
+        showToast(`📄 Đang mở tài liệu kinh văn bản in của ${currentUnitLabel()}...`);
       });
 
       // 12. Lưu bài giảng
@@ -1060,7 +1396,7 @@
           btnBookmarkEp.style.borderColor = 'var(--zen-green-border)';
           btnBookmarkEp.style.color = 'var(--zen-green-text)';
           bookmarkText.textContent = 'Đã lưu sổ tay';
-          showToast(`⭐ Đã lưu Tập ${epNum} vào sổ tay tu học!`);
+          showToast(`⭐ Đã lưu ${currentUnitLabel()} vào sổ tay tu học!`);
         } else {
           btnBookmarkEp.style.backgroundColor = '';
           btnBookmarkEp.style.borderColor = '';
@@ -1073,13 +1409,17 @@
       // 13. Chuyển đổi Dark Mode
       const btnThemeToggle = document.getElementById('btnThemeToggle');
       if (btnThemeToggle) {
-        if (localStorage.getItem('theme_preference') === 'dark') {
-          document.body.classList.add('dark-mode');
-        }
+        try {
+          if (localStorage.getItem('theme_preference') === 'dark') {
+            document.body.classList.add('dark-mode');
+          }
+        } catch (e) {}
         btnThemeToggle.addEventListener('click', function () {
           document.body.classList.toggle('dark-mode');
           const isDark = document.body.classList.contains('dark-mode');
-          localStorage.setItem('theme_preference', isDark ? 'dark' : 'light');
+          try {
+            localStorage.setItem('theme_preference', isDark ? 'dark' : 'light');
+          } catch (e) {}
         });
       }
     });

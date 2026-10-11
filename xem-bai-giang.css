@@ -1044,17 +1044,347 @@ body.dark-mode {
 /* ==========================================================================
    5. RESPONSIVE FOR WATCH THEATER
    ========================================================================== */
+/* --------------------------------------------------------------------------
+   5A. BẢNG DANH SÁCH TẬP TRƯỢT TỪ CẠNH PHẢI (TỪ 1080px TRỞ XUỐNG)
+   Trên 1080px: cột phải luôn hiện như cũ, các phần dưới đây bị ẩn.
+   Từ 1080px trở xuống: chính khối .watch-sidebar-col trượt ra, phủ lên cả thanh trên và TabBar.
+   -------------------------------------------------------------------------- */
+.watch-btn-list-top,
+.watch-btn-choose-ep,
+.watch-panel-head,
+.watch-panel-backdrop {
+  display: none;
+}
+
+/* Icon vẽ trên lưới 24px, nét 1.25, đầu và góc bo tròn (cùng kiểu icon TabBar) */
+.watch-list-icon,
+.watch-close-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.watch-btn-list-top:focus-visible,
+.watch-btn-choose-ep:focus-visible,
+.watch-panel-close:focus-visible,
+.watch-ep-item:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+/* Màn hình cảm ứng: ô tìm kiếm 16px để iOS Safari không tự phóng to */
+@media (hover: none) and (pointer: coarse) {
+  .watch-search-input {
+    font-size: 16px;
+  }
+}
+
 @media (max-width: 1080px) {
   .watch-main-layout {
     grid-template-columns: minmax(0, 1fr);
     gap: 24px;
     padding: 16px;
   }
-  .watch-sidebar-col {
-    position: static;
+
+  /* Thanh trên: các nút cao 44px cho dễ chạm */
+  .watch-btn-back,
+  .watch-btn-share-top {
+    min-height: 44px;
   }
+  .watch-nav-right .theme-toggle {
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
+  }
+
+  /* Breadcrumb chật: rút gọn tên bộ giảng bằng "…", luôn giữ tên tập/bài */
+  .watch-breadcrumbs {
+    min-width: 0;
+  }
+  .watch-breadcrumb-series {
+    flex: 0 1000 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .watch-breadcrumb-sep {
+    flex-shrink: 0;
+  }
+  .watch-breadcrumb-ep {
+    flex: 0 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Nút mở danh sách trên thanh trên (đứng trước nút đổi giao diện sáng/tối) */
+  .watch-btn-list-top {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 14px 0 10px;
+    background-color: var(--bg-surface-subtle);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    color: var(--text-main);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+    white-space: nowrap;
+    transition: background-color var(--transition-fast), border-color var(--transition-fast);
+  }
+
+  /* Nút "Chọn tập" / "Chọn bài" nằm giữa nút Tập trước và Tập sau */
+  .watch-btn-choose-ep {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 0 14px;
+    background-color: var(--bg-surface-subtle);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-main);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+    white-space: nowrap;
+    transition: background-color var(--transition-fast), border-color var(--transition-fast);
+  }
+  .watch-btn-choose-ep .watch-list-icon {
+    width: 20px;
+    height: 20px;
+  }
+  .watch-btn-prev-ep,
+  .watch-btn-next-ep,
+  .watch-btn-choose-ep {
+    min-height: 44px;
+    font-size: 14px;
+    border-radius: var(--radius-md);
+    white-space: nowrap;
+  }
+
+  /* Bảng trượt: cùng một khối danh sách với cột phải trên máy tính */
+  .watch-sidebar-col {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 200;
+    width: min(400px, 88vw);
+    display: flex;
+    flex-direction: column;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) 0;
+    background-color: var(--bg-surface);
+    border-left: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-modal);
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform var(--transition-normal), visibility 0s linear 0.25s;
+    overscroll-behavior: contain;
+  }
+  .watch-sidebar-col.is-open {
+    transform: none;
+    visibility: visible;
+    transition: transform var(--transition-normal), visibility 0s linear 0s;
+  }
+
+  /* Hàng đầu bảng: nút Đóng nằm đúng chỗ nút mở trên thanh trên
+     (lề phải = lề thanh trên 24px + nút sáng/tối 44px + khoảng cách 10px) */
+  .watch-panel-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-shrink: 0;
+    min-height: 64px;
+    padding: 0 calc(24px + 44px + 10px) 0 20px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .watch-panel-title {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-main);
+  }
+  .watch-panel-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    background-color: var(--bg-surface-subtle);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    color: var(--text-main);
+    transition: background-color var(--transition-fast);
+  }
+
   .watch-playlist-card {
-    max-height: 520px;
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: none;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  /* Chữ trong bảng tối thiểu 14px, ô tìm kiếm 16px, vùng chạm 44px */
+  .watch-playlist-header {
+    padding: 16px 20px 14px;
+  }
+  .watch-playlist-heading {
+    font-size: 18px;
+  }
+  .watch-playlist-count-badge {
+    font-size: 14px;
+  }
+  .watch-progress-label-row {
+    flex-wrap: wrap;
+    gap: 2px 8px;
+    font-size: 14px;
+  }
+  .watch-playlist-controls {
+    padding: 12px 16px 8px;
+    gap: 4px;
+  }
+  .watch-search-icon {
+    left: 12px;
+  }
+  .watch-search-input {
+    min-height: 44px;
+    padding: 10px 12px 10px 34px;
+    font-size: 16px;
+  }
+  .watch-search-input:focus-visible {
+    outline: 2px solid var(--border-focus);
+    outline-offset: 1px;
+  }
+  .watch-autonext-row {
+    gap: 12px;
+    font-size: 14px;
+  }
+  .watch-toggle-wrap {
+    min-height: 44px;
+    gap: 10px;
+  }
+  .watch-toggle-wrap input {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+  .watch-episodes-list {
+    padding: 12px 16px 16px;
+    overscroll-behavior: contain;
+  }
+  .watch-ep-item {
+    flex-shrink: 0;
+    min-height: 56px;
+    /* Không chuyển tiếp "visibility" (transition: all) để tập hiện tại nhận focus ngay khi bảng mở */
+    transition-property: background-color, border-color, box-shadow, transform;
+  }
+  .watch-ep-num {
+    font-size: 14px;
+  }
+  .watch-ep-name {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    font-size: 15px;
+    line-height: 1.35;
+  }
+  .watch-ep-duration {
+    font-size: 14px;
+  }
+  /* Đầu mỗi chặng: hàng 1 là nhãn chặng, hàng 2 là tên chặng + số bài */
+  .watch-stage-header-simple {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "pill pill" "name count";
+    align-items: baseline;
+    gap: 6px 12px;
+  }
+  .watch-stage-pill-simple {
+    grid-area: pill;
+    justify-self: start;
+    font-size: 14px;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .watch-stage-name-simple {
+    grid-area: name;
+    font-size: 16px;
+  }
+  .watch-stage-count-simple {
+    grid-area: count;
+    margin-left: 0;
+    font-size: 14px;
+  }
+
+  /* Lớp phủ mờ: nằm dưới bảng (190), trên thanh trên (100) và TabBar (90); toast vẫn ở trên cùng (300) */
+  .watch-panel-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 190;
+    background-color: var(--scrim);
+    opacity: 0;
+    visibility: hidden;
+    -webkit-tap-highlight-color: transparent;
+    transition: opacity var(--transition-normal), visibility 0s linear 0.25s;
+  }
+  .watch-panel-backdrop.is-open {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity var(--transition-normal), visibility 0s linear 0s;
+  }
+}
+
+@media (max-width: 1080px) and (hover: hover) {
+  .watch-btn-list-top:hover,
+  .watch-btn-choose-ep:hover,
+  .watch-panel-close:hover {
+    background-color: var(--border-subtle);
+    border-color: var(--border-muted);
+  }
+}
+
+/* Dưới 1024px nút mở danh sách chỉ còn icon 44×44px (nhãn vẫn đọc được bằng trình đọc màn hình),
+   để thanh trên không che mất tên bộ giảng / tên tập */
+@media (max-width: 1023.98px) {
+  .watch-btn-list-top {
+    width: 44px;
+    padding: 0;
+  }
+  .watch-btn-list-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+
+/* Giảm chuyển động: bảng hiện/ẩn ngay, không trượt */
+@media (max-width: 1080px) and (prefers-reduced-motion: reduce) {
+  .watch-sidebar-col,
+  .watch-sidebar-col.is-open,
+  .watch-panel-backdrop,
+  .watch-panel-backdrop.is-open {
+    transition: none;
   }
 }
 
@@ -1080,6 +1410,13 @@ body.dark-mode {
   .watch-btn-prev-ep, .watch-btn-next-ep {
     flex: 1;
     justify-content: center;
+  }
+  .watch-btn-prev-ep,
+  .watch-btn-next-ep,
+  .watch-btn-choose-ep {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 0 8px;
   }
 }
 
@@ -1110,6 +1447,19 @@ body.dark-mode {
     overflow: hidden;
     clip-path: inset(50%);
     white-space: nowrap;
+  }
+  /* Nút quay lại: nếu chật thì chữ tự rút gọn bằng dấu "…" thay vì đè lên các nút bên phải */
+  .watch-btn-back {
+    flex-shrink: 1;
+    min-width: 0;
+  }
+  .watch-btn-back span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  /* Lề phải hàng đầu bảng = lề thanh trên 16px + nút sáng/tối 44px + khoảng cách 10px */
+  .watch-panel-head {
+    padding: 0 calc(16px + 44px + 10px) 0 16px;
   }
   .watch-big-play-btn {
     width: 56px;

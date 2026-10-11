@@ -54,13 +54,16 @@
   --shadow-card-hover: 0 12px 30px -4px rgba(28, 25, 23, 0.09);
   --shadow-modal: 0 25px 50px -12px rgba(28, 25, 23, 0.25);
 
+  /* Lớp phủ mờ phía sau bảng trượt / hộp thoại */
+  --scrim: rgba(28, 25, 23, 0.45);
+
   --transition-fast: 0.15s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-normal: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-slow: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Điều hướng: màu mục đang chọn, chiều cao TabBar (dưới 1024px) */
   --nav-active: var(--accent-gold);
-  --tabbar-height: 64px;
+  --tabbar-height: 56px;
   --tabbar-offset: 0px;
 }
 
@@ -91,6 +94,8 @@ body.dark-mode {
   --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
   --shadow-card-hover: 0 12px 30px -4px rgba(0, 0, 0, 0.7);
   --shadow-modal: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+
+  --scrim: rgba(0, 0, 0, 0.6);
 
   --nav-active: var(--accent-amber);
 }
@@ -2456,36 +2461,84 @@ body {
     border-top: 1px solid var(--border-subtle);
   }
 
-  /* Các ô rộng bằng nhau, nội dung căn giữa; trên iPad giới hạn bề rộng để cụm menu nằm giữa */
+  /* Chỉ hiện icon. Các ô rộng bằng nhau, icon căn giữa; trên iPad giới hạn bề rộng để cụm icon nằm giữa, không giãn quá xa */
   .td-tabbar-item {
+    position: relative;
     flex: 1 1 0;
-    max-width: 160px;
-    min-width: 0;
+    max-width: 112px;
+    min-width: 44px;
     min-height: 44px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 4px;
-    padding: 0 4px;
     color: var(--text-muted);
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.2;
-    text-align: center;
-    white-space: nowrap;
     transition: color var(--transition-fast);
   }
 
+  /* Nhãn ẩn về mặt thị giác nhưng vẫn là tên truy cập của liên kết (trình đọc màn hình) */
   .td-tabbar-label {
-    max-width: 100%;
+    position: absolute;
+    width: 1px;
+    height: 1px;
     overflow: hidden;
-    text-overflow: ellipsis;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
 
   .td-tabbar-item[aria-current="page"] {
     color: var(--nav-active);
-    font-weight: 500;
+  }
+
+  /* Mục đang chọn: thêm vạch mảnh dưới icon, không chỉ dựa vào màu.
+     Vạch ::after riêng từng mục chỉ là dự phòng khi JS chưa chạy; animations.js gắn .has-indicator
+     và dùng một vạch chung .td-tabbar-indicator để trượt từ icon này sang icon khác. */
+  .td-tabbar:not(.has-indicator) .td-tabbar-item[aria-current="page"]::after {
+    content: "";
+    position: absolute;
+    top: calc(50% + 17px);
+    left: 50%;
+    width: 16px;
+    height: 2px;
+    border-radius: var(--radius-full);
+    background-color: var(--nav-active);
+    transform: translateX(-50%);
+  }
+
+  /* Thời lượng trượt: giữ khớp với SLIDE_MS trong animations.js */
+  .td-tabbar {
+    --td-tabbar-slide: 260ms cubic-bezier(0.33, 1, 0.68, 1);
+  }
+
+  /* Vạch chung: cùng vị trí với vạch cũ (50% chiều cao ô + 17px, trừ phần đệm safe-area ở đáy).
+     JS chỉ đặt translateX để vạch nằm giữa icon đang chọn. */
+  .td-tabbar-indicator {
+    position: absolute;
+    top: calc(50% - env(safe-area-inset-bottom, 0px) / 2 + 17px);
+    left: 0;
+    width: 16px;
+    height: 2px;
+    border-radius: var(--radius-full);
+    background-color: var(--nav-active);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .td-tabbar-indicator.is-visible {
+    opacity: 1;
+  }
+
+  /* Khi JS đặt vị trí tức thì (lúc tải trang, đổi kích thước, quay lại bằng Back): không chuyển động */
+  .td-tabbar.has-indicator .td-tabbar-item {
+    transition: none;
+  }
+
+  /* Sẵn sàng: vạch trượt / hiện dần, màu active chuyển cùng nhịp */
+  .td-tabbar.is-ready .td-tabbar-item {
+    transition: color var(--td-tabbar-slide);
+  }
+
+  .td-tabbar.is-ready .td-tabbar-indicator {
+    transition: transform var(--td-tabbar-slide), opacity var(--td-tabbar-slide);
   }
 
   .td-tabbar-item:focus-visible {
@@ -2509,5 +2562,13 @@ body {
 @media (hover: hover) and (max-width: 1023.98px) {
   .td-tabbar-item:hover {
     color: var(--text-main);
+  }
+}
+
+/* Giảm chuyển động: vạch và màu đổi chỗ tức thì, không trượt, không hiện dần */
+@media (max-width: 1023.98px) and (prefers-reduced-motion: reduce) {
+  .td-tabbar.is-ready .td-tabbar-item,
+  .td-tabbar.is-ready .td-tabbar-indicator {
+    transition: none;
   }
 }
