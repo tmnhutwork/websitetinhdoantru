@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title id="pageTitle">Xem Bài Giảng Video · Tịnh Độ An Trú</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -770,6 +770,7 @@
 
       function setPlayState(playing) {
         isPlaying = playing;
+        watchPlayerFrame.classList.toggle('is-playing', isPlaying);
         const PAUSE_SVG = '<rect x="6" y="5" width="4" height="14"></rect><rect x="14" y="5" width="4" height="14"></rect>';
         const PLAY_SVG = '<polygon points="7,5 19,12 7,19"/>';
 
@@ -1086,5 +1087,25 @@
 
   <!-- Custom Animations (GSAP) -->
   <script src="animations.js"></script>
+  <!-- TabBar: điều hướng chính dưới 1024px (cùng mục với menu desktop) -->
+  <nav class="td-tabbar" aria-label="Điều hướng chính">
+    <a href="index.html#kham-pha" class="td-tabbar-item">
+      <svg class="td-tabbar-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5.5c-1.8 1.8-2.7 3.9-2.7 6.2s.9 4.3 2.7 5.8c1.8-1.5 2.7-3.5 2.7-5.8S13.8 7.3 12 5.5z"/><path d="M9.5 9.3C7.6 8.7 5.6 8.9 4.2 9.7c.3 3.7 3.2 6.8 7.8 7.8"/><path d="M14.5 9.3c1.9-.6 3.9-.4 5.3.4-.3 3.7-3.2 6.8-7.8 7.8"/><path d="M7 20h10"/></svg>
+      <span class="td-tabbar-label">Giáo Lý</span>
+    </a>
+    <a href="bai-giang.html" class="td-tabbar-item" aria-current="page">
+      <svg class="td-tabbar-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 15.5V12a7.5 7.5 0 0 1 15 0v3.5"/><rect x="3.75" y="13.75" width="4" height="6.5" rx="2"/><rect x="16.25" y="13.75" width="4" height="6.5" rx="2"/></svg>
+      <span class="td-tabbar-label">Bài Giảng</span>
+    </a>
+    <a href="kinh-dien.html" class="td-tabbar-item">
+      <svg class="td-tabbar-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6.6C10.2 5.3 7.9 4.6 4.5 4.6v13.2c3.4 0 5.7.7 7.5 2 1.8-1.3 4.1-2 7.5-2V4.6c-3.4 0-5.7.7-7.5 2z"/><path d="M12 6.6v13.2"/></svg>
+      <span class="td-tabbar-label">Kinh Điển</span>
+    </a>
+    <a href="index.html#thoi-khoa" class="td-tabbar-item">
+      <svg class="td-tabbar-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 7.8V12l2.8 1.8"/></svg>
+      <span class="td-tabbar-label">Thời Khóa</span>
+    </a>
+  </nav>
+
 </body>
 </html>

@@ -1319,7 +1319,7 @@ body.dark-mode .bg-btn-primary:hover {
 /* Audio Player Fixed Bottom Bar (Hidden by default, shows when clicking Nghe ngay) */
 .bg-player-bar {
   position: fixed;
-  bottom: 0; left: 0; right: 0;
+  bottom: var(--tabbar-offset, 0px); left: 0; right: 0;
   background-color: var(--bg-surface, rgba(250, 249, 247, 0.96));
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -2859,7 +2859,7 @@ body.dark-mode .bg-qa-modal-close {
    ========================================================================== */
 .bg-sleep-timer-popover {
   position: fixed;
-  bottom: 84px;
+  bottom: calc(84px + var(--tabbar-offset, 0px));
   right: 180px;
   background-color: var(--bg-surface, #ffffff);
   border: 1px solid var(--border-subtle, #e7e5e4);
@@ -3079,7 +3079,7 @@ body.dark-mode .bg-qa-modal-close {
    ========================================================================== */
 .bg-playlist-popover {
   position: fixed;
-  bottom: 84px;
+  bottom: calc(84px + var(--tabbar-offset, 0px));
   right: 120px;
   background-color: var(--bg-surface, #ffffff);
   border: 1px solid var(--border-subtle, #e7e5e4);
@@ -3169,7 +3169,7 @@ body.dark-mode .bg-qa-modal-close {
    ========================================================================== */
 .bg-toast {
   position: fixed;
-  bottom: 96px;
+  bottom: calc(96px + var(--tabbar-offset, 0px));
   left: 50%;
   transform: translateX(-50%) translateY(20px);
   background-color: rgba(28, 25, 23, 0.95);
@@ -5360,5 +5360,27 @@ body.dark-mode .bg-eleven-desc {
   .bg-eleven-sphere.slot-hidden {
     opacity: 0;
     pointer-events: none;
+  }
+}
+
+/* ==========================================================================
+   TRANG VẤN ĐÁP: không có ảnh hero toàn màn hình nên header nằm trong luồng
+   trang (sticky) thay vì nổi đè lên nội dung; phần mở đầu có lề hai bên.
+   ========================================================================== */
+.bai-giang-body.van-dap-body .navbar,
+.bai-giang-body.van-dap-body .navbar.is-scrolled {
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.van-dap-body .bg-opt3-island {
+  padding: 0 24px;
+}
+
+@media (max-width: 639.98px) {
+  .van-dap-body .bg-opt3-island {
+    padding: 0 16px;
   }
 }

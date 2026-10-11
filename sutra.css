@@ -549,6 +549,74 @@
   }
 }
 
+/* Thẻ kinh: xếp dọc trên điện thoại, ảnh nhỏ lại trên máy tính bảng */
+@media (max-width: 1023.98px) {
+  .kinh-card-horizontal {
+    gap: 24px;
+  }
+  .kinh-card-img {
+    width: 220px;
+  }
+  .kinh-card-content {
+    min-width: 0;
+  }
+  .kinh-card-footer {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 16px;
+  }
+  .sutra-progress-container {
+    flex: 1 1 140px;
+    min-width: 0;
+    max-width: 220px;
+  }
+  .sutra-actions > * {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 639.98px) {
+  .kinh-card-horizontal {
+    flex-direction: column;
+    gap: 16px;
+    padding: 12px;
+  }
+  .kinh-card-img {
+    width: 100%;
+  }
+  .kinh-card-content {
+    min-width: 0;
+    padding: 0 4px 4px;
+  }
+  .kinh-text h3 {
+    flex-wrap: wrap;
+    gap: 4px 12px;
+  }
+  .kinh-card-footer {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+  }
+  .sutra-progress-container {
+    width: 100%;
+  }
+}
+
+/* Màn hình cảm ứng không có hover: luôn hiện nút thao tác trên ảnh, vùng chạm 44px */
+@media (hover: none) {
+  .card-img-actions {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (pointer: coarse) {
+  .action-icon-btn {
+    width: 44px;
+    height: 44px;
+  }
+}
+
 /* Notebook Card (Sổ Tay Tinh Tấn) */
 .notebook-card {
   background-color: var(--bg-surface);
