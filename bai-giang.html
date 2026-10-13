@@ -25,10 +25,11 @@
       </a>
 
       <nav class="nav-links" id="nav-links">
-        <a href="index.html#kham-pha" class="nav-link">Giáo Lý</a>
+        <a href="index.html" class="nav-link">Giáo Lý</a>
         <a href="bai-giang.html" class="nav-link active">Bài Giảng</a>
         <a href="kinh-dien.html" class="nav-link">Kinh Điển</a>
         <a href="index.html#thoi-khoa" class="nav-link">Thời Khóa</a>
+        <a href="van-dap.html" class="nav-link">Vấn Đáp</a>
       </nav>
 
       <div class="nav-actions">
@@ -738,7 +739,7 @@
           <h4 class="footer-col-title">Về Dự Án</h4>
           <ul class="footer-links-list">
             <li><a href="index.html">Tôn Chỉ Tịnh Độ An Trú</a></li>
-            <li><a href="index.html#kham-pha">Sứ Mệnh Pháp Thí</a></li>
+            <li><a href="index.html">Sứ Mệnh Pháp Thí</a></li>
             <li><a href="index.html#thoi-khoa">Lời Ngỏ Cùng Bạn Đạo</a></li>
             <li><a href="van-dap.html#hoi-dap">Đóng Góp &amp; Hiệu Đính</a></li>
           </ul>
@@ -756,9 +757,9 @@
           <h4 class="footer-col-title">Lộ Trình Hành Trì</h4>
           <ul class="footer-links-list">
             <li><a href="index.html#tam-tu-luong">Ba Món Tư Lương: Tín - Nguyện - Hạnh</a></li>
-            <li><a href="index.html#kham-pha">Phương Pháp Thập Niệm Ký Số</a></li>
+            <li><a href="index.html">Phương Pháp Thập Niệm Ký Số</a></li>
             <li><a href="index.html#thoi-khoa">48 Lời Đại Nguyện A Di Đà</a></li>
-            <li><a href="index.html#kham-pha">Lời Khai Thị Chư Tổ Tịnh Tông</a></li>
+            <li><a href="index.html">Lời Khai Thị Chư Tổ Tịnh Tông</a></li>
           </ul>
         </div>
         <div class="footer-nav-col">
@@ -879,7 +880,7 @@
   <div class="bg-playlist-popover" id="playlistPopover" role="dialog" aria-label="Danh sách phát">
     <div class="bg-playlist-title">
       <span>Danh sách pháp âm</span>
-      <span style="font-size: 11px; color: var(--text-muted); font-weight: normal;">6 bài tuyển chọn</span>
+      <span style="font-size: 14px; color: var(--text-muted); font-weight: normal;">6 bài tuyển chọn</span>
     </div>
     <div class="bg-playlist-list" id="playlistItemsList">
       <!-- Items generated in JS -->
@@ -911,7 +912,7 @@
         </div>
       </div>
       <div class="bg-transcript-footer">
-        <span style="font-size: 12px; color: var(--text-muted);">Bản chép lời hỗ trợ học tập & hành trì</span>
+        <span style="font-size: 14px; color: var(--text-muted);">Bản chép lời hỗ trợ học tập & hành trì</span>
         <button class="bg-btn-copy-quote" id="btnCopyQuote">
           <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"></path></svg>
           Sao chép trích đoạn
@@ -1372,10 +1373,10 @@
             navigator.clipboard.writeText(text).then(function () {
               showToast('Đã sao chép trích đoạn tâm đắc vào bộ nhớ tạm');
             }).catch(function () {
-              showToast('Đã sao chép trích đoạn!');
+              showToast('Đã sao chép trích đoạn');
             });
           } else {
-            showToast('Đã sao chép trích đoạn!');
+            showToast('Đã sao chép trích đoạn');
           }
         });
       }
@@ -1535,15 +1536,15 @@
           synopsis: 'Ba món tư lương thiết yếu của người tu Tịnh Độ: Tín sâu - Nguyện thiết - Hạnh chuyên. Lộ trình gồm trọn vẹn 3 chặng tuần tự từ xây dựng chánh tín kiên cố, phát tâm bồ đề nguyện sanh Cực Lạc đến phương pháp hành trì trì danh niệm Phật thực tế mỗi ngày.',
           quote: '“Được vãng sanh hay không toàn do Tín – Nguyện có hay không; Phẩm vị cao hay thấp do Trì Danh sâu hay cạn.” — Ngẫu Ích Đại Sư',
           episodes: [
-            { ep: 1, title: 'Tập 01: Tịnh Độ Có Thật Hay Không? Phá Nghi Sinh Tín', duration: '35:00', quote: 'Lòng tin là mẹ của tất cả công đức. Dứt nghi ngờ thì sen báu tự nhiên nở rực rỡ nơi ao thất bảo cõi Phật Di Đà.' },
-            { ep: 2, title: 'Tập 02: Khởi Phát Niềm Tin Kiên Cố Với Pháp Môn Niệm Phật', duration: '28:00', quote: 'Tín tâm kiên cố như kim cương, gió nghiệp đời mạt pháp dù có lay động cách mấy cũng không chuyển lay chí nguyện vãng sanh.' },
-            { ep: 3, title: 'Tập 03: Ý Nghĩa 48 Lời Đại Nguyện Của Phật A Di Đà', duration: '42:00', quote: 'Bốn mươi tám lời thệ nguyện thâm sâu như biển cả, không bỏ sót bất kỳ một chúng sanh nào tha thiết xưng danh hướng về.' },
-            { ep: 4, title: 'Tập 04: Bồ Đề Tâm & Bổn Nguyện Cầu Sanh Cực Lạc', duration: '32:00', quote: 'Phát tâm Bồ Đề xưng niệm danh hiệu Phật, đó là chiếc bè đại từ bi đưa người con Phật vượt thoát biển luân hồi sinh tử.' },
-            { ep: 5, title: 'Tập 05: Buông Xả Duyên Trần – Thiết Thực Lập Nguyện', duration: '30:00', quote: 'Buông xả không phải là bỏ bê trách nhiệm, mà là làm trọn bổn phận mà lòng không vướng bận, tâm hồn thanh thản quy hướng Tây Phương.' },
-            { ep: 6, title: 'Tập 06: Cảnh Giới Cực Lạc: Y Báo & Chánh Báo Trang Nghiêm', duration: '40:00', quote: 'Quán chiếu trang nghiêm cõi Phật để nuôi dưỡng tâm nguyện tha thiết, chuyển hóa tâm phàm phu thành tâm Phật thanh tịnh.' },
-            { ep: 7, title: 'Tập 07: Phương Pháp Thập Niệm Ký Số Của Ấn Quang Đại Sư', duration: '25:00', quote: 'Tâm niệm rõ ràng, miệng niệm rõ ràng, tai nghe rõ ràng, đếm số rành rẽ từ một đến mười, không có chỗ cho vọng niệm chen vào.' },
-            { ep: 8, title: 'Tập 08: Khai Thị Cách Nhiếp Tâm Trừ Vọng Niệm Khi Trì Danh', duration: '34:00', quote: 'Không sợ vọng niệm khởi, chỉ sợ giác chậm. Vọng niệm vừa dấy lên liền nhớ đến câu Phật hiệu, ấy chính là công phu đắc lực.' },
-            { ep: 9, title: 'Tập 09: Thường Niệm Trong Đời Sống: Tọa Niệm, Kinh Hành & Sinh Hoạt', duration: '27:00', quote: 'Đi đứng nằm ngồi đều không rời câu niệm Phật; một niệm thanh tịnh là một niệm Phật, niệm niệm thanh tịnh là trọn ngày an trú Cực Lạc.' }
+            { ep: 1, title: 'Tịnh Độ Có Thật Hay Không? Phá Nghi Sinh Tín', duration: '35:00', quote: 'Lòng tin là mẹ của tất cả công đức. Dứt nghi ngờ thì sen báu tự nhiên nở rực rỡ nơi ao thất bảo cõi Phật Di Đà.' },
+            { ep: 2, title: 'Khởi Phát Niềm Tin Kiên Cố Với Pháp Môn Niệm Phật', duration: '28:00', quote: 'Tín tâm kiên cố như kim cương, gió nghiệp đời mạt pháp dù có lay động cách mấy cũng không chuyển lay chí nguyện vãng sanh.' },
+            { ep: 3, title: 'Ý Nghĩa 48 Lời Đại Nguyện Của Phật A Di Đà', duration: '42:00', quote: 'Bốn mươi tám lời thệ nguyện thâm sâu như biển cả, không bỏ sót bất kỳ một chúng sanh nào tha thiết xưng danh hướng về.' },
+            { ep: 4, title: 'Bồ Đề Tâm & Bổn Nguyện Cầu Sanh Cực Lạc', duration: '32:00', quote: 'Phát tâm Bồ Đề xưng niệm danh hiệu Phật, đó là chiếc bè đại từ bi đưa người con Phật vượt thoát biển luân hồi sinh tử.' },
+            { ep: 5, title: 'Buông Xả Duyên Trần – Thiết Thực Lập Nguyện', duration: '30:00', quote: 'Buông xả không phải là bỏ bê trách nhiệm, mà là làm trọn bổn phận mà lòng không vướng bận, tâm hồn thanh thản quy hướng Tây Phương.' },
+            { ep: 6, title: 'Cảnh Giới Cực Lạc: Y Báo & Chánh Báo Trang Nghiêm', duration: '40:00', quote: 'Quán chiếu trang nghiêm cõi Phật để nuôi dưỡng tâm nguyện tha thiết, chuyển hóa tâm phàm phu thành tâm Phật thanh tịnh.' },
+            { ep: 7, title: 'Phương Pháp Thập Niệm Ký Số Của Ấn Quang Đại Sư', duration: '25:00', quote: 'Tâm niệm rõ ràng, miệng niệm rõ ràng, tai nghe rõ ràng, đếm số rành rẽ từ một đến mười, không có chỗ cho vọng niệm chen vào.' },
+            { ep: 8, title: 'Khai Thị Cách Nhiếp Tâm Trừ Vọng Niệm Khi Trì Danh', duration: '34:00', quote: 'Không sợ vọng niệm khởi, chỉ sợ giác chậm. Vọng niệm vừa dấy lên liền nhớ đến câu Phật hiệu, ấy chính là công phu đắc lực.' },
+            { ep: 9, title: 'Thường Niệm Trong Đời Sống: Tọa Niệm, Kinh Hành & Sinh Hoạt', duration: '27:00', quote: 'Đi đứng nằm ngồi đều không rời câu niệm Phật; một niệm thanh tịnh là một niệm Phật, niệm niệm thanh tịnh là trọn ngày an trú Cực Lạc.' }
           ]
         }
       };
@@ -1644,7 +1645,7 @@
 
         if (filtered.length === 0) {
           seriesEpisodesList.innerHTML = `
-            <div style="text-align: center; padding: 36px 16px; color: var(--text-muted); font-size: 13.5px;">
+            <div style="text-align: center; padding: 36px 16px; color: var(--text-muted); font-size: 14px;">
               Không tìm thấy tập nào phù hợp với từ khóa "<strong>${filterQuery}</strong>"
             </div>
           `;
@@ -2082,7 +2083,7 @@
   <script src="animations.js"></script>
   <!-- TabBar: điều hướng chính dưới 1024px (cùng mục với menu desktop) -->
   <nav class="td-tabbar" aria-label="Điều hướng chính">
-    <a href="index.html#kham-pha" class="td-tabbar-item">
+    <a href="index.html" class="td-tabbar-item">
       <svg class="td-tabbar-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5.5c-1.8 1.8-2.7 3.9-2.7 6.2s.9 4.3 2.7 5.8c1.8-1.5 2.7-3.5 2.7-5.8S13.8 7.3 12 5.5z"/><path d="M9.5 9.3C7.6 8.7 5.6 8.9 4.2 9.7c.3 3.7 3.2 6.8 7.8 7.8"/><path d="M14.5 9.3c1.9-.6 3.9-.4 5.3.4-.3 3.7-3.2 6.8-7.8 7.8"/><path d="M7 20h10"/></svg>
       <span class="td-tabbar-label">Giáo Lý</span>
     </a>
@@ -2097,6 +2098,10 @@
     <a href="index.html#thoi-khoa" class="td-tabbar-item">
       <svg class="td-tabbar-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 7.8V12l2.8 1.8"/></svg>
       <span class="td-tabbar-label">Thời Khóa</span>
+    </a>
+    <a href="van-dap.html" class="td-tabbar-item">
+      <svg class="td-tabbar-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 15.25A7.5 7.5 0 1 1 9.43 18.55L5.98 19.32Q5.2 19.5 5.26 18.7z"/><path d="M9.75 9.5a2.25 2.25 0 1 1 3.4 1.95c-.7.4-1.15.9-1.15 1.7v.35"/><path d="M12 15.75h.01"/></svg>
+      <span class="td-tabbar-label">Vấn Đáp</span>
     </a>
   </nav>
 

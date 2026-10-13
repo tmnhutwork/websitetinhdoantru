@@ -155,7 +155,7 @@
 }
 
 .filter-pill-count {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -168,14 +168,14 @@
 
 .hero-badge {
   display: inline-block;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--accent-gold);
   background-color: #FDF6E3;
   padding: 6px 12px;
   border-radius: var(--radius-full);
   margin-bottom: 12px;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
 }
 
 .hero-title {
@@ -235,7 +235,7 @@
 }
 
 .filter-group label {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--text-muted);
   font-weight: 500;
 }
@@ -385,7 +385,7 @@
 
 .course-filters .pill-btn {
   padding: 6px 16px;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .course-list {
@@ -426,7 +426,7 @@
 }
 
 .badge-tag {
-  font-size: 11px;
+  font-size: 14px;
   padding: 2px 8px;
   border-radius: 4px;
   background-color: #ECFDF5;
@@ -439,13 +439,13 @@
 }
 
 .course-info p {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-secondary);
   margin: 0 0 4px;
 }
 
 .course-meta {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--text-muted);
 }
 
@@ -482,7 +482,7 @@
 }
 
 .calendar-month {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--accent-gold);
 }
@@ -505,14 +505,14 @@
 }
 
 .cal-solar-date {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-muted);
   margin: 0 0 8px;
 }
 
 .cal-event-tag {
   display: inline-block;
-  font-size: 11px;
+  font-size: 14px;
   background-color: #ECFDF5;
   color: #059669;
   padding: 4px 8px;
@@ -566,7 +566,7 @@
     gap: 12px 16px;
   }
   .sutra-progress-container {
-    flex: 1 1 140px;
+    flex: 1 1 180px;
     min-width: 0;
     max-width: 220px;
   }
@@ -662,7 +662,7 @@
 }
 
 .notebook-subtitle {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-muted);
   margin: 0;
 }
@@ -670,7 +670,7 @@
 .notebook-badge {
   background-color: #ECFDF5;
   color: #059669;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   padding: 6px 12px;
   border-radius: var(--radius-full);
@@ -693,10 +693,11 @@
 }
 
 .stat-label {
-  font-size: 11px;
+  font-size: 14px;
+  line-height: 1.35;
   text-transform: uppercase;
   color: var(--text-muted);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
   margin: 0 0 8px;
   font-weight: 600;
 }
@@ -741,7 +742,7 @@
 }
 
 .stat-caption {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--text-muted);
   margin: 0;
 }
@@ -760,18 +761,19 @@
 .weekly-top {
   display: flex;
   justify-content: space-between;
+  gap: 12px;
   margin-bottom: 16px;
 }
 
 .weekly-title {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--text-main);
   margin: 0;
 }
 
 .weekly-status {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--btn-dark);
 }
@@ -795,7 +797,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   border: 1px solid var(--border-muted);
   color: var(--text-secondary);
@@ -813,7 +815,7 @@
 }
 
 .day-mark {
-  font-size: 12px;
+  font-size: 14px;
   height: 12px;
   color: #059669;
 }
@@ -1014,7 +1016,7 @@
 }
 
 .sutra-meta {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-muted);
   margin-bottom: 12px;
   display: flex;
@@ -1051,11 +1053,12 @@
 }
 
 .sutra-progress-text {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--text-muted);
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 .sutra-progress-bar {
@@ -1107,7 +1110,7 @@
   justify-content: center;
   padding: 7px 16px;
   border-radius: var(--radius-full);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   background-color: var(--btn-dark);
   color: white;

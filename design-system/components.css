@@ -1,0 +1,922 @@
+/* ==========================================================================
+   Tịnh Độ An Trú — components.css (design system v2, "thanh mảnh")
+   Cần nạp tokens.css trước. Mọi giá trị lấy từ token: không mã màu, không cỡ chữ,
+   bán kính hay bóng viết trực tiếp. Chỉ hai độ đậm 400/500 (qua --type-*).
+   Tiền tố td- để không đụng class cũ trong lúc chuyển đổi.
+   Dark mode: không có CSS riêng ở đây; [data-theme="dark"] chỉ đổi token.
+
+   Mục lục
+    0. Nền tảng (base, focus, icon, container, .site-section, kiểu chữ)
+    1. Button            2. IconButton        3. Chip              4. Tag
+    5. SectionHeader     6. Header            7. TabBar            8. ContentCard
+    9. SutraCard        10. Progress         11. EpisodeItem      12. MalaCounter
+   13. Quote            14. SearchField      15. Accordion        16. Toast
+   17. Dialog + Drawer  18. EmptyState       19. PracticeCalendar 20. LessonSteps
+   21. Giảm chuyển động
+   ========================================================================== */
+
+
+/* ---------- 0. Nền tảng ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: var(--type-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+strong, b { font-weight: var(--weight-medium); }
+
+:focus-visible {
+  outline: var(--focus-width) solid var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+.td-icon {
+  width: var(--icon-md);
+  height: var(--icon-md);
+  flex: none;
+  color: inherit;
+}
+.td-icon--xs { width: var(--icon-xs); height: var(--icon-xs); }
+.td-icon--sm { width: var(--icon-sm); height: var(--icon-sm); }
+.td-icon--lg { width: var(--icon-lg); height: var(--icon-lg); }
+
+/* Ẩn về mặt thị giác nhưng trình đọc màn hình vẫn đọc */
+.td-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.td-container {
+  width: 100%;
+  max-width: var(--page-max);
+  margin-inline: auto;
+  padding-inline: var(--page-gutter);
+}
+
+.td-prose { max-width: var(--measure); }
+
+.td-link {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: var(--hairline-width);
+  text-underline-offset: 0.2em;
+}
+.td-link:hover { text-decoration-thickness: var(--indicator-height); }
+
+/* Nhịp dọc: section cách nhau 64px (điện thoại) / 80px (từ 1024px).
+   Hero và đầu trang không tự thêm padding dưới; section kế tiếp lo khoảng cách. */
+.site-section { padding-block: var(--section-space) 0; }
+.site-section:last-child { padding-block-end: var(--section-space); }
+
+/* Lớp kiểu chữ: .td-text-<tên> tương ứng --type-<tên> */
+.td-text-display    { font: var(--type-display-sm); letter-spacing: var(--tracking-display); }
+.td-text-heading-2  { font: var(--type-heading-2-sm); }
+.td-text-heading-3  { font: var(--type-heading-3); }
+.td-text-heading-4  { font: var(--type-heading-4); }
+.td-text-lead       { font: var(--type-lead); }
+.td-text-body       { font: var(--type-body); }
+.td-text-body-sm    { font: var(--type-body-sm); }
+.td-text-ui         { font: var(--type-ui); }
+.td-text-label      { font: var(--type-label); }
+.td-text-meta       { font: var(--type-meta); }
+.td-text-scripture  { font: var(--type-scripture); }
+.td-text-han        { font: var(--type-han); }
+@media (min-width: 640px)  { .td-text-heading-2 { font: var(--type-heading-2); } }
+@media (min-width: 1024px) { .td-text-display { font: var(--type-display); } }
+
+
+/* ---------- 1. Button ---------- */
+/* Nhãn bắt đầu bằng động từ. Một .td-btn--primary mỗi vùng màn hình. */
+.td-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--control-md);
+  padding: 0 var(--space-6);
+  border: var(--hairline-width) solid transparent;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--ink);
+  font: var(--type-ui);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-out),
+              border-color var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out);
+}
+.td-btn .td-icon { width: var(--icon-sm); height: var(--icon-sm); }
+
+.td-btn--primary { background: var(--primary); color: var(--on-primary); }
+.td-btn--primary:hover { background: var(--primary-hover); }
+
+.td-btn--secondary { background: var(--surface); border-color: var(--line-strong); }
+.td-btn--secondary:hover { background: var(--surface-sunken); }
+
+.td-btn--ghost { color: var(--accent); padding-inline: var(--space-3); }
+.td-btn--ghost:hover { background: var(--accent-soft); }
+
+.td-btn--lg { min-height: var(--control-lg); padding-inline: var(--space-8); font: var(--type-ui-lg); }
+.td-btn--block { width: 100%; }
+
+.td-btn:disabled,
+.td-btn[aria-disabled="true"] {
+  background: var(--surface-sunken);
+  border-color: var(--line);
+  color: var(--ink-subtle);
+  cursor: not-allowed;
+}
+
+.td-btn[aria-busy="true"] { pointer-events: none; }
+.td-btn[aria-busy="true"]::before {
+  content: "";
+  width: var(--icon-xs);
+  height: var(--icon-xs);
+  border: var(--hairline-width) solid currentColor;
+  border-right-color: transparent;
+  border-radius: var(--radius-full);
+  animation: td-spin calc(var(--duration-slow) * 2) linear infinite;
+}
+@keyframes td-spin { to { transform: rotate(360deg); } }
+
+
+/* ---------- 2. IconButton ---------- */
+/* Luôn có aria-label. Vùng chạm 44 × 44. */
+.td-icon-btn {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: var(--touch-min);
+  height: var(--touch-min);
+  padding: 0;
+  border: var(--hairline-width) solid transparent;
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--ink-muted);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
+}
+.td-icon-btn:hover { background: var(--surface-sunken); color: var(--ink); }
+.td-icon-btn[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--ink); }
+.td-icon-btn--outline { border-color: var(--line-strong); color: var(--ink); }
+.td-icon-btn--square { border-radius: var(--radius-md); }
+
+
+/* ---------- 3. Chip (lựa chọn, bộ lọc) ---------- */
+/* Đã chọn: nền accent-soft + viền accent, chữ ink (không nền đặc). Trạng thái đọc từ aria-pressed / aria-checked. */
+.td-chip-group { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+.td-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--touch-min);
+  padding: 0 var(--space-4);
+  border: var(--hairline-strong);
+  border-radius: var(--radius-full);
+  background: var(--surface);
+  color: var(--ink);
+  font: var(--type-ui);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
+}
+.td-chip .td-icon { width: var(--icon-sm); height: var(--icon-sm); color: var(--ink-muted); }
+.td-chip:hover { background: var(--surface-sunken); }
+.td-chip[aria-pressed="true"],
+.td-chip[aria-checked="true"] {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--ink);
+}
+.td-chip[aria-pressed="true"] .td-icon,
+.td-chip[aria-checked="true"] .td-icon { color: var(--accent); }
+
+
+/* ---------- 4. Tag (nhãn thông tin, không bấm được) ---------- */
+.td-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  background: var(--surface-sunken);
+  color: var(--ink-muted);
+  font: var(--type-label);
+  white-space: nowrap;
+}
+.td-tag .td-icon { width: var(--icon-xs); height: var(--icon-xs); }
+.td-tag--accent  { background: var(--accent-soft); color: var(--accent); }
+.td-tag--success { background: var(--success-soft); color: var(--success); } /* luôn kèm icon check hoặc chữ "Đã …" */
+.td-tag--outline { background: transparent; border: var(--hairline); }
+
+
+/* ---------- 5. SectionHeader + tiêu đề ---------- */
+.td-section-head {
+  display: grid;
+  gap: var(--space-3);
+  max-width: var(--measure);
+  margin-bottom: var(--section-head-gap);   /* 32px → 40px */
+}
+.td-section-head--center { margin-inline: auto; text-align: center; justify-items: center; }
+
+.td-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  color: var(--accent);
+  font: var(--type-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+}
+.td-eyebrow .td-icon { width: var(--icon-sm); height: var(--icon-sm); }
+
+.td-h1 { margin: 0; color: var(--ink); font: var(--type-display-sm); text-wrap: balance; }
+.td-h2 { margin: 0; color: var(--ink); font: var(--type-heading-2-sm); text-wrap: balance; }
+.td-h3 { margin: 0; color: var(--ink); font: var(--type-heading-3); }
+.td-h4 { margin: 0; color: var(--ink); font: var(--type-heading-4); }
+.td-h1 em, .td-h2 em { font-style: italic; color: var(--accent); }
+@media (min-width: 640px)  { .td-h2 { font: var(--type-heading-2); } }
+@media (min-width: 1024px) { .td-h1 { font: var(--type-display); letter-spacing: var(--tracking-display); } }
+
+.td-lead { margin: 0; color: var(--ink-muted); font: var(--type-lead); }
+.td-meta { color: var(--ink-subtle); font: var(--type-meta); }
+
+
+/* ---------- 6. Header ---------- */
+/* Từ 1024px: thương hiệu + menu ngang 5 mục + công cụ. Dưới 1024px: chỉ thương hiệu + công cụ, menu chuyển xuống TabBar.
+   Không hamburger. Không Đăng nhập/Đăng ký khi chưa có chức năng; nếu có thì chỉ hiện từ 1280px. */
+.td-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  padding-top: env(safe-area-inset-top, 0px);
+  background: var(--surface);
+  border-bottom: var(--hairline);
+}
+.td-header__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  min-height: var(--header-height);
+}
+.td-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--ink);
+  font: var(--type-brand);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.td-brand .td-icon { color: var(--accent); }
+.td-brand em { color: var(--accent); }
+
+.td-nav { display: none; gap: var(--space-1); margin-inline: auto; }
+@media (min-width: 1024px) { .td-nav { display: flex; } }
+.td-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch-min);
+  padding: 0 var(--space-3);
+  border-bottom: var(--indicator-height) solid transparent;
+  color: var(--ink-muted);
+  font: var(--type-ui);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
+}
+.td-nav a:hover { color: var(--ink); }
+.td-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+
+.td-header__actions { display: flex; align-items: center; gap: var(--space-1); margin-left: auto; }
+@media (min-width: 1024px) { .td-header__actions { margin-left: 0; } }
+
+.td-header__auth { display: none; gap: var(--space-2); }
+@media (min-width: 1280px) { .td-header__auth { display: flex; } }
+
+
+/* ---------- 7. TabBar (dưới 1024px) ---------- */
+/* Chỉ icon: nhãn ẩn về mặt thị giác (.td-tabbar-label) nhưng vẫn là tên truy cập của liên kết.
+   Cao 56px + safe-area. Các mục giống hệt menu Header (Giáo Lý · Bài Giảng · Kinh Điển · Thời Khóa · Vấn Đáp).
+   Một vạch 16 × 2px (.td-tabbar-indicator, do JS chèn) trượt tới mục vừa chạm rồi mới chuyển trang (<= 300ms).
+   Không có JS: vạch ::after riêng dưới mục aria-current="page". Class trạng thái do JS gắn:
+   .has-indicator (đã chèn vạch chung), .is-ready (bật chuyển động), .is-visible (trên vạch). */
+.td-tabbar { display: none; }
+
+@media (max-width: 1023.98px) {
+  body { padding-bottom: var(--tabbar-offset); }
+
+  .td-tabbar {
+    position: fixed;
+    inset: auto 0 0 0;
+    z-index: var(--z-tabbar);
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    height: var(--tabbar-offset);
+    padding: 0 max(var(--space-2), env(safe-area-inset-right, 0px)) env(safe-area-inset-bottom, 0px) max(var(--space-2), env(safe-area-inset-left, 0px));
+    background: var(--surface);
+    border-top: var(--hairline);
+  }
+
+  .td-tabbar-item {
+    position: relative;
+    flex: 1 1 0;
+    max-width: calc(var(--control-lg) * 2);
+    min-width: var(--touch-min);
+    min-height: var(--touch-min);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink-subtle);
+    text-decoration: none;
+  }
+  .td-tabbar-item[aria-current="page"] { color: var(--accent); }
+
+  /* Viền focus nằm trong ô vì TabBar sát mép màn hình (ngoại lệ duy nhất của offset 3px) */
+  .td-tabbar-item:focus-visible {
+    outline-offset: calc(var(--focus-offset) * -1);
+    border-radius: var(--radius-sm);
+  }
+
+  .td-tabbar-icon,
+  .td-tabbar-item .td-icon {
+    width: var(--icon-md);
+    height: var(--icon-md);
+    flex: none;
+  }
+
+  .td-tabbar-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  /* Dự phòng khi chưa có JS: vạch riêng dưới mục đang chọn (không chỉ dựa vào màu) */
+  .td-tabbar:not(.has-indicator) .td-tabbar-item[aria-current="page"]::after {
+    content: "";
+    position: absolute;
+    top: calc(50% + var(--indicator-offset));
+    left: 50%;
+    width: var(--indicator-width);
+    height: var(--indicator-height);
+    border-radius: var(--radius-full);
+    background: var(--accent);
+    transform: translateX(-50%);
+  }
+
+  /* Vạch chung: JS chỉ đặt translateX để vạch nằm giữa icon đang chọn */
+  .td-tabbar-indicator {
+    position: absolute;
+    top: calc(50% - env(safe-area-inset-bottom, 0px) / 2 + var(--indicator-offset));
+    left: 0;
+    width: var(--indicator-width);
+    height: var(--indicator-height);
+    border-radius: var(--radius-full);
+    background: var(--accent);
+    opacity: 0;
+    pointer-events: none;
+  }
+  .td-tabbar-indicator.is-visible { opacity: 1; }
+
+  .td-tabbar.has-indicator .td-tabbar-item { transition: none; }
+  .td-tabbar.is-ready .td-tabbar-item {
+    transition: color var(--duration-indicator) var(--ease-indicator);
+  }
+  .td-tabbar.is-ready .td-tabbar-indicator {
+    transition: transform var(--duration-indicator) var(--ease-indicator),
+                opacity var(--duration-indicator) var(--ease-indicator);
+  }
+}
+
+@media (hover: hover) and (max-width: 1023.98px) {
+  .td-tabbar-item:hover { color: var(--ink); }
+}
+
+
+/* ---------- 8. ContentCard ---------- */
+/* Tiêu đề thẻ luôn heading-4 sans 500. Tiêu đề → mô tả 8–12px. */
+.td-card-grid {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--card-min-width)), 1fr));
+}
+.td-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--surface);
+  border: var(--hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  color: inherit;
+  text-decoration: none;
+  transition: box-shadow var(--duration-base) var(--ease-out),
+              border-color var(--duration-base) var(--ease-out),
+              transform var(--duration-base) var(--ease-out);
+}
+a.td-card:hover { box-shadow: var(--shadow-raised); transform: translateY(calc(var(--space-1) / -2)); }
+.td-card__media { aspect-ratio: 16 / 10; background: var(--surface-sunken); }
+.td-card__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.td-card__body { display: grid; gap: var(--card-title-gap); padding: var(--space-5); }
+@media (min-width: 640px) { .td-card__body { padding: var(--space-6); } }
+.td-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  color: var(--ink-subtle);
+  font: var(--type-meta);
+}
+.td-card__meta .td-icon { width: var(--icon-xs); height: var(--icon-xs); }
+.td-card__title { margin: 0; color: var(--ink); font: var(--type-heading-4); }
+.td-card__desc {
+  margin: 0;
+  color: var(--ink-muted);
+  font: var(--type-body-sm);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+/* ---------- 9. SutraCard ---------- */
+/* Tên kinh: Crimson Pro 400 (heading-3). Tên chữ Hán đặt dưới, màu ink-subtle. */
+.td-sutra {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: var(--surface);
+  border: var(--hairline);
+  border-radius: var(--radius-lg);
+}
+@media (min-width: 640px) {
+  .td-sutra { grid-template-columns: var(--cover-width) 1fr; gap: var(--space-6); padding: var(--space-6); }
+}
+.td-sutra__cover {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  max-width: var(--cover-width);
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-md);
+  background: var(--accent-soft);
+  color: var(--accent);
+  object-fit: cover;
+}
+.td-sutra__body { display: grid; align-content: start; gap: var(--space-2); min-width: 0; }
+.td-sutra__title { margin: 0; color: var(--ink); font: var(--type-heading-3); }
+.td-sutra__han { color: var(--ink-subtle); font: var(--type-han); }
+.td-sutra__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-2); }
+
+
+/* ---------- 10. Progress ---------- */
+/* Thanh mảnh 4px. Trạng thái xong luôn kèm chữ hoặc icon check trong nhãn. */
+.td-progress { display: grid; gap: var(--space-2); }
+.td-progress__label {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  color: var(--ink-muted);
+  font: var(--type-meta);
+  font-variant-numeric: tabular-nums;
+}
+.td-progress__track {
+  height: var(--progress-height);
+  overflow: hidden;
+  border-radius: var(--radius-full);
+  background: var(--surface-sunken);
+}
+.td-progress__fill {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent);
+  transition: width var(--duration-base) var(--ease-out);
+}
+.td-progress--done .td-progress__fill { background: var(--success); }
+.td-progress--done .td-progress__label { color: var(--success); }
+
+
+/* ---------- 11. EpisodeItem ---------- */
+/* Mỗi tập là một liên kết thật (<a href> có URL riêng). Tập đang phát: aria-current="true". Đã nghe: data-done + icon check. */
+.td-episodes { display: grid; gap: var(--space-2); margin: 0; padding: 0; list-style: none; }
+.td-episode {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  min-height: var(--control-lg);
+  padding: var(--space-3) var(--space-4);
+  border: var(--hairline);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+.td-episode:hover { background: var(--surface-sunken); }
+.td-episode__num { color: var(--ink-subtle); font: var(--type-meta); font-variant-numeric: tabular-nums; }
+.td-episode__text { display: grid; gap: var(--space-1); min-width: 0; }
+.td-episode__title {
+  font: var(--type-ui);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.td-episode__meta { color: var(--ink-subtle); font: var(--type-meta); }
+.td-episode__state { color: var(--ink-subtle); }
+.td-episode[aria-current="true"] { background: var(--accent-soft); border-color: var(--accent); }
+.td-episode[aria-current="true"] .td-episode__state { color: var(--accent); }
+.td-episode[data-done] .td-episode__state { color: var(--success); }
+
+
+/* ---------- 12. MalaCounter (máy niệm Phật) ---------- */
+/* Vòng tiến độ nét mảnh (--ring-width). SVG viewBox="0 0 100 100", hai circle r="49", value dùng pathLength="100". Số câu niệm Crimson Pro 400. */
+.td-mala { display: grid; justify-items: center; gap: var(--space-6); }
+.td-mala__ring {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: var(--mala-size);
+  aspect-ratio: 1;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.td-mala__ring svg { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); overflow: visible; }
+.td-mala__track,
+.td-mala__value {
+  fill: none;
+  stroke-width: var(--ring-width);   /* đơn vị viewBox 0 0 100 100: 1 ≈ 3px khi vòng rộng 300px */
+}
+.td-mala__track { stroke: var(--line); }
+.td-mala__value {
+  stroke: var(--accent);
+  stroke-linecap: round;
+  transition: stroke-dashoffset var(--duration-base) var(--ease-out);
+}
+.td-mala__center { position: relative; display: grid; justify-items: center; gap: var(--space-1); }
+.td-mala__count { color: var(--ink); font: var(--type-counter); font-variant-numeric: tabular-nums; }
+.td-mala__chant { color: var(--accent); font: var(--type-ui); }
+.td-mala__hint { color: var(--ink-subtle); font: var(--type-meta); }
+.td-mala__tools { display: flex; gap: var(--space-2); }
+
+.td-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); width: 100%; max-width: var(--mala-size); }
+.td-stat {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-1);
+  padding: var(--space-3);
+  border: var(--hairline);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+.td-stat__value { color: var(--ink); font: var(--type-heading-2-sm); font-variant-numeric: tabular-nums; }
+.td-stat__label { color: var(--ink-muted); font: var(--type-meta); }
+
+
+/* ---------- 13. Quote (lời khai thị) ---------- */
+/* Luôn ghi người dạy và nguồn trong .td-quote__cite. */
+.td-quote {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-4);
+  margin: 0;
+  padding: var(--space-8) var(--space-6);
+  text-align: center;
+}
+.td-quote > .td-icon { width: var(--icon-lg); height: var(--icon-lg); color: var(--accent); }
+.td-quote__text { margin: 0; max-width: var(--measure-narrow); color: var(--ink); font: var(--type-quote); text-wrap: balance; }
+.td-quote__cite { color: var(--ink-muted); font: var(--type-meta); font-style: normal; }
+.td-quote__cite strong { color: var(--ink); }
+
+
+/* ---------- 14. SearchField ---------- */
+/* Ô nhập 16px trở lên để iOS không tự phóng to. Nút xóa là .td-icon-btn có aria-label. */
+.td-field { display: grid; gap: var(--space-2); }
+.td-label { color: var(--ink); font: var(--type-ui); }
+.td-help  { color: var(--ink-muted); font: var(--type-meta); }
+.td-input-wrap { position: relative; display: flex; align-items: center; }
+.td-input-wrap > .td-icon {
+  position: absolute;
+  left: var(--space-3);
+  color: var(--ink-subtle);
+  pointer-events: none;
+}
+.td-input {
+  width: 100%;
+  min-height: var(--control-md);
+  padding: 0 var(--space-12) 0 var(--space-4);
+  border: var(--hairline-strong);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--ink);
+  font: var(--type-body-sm);
+}
+.td-input-wrap > .td-icon ~ .td-input { padding-left: calc(var(--space-3) + var(--icon-md) + var(--space-2)); }
+.td-input::placeholder { color: var(--ink-subtle); }
+.td-input:focus-visible { border-color: var(--focus-ring); }
+.td-input[aria-invalid="true"] { border-color: var(--danger); }
+.td-input-wrap .td-icon-btn { position: absolute; right: var(--space-1); }
+.td-error { display: flex; align-items: center; gap: var(--space-2); color: var(--danger); font: var(--type-meta); }
+
+
+/* ---------- 15. Accordion (vấn đáp) ---------- */
+/* Mỗi câu hỏi là <details id="…"> có URL riêng (#id); JS mở câu khớp location.hash. */
+.td-accordion { border-top: var(--hairline); }
+.td-accordion details { border-bottom: var(--hairline); }
+.td-accordion summary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  min-height: var(--control-lg);
+  padding: var(--space-3) 0;
+  color: var(--ink);
+  font: var(--type-ui-lg);
+  list-style: none;
+  cursor: pointer;
+}
+.td-accordion summary::-webkit-details-marker { display: none; }
+.td-accordion summary .td-icon {
+  margin-left: auto;
+  color: var(--ink-subtle);
+  transition: transform var(--duration-base) var(--ease-out);
+}
+.td-accordion details[open] summary .td-icon { transform: rotate(180deg); }
+.td-accordion__body { max-width: var(--measure); padding: 0 0 var(--space-6); color: var(--ink-muted); font: var(--type-body); }
+.td-accordion__body p { margin: 0 0 var(--space-3); }
+
+
+/* ---------- 16. Toast ---------- */
+/* Viết ở thể đã xong: "Đã sao chép liên kết". role="status" aria-live="polite". */
+.td-toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--tabbar-offset) + var(--space-4));
+  z-index: var(--z-toast);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  max-width: calc(100vw - var(--space-8));
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--ink);
+  color: var(--bg);
+  box-shadow: var(--shadow-raised);
+  font: var(--type-ui);
+  transform: translateX(-50%);
+}
+.td-toast--static { position: static; transform: none; }
+.td-toast .td-icon { width: var(--icon-sm); height: var(--icon-sm); }
+
+
+/* ---------- 17. Dialog + Drawer ---------- */
+/* Lớp phủ dùng --scrim, nằm trên Header và TabBar. Đóng bằng nút ×, chạm lớp phủ, phím Esc
+   (Drawer: cả khi chọn một mục). Khi mở: khóa cuộn trang (.td-scroll-lock), giữ focus trong hộp,
+   trả focus về nút đã mở khi đóng. JS gắn .is-open lên cả lớp phủ và hộp. */
+.td-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-scrim);
+  background: var(--scrim);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity var(--duration-base) var(--ease-out), visibility 0s linear var(--duration-base);
+}
+.td-scrim.is-open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity var(--duration-base) var(--ease-out), visibility 0s linear 0s;
+}
+
+/* Dialog: hộp giữa màn hình */
+.td-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: var(--z-drawer);
+  width: min(calc(100vw - var(--space-8)), var(--dialog-width));
+  max-height: calc(100dvh - var(--space-8));
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+  border: var(--hairline);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-overlay);
+  color: var(--ink);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -48%);
+  transition: opacity var(--duration-slow) var(--ease-out),
+              transform var(--duration-slow) var(--ease-out),
+              visibility 0s linear var(--duration-slow);
+}
+.td-dialog.is-open,
+.td-dialog[open] {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%);
+  transition: opacity var(--duration-slow) var(--ease-out),
+              transform var(--duration-slow) var(--ease-out),
+              visibility 0s linear 0s;
+}
+.td-dialog::backdrop { background: var(--scrim); }
+.td-dialog__head { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-4) var(--space-4) 0 var(--space-6); }
+.td-dialog__title { margin: 0; color: var(--ink); font: var(--type-heading-3); }
+.td-dialog__head .td-icon-btn { margin-left: auto; }
+.td-dialog__body { padding: var(--space-4) var(--space-6) var(--space-6); font: var(--type-body); }
+.td-dialog__foot { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--space-3); padding: 0 var(--space-6) var(--space-6); }
+
+/* Drawer: bảng trượt từ cạnh phải (danh sách tập trên trang xem bài giảng, từ 1080px trở xuống) */
+.td-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-drawer);
+  display: flex;
+  flex-direction: column;
+  width: var(--drawer-width);
+  padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) 0;
+  background: var(--surface);
+  border-left: var(--hairline);
+  box-shadow: var(--shadow-overlay);
+  overscroll-behavior: contain;
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform var(--duration-base) var(--ease-out), visibility 0s linear var(--duration-base);
+}
+.td-drawer.is-open {
+  transform: none;
+  visibility: visible;
+  transition: transform var(--duration-base) var(--ease-out), visibility 0s linear 0s;
+}
+.td-drawer__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex: none;
+  min-height: calc(var(--touch-min) + var(--space-5));
+  padding: 0 var(--space-4) 0 var(--space-5);
+  border-bottom: var(--hairline);
+}
+.td-drawer__title {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--ink);
+  font: var(--type-ui);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.td-drawer__body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding: var(--space-4);
+}
+
+/* Khóa cuộn an toàn cho iOS: JS lưu scrollY, đặt body.style.top = -scrollY rồi gắn class;
+   khi đóng gỡ class và window.scrollTo(0, scrollY). */
+.td-scroll-lock {
+  position: fixed;
+  inset-inline: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+/* ---------- 18. EmptyState ---------- */
+.td-empty {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-3);
+  padding: var(--space-12) var(--space-6);
+  text-align: center;
+}
+.td-empty__icon {
+  display: grid;
+  place-items: center;
+  width: calc(var(--icon-lg) + var(--space-8));
+  height: calc(var(--icon-lg) + var(--space-8));
+  border: var(--hairline);
+  border-radius: var(--radius-full);
+  background: var(--surface);
+  color: var(--ink-muted);
+}
+.td-empty__icon .td-icon { width: var(--icon-lg); height: var(--icon-lg); }
+.td-empty__title { margin: 0; color: var(--ink); font: var(--type-heading-4); }
+.td-empty p { margin: 0; max-width: var(--measure-narrow); color: var(--ink-muted); font: var(--type-body-sm); }
+
+
+/* ---------- 19. PracticeCalendar (lịch tu) ---------- */
+/* Ngày đã tu: nền success-soft + icon check (không chỉ dựa vào màu). Hôm nay: aria-current="date". */
+.td-cal { display: grid; gap: var(--space-3); }
+.td-cal__head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3); }
+.td-cal__grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: var(--space-1); }
+@media (min-width: 640px) { .td-cal__grid { gap: var(--space-2); } }
+.td-cal__dow { color: var(--ink-subtle); font: var(--type-meta); text-align: center; }
+.td-day {
+  position: relative;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-width: 0;
+  min-height: var(--touch-min);
+  aspect-ratio: 1;
+  border: var(--hairline-width) solid transparent;
+  border-radius: var(--radius-sm);
+  color: var(--ink-muted);
+  font: var(--type-ui);
+  font-variant-numeric: tabular-nums;
+}
+.td-day .td-icon { width: var(--icon-xs); height: var(--icon-xs); }
+.td-day--done { background: var(--success-soft); color: var(--success); }
+.td-day[aria-current="date"] { border-color: var(--accent); background: var(--accent-soft); color: var(--ink); }
+.td-day--empty { visibility: hidden; }
+
+
+/* ---------- 20. LessonSteps (nhập môn theo ngày) ---------- */
+/* Mỗi bước có URL riêng. Bước đang học: primary. Đã xong: success + icon check. */
+.td-steps { display: grid; margin: 0; padding: 0; list-style: none; }
+.td-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--space-10) 1fr;
+  gap: var(--space-4);
+  padding-bottom: var(--space-6);
+}
+.td-step:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--space-10) / 2);
+  top: calc(var(--space-10) + var(--space-1));
+  bottom: var(--space-1);
+  width: var(--hairline-width);
+  background: var(--line);
+}
+.td-step__dot {
+  display: grid;
+  place-items: center;
+  width: var(--space-10);
+  height: var(--space-10);
+  border: var(--hairline-strong);
+  border-radius: var(--radius-full);
+  background: var(--surface);
+  color: var(--ink-muted);
+  font: var(--type-ui);
+}
+.td-step__dot .td-icon { width: var(--icon-sm); height: var(--icon-sm); }
+.td-step--done .td-step__dot { border-color: var(--success); background: var(--success-soft); color: var(--success); }
+.td-step--current .td-step__dot { border-color: var(--primary); background: var(--primary); color: var(--on-primary); }
+.td-step__body { display: grid; gap: var(--card-title-gap); padding-top: var(--space-2); }
+.td-step__title { margin: 0; color: var(--ink); font: var(--type-heading-4); }
+.td-step__title a { color: inherit; text-decoration: none; }
+.td-step__desc { margin: 0; color: var(--ink-muted); font: var(--type-body-sm); }
+
+
+/* ---------- 21. Giảm chuyển động ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* TabBar: vạch và màu đổi chỗ tức thì; bảng trượt và dialog hiện/ẩn ngay */
+  .td-tabbar.is-ready .td-tabbar-item,
+  .td-tabbar.is-ready .td-tabbar-indicator,
+  .td-drawer, .td-drawer.is-open,
+  .td-scrim, .td-scrim.is-open,
+  .td-dialog, .td-dialog.is-open {
+    transition: none !important;
+  }
+  a.td-card:hover { transform: none; }
+}

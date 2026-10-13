@@ -21,6 +21,15 @@
   --zen-green-bg: #EBF5EE;
   --zen-green-text: #166534;
   --zen-green-border: rgba(22, 101, 52, 0.2);
+  /* Chữ/icon đặt trên nền xanh đặc (số tập đang xem, nút check khi hover) */
+  --zen-green-on: #ffffff;
+  /* Hàng tập đã học / đã huân tu */
+  --ep-completed-bg: rgba(235, 245, 238, 0.22);
+  --ep-completed-border: rgba(22, 101, 52, 0.14);
+  /* Nhãn chặng trong lộ trình */
+  --stage-pill-text: #b45309;
+  --stage-pill-bg: rgba(180, 83, 9, 0.09);
+  --stage-pill-border: rgba(180, 83, 9, 0.2);
 }
 
 body.dark-mode {
@@ -37,6 +46,12 @@ body.dark-mode {
   --zen-green-bg: rgba(16, 185, 129, 0.12);
   --zen-green-text: #6ee7b7;
   --zen-green-border: rgba(16, 185, 129, 0.25);
+  --zen-green-on: #052e16;
+  --ep-completed-bg: rgba(16, 185, 129, 0.05);
+  --ep-completed-border: rgba(16, 185, 129, 0.16);
+  --stage-pill-text: #e2a853;
+  --stage-pill-bg: rgba(226, 168, 83, 0.12);
+  --stage-pill-border: rgba(226, 168, 83, 0.28);
 }
 
 /* ==========================================================================
@@ -84,7 +99,7 @@ body.dark-mode {
   border: 1px solid var(--border-subtle);
   border-radius: 10px;
   color: var(--text-main);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.2s ease;
@@ -108,7 +123,7 @@ body.dark-mode {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-secondary);
   white-space: nowrap;
   overflow: hidden;
@@ -147,7 +162,7 @@ body.dark-mode {
   border: 1px solid var(--zen-green-border);
   color: var(--zen-green-text);
   border-radius: 10px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -227,7 +242,7 @@ body.dark-mode {
   color: #ffffff;
   padding: 6px 12px;
   border-radius: 8px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   border: 1px solid rgba(255, 255, 255, 0.12);
   z-index: 5;
@@ -373,7 +388,7 @@ body.dark-mode {
   padding: 6px;
   border-radius: 6px;
   transition: all 0.15s ease;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .watch-ctrl-btn:hover {
@@ -382,7 +397,7 @@ body.dark-mode {
 }
 
 .watch-time-display {
-  font-size: 12.5px;
+  font-size: 14px;
   font-variant-numeric: tabular-nums;
   color: rgba(255, 255, 255, 0.85);
 }
@@ -417,7 +432,7 @@ body.dark-mode {
   background-color: var(--zen-green-bg);
   color: var(--zen-green-text);
   border: 1px solid var(--zen-green-border);
-  font-size: 12.5px;
+  font-size: 14px;
   font-weight: 700;
   padding: 4px 10px;
   border-radius: 8px;
@@ -429,7 +444,7 @@ body.dark-mode {
   background-color: var(--bg-surface-subtle);
   color: var(--text-secondary);
   border: 1px solid var(--border-subtle);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   padding: 4px 10px;
   border-radius: 8px;
@@ -494,7 +509,7 @@ body.dark-mode {
   background-color: var(--bg-surface-subtle);
   border: 1px solid var(--border-subtle);
   border-radius: 10px;
-  font-size: 12.5px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--text-main);
   cursor: pointer;
@@ -534,7 +549,7 @@ body.dark-mode {
   background-color: var(--bg-surface-subtle);
   border: 1px solid var(--border-subtle);
   border-radius: 10px;
-  font-size: 12.5px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--text-main);
   cursor: pointer;
@@ -599,7 +614,7 @@ body.dark-mode {
 }
 
 .watch-quote-content {
-  font-size: 13.5px;
+  font-size: 14px;
   font-style: italic;
   color: var(--text-secondary);
   line-height: 1.55;
@@ -653,7 +668,7 @@ body.dark-mode {
 }
 
 .watch-playlist-count-badge {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   padding: 3px 9px;
   border-radius: 6px;
@@ -678,7 +693,7 @@ body.dark-mode {
 .watch-progress-label-row {
   display: flex;
   justify-content: space-between;
-  font-size: 11.5px;
+  font-size: 14px;
   color: var(--text-muted);
 }
 
@@ -725,7 +740,7 @@ body.dark-mode {
   padding: 8px 12px 8px 32px;
   border: 1px solid var(--border-subtle);
   border-radius: 8px;
-  font-size: 12.5px;
+  font-size: 14px;
   background-color: var(--bg-surface);
   color: var(--text-main);
   outline: none;
@@ -740,7 +755,7 @@ body.dark-mode {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 11.5px;
+  font-size: 14px;
   color: var(--text-secondary);
 }
 
@@ -794,7 +809,7 @@ body.dark-mode {
 }
 
 .watch-ep-num {
-  font-size: 11.5px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--zen-green-text);
   background-color: rgba(22, 101, 52, 0.08);
@@ -805,7 +820,7 @@ body.dark-mode {
 
 .watch-ep-item.active .watch-ep-num {
   background-color: var(--zen-green-text);
-  color: #ffffff;
+  color: var(--zen-green-on);
 }
 
 .watch-ep-info {
@@ -815,7 +830,7 @@ body.dark-mode {
 }
 
 .watch-ep-name {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--text-main);
   white-space: nowrap;
@@ -832,7 +847,7 @@ body.dark-mode {
 }
 
 .watch-ep-duration {
-  font-size: 11.5px;
+  font-size: 14px;
   color: var(--text-muted);
 }
 
@@ -841,7 +856,7 @@ body.dark-mode {
   display: inline-flex;
   align-items: center;
   gap: 3.5px;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--zen-green-text);
   background-color: var(--zen-green-bg);
@@ -859,8 +874,8 @@ body.dark-mode {
 
 /* Trạng thái card Tập đã huân tu */
 .watch-ep-item.is-completed:not(.active) {
-  border-color: rgba(22, 101, 52, 0.14);
-  background-color: rgba(235, 245, 238, 0.22);
+  border-color: var(--ep-completed-border);
+  background-color: var(--ep-completed-bg);
 }
 
 .watch-ep-item.is-completed:not(.active):hover {
@@ -887,7 +902,7 @@ body.dark-mode {
 }
 
 .watch-ep-item.active .watch-ep-right-icon {
-  color: #166534;
+  color: var(--zen-green-text);
 }
 
 /* Badge Icon Check Đã Huân Tu ở cột phải */
@@ -914,7 +929,7 @@ body.dark-mode {
 
 .watch-ep-item:hover .watch-check-badge {
   background-color: var(--zen-green-text);
-  color: #ffffff;
+  color: var(--zen-green-on);
   border-color: var(--zen-green-text);
   transform: scale(1.08);
 }
@@ -957,7 +972,7 @@ body.dark-mode {
 .watch-wave-bar {
   width: 3px;
   height: 100%;
-  background-color: #166534;
+  background-color: var(--zen-green-text);
   border-radius: 2px;
   animation: waveAnim 1s ease-in-out infinite alternate;
 }
@@ -981,7 +996,7 @@ body.dark-mode {
   padding: 10px 20px;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-  font-size: 13.5px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -1000,9 +1015,12 @@ body.dark-mode {
    4B. SIMPLE STAGE DIVIDERS FOR LỘ TRÌNH TU HỌC
    ========================================================================== */
 .watch-stage-header-simple {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  /* Hàng 1: nhãn chặng; hàng 2: tên chặng + số bài (đủ chỗ cho chữ 14px ở cột hẹp) */
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas: "pill pill" "name count";
+  align-items: baseline;
+  gap: 6px 12px;
   padding: 12px 4px 6px;
   margin-top: 10px;
   margin-bottom: 4px;
@@ -1015,30 +1033,33 @@ body.dark-mode {
 }
 
 .watch-stage-pill-simple {
-  font-size: 10px;
+  grid-area: pill;
+  justify-self: start;
+  font-size: 14px;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  padding: 2px 7px;
+  letter-spacing: 0;
+  padding: 2px 8px;
   border-radius: 6px;
-  background-color: rgba(180, 83, 9, 0.09);
-  color: #b45309;
-  border: 1px solid rgba(180, 83, 9, 0.2);
+  background-color: var(--stage-pill-bg);
+  color: var(--stage-pill-text);
+  border: 1px solid var(--stage-pill-border);
   white-space: nowrap;
 }
 
 .watch-stage-name-simple {
+  grid-area: name;
   font-family: var(--font-display);
-  font-size: 13.5px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--text-main);
   line-height: 1.3;
 }
 
 .watch-stage-count-simple {
-  font-size: 11px;
+  grid-area: count;
+  font-size: 14px;
   color: var(--text-muted);
-  margin-left: auto;
+  white-space: nowrap;
 }
 
 /* ==========================================================================

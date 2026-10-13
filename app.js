@@ -850,7 +850,7 @@
       btnCopyQuote.addEventListener('click', () => {
         const text = document.getElementById('modal-article-title')?.textContent || '';
         navigator.clipboard.writeText(`"${text}" — Tịnh Độ An Trú`).then(() => {
-          btnCopyQuote.title = 'Đã sao chép!';
+          btnCopyQuote.title = 'Đã sao chép';
           setTimeout(() => { btnCopyQuote.title = 'Sao chép trích dẫn'; }, 1500);
         });
       });

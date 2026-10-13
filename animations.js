@@ -220,7 +220,7 @@
  *
  * 1. Tạo một vạch duy nhất .td-tabbar-indicator trong .td-tabbar, đặt dưới icon đang chọn.
  * 2. Chạm mục khác: vạch trượt sang icon mới, màu active chuyển theo, trượt xong
- *    (~260ms) mới chuyển trang. Trang chưa có mục chọn (van-dap.html): vạch hiện dần.
+ *    (~260ms) mới chuyển trang. Trang nào không có mục chọn sẵn: vạch hiện dần tại mục vừa chạm.
  * 3. Neo trong cùng trang (index.html → #thoi-khoa): vạch trượt, trình duyệt tự cuộn.
  *    Trên index.html vạch bám theo vị trí cuộn (IntersectionObserver): Thời Khóa / Giáo Lý.
  * 4. Quay lại bằng nút Back (bfcache): vạch về đúng mục của trang đó.

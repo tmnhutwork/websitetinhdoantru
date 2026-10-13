@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <title>Design system Tịnh Độ An Trú</title>
+  <!-- Trang xem trước nội bộ của design-system/. Không liên kết từ trang nào của site. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&text=%E4%BD%9B%E8%AA%AA%E9%98%BF%E5%BD%8C%E9%99%80%E7%B6%93&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="components.css">
+  <style>
+    /* CSS riêng của trang xem trước: chỉ bố cục, vẫn bằng token */
+    .pv-grid { display: grid; gap: var(--space-6); grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--card-min-width)), 1fr)); }
+    .pv-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); }
+    .pv-stack { display: grid; gap: var(--space-6); }
+    .pv-panel { padding: var(--space-6); background: var(--surface); border: var(--hairline); border-radius: var(--radius-lg); }
+    .pv-swatches { display: grid; gap: var(--space-3); grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)); }
+    .pv-swatch { display: grid; grid-template-columns: var(--control-md) 1fr; align-items: center; gap: var(--space-3); }
+    .pv-chip { width: var(--control-md); height: var(--control-md); border: var(--hairline); border-radius: var(--radius-md); }
+    .pv-swatch code, .pv-type code, .pv-space code { color: var(--ink-subtle); font: var(--type-meta); }
+    .pv-swatch strong { display: block; font: var(--type-label); }
+    .pv-type { display: grid; gap: var(--space-4); }
+    .pv-type div { display: grid; gap: var(--space-1); padding-bottom: var(--space-4); border-bottom: var(--hairline); }
+    .pv-space { display: grid; gap: var(--space-2); }
+    .pv-space div { display: grid; grid-template-columns: 120px 1fr; align-items: center; gap: var(--space-3); }
+    .pv-space span { height: var(--space-2); background: var(--accent-soft); border: var(--hairline-width) solid var(--accent); border-radius: var(--radius-full); }
+    .pv-icons { display: grid; gap: var(--space-3); grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); }
+    .pv-icons figure { display: grid; justify-items: center; gap: var(--space-2); margin: 0; padding: var(--space-3); border: var(--hairline); border-radius: var(--radius-md); background: var(--surface); color: var(--ink); }
+    .pv-icons figcaption { color: var(--ink-subtle); font: var(--type-meta); }
+    .pv-static .td-dialog { position: relative; top: auto; left: auto; width: 100%; transform: none; opacity: 1; visibility: visible; z-index: auto; }
+    .pv-stack > .td-toast--static { justify-self: start; }
+    .pv-note { color: var(--ink-muted); font: var(--type-body-sm); margin: 0; }
+  </style>
+</head>
+<body>
+
+  <header class="td-header">
+    <div class="td-container td-header__inner">
+      <a class="td-brand" href="#">
+        <svg class="td-icon" aria-hidden="true"><use href="icons.svg#i-lotus"/></svg>Tịnh Độ <em>An Trú</em>
+      </a>
+      <nav class="td-nav" aria-label="Điều hướng chính">
+        <a href="#" aria-current="page">Giáo Lý</a>
+        <a href="#">Bài Giảng</a>
+        <a href="#">Kinh Điển</a>
+        <a href="#">Thời Khóa</a>
+        <a href="#">Vấn Đáp</a>
+      </nav>
+      <div class="td-header__actions">
+        <button class="td-icon-btn" type="button" id="pvTheme" aria-label="Chuyển chế độ tối" aria-pressed="false">
+          <svg class="td-icon" aria-hidden="true"><use href="icons.svg#i-moon"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="site-section">
+      <div class="td-container">
+        <header class="td-section-head">
+          <p class="td-eyebrow"><svg class="td-icon" aria-hidden="true"><use href="icons.svg#i-lotus"/></svg>Design system v2, thanh mảnh</p>
+          <h1 class="td-h1">Bạn đang tìm kiếm <em>điều gì</em> hôm nay</h1>
+          <p class="td-lead">Trang xem nhanh token và component. Bấm nút mặt trăng ở góc trên để đổi theme.</p>
+        </header>
+        <div class="pv-row">
+          <a class="td-btn td-btn--primary td-btn--lg" href="#">
+            <svg class="td-icon" aria-hidden="true"><use href="icons.svg#i-mala"/></svg>Bắt đầu niệm Phật
+          </a>
+          <button class="td-btn td-btn--secondary" type="button">Nghe tiếp</button>
+          <button class="td-btn td-btn--ghost" type="button">Đọc kinh</button>
+          <button class="td-btn td-btn--secondary" type="button" disabled>Gửi câu hỏi</button>
+          <button class="td-btn td-btn--secondary" type="button" aria-busy="true">Đang lưu</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="site-section">
+      <div class="td-container">
+        <header class="td-section-head"><h2 class="td-h2">Màu</h2></header>
+        <div class="pv-swatches" id="pvSwatches"></div>
+      </div>
+    </section>
+
+    <section class="site-section">
+      <div class="td-container">
+        <header class="td-section-head"><h2 class="td-h2">Chữ và khoảng cách</h2></header>
+        <div class="pv-grid">
+          <div class="pv-type" id="pvType"></div>
+          <div class="pv-space" id="pvSpace"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="site-section">
+      <div class="td-container pv-stack">
+        <header class="td-section-head" style="margin-bottom:0">
+          <p class="td-eyebrow">Lựa chọn</p>
+          <h2 class="td-h2">Chip, tag, nút icon</h2>
+        </header>
+        <div class="td-chip-group" role="group" aria-label="Lọc theo chủ đề">
+          <button class="td-chip" type="button" aria-pressed="true">Tất cả</button>
+          <button class="td-chip" type="button" aria-pressed="false"><svg class="td-icon" aria-hidden="true"><use href="icons.svg#i-mala"/></svg>Niệm Phật</button>
+          <button class="td-chip" type="button" aria-pressed="false">Khai thị</button>
+        </div>
+        <div class="pv-row">
+          <span class="td-tag">Nhập môn</span>
+          <span class="td-tag td-tag--accent">Mới</span>
+          <span class="td-tag td-tag--success"><svg class="td-icon" aria-hidden="true"><use href="icons.svg#i-check"/></svg>Đã nghe</span>
+          <span class="td-tag td-tag--outline"><svg class="td-icon" aria-hidden="true"><use href="icons.svg#i-clock"/></svg>12 phút</span>
+          <button class="td-icon-btn" type="button" aria-label="Chia sẻ"><svg class="td-icon" aria-hidden="true"><use href="icons.svg#i-share"/></svg></button>
+          <button class="td-icon-btn td-icon-btn--outline" type="button" aria-label="Lưu bài"><svg class="td-icon" aria-hidden="true"><use href="icons.svg#i-bookmark"/></svg></button>
+          <button class="td-icon-btn" type="button" aria-label="Phát" aria-pressed="true"><svg class="td-icon" aria-hidden="true"><use href="icons.svg#i-play"/></svg></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="site-section">
+      <div class="td-container">
+        <header class="td-section-head"><h2 class="td-h2">Thẻ nội dung và kinh</h2></header>
+        <div class="td-card-grid">
+          <a class="td-card" href="#">
+            <div class="td-card__media"></div>
+            <div class="td-card__body">
+              <p class="td-card__meta" style="margin:0"><svg class="td-icon" aria-hidden="true"><use href="icons.svg#i-listen"/></svg>Bài giảng · 12 phút</p>
+              <h3 class="td-card__title">Phương pháp Thập niệm ký số</h3>
+              <p class="td-card__desc">Cách đếm từ 1 đến 10 giúp câu Phật hiệu rõ ràng, tâm không tán loạn.</p>
+            </div>
+          </a>
+          <a class="td-card" href="#">
+            <div class="td-card__media"></div>
+            <div class="td-card__body">
+              <p class="td-card__meta" style="margin:0"><svg class="td-icon" aria-hidden="true"><use href="icons.svg#i-sutra"/></svg>Giáo lý · 8 phút đọc</p>
+              <h3 class="td-card__title">Ba món tư lương: Tín, Nguyện, Hạnh</h3>
+              <p class="td-card__desc">Tư lương là hành trang cho người cầu vãng sanh. Bài này giải nghĩa từng món.</p>
+            </div>
+          </a>
+        </div>
+        <div style="margin-top: var(--space-6)">
+          <article class="td-sutra">
+            <div class="td-sutra__cover"><svg class="td-icon td-icon--lg" aria-hidden="true"><use href="icons.svg#i-sutra"/></svg></div>
+            <div class="td-sutra__body">
+              <h3 class="td-sutra__title">Kinh Phật Thuyết A Di Đà</h3>
+              <span class="td-sutra__han">佛說阿彌陀經</span>
+              <span class="td-meta">HT. Thích Trí Tịnh dịch · 20 phút tụng</span>
+              <div class="td-progress" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" aria-label="Tiến độ đọc">
+                <div class="td-progress__label"><span>Đã đọc</span><span>40%</span></div>
+                <div class="td-progress__track"><div class="td-progress__fill" style="width:40%"></div></div>
+              </div>
+              <div class="td-sutra__actions">
+                <a class="td-btn td-btn--primary" href="#">Đọc tiếp</a>
+                <a class="td-btn td-btn--secondary" href="#"><svg class="td-icon" aria-hidden="true"><use href="icons.svg#i-listen"/></svg>Nghe tụng</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="site-section">
+      <div class="td-container pv-grid">
+        <div class="pv-stack">
+          <header class="td-section-head" style="margin-bottom:0"><h2 class="td-h2">Danh sách tập</h2></header>
+          <ul class="td-episodes">
+            <li><a class="td-episode" href="#" data-done>
+              <span class="td-episode__num">01</span>
+              <span class="td-episode__text"><span class="td-episode__title">Duyên khởi Pháp hội Vô Lượng Thọ</span><span class="td-episode__meta">45 phút · Đã nghe</span></span>
+              <svg class="td-icon td-episode__state" aria-hidden="true"><use href="icons.svg#i-check"/></svg>
+            </a></li>
+            <li><a class="td-episode" href="#" aria-current="true">
+              <span class="td-episode__num">02</span>
+              <span class="td-episode__text"><span class="td-episode__title">Bốn mươi tám đại nguyện</span><span class="td-episode__meta">52 phút · Đang phát</span></span>
+              <svg class="td-icon td-episode__state" aria-hidden="true"><use href="icons.svg#i-pause"/></svg>
+            </a></li>
+            <li><a class="td-episode" href="#">
+              <span class="td-episode__num">03</span>
+              <span class="td-episode__text"><span class="td-episode__title">Trang nghiêm cõi Cực Lạc</span><span class="td-episode__meta">48 phút</span></span>
+              <svg class="td-icon td-episode__state" aria-hidden="true"><use href="icons.svg#i-play"/></svg>
+            </a></li>
+          </ul>
+          <button class="td-btn td-btn--secondary" type="button" id="pvOpenDrawer" aria-controls="pvDrawer" aria-expanded="false">
+            <svg class="td-icon" aria-hidden="true"><use href="icons.svg#i-episodes"/></svg>Chọn tập
+          </button>
+        </div>
+        <div class="td-mala">
+          <button class="td-mala__ring" type="button" aria-label="Niệm một câu, đã niệm 76 câu">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <circle class="td-mala__track" cx="50" cy="50" r="49"/>
+              <circle class="td-mala__value" cx="50" cy="50" r="49" pathLength="100" stroke-dasharray="100" stroke-dashoffset="30"/>
+            </svg>
+            <span class="td-mala__center">
+              <span class="td-mala__count">76</span>
+              <span class="td-mala__chant">Nam mô A Di Đà Phật</span>
+              <span class="td-mala__hint">Chạm để đếm</span>
+            </span>
+          </button>
+          <div class="td-stats">
+            <div class="td-stat"><span class="td-stat__value">3</span><span class="td-stat__label">Vòng</span></div>
+            <div class="td-stat"><span class="td-stat__value">400</span><span class="td-stat__label">Hôm nay</span></div>
+            <div class="td-stat"><span class="td-stat__value">12</span><span class="td-stat__label">Ngày liền</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="site-section">
+      <div class="td-container pv-grid">
+        <figure class="td-quote pv-panel">
+          <svg class="td-icon" aria-hidden="true"><use href="icons.svg#i-lotus"/></svg>
+          <blockquote class="td-quote__text">Niệm Phật phải niệm cho rõ ràng, nghe cho rõ ràng.</blockquote>
+          <figcaption class="td-quote__cite"><strong>Ấn Quang Đại Sư</strong> · Văn Sao</figcaption>
+        </figure>
+        <div class="pv-stack pv-panel">
+          <div class="td-field">
+            <label class="td-label" for="pvSearch">Tìm bài giảng</label>
+            <div class="td-input-wrap">
+              <svg class="td-icon" aria-hidden="true"><use href="icons.svg#i-search"/></svg>
+              <input class="td-input" id="pvSearch" type="search" placeholder="Ví dụ: vãng sanh" value="đới nghiệp">
+              <button class="td-icon-btn" type="button" aria-label="Xóa nội dung tìm"><svg class="td-icon" aria-hidden="true"><use href="icons.svg#i-close"/></svg></button>
+            </div>
+            <p class="td-help" style="margin:0">Tìm theo tên bài, tên kinh hoặc giảng sư.</p>
+          </div>
+          <div class="td-field">
+            <label class="td-label" for="pvEmail">Email nhận câu trả lời</label>
+            <div class="td-input-wrap"><input class="td-input" id="pvEmail" type="email" value="bac.hai@" aria-invalid="true" aria-describedby="pvEmailErr"></div>
+            <p class="td-error" id="pvEmailErr" style="margin:0"><svg class="td-icon td-icon--sm" aria-hidden="true"><use href="icons.svg#i-info"/></svg>Email chưa đúng, bạn kiểm tra lại giúp.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="site-section">
+      <div class="td-container">
+        <header class="td-section-head"><p class="td-eyebrow">Vấn đáp</p><h2 class="td-h2">Câu hỏi thường gặp</h2></header>
+        <div class="td-accordion">
+          <details id="niem-tham-hay-niem-ra-tieng" open>
+            <summary>Niệm thầm hay niệm ra tiếng thì tốt hơn<svg class="td-icon" aria-hidden="true"><use href="icons.svg#i-chevron-down"/></svg></summary>
+            <div class="td-accordion__body"><p>Tùy hoàn cảnh. Khi mệt thì niệm thầm, khi buồn ngủ thì niệm ra tiếng. Điều cốt yếu là niệm rõ ràng, nghe rõ ràng.</p></div>
+          </details>
+          <details id="thap-niem-ky-so">
+            <summary>Thập niệm ký số là gì<svg class="td-icon" aria-hidden="true"><use href="icons.svg#i-chevron-down"/></svg></summary>
+            <div class="td-accordion__body"><p>Là cách đếm mười câu Phật hiệu rồi bắt đầu lại, giúp tâm không tán loạn.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="site-section">
+      <div class="td-container pv-grid">
+        <div class="td-cal pv-panel">
+          <div class="td-cal__head"><h3 class="td-h4">Tháng 10</h3><span class="td-meta">12 ngày đã tu</span></div>
+          <div class="td-cal__grid" id="pvCal"></div>
+        </div>
+        <ol class="td-steps pv-panel">
+          <li class="td-step td-step--done">
+            <span class="td-step__dot"><svg class="td-icon" aria-hidden="true"><use href="icons.svg#i-check"/></svg><span class="td-visually-hidden">Đã xong</span></span>
+            <div class="td-step__body"><h3 class="td-step__title"><a href="#">Ngày 1: Tịnh Độ là gì</a></h3><p class="td-step__desc">Hiểu vì sao pháp môn này dễ tu.</p></div>
+          </li>
+          <li class="td-step td-step--current">
+            <span class="td-step__dot">2</span>
+            <div class="td-step__body"><h3 class="td-step__title"><a href="#">Ngày 2: Tín, Nguyện, Hạnh</a></h3><p class="td-step__desc">Ba món tư lương của người niệm Phật.</p></div>
+          </li>
+          <li class="td-step">
+            <span class="td-step__dot">3</span>
+            <div class="td-step__body"><h3 class="td-step__title"><a href="#">Ngày 3: Cách niệm Phật</a></h3><p class="td-step__desc">Niệm rõ ràng, nghe rõ ràng.</p></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="site-section">
+      <div class="td-container pv-grid">
+        <div class="pv-stack">
+          <div class="pv-static">
+            <div class="td-dialog" role="dialog" aria-modal="false" aria-labelledby="pvDlgTitle">
+              <div class="td-dialog__head"><h3 class="td-dialog__title" id="pvDlgTitle">Hồi hướng công đức</h3>
+                <button class="td-icon-btn" type="button" aria-label="Đóng"><svg class="td-icon" aria-hidden="true"><use href="icons.svg#i-close"/></svg></button></div>
+              <div class="td-dialog__body"><p style="margin:0">Nguyện đem công đức này, hướng về khắp tất cả.</p></div>
+              <div class="td-dialog__foot"><button class="td-btn td-btn--secondary" type="button">Để sau</button><button class="td-btn td-btn--primary" type="button">Hồi hướng</button></div>
+            </div>
+          </div>
+          <div class="td-toast td-toast--static" role="status"><svg class="td-icon" aria-hidden="true"><use href="icons.svg#i-check"/></svg>Đã sao chép liên kết</div>
+        </div>
+        <div class="td-empty pv-panel">
+          <div class="td-empty__icon"><svg class="td-icon" aria-hidden="true"><use href="icons.svg#i-bookmark"/></svg></div>
+          <h3 class="td-empty__title">Bạn chưa lưu bài nào</h3>
+          <p>Bấm biểu tượng lưu trên bài giảng để đọc lại sau.</p>
+          <a class="td-btn td-btn--secondary" href="#">Xem bài giảng</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="site-section">
+      <div class="td-container">
+        <header class="td-section-head"><h2 class="td-h2">Icon</h2><p class="td-lead">Lưới 24px, nét 1.25, đầu nét tròn.</p></header>
+        <div class="pv-icons" id="pvIcons"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bảng trượt phải (mẫu tham chiếu hành vi: Esc, lớp phủ, giữ focus, trả focus, khóa cuộn iOS) -->
+  <div class="td-scrim" id="pvScrim"></div>
+  <aside class="td-drawer" id="pvDrawer" role="dialog" aria-modal="true" aria-labelledby="pvDrawerTitle">
+    <div class="td-drawer__head">
+      <span class="td-drawer__title" id="pvDrawerTitle">Danh sách tập</span>
+      <button class="td-icon-btn td-icon-btn--outline td-icon-btn--square" type="button" id="pvCloseDrawer" aria-label="Đóng danh sách tập">
+        <svg class="td-icon" aria-hidden="true"><use href="icons.svg#i-close"/></svg>
+      </button>
+    </div>
+    <div class="td-drawer__body">
+      <ul class="td-episodes" id="pvDrawerList"></ul>
+    </div>
+  </aside>
+
+  <nav class="td-tabbar" aria-label="Điều hướng chính">
+    <a class="td-tabbar-item" href="#" aria-current="page"><svg class="td-tabbar-icon" aria-hidden="true"><use href="icons.svg#i-lotus"/></svg><span class="td-tabbar-label">Giáo Lý</span></a>
+    <a class="td-tabbar-item" href="#"><svg class="td-tabbar-icon" aria-hidden="true"><use href="icons.svg#i-listen"/></svg><span class="td-tabbar-label">Bài Giảng</span></a>
+    <a class="td-tabbar-item" href="#"><svg class="td-tabbar-icon" aria-hidden="true"><use href="icons.svg#i-sutra"/></svg><span class="td-tabbar-label">Kinh Điển</span></a>
+    <a class="td-tabbar-item" href="#"><svg class="td-tabbar-icon" aria-hidden="true"><use href="icons.svg#i-clock"/></svg><span class="td-tabbar-label">Thời Khóa</span></a>
+    <a class="td-tabbar-item" href="#"><svg class="td-tabbar-icon" aria-hidden="true"><use href="icons.svg#i-ask"/></svg><span class="td-tabbar-label">Vấn Đáp</span></a>
+  </nav>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var params = new URLSearchParams(location.search);
+      var themeBtn = document.getElementById('pvTheme');
+      function setTheme(dark) {
+        if (dark) root.setAttribute('data-theme', 'dark'); else root.removeAttribute('data-theme');
+        themeBtn.setAttribute('aria-pressed', String(dark));
+        themeBtn.setAttribute('aria-label', dark ? 'Chuyển chế độ sáng' : 'Chuyển chế độ tối');
+        themeBtn.querySelector('use').setAttribute('href', 'icons.svg#' + (dark ? 'i-sun' : 'i-moon'));
+        renderSwatches();
+      }
+      themeBtn.addEventListener('click', function () { setTheme(root.getAttribute('data-theme') !== 'dark'); });
+
+      var colors = ['bg', 'surface', 'surface-sunken', 'line', 'line-strong', 'ink', 'ink-muted', 'ink-subtle', 'primary', 'primary-hover',
+        'on-primary', 'accent', 'accent-soft', 'success', 'success-soft', 'danger', 'danger-soft', 'seal', 'focus-ring', 'scrim'];
+      function renderSwatches() {
+        var cs = getComputedStyle(root);
+        document.getElementById('pvSwatches').innerHTML = colors.map(function (n) {
+          return '<div class="pv-swatch"><span class="pv-chip" style="background:var(--' + n + ')"></span><span><strong>--' + n +
+            '</strong><code>' + cs.getPropertyValue('--' + n).trim() + '</code></span></div>';
+        }).join('');
+      }
+
+      var types = [['display-sm', 'Kho tàng kinh điển'], ['heading-2', 'Ba món tư lương'], ['heading-3', 'Kinh Phật Thuyết A Di Đà'],
+        ['scripture', 'Từ đây qua phương Tây, hơn mười muôn ức cõi Phật'], ['heading-4', 'Phương pháp Thập niệm ký số'],
+        ['lead', 'Những lời dạy giúp bạn an trú'], ['body', 'Niệm rõ ràng từng chữ, tai nghe thật rõ ràng.'],
+        ['body-sm', 'Mô tả trong thẻ'], ['ui', 'Đọc tiếp'], ['eyebrow', 'Khuyến tấn tu trì'], ['meta', 'HT. Thích Trí Tịnh dịch · 12 phút'],
+        ['han', '佛說阿彌陀經']];
+      document.getElementById('pvType').innerHTML = types.map(function (t) {
+        return '<div><code>--type-' + t[0] + '</code><span style="font:var(--type-' + t[0] + ')">' + t[1] + '</span></div>';
+      }).join('');
+      document.getElementById('pvSpace').innerHTML = [1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 20].map(function (n) {
+        return '<div><code>--space-' + n + '</code><span style="width:var(--space-' + n + ')"></span></div>';
+      }).join('');
+
+      var icons = ['lotus', 'listen', 'sutra', 'clock', 'ask', 'mala', 'buddha', 'incense', 'bell', 'mo', 'lamp', 'temple', 'west', 'today',
+        'cloud', 'palms', 'episodes', 'play', 'pause', 'skip-back', 'skip-forward', 'volume', 'restart', 'fullscreen', 'close',
+        'chevron-left', 'chevron-right', 'chevron-down', 'arrow-left', 'arrow-right', 'search', 'check', 'share', 'link', 'bookmark',
+        'calendar', 'download', 'text-size', 'info', 'sun', 'moon', 'menu'];
+      document.getElementById('pvIcons').innerHTML = icons.map(function (n) {
+        return '<figure><svg class="td-icon" aria-hidden="true"><use href="icons.svg#i-' + n + '"/></svg><figcaption>' + n + '</figcaption></figure>';
+      }).join('');
+
+      var cal = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'].map(function (d) { return '<span class="td-cal__dow">' + d + '</span>'; });
+      cal.push('<span class="td-day td-day--empty"></span>', '<span class="td-day td-day--empty"></span>');
+      for (var d = 1; d <= 31; d++) {
+        var done = d < 12 && d % 4 !== 0;
+        var today = d === 12;
+        cal.push('<span class="td-day' + (done ? ' td-day--done' : '') + '"' + (today ? ' aria-current="date"' : '') + '>' + d +
+          (done ? '<svg class="td-icon" aria-hidden="true"><use href="icons.svg#i-check"/></svg><span class="td-visually-hidden">đã tu</span>' : '') + '</span>');
+      }
+      document.getElementById('pvCal').innerHTML = cal.join('');
+
+      /* Bảng trượt: mẫu hành vi */
+      var drawer = document.getElementById('pvDrawer');
+      var scrim = document.getElementById('pvScrim');
+      var opener = document.getElementById('pvOpenDrawer');
+      var list = document.getElementById('pvDrawerList');
+      var lastFocus = null, savedY = 0;
+      list.innerHTML = [1, 2, 3, 4, 5, 6].map(function (n) {
+        return '<li><a class="td-episode" href="#tap-' + n + '"' + (n === 2 ? ' aria-current="true"' : '') + '><span class="td-episode__num">0' + n +
+          '</span><span class="td-episode__text"><span class="td-episode__title">Tập ' + n + '</span><span class="td-episode__meta">45 phút</span></span>' +
+          '<svg class="td-icon td-episode__state" aria-hidden="true"><use href="icons.svg#i-play"/></svg></a></li>';
+      }).join('');
+      function focusables() { return drawer.querySelectorAll('a[href], button:not([disabled]), input, [tabindex]:not([tabindex="-1"])'); }
+      function open() {
+        lastFocus = document.activeElement;
+        savedY = window.scrollY;
+        document.body.style.top = -savedY + 'px';
+        document.body.classList.add('td-scroll-lock');
+        drawer.classList.add('is-open'); scrim.classList.add('is-open');
+        opener.setAttribute('aria-expanded', 'true');
+        var cur = drawer.querySelector('[aria-current="true"]') || focusables()[0];
+        setTimeout(function () { cur.focus(); }, 0);
+      }
+      function close() {
+        drawer.classList.remove('is-open'); scrim.classList.remove('is-open');
+        document.body.classList.remove('td-scroll-lock'); document.body.style.top = '';
+        window.scrollTo(0, savedY);
+        opener.setAttribute('aria-expanded', 'false');
+        if (lastFocus) lastFocus.focus();
+      }
+      opener.addEventListener('click', open);
+      scrim.addEventListener('click', close);
+      document.getElementById('pvCloseDrawer').addEventListener('click', close);
+      list.addEventListener('click', function (e) { if (e.target.closest('a')) { e.preventDefault(); close(); } });
+      document.addEventListener('keydown', function (e) {
+        if (!drawer.classList.contains('is-open')) return;
+        if (e.key === 'Escape') { close(); return; }
+        if (e.key !== 'Tab') return;
+        var f = focusables(), first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      });
+
+      setTheme(params.get('theme') === 'dark');
+      if (params.get('drawer') === 'open') open();
+    })();
+  </script>
+</body>
+</html>

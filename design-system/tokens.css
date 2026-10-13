@@ -1,0 +1,348 @@
+/* ==========================================================================
+   Tịnh Độ An Trú — tokens.css (design system v2, "thanh mảnh")
+   Bản CSS của design-system/tokens.json. Sửa token thì sửa cả hai file.
+
+   Quy tắc:
+   - Code giao diện chỉ dùng token ở đây: var(--bg), var(--ink), var(--space-6),
+     font: var(--type-body)… Không viết mã màu, cỡ chữ, bán kính, bóng trực tiếp.
+   - Dark mode chỉ đổi token trong [data-theme="dark"]; component không có CSS dark riêng.
+   - Mọi cặp chữ/nền đạt >= 4.5:1 ở cả hai theme (kiểm bằng script, xem DESIGN.md).
+   - Breakpoint 640 / 1024 / 1280 (CSS không đọc được biến trong @media nên ghi số).
+
+   File này CHƯA được nạp vào trang nào. Xem "Hiện trạng code và lộ trình chuyển đổi"
+   trong DESIGN.md trước khi nạp.
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  /* ---------- Màu (theme Sáng) ---------- */
+  --bg: #faf8f4;
+  --surface: #ffffff;
+  --surface-sunken: #f2eee7;
+  --line: #e6e0d6;
+  --line-strong: #8c8174;
+  --ink: #1f1a15;
+  --ink-muted: #574e45;
+  --ink-subtle: #6f665c;
+  --primary: #43301d;
+  --primary-hover: #5a4129;
+  --on-primary: #fffaf2;
+  --accent: #a8500a;
+  --accent-soft: #fbeedd;
+  --success: #2f6b45;
+  --success-soft: #e6f2ea;
+  --danger: #b42318;
+  --danger-soft: #fdecea;
+  --seal: #ba2e22;
+  --focus-ring: #a8500a;
+  --scrim: rgba(31, 26, 21, 0.45);
+
+  /* ---------- Bóng (rất nhẹ; phân lớp chủ yếu bằng hairline) ---------- */
+  --shadow-card: 0 1px 2px rgba(31, 26, 21, 0.04);
+  --shadow-raised: 0 6px 20px -8px rgba(31, 26, 21, 0.1);
+  --shadow-overlay: 0 20px 40px -16px rgba(31, 26, 21, 0.22);
+
+  /* ---------- Họ chữ ---------- */
+  --font-display: "Crimson Pro", Georgia, "Times New Roman", serif;
+  --font-sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-han: "Noto Serif TC", "Songti TC", PMingLiU, serif;
+  --font-brush: "Ma Shan Zheng", KaiTi, STKaiti, serif;
+
+  /* Chỉ hai độ đậm */
+  --weight-regular: 400;
+  --weight-medium: 500;
+
+  /* ---------- Cỡ chữ lẻ (khi chỉ cần font-size; còn lại dùng --type-*) ---------- */
+  --fs-meta: 14px;        /* sàn thấp nhất của site */
+  --fs-ui: 16px;
+  --fs-body: 18px;
+  --fs-lead: 20px;
+  --fs-heading-4: 20px;
+  --fs-scripture: 22px;
+  --fs-heading-3: 26px;
+  --fs-heading-2-sm: 28px;
+  --fs-scripture-lg: 28px;
+  --fs-heading-2: 32px;
+  --fs-display-sm: 36px;
+  --fs-display: 48px;
+  --fs-counter: 72px;
+  --lh-body: 1.7;
+
+  /* ---------- Kiểu chữ: dùng với font: var(--type-…) ---------- */
+  /* Crimson Pro, luôn 400 */
+  --type-display: 400 48px/1.15 var(--font-display);
+  --type-display-sm: 400 36px/1.2 var(--font-display);
+  --type-heading-2: 400 32px/1.25 var(--font-display);
+  --type-heading-2-sm: 400 28px/1.25 var(--font-display);
+  --type-heading-3: 400 26px/1.3 var(--font-display);
+  --type-scripture: 400 22px/1.7 var(--font-display);
+  --type-scripture-lg: 400 28px/1.7 var(--font-display);
+  --type-quote: italic 400 24px/1.5 var(--font-display);
+  --type-counter: 400 72px/1 var(--font-display);
+  --type-brand: 400 24px/1 var(--font-display);
+  /* Inter, 400 hoặc 500 */
+  --type-heading-4: 500 20px/1.4 var(--font-sans);
+  --type-lead: 400 20px/1.6 var(--font-sans);
+  --type-body: 400 18px/1.7 var(--font-sans);
+  --type-body-sm: 400 16px/1.6 var(--font-sans);
+  --type-ui-lg: 500 18px/1.5 var(--font-sans);
+  --type-ui: 500 16px/1.5 var(--font-sans);
+  --type-eyebrow: 500 14px/1.4 var(--font-sans);
+  --type-label: 500 14px/1.4 var(--font-sans);
+  --type-meta: 400 14px/1.5 var(--font-sans);
+  /* Hán tự */
+  --type-han: 400 20px/1.4 var(--font-han);
+
+  --tracking-display: -0.01em;
+  --tracking-eyebrow: 0.02em;
+
+  /* ---------- Khoảng cách (lưới 4/8) ---------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* ---------- Nhịp dọc và bố cục ---------- */
+  --section-space: var(--space-16);     /* 64px điện thoại → 80px từ 1024px */
+  --section-head-gap: var(--space-8);   /* 32px → 40px */
+  --card-title-gap: var(--space-2);     /* 8–12px trong thẻ */
+  --page-gutter: var(--space-4);        /* 16px → 32px */
+  --page-max: 1200px;
+  --measure: 68ch;
+  --measure-narrow: 40ch;               /* lời trích, trạng thái trống */
+  --header-height: 72px;
+  --tabbar-height: 56px;
+  --tabbar-offset: 0px;                 /* > 0 dưới 1024px, xem @media bên dưới */
+  --drawer-width: min(400px, 88vw);
+  --dialog-width: 480px;
+  --card-min-width: 300px;              /* bề rộng tối thiểu một cột thẻ trong lưới */
+  --mala-size: min(300px, 78vw);        /* vòng chuỗi niệm */
+
+  /* ---------- Kích thước ---------- */
+  --touch-min: 44px;
+  --control-md: 48px;
+  --control-lg: 56px;
+  --icon-xs: 16px;
+  --icon-sm: 20px;
+  --icon-md: 24px;
+  --icon-lg: 32px;
+  --indicator-width: 16px;
+  --indicator-height: 2px;
+  --indicator-offset: 17px;             /* từ tâm ô TabBar xuống vạch chỉ báo (nửa icon 12px + 5px) */
+  --cover-width: 136px;                 /* bìa kinh trong SutraCard từ 640px */
+
+  /* ---------- Nét ---------- */
+  --hairline-width: 1px;
+  --focus-width: 2px;
+  --focus-offset: 3px;
+  --icon-stroke: 1.25;
+  --ring-width: 1;                      /* nét vòng chuỗi, đơn vị viewBox 0 0 100 100 (≈ 3px khi vòng rộng 300px) */
+  --progress-height: 4px;
+
+  /* ---------- Bo góc ---------- */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* ---------- Chuyển động ---------- */
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 400ms;
+  --duration-indicator: 260ms;          /* khớp SLIDE_MS trong animations.js; tổng <= 300ms */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-indicator: cubic-bezier(0.33, 1, 0.68, 1);
+
+  /* ---------- Lớp chồng ---------- */
+  --z-tabbar: 90;
+  --z-header: 100;
+  --z-scrim: 190;
+  --z-drawer: 200;
+  --z-toast: 300;
+
+  /* ---------- Breakpoint (chỉ để JS đọc; @media phải ghi số) ---------- */
+  --bp-sm: 640px;
+  --bp-md: 1024px;
+  --bp-lg: 1280px;
+  --bp-watch-drawer: 1080px;
+}
+
+/* Token ghép từ token màu: khai báo lại ở mọi nơi đổi theme để var(--line)… lấy đúng giá trị theme. */
+:root,
+[data-theme] {
+  --hairline: var(--hairline-width) solid var(--line);
+  --hairline-strong: var(--hairline-width) solid var(--line-strong);
+}
+
+/* ---------- Theme Tối: chỉ đổi token ---------- */
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #16130f;
+  --surface: #1f1b17;
+  --surface-sunken: #2a2520;
+  --line: #3a332c;
+  --line-strong: #7d7265;
+  --ink: #f2ece3;
+  --ink-muted: #c9beb1;
+  --ink-subtle: #a69a8c;
+  --primary: #e9c98f;
+  --primary-hover: #f2d8a6;
+  --on-primary: #1f1a15;
+  --accent: #f0a95a;
+  --accent-soft: #3a2612;
+  --success: #86c99f;
+  --success-soft: #18301f;
+  --danger: #f6877d;
+  --danger-soft: #3b1512;
+  --seal: #e0614f;
+  --focus-ring: #f0a95a;
+  --scrim: rgba(0, 0, 0, 0.6);
+
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-raised: 0 6px 20px -8px rgba(0, 0, 0, 0.5);
+  --shadow-overlay: 0 20px 40px -16px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------- Token đổi theo breakpoint ---------- */
+@media (max-width: 1023.98px) {
+  :root {
+    --tabbar-offset: calc(var(--tabbar-height) + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --section-space: var(--space-20);
+    --section-head-gap: var(--space-10);
+    --page-gutter: var(--space-8);
+  }
+}
+
+
+/* ==========================================================================
+   BÍ DANH TÊN CŨ (LEGACY ALIASES) — CHỈ ĐỂ CHUYỂN ĐỔI DẦN
+   --------------------------------------------------------------------------
+   Code hiện tại (styles.css, bai-giang.css, sutra.css, xem-bai-giang.css) dùng
+   tên token cũ. Khối dưới đây trỏ các tên cũ về token v2, để khi bắt đầu chuyển
+   đổi có thể nạp tokens.css SAU các file CSS cũ và toàn site đổi sang bảng màu v2
+   mà chưa cần sửa từng selector. Code mới KHÔNG dùng các tên này.
+
+   Lưu ý trước khi nạp:
+   - Nạp file này sẽ đổi giao diện thật (màu, viền control đậm hơn để đạt 3:1,
+     bỏ màu phân loại indigo/rose…). Làm trên nhánh riêng và chụp kiểm tra.
+   - Các tên trùng nhau giữa code cũ và v2 (cùng tên, giữ nguyên nghĩa):
+     --font-display, --font-sans, --radius-sm/md/lg/xl/full (cùng giá trị),
+     --shadow-card (v2 nhẹ hơn), --scrim, --tabbar-height, --tabbar-offset.
+   - Theme tối của code cũ bật bằng body.dark-mode (app.js). Selector
+     body.dark-mode bên dưới là cầu nối TẠM; xóa khi app.js chuyển sang đặt
+     data-theme="dark" trên <html>.
+   - Các file CSS cũ tự khai báo lại tên cũ trong body.dark-mode và :root
+     (vd. xem-bai-giang.css). Khi chuyển trang nào thì xóa khai báo cũ của trang đó.
+   ========================================================================== */
+
+/* Cầu nối tạm cho theme tối cũ: cùng giá trị với [data-theme="dark"] ở trên. */
+body.dark-mode {
+  color-scheme: dark;
+
+  --bg: #16130f;
+  --surface: #1f1b17;
+  --surface-sunken: #2a2520;
+  --line: #3a332c;
+  --line-strong: #7d7265;
+  --ink: #f2ece3;
+  --ink-muted: #c9beb1;
+  --ink-subtle: #a69a8c;
+  --primary: #e9c98f;
+  --primary-hover: #f2d8a6;
+  --on-primary: #1f1a15;
+  --accent: #f0a95a;
+  --accent-soft: #3a2612;
+  --success: #86c99f;
+  --success-soft: #18301f;
+  --danger: #f6877d;
+  --danger-soft: #3b1512;
+  --seal: #e0614f;
+  --focus-ring: #f0a95a;
+  --scrim: rgba(0, 0, 0, 0.6);
+
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-raised: 0 6px 20px -8px rgba(0, 0, 0, 0.5);
+  --shadow-overlay: 0 20px 40px -16px rgba(0, 0, 0, 0.6);
+
+  --hairline: var(--hairline-width) solid var(--line);
+  --hairline-strong: var(--hairline-width) solid var(--line-strong);
+}
+
+/* Tên cũ → token v2. Khai báo cả ở body.dark-mode để bí danh lấy đúng màu theme tối. */
+:root,
+[data-theme],
+body.dark-mode {
+  /* Nền */
+  --bg-primary: var(--bg);
+  --bg-page: var(--bg);                         /* xem-bai-giang.css */
+  --bg-surface: var(--surface);
+  --bg-surface-elevated: var(--surface);
+  --bg-surface-subtle: var(--surface-sunken);
+
+  /* Chữ */
+  --text-main: var(--ink);
+  --text-secondary: var(--ink-muted);
+  --text-muted: var(--ink-subtle);
+  --text-subtle: var(--ink-subtle);             /* cũ #a8a29e chỉ 2.4:1, nâng lên đạt 4.5:1 */
+  --text-tertiary: var(--ink-subtle);           /* bai-giang.css (chỉ có fallback) */
+
+  /* Viền */
+  --border-subtle: var(--line);
+  --border-muted: var(--line-strong);           /* cũ #d6d3d1 chỉ 1.5:1 khi làm viền control */
+  --border-focus: var(--focus-ring);
+
+  /* Nút, nhấn, trạng thái */
+  --btn-dark: var(--primary);
+  --nav-active: var(--accent);
+  --accent-gold: var(--accent);
+  --accent-gold-dark: var(--accent);            /* xem-bai-giang.css */
+  --accent-gold-bg: var(--accent-soft);
+  --accent-amber: var(--accent);
+  --accent-amber-bg: var(--accent-soft);
+  --accent-emerald: var(--success);
+  --accent-emerald-bg: var(--success-soft);
+  --zen-green-text: var(--success);             /* xem-bai-giang.css */
+  --zen-green-bg: var(--success-soft);
+  --zen-green-border: var(--line);
+
+  /* Màu phân loại nội dung bị bỏ ở v2: trỏ về trung tính */
+  --accent-indigo: var(--ink-muted);
+  --accent-indigo-bg: var(--surface-sunken);
+  --accent-rose: var(--ink-muted);
+  --accent-rose-bg: var(--surface-sunken);
+  --accent-stone: var(--ink-muted);
+  --accent-stone-bg: var(--surface-sunken);
+
+  /* Chữ */
+  --font-serif: var(--font-display);            /* xem-bai-giang.css */
+  --font-heading: var(--font-display);          /* bai-giang.css (fallback "Cinzel") */
+
+  /* Bo góc, bóng */
+  --radius-2xl: var(--radius-xl);               /* cũ 28px → 24px */
+  --shadow-subtle: var(--shadow-card);
+  --shadow-sm: var(--shadow-card);              /* bai-giang.css */
+  --shadow-card-hover: var(--shadow-raised);
+  --shadow-modal: var(--shadow-overlay);
+
+  /* Chuyển động */
+  --transition-fast: var(--duration-fast) var(--ease-out);
+  --transition-normal: var(--duration-base) var(--ease-out);
+  --transition-slow: var(--duration-slow) var(--ease-out);
+  --td-tabbar-slide: var(--duration-indicator) var(--ease-indicator);
+}
